@@ -65,6 +65,12 @@ class DebugDraw(DrawCaller):
         self.float_colors = float_colors
         super(DebugDraw, self).__init__(self, bool(float_colors))
 
+    def begin_draw(self):
+        pass
+
+    def end_draw(self):
+        pass
+
     def draw_solid_circle(self, center, radius, axis, c):
         raise NotImplementedError 
 
@@ -98,6 +104,12 @@ class BatchDebugDrawOld(DebugDraw):
 
         self.options = options
 
+    def begin_draw(self):
+        pass
+
+    def end_draw(self):
+        pass
+
     def drawing_aabb(self, aabb):
         pass
 
@@ -123,6 +135,12 @@ class BatchDebugDrawNew(BatchDebugDrawCaller):
     def __init__(self):
         super(BatchDebugDrawNew, self).__init__(self)
 
+    def begin_draw(self):
+        pass
+
+    def end_draw(self):
+        pass
+        
     def draw_solid_polygons(self, points, connect, color):
         pass
 

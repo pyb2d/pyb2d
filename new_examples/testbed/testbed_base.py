@@ -40,7 +40,7 @@ class TestbedBase(
         
         self.world.set_contact_listener(self)
         self.world.set_destruction_listener(self)
-
+        self.iter = 0
     def set_gui(self, gui):
         self._gui = gui
 
@@ -48,7 +48,7 @@ class TestbedBase(
         return self._gui.is_key_down(key)
     
     def step(self, dt):
-        
+        self.pre_step(dt)
         self.world.step(dt, 5, 5)
         if self.__time_last_step is None:
             self.__time_last_step  = time.time()
@@ -58,7 +58,8 @@ class TestbedBase(
             self.__time_last_step = t_now
             self.current_fps = 1.0/dt
         self.step_count += 1
-
+        self.post_step(dt)
+        self.iter += 1
     def say_goodbye_world(self):
         pass
 

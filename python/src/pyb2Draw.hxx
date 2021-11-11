@@ -2,17 +2,18 @@
 #include <pybind11/numpy.h>
 #include <pybind11/stl.h>
 #include <box2d/box2d.h>
-
 #include <iostream>
-
 #include <array>
+
+
+#include "debug_draw/extended_debug_draw_base.hxx"
 
 namespace py = pybind11;
 
 
 
 
-class PyB2Draw : public b2Draw {
+class PyB2Draw : public ExtendedDebugDrawBase {
 public:
 
     typedef std::pair<float,float> P;
@@ -89,7 +90,16 @@ public:
         );
     }
 
-    virtual void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
+
+    void BeginDraw(){
+        m_object.attr("begin_draw")();
+    }
+
+    void EndDraw(){
+        m_object.attr("end_draw")();
+    }
+
+    void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
     {
         
         //typedef long unsigned int ShapeType;
@@ -121,7 +131,7 @@ public:
         }
     }
 
-    virtual void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
+    void DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
     {
         auto npVertices = py::array(py::buffer_info(
             nullptr,            /* Pointer to data (nullptr -> ask NumPy to allocate!) */
@@ -150,7 +160,7 @@ public:
         }
     }
 
-    virtual void DrawPoint(const b2Vec2& center, float size, const b2Color& color) {
+    void DrawPoint(const b2Vec2& center, float size, const b2Color& color) {
         py::object f = m_object.attr("draw_point");
         auto c = this->world_to_screen(center);
         if(m_float_colors)
@@ -163,7 +173,7 @@ public:
         }
     }
 
-    virtual void DrawCircle(const b2Vec2& center, float radius, const b2Color& color) {
+    void DrawCircle(const b2Vec2& center, float radius, const b2Color& color) {
         py::object f = m_object.attr("draw_circle");
         auto c = this->world_to_screen(center);
         this->updateBoundingBox(b2Vec2(center.x+radius, center.y+radius));
@@ -178,7 +188,7 @@ public:
         }
     }
 
-    virtual void DrawSolidCircle(const b2Vec2& center, float radius, const b2Vec2& axis, const b2Color& color) {
+    void DrawSolidCircle(const b2Vec2& center, float radius, const b2Vec2& axis, const b2Color& color) {
         this->updateBoundingBox(b2Vec2(center.x+radius, center.y+radius));
         this->updateBoundingBox(b2Vec2(center.x-radius, center.y-radius));
         py::object f = m_object.attr("draw_solid_circle");
@@ -194,7 +204,7 @@ public:
         }
     }
     #ifdef PYBOX2D_LIQUID_FUN
-    virtual void DrawParticles(const b2Vec2 *centers, float radius, const b2ParticleColor *colors, const int32 count) {
+    void DrawParticles(const b2Vec2 *centers, float radius, const b2ParticleColor *colors, const int32 count) {
         py::object f = m_object.attr("draw_particles");
 
         auto npCenters = py::array(py::buffer_info(
@@ -249,7 +259,7 @@ public:
     }
     #endif
 
-    virtual void DrawSegment(const b2Vec2& p1, const b2Vec2& p2, const b2Color& color) {
+    void DrawSegment(const b2Vec2& p1, const b2Vec2& p2, const b2Color& color) {
         py::object f = m_object.attr("draw_segment");
         auto pp1 =  this->world_to_screen(p1);
         auto pp2 =  this->world_to_screen(p2);
@@ -265,7 +275,7 @@ public:
         }
     }
 
-    virtual void DrawTransform(const b2Transform& xf) {
+    void DrawTransform(const b2Transform& xf) {
         py::object f = m_object.attr("draw_transform");
         f(b2Transform(
             this->world_to_screen(xf.p),

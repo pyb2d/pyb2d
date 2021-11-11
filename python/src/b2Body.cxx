@@ -133,17 +133,13 @@ void exportB2Body(py::module & pybox2dModule){
         // will be extended on the python side
         .def("_has_fixture_list",[]( b2Body & body){return body.GetFixtureList()!= nullptr;})
         .def("_get_fixture_list",[]( b2Body & body){return body.GetFixtureList();}, py::return_value_policy::reference_internal)
-        .def("_get_fixture_list",[](const b2Body & body){return body.GetFixtureList();}, py::return_value_policy::reference_internal)
         .def("_has_joint_list",[]( b2Body & body){return body.GetJointList()!= nullptr;})
         .def("_get_joint_list",[]( b2Body & body){return body.GetJointList();}, py::return_value_policy::reference_internal)
-        .def("_get_joint_list",[](const b2Body & body){return body.GetJointList();}, py::return_value_policy::reference_internal)
         .def("_has_contact_list",[]( b2Body & body){return body.GetContactList()!= nullptr;})
         .def("_get_contact_list",[]( b2Body & body){return body.GetContactList();}, py::return_value_policy::reference_internal)
-        .def("_get_contact_list",[](const b2Body & body){return body.GetContactList();}, py::return_value_policy::reference_internal)
         .def("_has_next", [](b2Body &b){ return b.GetNext()!=nullptr;})
         .def("_get_next", [](b2Body &b){return b.GetNext();}, py::return_value_policy::reference_internal)        
         .def("_get_world",[]( b2Body & body){return body.GetWorld();}, py::return_value_policy::reference_internal)
-        .def("_get_world",[](const b2Body & body){return body.GetWorld();}, py::return_value_policy::reference_internal)
     
     ;
 

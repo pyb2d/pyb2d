@@ -3,8 +3,11 @@
 
 #include "numpy.hxx"
 
+#include "debug_draw/extended_debug_draw_base.hxx"
 
-class BatchDebugDrawCaller : public b2Draw {
+
+
+class BatchDebugDrawCaller : public ExtendedDebugDrawBase {
 public:
 
     typedef std::pair<float,float> P;
@@ -23,6 +26,14 @@ public:
         m_flip_y(true)
     {
 
+    }
+
+    void BeginDraw(){
+        m_object.attr("begin_draw")();
+    }
+
+    void EndDraw(){
+        m_object.attr("end_draw")();
     }
 
     b2Vec2 world_to_screen(const b2Vec2 & world_vec)const

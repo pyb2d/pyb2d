@@ -2,7 +2,7 @@ import numpy as np
 from time import sleep
 from threading import Event, Thread
 from ipycanvas import Canvas, hold_canvas
-from ipywidgets import Label, HTML, Button, HBox
+from ipywidgets import Label, HTML, Button, HBox, VBox
 
 import IPython
 import time
@@ -84,23 +84,46 @@ class JupyterGui(object):
         self.flip_bit = False
 
         # buttons
-        start_btn = Button(description='Start')
-        pause_btn = Button(description='Pause')
-        reset_btn = Button(description='Reset')
+        start_btn =         Button(icon='play')
+        step_forward_btn =  Button(icon='step-forward')
+        step_forward_btn.disabled = True
+        pause_btn =         Button(icon='pause')
+        reset_btn =         Button(icon='stop')
+
+        # sliders speed / fps
+        fps_slider = ipywidgets.IntSlider(
+            value=self._fps,
+            min=1,
+            max=100,
+            step=1
+        )
+
+        speed_slider = ipywidgets.FloatSlider(
+            value=1.0,
+            min=0.1,
+            max=10.0,
+            step=0.1
+        )
 
 
         def pause(btn=None):
             if not self.paused.isSet():
+                step_forward_btn.disabled = False
                 self.paused.set()
         pause_btn.on_click(pause)
 
         def start(btn=None):
+            step_forward_btn.disabled = True
             if self.paused.isSet():
                 self.paused.clear()
             if self.reached_end.isSet():
                 self.reached_end.clear()
                 Thread(target=loop).start() 
         start_btn.on_click(start)
+
+        def step_forward(btn=None):
+            self._single_step()
+        step_forward_btn.on_click(step_forward)
 
         def reset(btn):
             pause()
@@ -111,10 +134,31 @@ class JupyterGui(object):
         reset_btn.on_click(reset)
 
 
+
+        items = [
+            ipywidgets.Label(value='Draw Shapes :'), 
+            ipywidgets.Checkbox(),
+            ipywidgets.Label(value='Draw Joints :'), 
+            ipywidgets.Checkbox(),
+            ipywidgets.Label(value='Draw AABB   :'), 
+            ipywidgets.Checkbox(),
+            ipywidgets.Label(value='Draw COM    :'), 
+            ipywidgets.Checkbox(),
+            ipywidgets.Label(value='Draw Pairs  :'), 
+            ipywidgets.Checkbox(),
+        ]
+        draw_flags = ipywidgets.GridBox(items, layout=ipywidgets.Layout(grid_template_columns="repeat(4, 200px)"))
+
+
         # display
         IPython.display.display(self.out)
         with self.out:
-            IPython.display.display(self.multi_canvas, HBox([start_btn, pause_btn, reset_btn]))
+            IPython.display.display(self.multi_canvas, 
+                VBox([
+                    HBox([start_btn,  step_forward_btn,  pause_btn, reset_btn]),
+                    draw_flags
+                ])
+            )
   
 
         #make the world
@@ -136,6 +180,8 @@ class JupyterGui(object):
             # self.multi_canvas[ci].line_width = 1.0 / self.scale
 
 
+
+
         def loop():
             if self.reached_end.isSet():
                 self.reached_end.clear()
@@ -146,19 +192,7 @@ class JupyterGui(object):
                 if self._exit:
                     break
 
-                self._step_world()
-
-                canvas = self.multi_canvas[self.flip_bit]
-                self.flip_bit = not self.flip_bit
-                next_canvas = self.multi_canvas[self.flip_bit]
-                assert canvas != next_canvas
-                with hold_canvas(next_canvas):
-                    self.debug_draw._canvas = next_canvas
-                    self._draw_world(next_canvas)
-
-                # clear this one
-                canvas.clear()
-
+                self._single_step()
                 t1 = time.time()
 
                 delta = t1 - t0
@@ -170,6 +204,19 @@ class JupyterGui(object):
         Thread(target=loop).start() # Start it by default
 
 
+    def _single_step(self):
+        self._step_world()
+
+        canvas = self.multi_canvas[self.flip_bit]
+        self.flip_bit = not self.flip_bit
+        next_canvas = self.multi_canvas[self.flip_bit]
+        assert canvas != next_canvas
+        with hold_canvas(next_canvas):
+            self.debug_draw._canvas = next_canvas
+            self._draw_world(next_canvas)
+
+        # clear this one
+        canvas.clear()
                 
 
     def _step_world(self):
@@ -178,7 +225,7 @@ class JupyterGui(object):
     def _draw_world(self, canvas):
         old_style = canvas.fill_style
         canvas.fill_style = 'black'
-        # canvas.fill_rect(0,0, self.resolution[0],self.resolution[1])
+        canvas.fill_rect(0,0, self.resolution[0],self.resolution[1])
 
         self._testworld.world.draw_debug_data()
         # todo, cleapup this interface
