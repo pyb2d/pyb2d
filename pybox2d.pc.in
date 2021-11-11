@@ -1,0 +1,8 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
+includedir=${prefix}/include
+
+Name: pybox2d
+Description: pybox2d is a modern C++ library
+Version: @pybox2d_VERSION@
+Cflags: -I${includedir}

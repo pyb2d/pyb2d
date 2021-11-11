@@ -1,0 +1,51 @@
+package:
+  name: pybox2d
+  version: 0.1.0
+
+source:
+  path: ../
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake>=3.1
+    - conda-forge::xtl
+    - conda-forge::xtensor
+    - python>=3.6
+    - numpy>=1.16
+    - conda-forge::pybind11
+    - conda-forge::xtensor-python
+    
+  run:
+    - numpy>=1.16
+    - python>=3.6
+    
+test:
+  requires:
+    - pytest
+  imports:
+    - pybox2d
+  
+  commands:
+    - test -d ${PREFIX}/include/pybox2d           # [unix]
+    - test -f ${PREFIX}/include/pybox2d/pybox2d.hpp # [unix]
+    - if exist %LIBRARY_PREFIX%\include\pybox2d\pybox2d.hpp (exit 0) else (exit 1)  # [win]
+    # - make cpp-test
+    # -  make python-test
+
+about:
+  home:  https://github.com/DerThorsten/pybox2d
+  license: MIT
+  license_family: MIT
+  
+  summary: 'pybox2d is a modern C++ library'
+  description: 'pybox2d is a modern C++ library'
+  documentation_url: https://readthedocs.org/projects/pybox2d/
+  dev_url: https://github.com/DerThorsten/pybox2d
+
+extra:
+  recipe-maintainers:
+    - Thorsten Beier
+
