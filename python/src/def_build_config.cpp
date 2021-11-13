@@ -51,6 +51,13 @@ namespace pybox2d {
             return false;
             #endif
         })
+        .def_property_readonly_static("OLD_BOX2D", [](py::object /* self */) {
+            #ifdef  PYBOX2D_OLD_BOX2D
+            return true;
+            #else
+            return false;
+            #endif
+        })
 
 ;
 

@@ -18,10 +18,14 @@ def distance_joint_def(two_body_world):
     jdef.local_anchor_a = (0,0)
     jdef.local_anchor_b = (0,0) 
     jdef.length = 10
-    jdef.min_length = 2
-    jdef.max_length = 20
-    jdef.stiffness = 1.0
-    jdef.damping = 0.5
+    if not b2d.BuildConfiguration.OLD_BOX2D:
+        jdef.min_length = 2
+        jdef.max_length = 20
+        jdef.stiffness = 1.0
+        jdef.damping = 0.5
+    else:
+        jdef.damping_ratio = 0.1
+        jdef.frequency_hz = 0.2
     return jdef
 
 

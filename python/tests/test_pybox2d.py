@@ -112,10 +112,17 @@ class TestJoints(object):
 class TestEdgeShape(object):
     def test_set_two_sided(self):
         s = b2d.EdgeShape()
-        s.set_two_sided((0,0), (0,1))
+        if b2d.BuildConfiguration.OLD_BOX2D:
+            s.set((0,0), (0,1))
+        else:
+            s.set_two_sided((0,0), (0,1))
     def test_set_one_sided(self):
         s = b2d.EdgeShape()
-        s.set_one_sided((0,0), (0,1), (0,2), (0,3))
+
+        if b2d.BuildConfiguration.OLD_BOX2D:
+            s.set((0,0), (0,1))
+        else:
+            s.set_one_sided((0,0), (0,1), (0,2), (0,3))
 
 
 class TestCircleShape(object):
@@ -159,14 +166,22 @@ class TestChainShape(object):
 
     def test_create_chain(self):
         s = b2d.ChainShape()
-        s.create_chain([
-            (0,0),
-            (0,1),
-            (1,1),
-            (0,1),
-        ], 
-        [0,0],
-        (0,0))
+        if b2d.BuildConfiguration.OLD_BOX2D:
+            s.create_chain([
+                (0,0),
+                (0,1),
+                (1,1),
+                (0,1),
+            ])
+        else:
+            s.create_chain([
+                (0,0),
+                (0,1),
+                (1,1),
+                (0,1),
+            ], 
+            [0,0],
+            (0,0))
 
 if __name__ == "__main__":
     import sys
