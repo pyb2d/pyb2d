@@ -13,7 +13,7 @@ void exportb2JointDef(py::module & pybox2dModule){
 
     typedef PyDefExtender<b2JointDef> PyJointDef;
     py::class_<PyJointDef> jdClass(pybox2dModule, "JointDef");
-    add_user_data_api<PyJointDef>(jdClass);
+    add_user_data_to_def_api<PyJointDef>(jdClass);
     jdClass
         .def(py::init<>())
         .def_readwrite("jtype", &PyJointDef::type)

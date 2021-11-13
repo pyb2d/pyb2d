@@ -81,15 +81,19 @@ class PyDefExtender : public B2_DEF_CLASS
 public:
     PyDefExtender(){}
     ~PyDefExtender(){
-        delete_user_data_if_has_user_data(this);
+        void* ud = get_user_data_from_def(this);
+        if(ud != nullptr)
+        {
+            delete static_cast<UserData*>(ud);
+        }
     }
 
     void SetUserData(void* data){
         set_user_data_for_def(this, data);
     }
-    void *  GetUserData() {
-        return get_user_data_from_def(this);
-    }
+    // void *  GetUserData() {
+    //     return get_user_data_from_def(this);
+    // }
 };
 
 
@@ -108,14 +112,7 @@ void add_user_data_api(PY_CLS & py_cls)
         }
         return false;
     })
-    .def_property_readonly("has_int_user_data",[](CLS * entity){
-        void* vud = get_user_data(entity);
-        if(vud != nullptr)
-        {
-            return static_cast< UserData * >(vud)->has_int_data();
-        }
-        return false;
-    })
+
 
     .def("_set_object_user_data",[](CLS * entity, const pybind11::object & obj_ud){
         void* vud = get_user_data(entity);
@@ -139,28 +136,6 @@ void add_user_data_api(PY_CLS & py_cls)
             ud->clear_object_data();
         }
     })
-    .def("_clear_int_user_data",[](CLS * entity){
-        void* vud = get_user_data(entity);
-        if(vud != nullptr)
-        {
-            UserData * ud =  static_cast< UserData * >(vud);
-            ud->clear_int_data();
-        }
-    })
-    .def("_set_int_user_data",[](CLS * entity, const int64_t int_ud){
-        void* vud = get_user_data(entity);
-        if(vud != nullptr)
-        {
-            UserData * ud =  static_cast< UserData * >(vud);
-            ud->set_int_data(int_ud);
-        }
-        else
-        {
-            UserData * ud = new UserData();
-            set_user_data(entity, ud);
-            ud->set_int_data(int_ud);
-        }
-    })
 
     .def("_get_object_user_data",[](CLS * entity){
         void* vud = get_user_data(entity);
@@ -172,18 +147,6 @@ void add_user_data_api(PY_CLS & py_cls)
         else
         {
             throw std::runtime_error("cannot _get_object_user_data, ud is NULLPTR");
-        }
-    })
-    .def("_get_int_user_data",[](CLS * entity)->int64_t{
-        void* vud = get_user_data(entity);
-        if(vud != nullptr)
-        {
-            UserData * ud =  static_cast< UserData * >(vud);
-            return ud->get_int_data();
-        }
-        else
-        {
-            throw std::runtime_error("cannot _get_in_user_data, ud is NULLPTR");
         }
     })
     ;
@@ -194,24 +157,17 @@ void add_user_data_to_def_api(PY_CLS & py_cls)
 {
     py_cls
     .def_property_readonly("has_object_user_data",[](CLS * entity){
-        void* ud =  entity->userData;
+        void* ud =  get_user_data_from_def(entity);
         if(ud != nullptr)
         {
             return static_cast< UserData * >(ud)->has_object_data();
         }
         return false;
     })
-    .def_property_readonly("has_int_user_data",[](CLS * entity){
-        void* ud =  entity->userData;
-        if(ud != nullptr)
-        {
-            return static_cast< UserData * >(ud)->has_int_data();
-        }
-        return false;
-    })
+
 
     .def("_set_object_user_data",[](CLS * entity, const pybind11::object & obj_ud){
-        void* vud =  entity->userData;
+        void* vud = get_user_data_from_def(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -220,43 +176,22 @@ void add_user_data_to_def_api(PY_CLS & py_cls)
         else
         {
             UserData * ud = new UserData();
-            entity->userData = ud;
+            set_user_data_for_def(entity, ud);
             ud->set_object_data(obj_ud);
         }
     })
     .def("_clear_object_user_data",[](CLS * entity){
-        void* vud =  entity->userData;
+        void* vud = get_user_data_from_def(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
             ud->clear_object_data();
         }
     })
-    .def("_clear_int_user_data",[](CLS * entity){
-        void* vud =  entity->userData;
-        if(vud != nullptr)
-        {
-            UserData * ud =  static_cast< UserData * >(vud);
-            ud->clear_int_data();
-        }
-    })
-    .def("_set_int_user_data",[](CLS * entity, const int64_t int_ud){
-        void* vud =  entity->userData;
-        if(vud != nullptr)
-        {
-            UserData * ud =  static_cast< UserData * >(vud);
-            ud->set_int_data(int_ud);
-        }
-        else
-        {
-            UserData * ud = new UserData();
-            entity->userData = ud;
-            ud->set_int_data(int_ud);
-        }
-    })
+
 
     .def("_get_object_user_data",[](CLS * entity){
-        void* vud =  entity->userData;
+        void* vud = get_user_data_from_def(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -265,18 +200,6 @@ void add_user_data_to_def_api(PY_CLS & py_cls)
         else
         {
             throw std::runtime_error("cannot _get_object_user_data, ud is NULLPTR");
-        }
-    })
-    .def("_get_int_user_data",[](CLS * entity)->int64_t{
-        void* vud =  entity->userData;
-        if(vud != nullptr)
-        {
-            UserData * ud =  static_cast< UserData * >(vud);
-            return ud->get_int_data();
-        }
-        else
-        {
-            throw std::runtime_error("cannot _get_in_user_data, ud is NULLPTR");
         }
     })
     ;

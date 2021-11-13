@@ -119,7 +119,8 @@ class TestbedBase(
                 body_b=body,
                 target=p,
                 max_force=10000.0 * body.mass,
-                damping=2.0)
+                # damping=2.0
+                )
             body.awake = True
 
         return body is not None

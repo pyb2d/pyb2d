@@ -44,7 +44,7 @@ namespace pybox2d {
             return true;
             #endif
         })
-        .def_property_readonly_static("PYBOX2D_LIQUID_FUN", [](py::object /* self */) {
+        .def_property_readonly_static("LIQUID_FUN", [](py::object /* self */) {
             #ifdef  PYBOX2D_LIQUID_FUN
             return true;
             #else

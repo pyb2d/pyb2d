@@ -12,10 +12,11 @@ from . extend_fixture import *
 from . extend_shapes import *
 from . extend_shapes import EdgeShape, fobar
 from . extend_joints import *
-#from . extend_particles import *
 from . extend_collision import *
 from . extend_contact import *
 from . query_callback import *
+if BuildConfiguration.LIQUID_FUN:
+    from . extend_particles import *
 # from . destruction_listener import DestructionListener
 
 

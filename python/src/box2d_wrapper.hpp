@@ -35,7 +35,7 @@ void set_user_data_for_def(T * def, void * ud)
 template<class T>
 void  set_user_data(T * obj, void * ud)
 {
-    reinterpret_cast<void*>(obj->GetUserData().pointer) = ud;
+    obj->GetUserData().pointer = reinterpret_cast<uintptr_t>(ud);
 }
 
 template<class T>

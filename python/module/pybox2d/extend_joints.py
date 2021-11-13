@@ -74,6 +74,7 @@ def distance_joint_def(body_a,body_b,
 
 
 
+
 def mouse_joint_def(body_a,body_b,collide_connected=False,target=vec2(0,0),
                     max_force=0.0, stiffness=200.0, damping=0.0):
     jd = MouseJointDef()
@@ -89,6 +90,21 @@ def mouse_joint_def(body_a,body_b,collide_connected=False,target=vec2(0,0),
     jd.damping = damping
     return jd
 
+def mouse_joint_def(**kwargs):
+    jd = MouseJointDef()
+    jd.jtype = JointType.mouse_joint
+    for k,v in kwargs.items():
+        setattr(jd, k, v)
+    # jd.body_a = body_a
+    # jd.body_b = body_b
+    # jd.collide_connected = collide_connected 
+    # jd.target = target
+    # jd.max_force = max_force
+
+    # #stiffness, damping  = linear_stiffness(frequency_hz, damping_ratio, body_a, body_a)
+    # jd.stiffness = stiffness
+    # jd.damping = damping
+    return jd
 
 
 def joint_def(jtype,body_a,body_b,collide_connected=False):

@@ -25,7 +25,7 @@ void exportB2Body(py::module & pybox2dModule){
 
     typedef PyDefExtender<b2BodyDef> PyBodyDef;
     py::class_<PyBodyDef> body_def_py_cls(pybox2dModule,"BodyDef");
-    add_user_data_api<PyBodyDef>(body_def_py_cls);
+    add_user_data_to_def_api<PyBodyDef>(body_def_py_cls);
     body_def_py_cls
         .def(py::init<>())          
         .def_readwrite("btype", &PyBodyDef::type)
@@ -40,24 +40,6 @@ void exportB2Body(py::module & pybox2dModule){
         .def_readwrite("awake", &PyBodyDef::awake)
         .def_readwrite("fixed_rotation", &PyBodyDef::fixedRotation)
         .def_readwrite("bullet", &PyBodyDef::bullet)
-        //.def_readwrite("userData", &PyBodyDef::userData)
-        .def("_has_user_data",[](PyBodyDef & b){return get_user_data_from_def(&b) != 0;})
-        .def("_set_user_data",[](PyBodyDef & b, const py::object & ud){
-            auto ptr = new py::object(ud);
-            set_user_data_for_def(&b, ptr);
-        })
-        .def("_get_user_data",[](PyBodyDef & b){
-            auto vuserData = get_user_data_from_def(&b);
-            auto ud = static_cast<py::object *>(vuserData);
-            auto ret = py::object(*ud);
-            return ret;
-        })
-        .def("_delete_user_data",[](PyBodyDef & b){
-            auto vuserData = get_user_data_from_def(&b);
-            auto ud = static_cast<py::object *>(vuserData);
-            delete ud;
-            set_user_data_for_def(&b, 0);
-        })
         .def_readwrite("gravity_scale", &PyBodyDef::gravityScale)
     ;
 

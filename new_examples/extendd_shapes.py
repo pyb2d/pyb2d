@@ -5,6 +5,9 @@ import pybox2d as b2
 import math
 
 
+
+# 8 bit segment
+
 def char_to_shapes(c):
     if c in ['o','O']:
         return [b2.circle_shape(radius=1)]
@@ -92,6 +95,10 @@ def ngong(n):
 # x is fixed to be 1
 def rectangle(y_size):
     pass
+
+
+
+
 
 
 
