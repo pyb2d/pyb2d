@@ -41,7 +41,7 @@ void exportExtendedDebugDraw(py::module & );
 void exportB2Particle(py::module & );
 void exportB2ParticleSystem(py::module & );
 void exportB2ParticleGroup(py::module & );
-void exportEmitter(py::module &);
+// void exportEmitter(py::module &);
 #endif
 
 
@@ -80,7 +80,7 @@ PYBIND11_MODULE(_pybox2d , pybox2dModule)
     exportB2Particle(pybox2dModule);
     exportB2ParticleSystem(pybox2dModule);
     exportB2ParticleGroup(pybox2dModule);
-    exportEmitter(pybox2dModule);
+    //exportEmitter(pybox2dModule);
     #endif
 
     // make version string

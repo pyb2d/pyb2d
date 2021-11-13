@@ -28,12 +28,16 @@ public:
 
     }
 
-    void BeginDraw(){
+    void BeginDraw() override {
         m_object.attr("begin_draw")();
     }
 
-    void EndDraw(){
+    void EndDraw() override {
+        this->trigger_callbacks();
         m_object.attr("end_draw")();
+    }
+    bool ReleaseGilWhileDebugDraw() override {
+        return true;
     }
 
     b2Vec2 world_to_screen(const b2Vec2 & world_vec)const
@@ -147,12 +151,12 @@ public:
     #endif
     void trigger_callbacks(){
 
-        if(!m_polygon_verts.empty())
+        if(!m_solid_polygon_sizes.empty())
         {
             m_object.attr("draw_solid_polygons")(
-                np_view(m_polygon_verts.data(),  {m_polygon_verts.size()/2, std::size_t(2)}),
-                np_view(m_polygon_sizes.data(),  {m_polygon_sizes.size()}),
-                np_view(m_polygon_colors.data(), {m_polygon_colors.size()/3, 3})
+                np_view(m_solid_polygon_verts.data(),  {m_solid_polygon_verts.size()/2, std::size_t(2)}),
+                np_view(m_solid_polygon_sizes.data(),  {m_solid_polygon_sizes.size()}),
+                np_view(m_solid_polygon_colors.data(), {m_solid_polygon_colors.size()/3, 3})
             );
         }
             
@@ -187,27 +191,29 @@ public:
         #ifdef PYBOX2D_LIQUID_FUN
         py::object f = m_object.attr("draw_particles");
         #endif
+
+        this->reset();
     }
     void reset()
     {
-        m_polygon_verts.clear();
-        m_polygon_sizes.clear();
-        m_polygon_colors.clear();
-        m_solid_polygon_verts.clear();
-        m_solid_polygon_sizes.clear();
-        m_solid_circle_axis.clear();
-        m_solid_polygon_colors.clear();
-        m_circle_coords.clear();
-        m_circle_radii.clear();
-        m_circle_colors.clear();
-        m_solid_circle_coords.clear();
-        m_solid_circle_radii.clear();
-        m_solid_circle_colors.clear();
-        m_point_coords.clear();
-        m_point_sizes.clear();
-        m_point_colors.clear();
-        m_segment_coords.clear();
-        m_segment_colors.clear();
+        m_polygon_verts.resize(0);
+        m_polygon_sizes.resize(0);
+        m_polygon_colors.resize(0);
+        m_solid_polygon_verts.resize(0);
+        m_solid_polygon_sizes.resize(0);
+        m_solid_circle_axis.resize(0);
+        m_solid_polygon_colors.resize(0);
+        m_circle_coords.resize(0);
+        m_circle_radii.resize(0);
+        m_circle_colors.resize(0);
+        m_solid_circle_coords.resize(0);
+        m_solid_circle_radii.resize(0);
+        m_solid_circle_colors.resize(0);
+        m_point_coords.resize(0);
+        m_point_sizes.resize(0);
+        m_point_colors.resize(0);
+        m_segment_coords.resize(0);
+        m_segment_colors.resize(0);
     }
     void add_color(const b2Color & color, std::vector<uint8_t> & color_array)
     {

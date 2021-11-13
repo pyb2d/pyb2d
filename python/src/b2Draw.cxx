@@ -1,5 +1,5 @@
 #include <pybind11/pybind11.h>
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 
 #include "pyb2Draw.hxx"
@@ -45,8 +45,6 @@ void exportB2Draw(py::module & pybox2dModule){
 
     py::class_<BatchDebugDrawCaller>(pybox2dModule, "BatchDebugDrawCaller")
         .def(py::init<const py::object &>())
-        .def("trigger_callbacks", &BatchDebugDrawCaller::trigger_callbacks)
-        .def("reset", &BatchDebugDrawCaller::reset)
         .def("_append_flags_int",[](BatchDebugDrawCaller * draw,const int flag){draw->AppendFlags(flag);})
         .def("_clear_flags_int",[](BatchDebugDrawCaller * draw,const int flag){draw->ClearFlags(flag);})
         .def_readwrite("scale",&BatchDebugDrawCaller::m_scale)

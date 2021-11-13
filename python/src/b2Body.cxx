@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 
 #include <vector>
@@ -41,22 +41,22 @@ void exportB2Body(py::module & pybox2dModule){
         .def_readwrite("fixed_rotation", &PyBodyDef::fixedRotation)
         .def_readwrite("bullet", &PyBodyDef::bullet)
         //.def_readwrite("userData", &PyBodyDef::userData)
-        .def("_has_user_data",[](PyBodyDef & b){return b.GetUserData().pointer != 0;})
+        .def("_has_user_data",[](PyBodyDef & b){return get_user_data_from_def(&b) != 0;})
         .def("_set_user_data",[](PyBodyDef & b, const py::object & ud){
             auto ptr = new py::object(ud);
-            b.userData.pointer = reinterpret_cast<uintptr_t>(ptr);
+            set_user_data_for_def(&b, ptr);
         })
         .def("_get_user_data",[](PyBodyDef & b){
-            auto vuserData = reinterpret_cast<void*>(b.userData.pointer);
+            auto vuserData = get_user_data_from_def(&b);
             auto ud = static_cast<py::object *>(vuserData);
             auto ret = py::object(*ud);
             return ret;
         })
         .def("_delete_user_data",[](PyBodyDef & b){
-            auto vuserData = reinterpret_cast<void*>(b.userData.pointer);
+            auto vuserData = get_user_data_from_def(&b);
             auto ud = static_cast<py::object *>(vuserData);
             delete ud;
-            b.userData.pointer = 0;
+            set_user_data_for_def(&b, 0);
         })
         .def_readwrite("gravity_scale", &PyBodyDef::gravityScale)
     ;
@@ -108,7 +108,14 @@ void exportB2Body(py::module & pybox2dModule){
         .def_property("btype",&b2Body::GetType,&b2Body::SetType)
         .def_property("sleeping_allowed",&b2Body::IsSleepingAllowed,&b2Body::SetSleepingAllowed)
         .def_property("awake",&b2Body::IsAwake,&b2Body::SetAwake)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_property("active",&b2Body::IsActive,&b2Body::SetActive)
+        .def_property("enabled",&b2Body::IsActive,&b2Body::SetActive)
+        #else
+        .def_property("active",&b2Body::IsEnabled,&b2Body::SetEnabled)
         .def_property("enabled",&b2Body::IsEnabled,&b2Body::SetEnabled)
+        #endif
+
         .def_property("fixed_rotation",&b2Body::IsFixedRotation,&b2Body::SetFixedRotation)
         .def_property("gravity_scale",&b2Body::GetGravityScale,&b2Body::SetGravityScale)
         .def_property("linear_damping",&b2Body::GetLinearDamping,&b2Body::SetLinearDamping)

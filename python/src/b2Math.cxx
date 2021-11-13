@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/operators.h>
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 namespace py = pybind11;
 
@@ -28,6 +28,8 @@ b2Vec2 operator+ (const py::tuple & lhs, const b2Vec2 & rhs)
 //          lhs.y + rhs.y   
 //     );
 // }
+
+#ifndef PYBOX2D_OLD_BOX2D
 b2Vec2 operator/ (const b2Vec2 & lhs, float rhs)
 {
     return b2Vec2(
@@ -42,7 +44,7 @@ b2Vec2 operator* (const b2Vec2 & lhs, float rhs)
          lhs.y * rhs    
     );
 }
-
+#endif
 
 void exportB2Math(py::module & pybox2dModule){
 

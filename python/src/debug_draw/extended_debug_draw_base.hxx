@@ -1,8 +1,7 @@
 #ifndef PYBOX2D_DEBUG_DRAW_EXTENDED_DEBUG_DRAW_HXX
 #define PYBOX2D_DEBUG_DRAW_EXTENDED_DEBUG_DRAW_HXX
 
-#include <box2d/box2d.h>
-
+#include "../box2d_wrapper.hpp"
 
 class ExtendedDebugDrawBase : public b2Draw
 {
@@ -11,6 +10,9 @@ public:
 
     virtual void BeginDraw() = 0 ;
     virtual void EndDraw() = 0;
+    virtual bool ReleaseGilWhileDebugDraw() {
+        return false;
+    }
 
 };
 

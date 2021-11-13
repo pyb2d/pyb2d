@@ -1,7 +1,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
 #include <pybind11/stl.h>
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 #include <iostream>
 #include <array>
 
@@ -232,8 +232,8 @@ public:
 
             for(size_t i=0;  i<size_t(count); ++i){
                 auto ce = this->world_to_screen(centers[i]);
-                this->update_bounding_box(b2Vec2(ce.x + radius, ce.y +radius));
-                this->update_bounding_box(b2Vec2(ce.x - radius, ce.y -radius));
+                this->updateBoundingBox(b2Vec2(ce.x + radius, ce.y +radius));
+                this->updateBoundingBox(b2Vec2(ce.x - radius, ce.y -radius));
 
                 ptrCenters[i*2 ]   = ce.x ;
                 ptrCenters[i*2 +1] = ce.y ; 
@@ -248,8 +248,8 @@ public:
         else{
             for(size_t i=0;  i<size_t(count); ++i){
                 auto ce = this->world_to_screen(centers[i]);
-                this->update_bounding_box(b2Vec2(ce.x + radius, ce.y +radius));
-                this->update_bounding_box(b2Vec2(ce.x - radius, ce.y -radius));
+                this->updateBoundingBox(b2Vec2(ce.x + radius, ce.y +radius));
+                this->updateBoundingBox(b2Vec2(ce.x - radius, ce.y -radius));
 
                 ptrCenters[i*2 ]   = ce.x ;
                 ptrCenters[i*2 +1] = ce.y ; 

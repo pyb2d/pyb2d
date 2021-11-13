@@ -92,12 +92,16 @@ endif()
 # Python
 # ============
 OPTION(BUILD_PYTHON "${PROJECT_NAME} python binding" ON)
+OPTION(PYBOX2D_LIQUID_FUN "${PROJECT_NAME} liquidfun" OFF)
 if(BUILD_PYTHON)
     add_subdirectory(python)
     # add_subdirectory(old_python)
 endif()
 
-
+if(PYBOX2D_LIQUID_FUN)
+    add_compile_definitions(PYBOX2D_LIQUID_FUN)
+    add_compile_definitions(PYBOX2D_OLD_BOX2D)
+endif()
 
 # Tests
 ###########

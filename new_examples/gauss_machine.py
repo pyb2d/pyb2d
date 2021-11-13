@@ -10,7 +10,7 @@ class GaussMachine(TestbedBase):
     def __init__(self): 
         super(GaussMachine, self).__init__()
  
-        self.box_shape= 80,20
+        self.box_shape= 30,20
         box_shape = self.box_shape
             
         #  outer box
@@ -34,7 +34,6 @@ class GaussMachine(TestbedBase):
         # reflectors
         ref_start_y = int(bin_height + box_shape[1]/10.0)
         ref_stop_y = int(box_shape[1]*0.9)
-        print(ref_start_y)
         for x in range(0, box_shape[0]+1):
             
             for y in range(ref_start_y, ref_stop_y):

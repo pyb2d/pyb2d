@@ -2,7 +2,7 @@
 #define PYBOX2D_BATCH_DEBUG_DRAW_CALLER_OLD
 
 #include <pybind11/pybind11.h>
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 #include "pyworld.hxx"
 
@@ -215,8 +215,12 @@ struct BatchDebugDrawCollector
         const b2BroadPhase* bp = &world->GetContactManager().m_broadPhase;
 
         for ( b2Body* b = world->GetBodyList(); b; b = b->GetNext())
-        {
+        {   
+            #if PYBOX2D_OLD_BOX2D
+            if (b->IsActive() == false)
+            #else
             if (b->IsEnabled() == false)
+            #endif
             {
                 continue;
             }
@@ -254,7 +258,11 @@ struct BatchDebugDrawCollector
                 const b2Transform& xf = b->GetTransform();
                 for (b2Fixture* f = b->GetFixtureList(); f; f = f->GetNext())
                 {
+                    #if PYBOX2D_OLD_BOX2D
+                    if (b->IsActive() == false)
+                    #else
                     if (b->IsEnabled() == false)
+                    #endif
                     {
                         this->collect_shape<INACTIVE_BODY>(f, xf);
                     }

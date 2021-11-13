@@ -4,6 +4,17 @@ import random
 import time
 
 
+
+
+
+# class TestbedConactListener(b2.ContactListener):
+#     def __init__(self):
+#         super(TestbedConactListener, self).__init__()
+
+
+
+
+
 class TestbedBase(
     b2.DestructionListener,
     b2.ContactListener
@@ -131,27 +142,27 @@ class TestbedBase(
     def on_key_up(self, key):
         return False
 
-    # ContactListener
-    def begin_contact(self, contact):
-        pass
+    # # ContactListener
+    # def begin_contact(self, contact):
+    #     pass
 
-    def end_contact(self, contact):
-        pass
+    # def end_contact(self, contact):
+    #     pass
 
-    def begin_contact_particle_body(self, particleSystem, particleBodyContact):
-        pass
+    # def begin_contact_particle_body(self, particleSystem, particleBodyContact):
+    #     pass
 
-    def begin_contact_particle(self, particleSystem, indexA, indexB):
-        pass
+    # def begin_contact_particle(self, particleSystem, indexA, indexB):
+    #     pass
 
-    def end_contact_particle(self, particleSystem, indexA, indexB):
-        pass
+    # def end_contact_particle(self, particleSystem, indexA, indexB):
+    #     pass
 
-    def pre_solve(self, contact, oldManifold):
-        pass
+    # def pre_solve(self, contact, oldManifold):
+    #     pass
 
-    def post_solve(self, contact, impulse):
-       pass
+    # def post_solve(self, contact, impulse):
+    #    pass
 
     # DestructionListener
     def say_goodbye_joint(self, joint):

@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 #include "pyb2WorldCallbacks.hxx"
 namespace py = pybind11;

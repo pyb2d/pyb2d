@@ -25,7 +25,7 @@ class FuncShape(TestbedBase):
 
         box = self.world.create_static_body( position=(0, 0), shape = shape)
 
-        for i in range(700):
+        for i in range(30):
             box = self.world.create_dynamic_body(
                 position=(10+random.random()*10,random.random()*10 + 10),
                 shape=b2.circle_shape(pos=(0,0), radius=0.7),

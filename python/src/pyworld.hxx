@@ -1,6 +1,5 @@
 #pragma once
-#include <box2d/box2d.h>
-
+#include "box2d_wrapper.hpp"
 #include <pybind11/pybind11.h>
 #include "pyb2WorldCallbacks.hxx"
 #include <memory>
@@ -39,14 +38,28 @@ public:
         {
             throw std::runtime_error("PyWorld has already a debug draw");
         }
+        this->SetDebugDraw(extended_debug_draw);
         p_extended_debug_draw = extended_debug_draw;
     }
+    #if PYBOX2D_OLD_BOX2D
+    void DebugDraw(){
+        return this->DrawDebugData();
+    }
+    #endif
 
     void ExtendedDebugDraw()
     {
         if(p_extended_debug_draw){
             p_extended_debug_draw->BeginDraw();
-            this->DebugDraw();
+            if(p_extended_debug_draw->ReleaseGilWhileDebugDraw())
+            {
+                py::gil_scoped_release release;
+                this->DebugDraw();
+            }
+            else
+            {
+                this->DebugDraw();
+            }
             p_extended_debug_draw->EndDraw();
         }
     }

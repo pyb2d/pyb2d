@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 
 namespace py = pybind11;

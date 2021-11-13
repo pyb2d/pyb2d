@@ -2,7 +2,7 @@
 
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 #include <iostream>
 
@@ -155,72 +155,107 @@ public:
 
     virtual ~PyB2ContactListenerCaller() {}
     PyB2ContactListenerCaller(const py::object & object)
-    : object_(object){
+    : object_(object){ 
+
+        m_has_begin_contact = py::hasattr(object_, "begin_contact");
+        m_has_end_contact = py::hasattr(object_, "end_contact");
+        #ifdef PYBOX2D_LIQUID_FUN
+        m_has_begin_contact_particle_body  = py::hasattr(object_, "begin_contact_particle_body");
+        m_has_end_contact_fixture_particle  = py::hasattr(object_, "end_contact_fixture_particle");
+        m_has_begin_contact_particle  = py::hasattr(object_, "begin_contact_particle");
+        m_has_end_pontact_particle  = py::hasattr(object_, "end_pontact_particle");
+        #endif
+        m_has_pre_solve  = py::hasattr(object_, "pre_solve");
+        m_has_post_solve  = py::hasattr(object_, "post_solve");
     }
 
 
     virtual void BeginContact(b2Contact* contact) { 
-        py::object f = object_.attr("begin_contact");
-        //std::cout<<"call begin_contact"<<std::endl;
-        f(ContactHolder(contact));
-        //std::cout<<"after call begin_contact"<<std::endl;
+        if(m_has_begin_contact)
+        {
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("begin_contact");
+            f(ContactHolder(contact));
+        }
     }
 
     virtual void EndContact(b2Contact* contact) { 
-        py::object f = object_.attr("end_contact");
-        //std::cout<<"call end_contact"<<std::endl;
-        f(ContactHolder(contact));
-        //std::cout<<"after call end_contact"<<std::endl;
+        if(m_has_end_contact){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("end_contact");
+            f(ContactHolder(contact));
+        }
 
     }
 
     #ifdef PYBOX2D_LIQUID_FUN
     virtual void BeginContact(b2ParticleSystem* particleSystem,
                               b2ParticleBodyContact* particleBodyContact){
-        py::object f = object_.attr("begin_contact_particle_body");
-        f(ParticleSystemHolder(particleSystem), particleBodyContact);
-        //std::cout<<"after call begin_contact_particle_body"<<std::endl;
+
+        if(m_has_begin_contact_particle_body){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("begin_contact_particle_body");
+            f(ParticleSystemHolder(particleSystem), particleBodyContact);
+        }
     }
 
     virtual void EndContact(b2Fixture* fixture,
                             b2ParticleSystem* particleSystem, int32 index){
-        py::object f = object_.attr("end_contact_fixture_particle");
-        //std::cout<<"call end_contact_fixture_particle"<<std::endl;
-        f(FixtureHolder(fixture), ParticleSystemHolder(particleSystem), index);  
-        //std::cout<<"after call end_contact_fixture_particle"<<std::endl;
+
+        if(m_has_end_contact_fixture_particle){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("end_contact_fixture_particle");
+            f(FixtureHolder(fixture), ParticleSystemHolder(particleSystem), index);  
+        }
     }
 
     virtual void BeginContact(b2ParticleSystem* particleSystem,
                               b2ParticleContact* particleContact){
-        py::object f = object_.attr("begin_contact_particle");
-        //std::cout<<"call begin_contact_particle"<<std::endl;
-        f(ParticleSystemHolder(particleSystem),  particleContact);  
-        //std::cout<<"after call begin_contact_particle"<<std::endl;
+
+        if(m_has_begin_contact_particle){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("begin_contact_particle");
+            f(ParticleSystemHolder(particleSystem),  particleContact);  
+        }
     }
 
     virtual void EndContact(b2ParticleSystem* particleSystem,
                             int32 indexA, int32 indexB){
-        py::object f = object_.attr("end_pontact_particle");
-        //std::cout<<"call end_pontact_particle"<<std::endl;
-        f(ParticleSystemHolder(particleSystem),  indexA, indexB);  
-        //std::cout<<"after call end_pontact_particle"<<std::endl;
+        if(m_has_end_pontact_particle){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("end_pontact_particle");
+            f(ParticleSystemHolder(particleSystem),  indexA, indexB);  
+        }
     }
     #endif
     virtual void PreSolve(b2Contact* contact, const b2Manifold* oldManifold){
-        py::object f = object_.attr("pre_solve");
-        //std::cout<<"call pre_solve"<<std::endl;
-        f(ContactHolder(contact),  ManifoldHolder(oldManifold)); 
-        //std::cout<<"after call pre_solve"<<std::endl;
+        if(m_has_pre_solve){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("pre_solve");
+            f(ContactHolder(contact),  ManifoldHolder(oldManifold)); 
+        }
     }
 
     virtual void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse){
-        py::object f = object_.attr("post_solve");
-        //std::cout<<"call post_solve"<<std::endl;
-        f(ContactHolder(contact),  ContactImpulseHolder(impulse));  
-        //std::cout<<"after call post_solve"<<std::endl;
+        if(m_has_post_solve){
+            py::gil_scoped_acquire acquire;
+            py::object f = object_.attr("post_solve");
+            f(ContactHolder(contact),  ContactImpulseHolder(impulse));  
+        }
     }
 private:
     py::object object_;
+
+    bool m_has_begin_contact;
+    bool m_has_end_contact;
+    #ifdef PYBOX2D_LIQUID_FUN
+    bool m_has_begin_contact_particle_body;
+    bool m_has_end_contact_fixture_particle;
+    bool m_has_begin_contact_particle;
+    bool m_has_end_pontact_particle;
+    #endif
+    bool m_has_pre_solve;
+    bool m_has_post_solve;
 };
 
 class PyB2QueryCallbackCaller : public b2QueryCallback{
@@ -244,7 +279,7 @@ public:
     virtual bool ReportParticle(const b2ParticleSystem* particleSystem,
                                 int32 index)
     {
-
+        py::gil_scoped_acquire acquire;
         py::object f = object_.attr("report_particle");
         bool ret = f(particleSystem, index).cast<bool>();;
         return ret;
@@ -257,7 +292,7 @@ public:
     virtual bool ShouldQueryParticleSystem(
         const b2ParticleSystem* particleSystem)
     {
-        
+        py::gil_scoped_acquire acquire;
         py::object f = object_.attr("should_query_particle_system");
         bool ret = f(particleSystem).cast<bool>();;
         return ret;
@@ -288,7 +323,7 @@ public:
     /// closest hit, 1 to continue
     virtual float ReportFixture(  b2Fixture* fixture, const b2Vec2& point,
                                     const b2Vec2& normal, float fraction){
-
+        py::gil_scoped_acquire acquire;
         py::object f = object_.attr("report_fixture");
         float ret = f(fixture, point, normal, fraction).cast<float>();
         return ret;
@@ -315,6 +350,7 @@ public:
                                    int32 index, const b2Vec2& point,
                                    const b2Vec2& normal, float fraction)
     {
+        py::gil_scoped_acquire acquire;
         B2_NOT_USED(particleSystem);
         B2_NOT_USED(index);
         B2_NOT_USED(&point);
@@ -330,6 +366,7 @@ public:
     virtual bool ShouldQueryParticleSystem(
         const b2ParticleSystem* particleSystem)
     {
+        py::gil_scoped_acquire acquire;
         B2_NOT_USED(particleSystem);
         return true;
     }

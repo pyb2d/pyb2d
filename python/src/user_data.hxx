@@ -1,8 +1,10 @@
 #pragma once
 
 #include <pybind11/pybind11.h>
-
 #include <iostream> 
+
+#include "box2d_wrapper.hpp"
+
 
 class UserData
 {   
@@ -64,7 +66,8 @@ private:
 template<class ENTITY>
 inline void delete_user_data_if_has_user_data(ENTITY * entity)
 {   
-    void* ud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+
+    void* ud = get_user_data(entity);
     if(ud != nullptr)
     {
         delete static_cast<UserData*>(ud);
@@ -82,10 +85,10 @@ public:
     }
 
     void SetUserData(void* data){
-        this->userData.pointer = reinterpret_cast<uintptr_t>(data);
+        set_user_data_for_def(this, data);
     }
-    auto & GetUserData() {
-        return this->userData;
+    void *  GetUserData() {
+        return get_user_data_from_def(this);
     }
 };
 
@@ -97,7 +100,8 @@ void add_user_data_api(PY_CLS & py_cls)
 {
     py_cls
     .def_property_readonly("has_object_user_data",[](CLS * entity){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             return static_cast< UserData * >(vud)->has_object_data();
@@ -105,7 +109,7 @@ void add_user_data_api(PY_CLS & py_cls)
         return false;
     })
     .def_property_readonly("has_int_user_data",[](CLS * entity){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             return static_cast< UserData * >(vud)->has_int_data();
@@ -114,7 +118,7 @@ void add_user_data_api(PY_CLS & py_cls)
     })
 
     .def("_set_object_user_data",[](CLS * entity, const pybind11::object & obj_ud){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -123,12 +127,12 @@ void add_user_data_api(PY_CLS & py_cls)
         else
         {
             UserData * ud = new UserData();
-            entity->GetUserData().pointer = reinterpret_cast<uintptr_t>(ud);
+            set_user_data(entity, ud);
             ud->set_object_data(obj_ud);
         }
     })
     .def("_clear_object_user_data",[](CLS * entity){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -136,7 +140,7 @@ void add_user_data_api(PY_CLS & py_cls)
         }
     })
     .def("_clear_int_user_data",[](CLS * entity){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -144,7 +148,7 @@ void add_user_data_api(PY_CLS & py_cls)
         }
     })
     .def("_set_int_user_data",[](CLS * entity, const int64_t int_ud){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -153,13 +157,13 @@ void add_user_data_api(PY_CLS & py_cls)
         else
         {
             UserData * ud = new UserData();
-            entity->GetUserData().pointer = reinterpret_cast<uintptr_t>(ud);
+            set_user_data(entity, ud);
             ud->set_int_data(int_ud);
         }
     })
 
     .def("_get_object_user_data",[](CLS * entity){
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -171,7 +175,7 @@ void add_user_data_api(PY_CLS & py_cls)
         }
     })
     .def("_get_int_user_data",[](CLS * entity)->int64_t{
-        void* vud = reinterpret_cast<void*>(entity->GetUserData().pointer);
+        void* vud = get_user_data(entity);
         if(vud != nullptr)
         {
             UserData * ud =  static_cast< UserData * >(vud);
@@ -281,11 +285,13 @@ void add_user_data_to_def_api(PY_CLS & py_cls)
 template<class DEF, class ENTITY>
 void set_user_data_from_def(const DEF * def, ENTITY * entity)
 {
-    void * void_ptr_def_user_data = reinterpret_cast<void*>(def->userData.pointer);
+    void * void_ptr_def_user_data = get_user_data_from_def(def);
     if(void_ptr_def_user_data != nullptr)
     {
         UserData * def_user_data = static_cast<UserData*>(void_ptr_def_user_data);
         UserData * entity_user_data = new UserData(*def_user_data);
-        entity->GetUserData().pointer = reinterpret_cast<uintptr_t>(entity_user_data);
+
+        set_user_data(entity, entity_user_data);
+        //entity->GetUserData().pointer = reinterpret_cast<uintptr_t>(entity_user_data);
     }
 }

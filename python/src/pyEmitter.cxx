@@ -30,7 +30,6 @@ void exportEmitter(py::module & pybox2dModule){
                 return BodyHolder(self->body);
             }, 
             [](b2EmitterDefBase * self, b2Body * body){
-                std::cout<<"set bdy to "<<body<<"\n";
                 self->body = body;
             }
         )

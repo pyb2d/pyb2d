@@ -1,7 +1,6 @@
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
-
+#include "box2d_wrapper.hpp"
 
 namespace py = pybind11;
 
@@ -104,7 +103,7 @@ public:
 };
 
 void exportb2Joint(py::module & pybox2dModule){
-
+    #ifndef PYBOX2D_OLD_BOX2D
     pybox2dModule.def("linear_stiffness", [](float frequency_hertz, float damping_ratio, b2Body* bodyA, b2Body* bodyB){
         float stiffness;
         float damping;
@@ -127,6 +126,8 @@ void exportb2Joint(py::module & pybox2dModule){
         py::arg("body_a"),
         py::arg("body_b")
     );
+
+    #endif
 
     py::enum_<b2JointType>(pybox2dModule, "JointType")
         .value("unknown_joint", b2JointType::e_unknownJoint)
@@ -178,43 +179,37 @@ void exportb2Joint(py::module & pybox2dModule){
         .def("_get_next", [](b2Joint * j){return j->GetNext();}, py::return_value_policy::reference_internal)
 
 
-        .def("_has_user_data",[](b2Joint * j){return j->GetUserData().pointer != 0;})
+        .def("_has_user_data",[](b2Joint * j){return get_user_data(j) != 0;})
         .def("_set_user_data",[](b2Joint * j, const py::object & ud){
             auto ptr = new py::object(ud);
-            j->GetUserData().pointer = reinterpret_cast<uintptr_t>(ptr);
+            set_user_data(j, ptr);
 
         })
         .def("_get_user_data",[](b2Joint * j){
-            auto vuserData = reinterpret_cast<void*>(j->GetUserData().pointer);
+            auto vuserData = get_user_data(j);
             auto ud = static_cast<py::object *>(vuserData);
             auto ret = py::object(*ud);
             return ret;
         })
         .def("_delete_user_data",[](b2Joint * j){
-             auto vuserData = reinterpret_cast<void*>(j->GetUserData().pointer);
+            auto vuserData = get_user_data(j);
             auto ud = static_cast<py::object *>(vuserData);
             delete ud;
-            j->GetUserData().pointer = 0;
+            set_user_data(j,0);
         })
-
-            // .def_dynamic_cast<b2Joint,b2DistanceJoint>("asDistanceJoint")
-            // .def_dynamic_cast<b2Joint,b2FrictionJoint>("asFrictionJoint")
-            // .def_dynamic_cast<b2Joint,b2GearJoint>("asGearJoint")
-            // .def_dynamic_cast<b2Joint,b2PrismaticJoint>("asPrismaticJoint")
-            // .def_dynamic_cast<b2Joint,b2PulleyJoint>("asPulleyJoint")
-            // .def_dynamic_cast<b2Joint,b2RevoluteJoint>("asRevoluteJoint")
-            // .def_dynamic_cast<b2Joint,b2RopeJoint>("asRopeJoint")
-            // .def_dynamic_cast<b2Joint,b2WeldJoint>("asWeldJoint")
-            // .def_dynamic_cast<b2Joint,b2WheelJoint>("asWheelJoint")
-            // .def_dynamic_cast<b2Joint,b2MouseJoint>("asMouseJoint")
 
     ;
    
    
     py::class_<b2DistanceJoint,DistanceJointHolder, b2Joint>(pybox2dModule,"DistanceJoint")
         .def_property("length",&b2DistanceJoint::GetLength, &b2DistanceJoint::SetLength)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_property("frequency_hz",&b2DistanceJoint::GetFrequency, &b2DistanceJoint::SetFrequency)
+        .def_property("damping_ratio",&b2DistanceJoint::GetDampingRatio, &b2DistanceJoint::SetDampingRatio)
+        #else
         .def_property("stiffness",&b2DistanceJoint::GetStiffness, &b2DistanceJoint::SetStiffness)
         .def_property("damping",&b2DistanceJoint::GetDamping, &b2DistanceJoint::SetDamping)
+        #endif
     ;  
     py::class_<b2FrictionJoint,Holder<b2FrictionJoint>, b2Joint>(pybox2dModule,"FrictionJoint");
     ;
@@ -249,7 +244,13 @@ void exportb2Joint(py::module & pybox2dModule){
         .def_property("motor_speed",&b2WheelJoint::GetMotorSpeed, &b2WheelJoint::SetMotorSpeed)
         .def_property("enable_motor",&b2WheelJoint::IsMotorEnabled, &b2WheelJoint::EnableMotor)
         .def_property("max_motor_torque",&b2WheelJoint::GetMaxMotorTorque, &b2WheelJoint::SetMaxMotorTorque)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_property("spring_damping_ratio",&b2WheelJoint::GetSpringDampingRatio, &b2WheelJoint::SetSpringDampingRatio)
+        #else
         .def_property("damping",&b2WheelJoint::GetDamping, &b2WheelJoint::SetDamping)
+        #endif
+
+
         // .def_property("damping",&b2WheelJoint::GetSpringDampingRatio, &b2WheelJoint::SetSpringDampingRatio)
     ;
     py::class_<b2MouseJoint

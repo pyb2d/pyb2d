@@ -83,6 +83,10 @@ class JupyterGui(object):
         self.out = ipywidgets.Output()
         self.flip_bit = False
 
+
+
+
+
         # buttons
         start_btn =         Button(icon='play')
         step_forward_btn =  Button(icon='step-forward')
@@ -130,7 +134,8 @@ class JupyterGui(object):
             while not self.reached_end.wait(0.02):
                 pass
             self.make_testworld()
-            start()
+            self._single_step()
+            # start()
         reset_btn.on_click(reset)
 
 
@@ -163,6 +168,36 @@ class JupyterGui(object):
 
         #make the world
         self.make_testworld()
+
+        def on_mouse_down( xpos, ypos):
+            # with self.out:
+            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
+            # self.multi_canvas[1].flush()
+            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            pos = pos.x, pos.y
+            self._testworld.on_mouse_down(pos)
+ 
+
+
+        # moue callbacks
+        def on_mouse_up( xpos, ypos):
+            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            pos = pos.x, pos.y
+            self._testworld.on_mouse_up(pos)
+
+
+        def on_mouse_move( xpos, ypos):
+            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
+            # self.multi_canvas[1].flush()
+            # self.multi_canvas[0].fill_circle(xpos, ypos, 10)
+            # self.multi_canvas[0].flush()
+            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            pos = pos.x, pos.y
+            self._testworld.on_mouse_move(pos)
+
+        self.multi_canvas[1].on_mouse_down(on_mouse_down)
+        self.multi_canvas[1].on_mouse_up(on_mouse_up)
+        self.multi_canvas[1].on_mouse_move(on_mouse_move)
 
 
 
@@ -228,8 +263,4 @@ class JupyterGui(object):
         canvas.fill_rect(0,0, self.resolution[0],self.resolution[1])
 
         self._testworld.world.draw_debug_data()
-        # todo, cleapup this interface
-        self.debug_draw.trigger_callbacks()
-        self.debug_draw.reset()
-
         canvas.fill_style = old_style

@@ -38,26 +38,29 @@ class ContactListener(ContactListenerCaller):
     def __init__(self):
         super(ContactListener,self).__init__(self)
 
-    def begin_contact(self, contact):
-        pass
+    # def begin_contact(self, contact):
+    #     pass
 
-    def end_contact(self, contact):
-        pass
+    # def end_contact(self, contact):
+    #     pass
 
-    def begin_contact_particle_body(self, particleSystem, particleBodyContact):
-        pass
+    # def begin_contact_particle_body(self, particleSystem, particleBodyContact):
+    #     pass
 
-    def begin_contact_particle(self, particleSystem, indexA, indexB):
-        pass
+    # def begin_contact_particle(self, particleSystem, indexA, indexB):
+    #     pass
 
-    def end_contact_particle(self, particleSystem, indexA, indexB):
-        pass
+    # def end_contact_particle(self, particleSystem, indexA, indexB):
+    #     pass
 
-    def pre_solve(self, contact, oldManifold):
-        pass
+    # def pre_solve(self, contact, oldManifold):
+    #     pass
 
-    def post_solve(self, contact, impulse):
-        pass
+    # def post_solve(self, contact, impulse):
+    #     pass
+
+
+        
 
 
 class DebugDraw(DrawCaller):
@@ -140,7 +143,8 @@ class BatchDebugDrawNew(BatchDebugDrawCaller):
 
     def end_draw(self):
         pass
-        
+
+
     def draw_solid_polygons(self, points, connect, color):
         pass
 
@@ -158,14 +162,6 @@ class BatchDebugDrawNew(BatchDebugDrawCaller):
 
     def draw_particles(self, centers, radius, colors):
         pass
-
-    def __enter__(self):
-        self.trigger_callbacks()
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self.reset()
-
 
 
 class ContactFilter(ContactFilterCaller):

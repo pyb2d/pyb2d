@@ -6,66 +6,144 @@ find_package(xtensor           REQUIRED)
 find_package(xtensor-python    CONFIG  REQUIRED)
 
 
+
+
+if(NOT PYBOX2D_LIQUID_FUN)
+
+SET(BOX2D_BASE_DIR ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1)
+
 set(BOX2D_INCLUDE_DIRS 
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/include
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src
+    ${BOX2D_BASE_DIR}/include
+    ${BOX2D_BASE_DIR}/src
 )
 set(BOX2D_SOURCE_FILES
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_broad_phase.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_chain_shape.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_circle_shape.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_collide_circle.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_collide_edge.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_collide_polygon.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_collision.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_distance.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_dynamic_tree.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_edge_shape.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_polygon_shape.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/collision/b2_time_of_impact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/common/b2_block_allocator.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/common/b2_draw.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/common/b2_math.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/common/b2_settings.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/common/b2_stack_allocator.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/common/b2_timer.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_body.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_chain_circle_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_chain_circle_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_chain_polygon_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_chain_polygon_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_circle_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_circle_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_contact_manager.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_contact_solver.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_contact_solver.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_distance_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_edge_circle_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_edge_circle_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_edge_polygon_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_edge_polygon_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_fixture.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_friction_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_gear_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_island.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_island.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_motor_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_mouse_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_polygon_circle_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_polygon_circle_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_polygon_contact.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_polygon_contact.h
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_prismatic_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_pulley_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_revolute_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_weld_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_wheel_joint.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_world.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/dynamics/b2_world_callbacks.cpp
-    ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1/src/rope/b2_rope.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_broad_phase.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_chain_shape.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_circle_shape.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_collide_circle.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_collide_edge.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_collide_polygon.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_collision.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_distance.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_dynamic_tree.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_edge_shape.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_polygon_shape.cpp
+    ${BOX2D_BASE_DIR}/src/collision/b2_time_of_impact.cpp
+    ${BOX2D_BASE_DIR}/src/common/b2_block_allocator.cpp
+    ${BOX2D_BASE_DIR}/src/common/b2_draw.cpp
+    ${BOX2D_BASE_DIR}/src/common/b2_math.cpp
+    ${BOX2D_BASE_DIR}/src/common/b2_settings.cpp
+    ${BOX2D_BASE_DIR}/src/common/b2_stack_allocator.cpp
+    ${BOX2D_BASE_DIR}/src/common/b2_timer.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_body.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_chain_circle_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_chain_circle_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_chain_polygon_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_chain_polygon_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_circle_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_circle_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_contact_manager.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_contact_solver.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_contact_solver.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_distance_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_edge_circle_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_edge_circle_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_edge_polygon_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_edge_polygon_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_fixture.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_friction_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_gear_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_island.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_island.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_motor_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_mouse_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_polygon_circle_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_polygon_circle_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_polygon_contact.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_polygon_contact.h
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_prismatic_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_pulley_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_revolute_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_weld_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_wheel_joint.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_world.cpp
+    ${BOX2D_BASE_DIR}/src/dynamics/b2_world_callbacks.cpp
+    ${BOX2D_BASE_DIR}/src/rope/b2_rope.cpp
 )
+else()
+
+SET(BOX2D_BASE_DIR ${CMAKE_SOURCE_DIR}/external/liquidfun-1.1.0/liquidfun/Box2D)
+
+set(BOX2D_SOURCE_FILES
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2BroadPhase.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2CollideCircle.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2CollideEdge.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2CollidePolygon.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2Collision.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2Distance.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2DynamicTree.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/b2TimeOfImpact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/Shapes/b2CircleShape.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/Shapes/b2EdgeShape.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/Shapes/b2ChainShape.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Collision/Shapes/b2PolygonShape.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2BlockAllocator.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2Draw.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2FreeList.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2Math.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2Settings.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2StackAllocator.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2Stat.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2Timer.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Common/b2TrackedBlock.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/b2Body.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/b2ContactManager.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/b2Fixture.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/b2Island.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/b2World.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/b2WorldCallbacks.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2CircleContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2Contact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2ContactSolver.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Contacts/b2PolygonContact.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2DistanceJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2FrictionJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2GearJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2Joint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2MotorJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2MouseJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2MotorJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2PulleyJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2RopeJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2WeldJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Dynamics/Joints/b2WheelJoint.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Particle/b2Particle.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Particle/b2ParticleGroup.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Particle/b2ParticleSystem.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Particle/b2VoronoiDiagram.cpp
+  ${BOX2D_BASE_DIR}/Box2D/Rope/b2Rope.cpp
+  # ${BOX2D_BASE_DIR}/Box2D/Extensions/b2Emitter.cpp
+)
+
+
+        
+set(BOX2D_INCLUDE_DIRS 
+    ${BOX2D_BASE_DIR}
+)
+
+
+
+
+ENDIF()
 
 
 set(PY_MOD_NAME pybox2d )
@@ -75,9 +153,22 @@ set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
 
 
 
+if(NOT PYBOX2D_LIQUID_FUN)
+    set(LF_SOURCES "")
+else()
+    set(LF_SOURCES 
+        b2Particle.cxx
+        b2ParticleSystem.cxx
+        b2ParticleGroup.cxx
+        # pyEmitter.cxx
+    )
+endif()
+
+
 # add the python library
 pybind11_add_module(${PY_MOD_LIB_NAME}  
     ${BOX2D_SOURCE_FILES}
+    ${LF_SOURCES}
     main.cpp
     def_build_config.cpp
 
@@ -88,10 +179,6 @@ pybind11_add_module(${PY_MOD_LIB_NAME}
     b2Shape.cxx
     b2Joint.cxx
     b2JointDef.cxx
-    # b2Particle.cxx
-    # b2ParticleSystem.cxx
-    # b2ParticleGroup.cxx
-    # pyEmitter.cxx
     b2WorldCallbacks.cxx
     b2Contact.cxx
     b2Collision.cxx
@@ -113,6 +200,12 @@ set(PY_INCLUDE_DIRS
     ${BOX2D_INCLUDE_DIRS}
     ${xtensor-python_INCLUDE_DIRS}
 )
+target_include_directories(${PY_MOD_LIB_NAME} PUBLIC  ${PY_INCLUDE_DIRS})
+
+if(PYBOX2D_LIQUID_FUN)
+    target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DPYBOX2D_LIQUID_FUN)  # -D removed
+    target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DPYBOX2D_OLD_BOX2D)  
+endif()
 target_include_directories(${PY_MOD_LIB_NAME} PUBLIC  ${PY_INCLUDE_DIRS})
 
 # custom target for `make python-module`

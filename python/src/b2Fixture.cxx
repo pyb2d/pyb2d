@@ -1,7 +1,6 @@
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
-
+#include "box2d_wrapper.hpp"
 
 #include "holder.hxx"
 
@@ -9,19 +8,14 @@
 namespace py = pybind11;
 
 
-    inline void setShape(b2FixtureDef & f, b2Shape * s){
-                f.shape = s;
-    }
+inline void setShape(b2FixtureDef & f, b2Shape * s){
+            f.shape = s;
+}
 
 
-    inline void fooFunc(const b2Shape * s){
-        //std::cout<<"FOOO\n";
-    }
 
 void exportB2Fixture(py::module & pybox2dModule){
 
-
-    pybox2dModule.def("fooFunc",&fooFunc);
 
     py::class_<b2Filter>(pybox2dModule,"Filter")
         .def(py::init<>())
@@ -48,19 +42,21 @@ void exportB2Fixture(py::module & pybox2dModule){
         .def_readwrite("filter", &b2FixtureDef::filter)
         .def("_set_user_data",[](b2FixtureDef & b, const py::object & ud){
             auto ptr = new py::object(ud);
-            b.userData.pointer = reinterpret_cast<uintptr_t>(ptr);
+            set_user_data_for_def(&b, ptr);
         })
         .def("_get_user_data",[](const b2FixtureDef & b){
-            auto vuserData = reinterpret_cast<void*>(b.userData.pointer);
+
+
+            auto vuserData = get_user_data_from_def(&b);
             auto ud = static_cast<py::object *>(vuserData);
             auto ret = py::object(*ud);
             return ret;
         })
         .def("_delete_userData",[](b2FixtureDef & b){
-            auto vuserData = reinterpret_cast<void*>(b.userData.pointer);
+            auto vuserData = get_user_data_from_def(&b);
             auto ud = static_cast<py::object *>(vuserData);
             delete ud;
-            b.userData.pointer = 0;
+            set_user_data_for_def(&b, 0);
         })
     ;
 
@@ -84,22 +80,24 @@ void exportB2Fixture(py::module & pybox2dModule){
             return next;
         }, py::return_value_policy::reference_internal)
 
-        .def("_has_user_data",[](b2Fixture & b){return b.GetUserData().pointer!=0;})
+        .def("_has_user_data",[](b2Fixture & b){
+            return get_user_data(&b)!=0;
+        })
         .def("_set_user_data",[](b2Fixture & b, const py::object & ud){
             auto ptr = new py::object(ud);
-            b.GetUserData().pointer = reinterpret_cast<uintptr_t>(ptr);
+            set_user_data(&b, ptr);
         })
         .def("_get_user_data",[](b2Fixture & b){
-            auto vuserData = reinterpret_cast<void*>(b.GetUserData().pointer);
+            auto vuserData = get_user_data(&b);
             auto ud = static_cast<py::object *>(vuserData);
             auto ret = py::object(*ud);
             return ret;
         })
-        .def("_delete_U_serData",[](b2Fixture & b){
-            auto vuserData = reinterpret_cast<void*>(b.GetUserData().pointer);
+        .def("_delete_user_data",[](b2Fixture & b){
+            auto vuserData = get_user_data(&b);
             auto ud = static_cast<py::object *>(vuserData);
             delete ud;
-            b.GetUserData().pointer  = 0;
+            set_user_data(&b, 0);
         })
         .def("test_point",&b2Fixture::TestPoint)
 
@@ -107,4 +105,3 @@ void exportB2Fixture(py::module & pybox2dModule){
     ;
 
 }
-

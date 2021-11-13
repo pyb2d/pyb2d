@@ -1,7 +1,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
 
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 //#include <Box2D/extensions/multi_gravity_world.hxx>
 #include "pyb2Draw.hxx"

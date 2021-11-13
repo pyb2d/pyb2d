@@ -4,7 +4,7 @@
 
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-#include <box2d/box2d.h>
+#include "box2d_wrapper.hpp"
 
 #include <iostream>
 
@@ -157,10 +157,15 @@ void exportB2Shape(py::module & pybox2dModule){
     , Holder<b2EdgeShape>,b2Shape
     >(pybox2dModule,"EdgeShape")
         .def(py::init<>())
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def("set",[](b2EdgeShape * s,const b2Vec2 & v1,const b2Vec2 & v2)
+             {s->Set(v1,v2);},py::arg("v1"),py::arg("v2"))
+        #else
         .def("set_one_sided",[](b2EdgeShape * s,const b2Vec2 & v0,const b2Vec2 & v1,const b2Vec2 & v2, const b2Vec2 & v3)
              {s->SetOneSided(v0, v1,v2, v3);},py::arg("v0"), py::arg("v1"),py::arg("v2"),py::arg("v3"))
         .def("set_two_sided",[](b2EdgeShape * s,const b2Vec2 & v1,const b2Vec2 & v2)
              {s->SetTwoSided(v1,v2);},py::arg("v1"),py::arg("v2"))
+        #endif
     ;
     py::class_<b2ChainShape
         , Holder<b2ChainShape>,b2Shape 
@@ -169,6 +174,23 @@ void exportB2Shape(py::module & pybox2dModule){
         .def("create_loop",[](b2ChainShape *s, const std::vector<b2Vec2> & verts ){
             s->CreateLoop(verts.data(), verts.size());
         })
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts){
+                with_vertices(verts, [&](auto ptr, auto n_verts){
+                    s->CreateChain(ptr, n_verts);
+                });
+            }
+        )
+        .def("create_chain", []( b2ChainShape *s, const np_verts_dynamic & verts){
+                with_vertices(verts, [&](auto ptr, auto n_verts){
+                    s->CreateChain(ptr, n_verts);
+                });
+            }
+        )
+        .def("create_chain",[](b2ChainShape *s, const std::vector<b2Vec2> & verts){
+            s->CreateChain(verts.data(), verts.size());
+        })
+        #else
         .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts,
             const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
                 with_vertices(verts, [&](auto ptr, auto n_verts){
@@ -187,6 +209,7 @@ void exportB2Shape(py::module & pybox2dModule){
         const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
             s->CreateChain(verts.data(), verts.size(), prevVertex, nextVertex);
         })
+        #endif
 
         // .def("set", [](b2ChainShape *s, const np_verts_dynamic & verts){
         //         with_vertices(verts, [s](auto ptr, auto n_verts){

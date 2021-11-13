@@ -97,8 +97,7 @@ class TestWorldCallbacks(object):
         assert debug_draw.total_calls() == 0
         world.set_debug_draw(debug_draw)
         do_test_step(world, draw_debug_data=True)
-        with debug_draw :
-            assert debug_draw.total_calls() > 0
+        assert debug_draw.total_calls() > 0
         
 
 class TestJoints(object):

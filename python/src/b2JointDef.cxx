@@ -1,7 +1,6 @@
 #include <pybind11/pybind11.h>
 
-#include <box2d/box2d.h>
-#include <box2d/b2_rope.h>
+#include "box2d_wrapper.hpp"
 #include "user_data.hxx"
 #include "holder.hxx"
 
@@ -46,10 +45,15 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def_readwrite("local_anchor_a",&PyDistanceJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyDistanceJointDef::localAnchorB)
         .def_readwrite("length", &PyDistanceJointDef::length)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_readwrite("frequency_hz", &PyDistanceJointDef::frequencyHz)
+        .def_readwrite("damping_ratio", &PyDistanceJointDef::dampingRatio)
+        #else
         .def_readwrite("min_length", &PyDistanceJointDef::minLength)
         .def_readwrite("max_length", &PyDistanceJointDef::maxLength)
         .def_readwrite("stiffness", &PyDistanceJointDef::stiffness)
         .def_readwrite("damping", &PyDistanceJointDef::damping)
+        #endif
     ;
     
     typedef PyDefExtender<b2FrictionJointDef> PyFrictionJointDef;
@@ -131,8 +135,13 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def_readwrite("local_anchor_a",&Py2WeldJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&Py2WeldJointDef::localAnchorB)
         .def_readwrite("reference_angle", &Py2WeldJointDef::referenceAngle)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_readwrite("frequency_hz", &Py2WeldJointDef::frequencyHz)
+        .def_readwrite("damping_ratio", &Py2WeldJointDef::dampingRatio)
+        #else
         .def_readwrite("stiffness", &Py2WeldJointDef::stiffness)
         .def_readwrite("damping", &Py2WeldJointDef::damping)
+        #endif
     ;
 
 
@@ -145,8 +154,13 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def_readwrite("enable_motor", &PyWheelJointDef::enableMotor)
         .def_readwrite("max_motor_torque", &PyWheelJointDef::maxMotorTorque)
         .def_readwrite("motor_speed", &PyWheelJointDef::motorSpeed)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_readwrite("frequency_hz", &PyWheelJointDef::frequencyHz)
+        .def_readwrite("damping_ratio", &PyWheelJointDef::dampingRatio)
+        #else
         .def_readwrite("stiffness", &PyWheelJointDef::stiffness)
         .def_readwrite("damping", &PyWheelJointDef::damping)
+        #endif
     ;
 
     typedef PyDefExtender<b2MouseJointDef> PyMouseJointDef;
@@ -154,8 +168,13 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def(py::init<>())
         .def_readwrite("target", &PyMouseJointDef::target)
         .def_readwrite("max_force", &PyMouseJointDef::maxForce)
+        #ifdef PYBOX2D_OLD_BOX2D
+        .def_readwrite("frequency_hz", &PyMouseJointDef::frequencyHz)
+        .def_readwrite("damping_ratio", &PyMouseJointDef::dampingRatio)
+        #else
         .def_readwrite("stiffness", &PyMouseJointDef::stiffness)
         .def_readwrite("damping", &PyMouseJointDef::damping)
+        #endif
     ;
 
 }
