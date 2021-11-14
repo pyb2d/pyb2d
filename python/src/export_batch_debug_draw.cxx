@@ -3,16 +3,13 @@
 
 #include "box2d_wrapper.hpp"
 
-//#include <Box2D/extensions/multi_gravity_world.hxx>
-#include "pyb2Draw.hxx"
-#include "pyb2WorldCallbacks.hxx"
 
 #include "holder.hxx"
-#include "batch_debug_draw_old.hxx"
+#include "pyb2WorldCallbacks.hxx"
+#include "debug_draw/pyb2Draw.hxx"
+#include "debug_draw/batch_debug_draw_old.hxx"
 #include "numpy.hxx"
-// PYBIND11_DECLARE_HOLDER_TYPE(T, Holder<T>, true);
 
-//#include "type_caster.hxx"
 
 namespace py = pybind11;
 

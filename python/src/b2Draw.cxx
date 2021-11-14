@@ -2,8 +2,8 @@
 #include "box2d_wrapper.hpp"
 
 
-#include "pyb2Draw.hxx"
-#include "batch_debug_draw_caller.hxx"
+#include "debug_draw/pyb2Draw.hxx"
+#include "debug_draw/batch_debug_draw_caller.hxx"
 
 #include <iostream>
 #include <initializer_list>

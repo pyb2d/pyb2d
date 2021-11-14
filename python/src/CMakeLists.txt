@@ -154,13 +154,16 @@ set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
 
 
 if(NOT PYBOX2D_LIQUID_FUN)
-    set(LF_SOURCES "")
+    set(LIQUIDFUN_EXTRA_SOURCES "")
 else()
-    set(LF_SOURCES 
+    set(LIQUIDFUN_EXTRA_SOURCES 
         b2Particle.cxx
         b2ParticleSystem.cxx
         b2ParticleGroup.cxx
-        # pyEmitter.cxx
+        
+        # extensions
+        extensions/b2Emitter.cpp
+        pyEmitter.cxx
     )
 endif()
 
@@ -168,7 +171,7 @@ endif()
 # add the python library
 pybind11_add_module(${PY_MOD_LIB_NAME}  
     ${BOX2D_SOURCE_FILES}
-    ${LF_SOURCES}
+    ${LIQUIDFUN_EXTRA_SOURCES}
     main.cpp
     def_build_config.cpp
 

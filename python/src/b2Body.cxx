@@ -6,7 +6,8 @@
 #include <vector>
 
 #include "holder.hxx"
-#include "user_data.hxx"
+#include "apis/user_data_api.hxx"
+#include "apis/get_next_api.hxx"
 
 namespace py = pybind11;
 
@@ -24,6 +25,8 @@ void exportB2Body(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2BodyDef> PyBodyDef;
+
+
     py::class_<PyBodyDef> body_def_py_cls(pybox2dModule,"BodyDef");
     add_user_data_to_def_api<PyBodyDef>(body_def_py_cls);
     body_def_py_cls
@@ -45,6 +48,8 @@ void exportB2Body(py::module & pybox2dModule){
 
     py::class_<b2Body, BodyHolder > body_py_cls(pybox2dModule,"Body");
     add_user_data_api<b2Body>(body_py_cls);
+    add_get_next_api<b2Body>(body_py_cls);
+
     body_py_cls
         //.def(py::init<>())
         .def("create_fixture",
@@ -55,13 +60,13 @@ void exportB2Body(py::module & pybox2dModule){
             py::arg("density") = 1.0
         )
         .def("create_fixture",
-            [&](b2Body & body, const b2FixtureDef * def){
+            [&](b2Body & body, const PyDefExtender<b2FixtureDef> * def){
                 return FixtureHolder(body.CreateFixture(def));
             },
             py::arg("fixtureDef")
         )
         .def("_create_fixture_from_fixture_def",
-            [&](b2Body & body, const b2FixtureDef * def){
+            [&](b2Body & body, const PyDefExtender<b2FixtureDef> * def){
                 return FixtureHolder(body.CreateFixture(def));
             },
             py::arg("fixture_def")
@@ -126,8 +131,6 @@ void exportB2Body(py::module & pybox2dModule){
         .def("_get_joint_list",[]( b2Body & body){return body.GetJointList();}, py::return_value_policy::reference_internal)
         .def("_has_contact_list",[]( b2Body & body){return body.GetContactList()!= nullptr;})
         .def("_get_contact_list",[]( b2Body & body){return body.GetContactList();}, py::return_value_policy::reference_internal)
-        .def("_has_next", [](b2Body &b){ return b.GetNext()!=nullptr;})
-        .def("_get_next", [](b2Body &b){return b.GetNext();}, py::return_value_policy::reference_internal)        
         .def("_get_world",[]( b2Body & body){return body.GetWorld();}, py::return_value_policy::reference_internal)
     
     ;

@@ -1,17 +1,12 @@
 #include <pybind11/pybind11.h>
 
 #include "box2d_wrapper.hpp"
-//#include <Box2D/extensions/multi_gravity_world.hxx>
-
-#include "batch_debug_draw_caller.hxx"
-#include "pyb2Draw.hxx"
+#include "debug_draw/batch_debug_draw_caller.hxx"
+#include "debug_draw/pyb2Draw.hxx"
 #include "pyb2WorldCallbacks.hxx"
-#include "pyworld.hxx"
-
+#include "extensions/pyworld.hxx"
 #include "holder.hxx"
-// PYBIND11_DECLARE_HOLDER_TYPE(T, Holder<T>, true);
 
-//#include "type_caster.hxx"
 
 namespace py = pybind11;
 
@@ -154,22 +149,11 @@ void exportB2World(py::module & pybox2dModule){
 
 
         // py extended properties
-        .def("_get_body_list", [](const world_type & w){
-            return  BodyHolder(w.GetBodyList());
-        })
         .def("_get_body_list", []( world_type & w){
             return  BodyHolder(w.GetBodyList());
         })
-
-        .def("_get_joint_list", [](const world_type & w){
-            return  JointHolder(w.GetJointList());
-        }, py::return_value_policy::reference_internal)
         .def("_get_joint_list", []( world_type & w){
             return  JointHolder(w.GetJointList());
-        }, py::return_value_policy::reference_internal)
-
-        .def("_get_contact_list", [](const world_type & w){
-            return  ContactHolder(w.GetContactList());
         }, py::return_value_policy::reference_internal)
         .def("_get_contact_list", []( world_type & w){
             return  ContactHolder(w.GetContactList());
@@ -177,9 +161,6 @@ void exportB2World(py::module & pybox2dModule){
 
 
         #ifdef PYBOX2D_LIQUID_FUN
-        .def("_get_particleSystem_list", [](const world_type & w){
-            return  w.GetParticleSystemList();
-        })
         .def("_get_particleSystem_list", []( world_type & w){
             return  ParticleSystemHolder(w.GetParticleSystemList());
         })

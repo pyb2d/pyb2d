@@ -125,10 +125,7 @@ void exportB2Shape(py::module & pybox2dModule){
         .def_property_readonly("is_edge_shape",&isType<b2EdgeShape>)
         .def_property_readonly("is_polygon_shape",&isType<b2PolygonShape>)
         .def_readwrite("radius", &b2Shape::m_radius)
-            //.def_dynamic_cast<b2Shape,b2CircleShape>("asCircleShape")
-            //.def_dynamic_cast<b2Shape,b2ChainShape>("asChainShape")
-            //.def_dynamic_cast<b2Shape,b2EdgeShape>("asEdgeShape")
-            //.def_dynamic_cast<b2Shape,b2PolygonShape>("asPolygonShape")
+
         //.defIseadwrite("categoryBits", &b2Shape::categoryBits)
         //.def_readwrite("maskBits", &b2Shape::maskBits)
         //.def_readwrite("groupIndex", &b2Shape::groupIndex)
@@ -175,21 +172,48 @@ void exportB2Shape(py::module & pybox2dModule){
             s->CreateLoop(verts.data(), verts.size());
         })
         #ifdef PYBOX2D_OLD_BOX2D
-        .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts){
+        // .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts){
+        //         with_vertices(verts, [&](auto ptr, auto n_verts){
+        //             s->CreateChain(ptr, n_verts);
+        //         });
+        //     }
+        // )
+        // .def("create_chain", []( b2ChainShape *s, const np_verts_dynamic & verts){
+        //         with_vertices(verts, [&](auto ptr, auto n_verts){
+        //             s->CreateChain(ptr, n_verts);
+        //         });
+        //     }
+        // )
+        // .def("create_chain",[](b2ChainShape *s, const std::vector<b2Vec2> & verts){
+        //     s->CreateChain(verts.data(), verts.size());
+        // })
+
+        .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts,
+            const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
                 with_vertices(verts, [&](auto ptr, auto n_verts){
                     s->CreateChain(ptr, n_verts);
+                    s->SetPrevVertex(prevVertex);
+                    s->SetNextVertex(nextVertex);
                 });
             }
         )
-        .def("create_chain", []( b2ChainShape *s, const np_verts_dynamic & verts){
+        .def("create_chain", []( b2ChainShape *s, const np_verts_dynamic & verts,
+            const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
                 with_vertices(verts, [&](auto ptr, auto n_verts){
                     s->CreateChain(ptr, n_verts);
+                    s->SetPrevVertex(prevVertex);
+                    s->SetNextVertex(nextVertex);
                 });
             }
         )
-        .def("create_chain",[](b2ChainShape *s, const std::vector<b2Vec2> & verts){
+        .def("create_chain",[](b2ChainShape *s, const std::vector<b2Vec2> & verts,
+        const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
             s->CreateChain(verts.data(), verts.size());
+            s->SetPrevVertex(prevVertex);
+            s->SetNextVertex(nextVertex);
         })
+
+
         #else
         .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts,
             const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){

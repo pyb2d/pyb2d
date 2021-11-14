@@ -113,14 +113,16 @@ class TestbedBase(
 
         body = self.world.find_body(pos=p)
         if body is not None:
-    
-            self.mouse_joint = self.world.create_mouse_joint(
+            
+            kwargs = dict(
                 body_a=self.groundbody,
                 body_b=body,
                 target=p,
-                max_force=10000.0 * body.mass,
-                # damping=2.0
-                )
+                max_force=50000.0 * body.mass
+            )
+            if not b2.BuildConfiguration.OLD_BOX2D:
+                kwargs["stiffness"] = 100.0
+            self.mouse_joint = self.world.create_mouse_joint(**kwargs)
             body.awake = True
 
         return body is not None

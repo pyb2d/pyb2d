@@ -166,22 +166,14 @@ class TestChainShape(object):
 
     def test_create_chain(self):
         s = b2d.ChainShape()
-        if b2d.BuildConfiguration.OLD_BOX2D:
-            s.create_chain([
-                (0,0),
-                (0,1),
-                (1,1),
-                (0,1),
-            ])
-        else:
-            s.create_chain([
-                (0,0),
-                (0,1),
-                (1,1),
-                (0,1),
-            ], 
-            [0,0],
-            (0,0))
+        s.create_chain([
+            (0,0),
+            (0,1),
+            (1,1),
+            (0,1),
+        ], 
+        [0,0],
+        (0,0))
 
 if __name__ == "__main__":
     import sys
