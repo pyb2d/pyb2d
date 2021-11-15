@@ -28,12 +28,10 @@ class PygameDebugDraw(b2.DebugDraw):
         pygame.draw.aaline(self.surface, c, v1, v2, 1)
 
     def draw_polygon(self,vertices, c):
-        print(vertices.shape, vertices)
         pygame.draw.polygon(self.surface, c, vertices, 1)
 
-
     def draw_solid_polygon(self,vertices, c):
-        pygame.draw.polygon(self.surface, c, center, vertices, 0)
+        pygame.draw.polygon(self.surface, c, vertices, 0)
 
     def draw_particles(self, centers, radius,  c=None):
         if c is None:
