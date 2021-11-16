@@ -17,7 +17,7 @@ __version__ = "0.0.1"
 #   Sort input source files if you glob sources to ensure bit-for-bit
 #   reproducible builds (https://github.com/pybind/python_example/pull/53)
 
-liquidfun = False
+liquidfun = True
 
 binding_sources = [
     "python/src/main.cpp",
@@ -40,11 +40,12 @@ binding_sources = [
 include_dirs = ['include']
 
 if liquidfun:
+    package_name = "liquidfun"
     binding_sources += [
         "python/src/b2Particle.cxx",
         "python/src/b2ParticleGroup.cxx",
         "python/src/b2ParticleSystem.cxx",
-        "python/src/pyEmitter.cxx",
+        "python/src/extensions/b2Emitter.cpp"
     ]
     box2d_include_dirs = [
         "external/liquidfun-1.1.0/liquidfun/Box2D"
@@ -92,7 +93,7 @@ if liquidfun:
         "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp",
         "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp",
         "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp",
+        # "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp",
         "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp",
         "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp",
         "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp",
@@ -107,10 +108,11 @@ if liquidfun:
 
     ]
     macros = [
-        ('PYBOX2D_LIQUID_FUN',None),
-        ('PYBOX2D_OLD_BOX2D', None)
+        ('PYBOX2D_LIQUID_FUN',1),
+        ('PYBOX2D_OLD_BOX2D', 1)
     ]
 else:
+    package_name = "yabox2d"
     box2d_include_dirs = [
         "external/box2d-2.4.1/include",
         "external/box2d-2.4.1/src"
@@ -191,8 +193,8 @@ install_requires = [
 setup(
     name="pybox2d",
     version=__version__,
-    author="Sylvain Corlay",
-    author_email="sylvain.corlay@gmail.com",
+    author="Thorsten Beier",
+    author_email="derthorstenbeier@gmail.com",
     url="https://github.com/pybind/python_example",
     description="A test project using pybind11",
     long_description="",

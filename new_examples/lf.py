@@ -42,7 +42,7 @@ class LiquidFun(TestbedBase):
 
         pdef = b2.particle_system_def(viscous_strength=0.2,spring_strength=0.0, damping_strength=2.0)
         psystem = self.world.create_particle_system(pdef)
-        psystem.radius = 0.08
+        psystem.radius = 0.1
         psystem.damping = 1.2
 
 

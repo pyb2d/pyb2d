@@ -1,9 +1,9 @@
 import numpy as np
 from time import sleep
-from threading import Event, Thread
+from threading import Event, Thread, Lock
 from ipycanvas import Canvas, hold_canvas
 from ipywidgets import Label, HTML, Button, HBox, VBox
-
+import functools
 import IPython
 import time
 from ipycanvas import Canvas,MultiCanvas, hold_canvas
@@ -24,9 +24,20 @@ def rgb(color):
     return f"rgb({r},{g},{b})"
 
 
+_id_to_gui = dict()
+
+
 class JupyterGui(object):
-    def __init__(self, testbed_cls, settings=None, testbed_kwargs=None):
+    def __init__(self, testbed_cls, settings, testbed_kwargs=None):
         
+        self.id = settings["id"]
+        print(self.id)
+
+        if self.id in _id_to_gui:
+            old_self = _id_to_gui[self.id]
+            old_self._terminate()
+        _id_to_gui[self.id] = self
+
         # settings
         resolution = settings.get("resolution", (640,480))
         if resolution is None:
@@ -57,10 +68,16 @@ class JupyterGui(object):
         self.translate = settings.get("translate", (0, self.resolution[1]))
 
 
-
+        # Thread related
         # events
         self.paused = Event()
         self.reached_end = Event()
+        self._world_lock = Lock()
+
+    def _terminate(self):
+        if not self.paused.isSet():
+            self.paused.set()
+
 
     def make_testworld(self):
 
@@ -84,9 +101,87 @@ class JupyterGui(object):
         self.flip_bit = False
 
 
+        # _setup_ipywidgets_gui
+        self._setup_ipywidgets_gui()
 
 
 
+        #make the world
+        self.make_testworld()
+
+        def on_mouse_down( xpos, ypos):
+            # with self.out:
+            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
+            # self.multi_canvas[1].flush()
+            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            pos = pos.x, pos.y
+            with self._world_lock:
+                self._testworld.on_mouse_down(pos)
+ 
+
+
+        # moue callbacks
+        def on_mouse_up( xpos, ypos):
+            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            pos = pos.x, pos.y
+            with self._world_lock:
+                self._testworld.on_mouse_up(pos)
+
+
+        def on_mouse_move( xpos, ypos):
+            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
+            # self.multi_canvas[1].flush()
+            # self.multi_canvas[0].fill_circle(xpos, ypos, 10)
+            # self.multi_canvas[0].flush()
+            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            pos = pos.x, pos.y
+            with self._world_lock:
+                self._testworld.on_mouse_move(pos)
+
+        self.multi_canvas[1].on_mouse_down(on_mouse_down)
+        self.multi_canvas[1].on_mouse_up(on_mouse_up)
+        self.multi_canvas[1].on_mouse_move(on_mouse_move)
+
+
+
+    
+        target_fps = 30
+        dt_desired_ms = (1.0/target_fps)*1000.0
+        dt_desired_s = dt_desired_ms/1000.0
+        
+
+
+
+        for ci in range(2):
+            self.multi_canvas[ci].line_width = self.settings.get("line_width", 1)
+            # self.multi_canvas[ci].scale(self.scale, -1.0*self.scale)
+            # self.multi_canvas[ci].line_width = 1.0 / self.scale
+
+
+
+        Thread(target=self._loop).start() # Start it by default
+
+
+    def _loop(self):
+        if self.reached_end.isSet():
+            self.reached_end.clear()
+        # Event loop
+        while not self.paused.isSet():
+            
+            t0 = time.time()
+            if self._exit:
+                break
+
+            self._single_step()
+            t1 = time.time()
+
+            delta = t1 - t0
+            if delta < self._dt_s:
+                time.sleep(self._dt_s - delta)
+        self.reached_end.set()
+
+
+    def _setup_ipywidgets_gui(self):
         # buttons
         start_btn =         Button(icon='play')
         step_forward_btn =  Button(icon='step-forward')
@@ -122,7 +217,7 @@ class JupyterGui(object):
                 self.paused.clear()
             if self.reached_end.isSet():
                 self.reached_end.clear()
-                Thread(target=loop).start() 
+                Thread(target=self._loop).start() 
         start_btn.on_click(start)
 
         def step_forward(btn=None):
@@ -139,19 +234,34 @@ class JupyterGui(object):
         reset_btn.on_click(reset)
 
 
+        draw_checkboxes = dict(
+            shapes=ipywidgets.Checkbox(value=True),
+            joints=ipywidgets.Checkbox(value=True),
+            aabb=ipywidgets.Checkbox(value=False),
+            com=ipywidgets.Checkbox(value=False),
+            pairs=ipywidgets.Checkbox(value=False)
+        )   
 
-        items = [
-            ipywidgets.Label(value='Draw Shapes :'), 
-            ipywidgets.Checkbox(),
-            ipywidgets.Label(value='Draw Joints :'), 
-            ipywidgets.Checkbox(),
-            ipywidgets.Label(value='Draw AABB   :'), 
-            ipywidgets.Checkbox(),
-            ipywidgets.Label(value='Draw COM    :'), 
-            ipywidgets.Checkbox(),
-            ipywidgets.Label(value='Draw Pairs  :'), 
-            ipywidgets.Checkbox(),
-        ]
+        def on_flag_change(v, flag):
+            v = v['new']
+            if v :
+                self.debug_draw.append_flags(flag)
+            else:
+                self.debug_draw.clear_flags([flag])
+
+            if self.paused.isSet():
+                self._draw_world(self.debug_draw._canvas)
+
+        items = []
+        flags = ['shape','joint','aabb','pair','center_of_mass','particle']
+        for f in flags:
+            label = ipywidgets.Label(value=f'Draw {f} :')
+            checkbox = ipywidgets.Checkbox(value=bool(f in self._debug_draw_flags))
+            checkbox.observe(functools.partial(on_flag_change, flag=f), names='value')
+            items.append(label)
+            items.append(checkbox)
+
+
         draw_flags = ipywidgets.GridBox(items, layout=ipywidgets.Layout(grid_template_columns="repeat(4, 200px)"))
 
 
@@ -164,80 +274,6 @@ class JupyterGui(object):
                     draw_flags
                 ])
             )
-  
-
-        #make the world
-        self.make_testworld()
-
-        def on_mouse_down( xpos, ypos):
-            # with self.out:
-            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
-            # self.multi_canvas[1].flush()
-            pos = self.debug_draw.screen_to_world((xpos, ypos))
-            pos = pos.x, pos.y
-            self._testworld.on_mouse_down(pos)
- 
-
-
-        # moue callbacks
-        def on_mouse_up( xpos, ypos):
-            pos = self.debug_draw.screen_to_world((xpos, ypos))
-            pos = pos.x, pos.y
-            self._testworld.on_mouse_up(pos)
-
-
-        def on_mouse_move( xpos, ypos):
-            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
-            # self.multi_canvas[1].flush()
-            # self.multi_canvas[0].fill_circle(xpos, ypos, 10)
-            # self.multi_canvas[0].flush()
-            pos = self.debug_draw.screen_to_world((xpos, ypos))
-            pos = pos.x, pos.y
-            self._testworld.on_mouse_move(pos)
-
-        self.multi_canvas[1].on_mouse_down(on_mouse_down)
-        self.multi_canvas[1].on_mouse_up(on_mouse_up)
-        self.multi_canvas[1].on_mouse_move(on_mouse_move)
-
-
-
-    
-        target_fps = 30
-        dt_desired_ms = (1.0/target_fps)*1000.0
-        dt_desired_s = dt_desired_ms/1000.0
-        
-
-
-
-        for ci in range(2):
-            self.multi_canvas[ci].line_width = self.settings.get("line_width", 1)
-            # self.multi_canvas[ci].scale(self.scale, -1.0*self.scale)
-            # self.multi_canvas[ci].line_width = 1.0 / self.scale
-
-
-
-
-        def loop():
-            if self.reached_end.isSet():
-                self.reached_end.clear()
-            # Event loop
-            while not self.paused.isSet():
-                
-                t0 = time.time()
-                if self._exit:
-                    break
-
-                self._single_step()
-                t1 = time.time()
-
-                delta = t1 - t0
-                if delta < self._dt_s:
-                    time.sleep(self._dt_s - delta)
-            self.reached_end.set()
-
-
-        Thread(target=loop).start() # Start it by default
-
 
     def _single_step(self):
         self._step_world()
@@ -255,7 +291,8 @@ class JupyterGui(object):
                 
 
     def _step_world(self):
-        self._testworld.step(self._dt_s)
+        with self._world_lock:
+            self._testworld.step(self._dt_s)
 
     def _draw_world(self, canvas):
         old_style = canvas.fill_style

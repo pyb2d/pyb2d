@@ -186,7 +186,7 @@ public:
         }
         if(!m_polygon_sizes.empty())
         {
-            m_object.attr("draw_solid_polygons")(
+            m_object.attr("draw_polygons")(
                 np_view(m_polygon_verts.data(),  {m_polygon_verts.size()/2, std::size_t(2)}),
                 np_view(m_polygon_sizes.data(),  {m_polygon_sizes.size()}),
                 np_view(m_polygon_colors.data(), {m_polygon_colors.size()/3, 3})
@@ -215,7 +215,25 @@ public:
 
 
         #ifdef PYBOX2D_LIQUID_FUN
-        py::object f = m_object.attr("draw_particles");
+        //py::object f = m_object.attr("draw_particles");
+        auto coord_offset = 0;
+        auto color_offset = 0;
+        for(auto psi=0; psi<m_particle_systems_radii.size(); ++psi)
+        {
+            const auto radius = m_particle_systems_radii[psi];
+            const auto n_particels = m_particle_systems_size[psi];
+            const auto has_colors = m_particle_systems_has_colors[psi];
+
+            auto centers_ptr = m_particle_systems_centers.data() + coord_offset;
+
+
+            m_object.attr("draw_particles")(
+                np_view(centers_ptr, {n_particels, 2}),
+                radius
+            );
+
+            coord_offset += 2* n_particels;
+        }
         #endif
 
         this->reset();

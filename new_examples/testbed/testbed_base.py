@@ -30,6 +30,7 @@ class TestbedBase(
         ui = gui_factory(testbed_cls=cls, testbed_kwargs=testbed_kwargs, settings=gui_settings)
 
         ui.start_ui()
+        return ui._testworld,ui
 
     def __init__(self, gravity=b2.vec2(0,-9.81)):
         b2.ContactListener.__init__(self)

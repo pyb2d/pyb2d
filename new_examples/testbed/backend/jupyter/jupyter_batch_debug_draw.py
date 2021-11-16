@@ -12,6 +12,7 @@ class JupyterBatchDebugDraw(b2.BatchDebugDrawNew):
         # what is drawn
         if flags is None:
             flags = ['shape','joint','aabb','pair','center_of_mass','particle']
+        self.flags = flags
         self.clear_flags(['shape','joint','aabb','pair','center_of_mass','particle'])
         for flag in flags:
             self.append_flags(flag)
@@ -70,6 +71,9 @@ class JupyterBatchDebugDraw(b2.BatchDebugDrawNew):
         )
 
 
-    def draw_particles(self, centers, radius, colors):
-        pass
+    def draw_particles(self, centers, radius, colors=None):
+        print("draw_particles",centers.shape, radius)
+        centers -= radius
+        self._canvas.fill_style = 'green' 
+        self._canvas.fill_rects(centers[:,0], centers[:,1], radius*2)
 
