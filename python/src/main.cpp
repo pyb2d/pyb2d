@@ -1,11 +1,11 @@
 #include "pybind11/pybind11.h"
 
-#include "xtensor/xmath.hpp"
-#include "xtensor/xarray.hpp"
+// #include "xtensor/xmath.hpp"
+// #include "xtensor/xarray.hpp"
 
-#define FORCE_IMPORT_ARRAY
-#include "xtensor-python/pyarray.hpp"
-#include "xtensor-python/pyvectorize.hpp"
+// #define FORCE_IMPORT_ARRAY
+// #include "xtensor-python/pyarray.hpp"
+// #include "xtensor-python/pyvectorize.hpp"
 
 #include <iostream>
 #include <numeric>
@@ -49,7 +49,7 @@ void exportB2ParticleGroup(py::module & );
 // Python Module and Docstrings
 PYBIND11_MODULE(_pybox2d , pybox2dModule)
 {
-    xt::import_numpy();
+    //xt::import_numpy();
 
     pybox2dModule.doc() = R"pbdoc(
         _pybox2d  python bindings
