@@ -106,12 +106,12 @@ def rectangle(y_size):
 
 
 
-class Example(TestbedBase):
+class Quantstack(TestbedBase):
 
     name = "the func shape"
     
     def __init__(self): 
-        super(Example, self).__init__()
+        super(Quantstack, self).__init__()
     
 
 
@@ -136,4 +136,4 @@ if __name__ == "__main__":
         "fps" : 40,
         "resolution" : (1000,1000)
     }
-    Example.run(PygameGui, gui_settings=gui_settings)
+    Quantstack.run(PygameGui, gui_settings=gui_settings)
