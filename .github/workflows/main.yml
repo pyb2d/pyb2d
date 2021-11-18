@@ -23,7 +23,7 @@ jobs:
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
         with:
-          environment-file: environment-dev.yml
+          environment-file: dev-requirements.yml
           environment-name: pybox2d
 
       - name: install cxx compiler
@@ -81,7 +81,7 @@ jobs:
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
         with:
-          environment-file: environment-dev.yml
+          environment-file: dev-requirements.yml
           environment-name: pybox2d
 
       - name: install cxx compiler
