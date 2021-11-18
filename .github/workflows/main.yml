@@ -32,13 +32,6 @@ jobs:
         run: |
           $HOME/micromamba-bin/micromamba install cxx-compiler -c conda-forge -y
 
-      - name: install luajit
-        shell: bash -l {0}
-        run: |
-          $HOME/micromamba-bin/micromamba install luajit -c conda-forge -y
-        if: matrix.luajit == 'ON'
-
-
       - name: cmake configure
         shell: bash -l {0}
         run: |
@@ -46,7 +39,7 @@ jobs:
           cd bld
           cmake .. \
            -DBUILD_PYTHON=ON\
-           -DPYBOX2D_LIQUID_FUN=${{liquidfun.luajit}} \
+           -DPYBOX2D_LIQUID_FUN=${{matrix.liquidfun}} \
            -DCMAKE_PREFIX_PATH=$CONDA_PREFIX \
            -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX 
 
