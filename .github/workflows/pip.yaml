@@ -35,3 +35,7 @@ jobs:
         python -m pip install pytest
         python -m pip install pytest-lazy-fixture
         python -m pytest python/tests
+
+    - name: Run Examples
+      run: |
+        python examples/run_all.py
