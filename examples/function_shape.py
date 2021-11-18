@@ -4,7 +4,7 @@ import numpy
 import b2d as b2
 class FunctionShape(TestbedBase):
 
-    name = "the func shape"
+    name = "Function Shape"
     
     def __init__(self): 
         super(FunctionShape, self).__init__()
