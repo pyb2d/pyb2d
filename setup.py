@@ -6,7 +6,7 @@ from pybind11 import get_cmake_dir
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup, find_packages
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 # The main interface is through Pybind11Extension.
 # * You can add cxx_std=11/14/17, and then build_ext can be removed.
@@ -37,14 +37,14 @@ binding_sources = [
 
 ]
 
-include_dirs = ['include']
+include_dirs = []
 
 if liquidfun:
-    package_name = "liquidfun"
     binding_sources += [
         "python/src/b2Particle.cxx",
         "python/src/b2ParticleGroup.cxx",
         "python/src/b2ParticleSystem.cxx",
+        "python/src/pyEmitter.cxx",
         "python/src/extensions/b2Emitter.cpp"
     ]
     box2d_include_dirs = [
@@ -112,7 +112,6 @@ if liquidfun:
         ('PYBOX2D_OLD_BOX2D', 1)
     ]
 else:
-    package_name = "yabox2d"
     box2d_include_dirs = [
         "external/box2d-2.4.1/include",
         "external/box2d-2.4.1/src"
@@ -177,7 +176,7 @@ else:
 
 
 ext_modules = [
-    Pybind11Extension("pybox2d._pybox2d",
+    Pybind11Extension("b2d._pybox2d",
 
         binding_sources + box2d_sources,
         include_dirs=box2d_include_dirs+include_dirs,
@@ -191,7 +190,7 @@ install_requires = [
     "numpy"
 ]
 setup(
-    name="pybox2d",
+    name="b2d",
     version=__version__,
     author="Thorsten Beier",
     author_email="derthorstenbeier@gmail.com",
@@ -202,7 +201,6 @@ setup(
     packages=find_packages(where='./python/module', exclude="test"),
     install_requires=install_requires,
     extras_require={"test": "pytest"},
-    # packages=['pybox2d'],
     package_dir = {'': 'python/module'},
     # Currently, build_ext only provides an optional "highest supported C++
     # level" feature, but in the future it may provide more features.

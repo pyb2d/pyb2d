@@ -4,12 +4,6 @@
 #include <iostream>
 #include <numeric>
 
-
-// our headers
-#include "pybox2d/pybox2d.hpp"
-#include "pybox2d/pybox2d_config.hpp"
-
-
 namespace py = pybind11;
 
 
@@ -28,15 +22,6 @@ namespace pybox2d {
         "This class show the compile/build configuration\n"
         "Of pybox2d\n"
         )
-        .def_property_readonly_static("VERSION_MAJOR", [](py::object /* self */) {
-           return PYBOX2D_VERSION_MAJOR ;
-        })
-        .def_property_readonly_static("VERSION_MINOR", [](py::object /* self */) {
-           return PYBOX2D_VERSION_MINOR ;
-        })
-        .def_property_readonly_static("VERSION_PATCH", [](py::object /* self */) {
-           return PYBOX2D_VERSION_MAJOR ;
-        })
         .def_property_readonly_static("DEBUG", [](py::object /* self */) {
             #ifdef  NDEBUG
             return false;

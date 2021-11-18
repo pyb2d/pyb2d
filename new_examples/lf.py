@@ -1,7 +1,7 @@
 from testbed import TestbedBase
 import random
 import numpy
-import pybox2d as b2
+import b2d as b2
 
 
 
@@ -40,7 +40,7 @@ class LiquidFun(TestbedBase):
         ) 
 # 
 
-        pdef = b2.particle_system_def(viscous_strength=0.2,spring_strength=0.0, damping_strength=2.0)
+        pdef = b2.particle_system_def(viscous_strength=0.5,spring_strength=0.0, damping_strength=0.5,pressure_strength=0.5)
         psystem = self.world.create_particle_system(pdef)
         psystem.radius = 0.1
         psystem.damping = 1.2

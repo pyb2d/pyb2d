@@ -1,4 +1,4 @@
-import pybox2d as b2
+import b2d
 import numpy
 import random
 import time
@@ -7,7 +7,7 @@ import time
 
 
 
-# class TestbedConactListener(b2.ContactListener):
+# class TestbedConactListener(b2d.ContactListener):
 #     def __init__(self):
 #         super(TestbedConactListener, self).__init__()
 
@@ -16,8 +16,8 @@ import time
 
 
 class TestbedBase(
-    b2.DestructionListener,
-    b2.ContactListener
+    b2d.DestructionListener,
+    b2d.ContactListener
     
 ):
     @classmethod
@@ -32,9 +32,9 @@ class TestbedBase(
         ui.start_ui()
         return ui._testworld,ui
 
-    def __init__(self, gravity=b2.vec2(0,-9.81)):
-        b2.ContactListener.__init__(self)
-        b2.DestructionListener.__init__(self)
+    def __init__(self, gravity=b2d.vec2(0,-9.81)):
+        b2d.ContactListener.__init__(self)
+        b2d.DestructionListener.__init__(self)
 
         # Box2D-related
         self.points = []
@@ -47,7 +47,7 @@ class TestbedBase(
         self.__time_last_step = None
         self.current_fps = 0.0
 
-        self.world = b2.world(gravity)
+        self.world = b2d.world(gravity)
         self.groundbody = self.world.create_body()
         
         self.world.set_contact_listener(self)
@@ -121,7 +121,7 @@ class TestbedBase(
                 target=p,
                 max_force=50000.0 * body.mass
             )
-            if not b2.BuildConfiguration.OLD_BOX2D:
+            if not b2d.BuildConfiguration.OLD_BOX2D:
                 kwargs["stiffness"] = 100.0
             self.mouse_joint = self.world.create_mouse_joint(**kwargs)
             body.awake = True

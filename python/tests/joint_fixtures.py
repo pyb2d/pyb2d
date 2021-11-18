@@ -1,4 +1,4 @@
-import pybox2d as b2d
+import b2d
 
 import pytest
 from pytest_lazyfixture import sorted_by_dependency, lazy_fixture, _sorted_argnames,LazyFixture

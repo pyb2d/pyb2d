@@ -1,4 +1,4 @@
-import pybox2d
+import b2d
 
 
 

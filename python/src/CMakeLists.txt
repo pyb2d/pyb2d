@@ -1,11 +1,6 @@
 #-------------------------------------------------------------------------------------------------------------------
 # Add The module
 #-------------------------------------------------------------------------------------------------------------------
-find_package(xtl               REQUIRED)
-find_package(xtensor           REQUIRED)
-find_package(xtensor-python    CONFIG  REQUIRED)
-
-
 
 
 if(NOT PYBOX2D_LIQUID_FUN)
@@ -146,7 +141,7 @@ set(BOX2D_INCLUDE_DIRS
 ENDIF()
 
 
-set(PY_MOD_NAME pybox2d )
+set(PY_MOD_NAME b2d )
 set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
 
 
@@ -194,14 +189,12 @@ pybind11_add_module(${PY_MOD_LIB_NAME}
 # `link` against pybind11 interface module
 target_link_libraries(${PY_MOD_LIB_NAME} PUBLIC  
     ${INTERFACE_LIB_NAME}
-    pybind11::module
-    xtensor-python)
+    pybind11::module)
 
 # include directories for non-modern cmake
 set(PY_INCLUDE_DIRS 
     ${PYTHON_NUMPY_INCLUDE_DIR}
     ${BOX2D_INCLUDE_DIRS}
-    ${xtensor-python_INCLUDE_DIRS}
 )
 target_include_directories(${PY_MOD_LIB_NAME} PUBLIC  ${PY_INCLUDE_DIRS})
 

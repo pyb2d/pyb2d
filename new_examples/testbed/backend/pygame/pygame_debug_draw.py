@@ -1,5 +1,5 @@
 import numpy
-import pybox2d as b2
+import b2d as b2
 import pygame
 import pygame.locals 
 from skimage.morphology import disk, binary_dilation

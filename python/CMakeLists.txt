@@ -32,8 +32,6 @@ add_subdirectory(src)
 file(COPY ${CMAKE_SOURCE_DIR}/python/module/${PY_MOD_NAME} DESTINATION ${CMAKE_BINARY_DIR}/python/module)
 
 
-
-
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/module/
     DESTINATION ${PYTHON_MODULE_INSTALL_DIR})
 

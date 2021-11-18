@@ -1,7 +1,7 @@
 file(COPY ${CMAKE_SOURCE_DIR}/docs DESTINATION ${CMAKE_BINARY_DIR}/docs_bld)
 
 
-set(PY_MOD_NAME pybox2d )
+set(PY_MOD_NAME b2d )
 set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
 set(PYTHON_TMP_MODULE_DIR ${CMAKE_BINARY_DIR}/python/module)
 set(INCLUDE_PATH ${CMAKE_SOURCE_DIR}/include)

@@ -226,11 +226,23 @@ public:
 
             auto centers_ptr = m_particle_systems_centers.data() + coord_offset;
 
-
-            m_object.attr("draw_particles")(
-                np_view(centers_ptr, {n_particels, 2}),
-                radius
-            );
+            if(!has_colors)
+            {
+                m_object.attr("draw_particles")(
+                    np_view(centers_ptr, {n_particels, 2}),
+                    radius
+                );
+            } 
+            else
+            {
+                auto color_ptr = m_particle_systems_colors.data() + color_offset;
+                m_object.attr("draw_particles")(
+                    np_view(centers_ptr, {n_particels, 2}),
+                    radius, 
+                    np_view(color_ptr, {n_particels, 4})
+                );
+                color_offset += 4 * n_particels;
+            }
 
             coord_offset += 2* n_particels;
         }

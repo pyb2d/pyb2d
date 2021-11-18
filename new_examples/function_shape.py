@@ -1,8 +1,7 @@
 from testbed import TestbedBase
 import random
 import numpy
-import pybox2d as b2
-
+import b2d as b2
 class FuncShape(TestbedBase):
 
     name = "the func shape"
