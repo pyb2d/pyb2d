@@ -1,4 +1,4 @@
-name: CI
+name: Micromamba + CMake
 on:
   push:
     branches:
