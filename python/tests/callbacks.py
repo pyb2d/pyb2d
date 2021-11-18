@@ -1,5 +1,4 @@
-import pybox2d as b2d
-
+import b2d
 from  collections import defaultdict
 
 

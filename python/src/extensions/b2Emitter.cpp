@@ -74,8 +74,9 @@ void b2EmitterBase::CreateParticle(b2ParticleDef  def)
         const auto m = area * density;
         m_body->ApplyLinearImpulse(m*velocity * -1.0f, pos, true);
     }
-
 }
+
+
 
 b2Body* b2EmitterBase::GetBody()const
 {    

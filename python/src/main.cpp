@@ -12,12 +12,6 @@
 #include <string>
 #include <sstream>
 
-
-// our headers
-#include "pybox2d/pybox2d.hpp"
-#include "pybox2d/pybox2d_config.hpp"
-
-
 namespace py = pybind11;
 
 
@@ -41,13 +35,13 @@ void exportExtendedDebugDraw(py::module & );
 void exportB2Particle(py::module & );
 void exportB2ParticleSystem(py::module & );
 void exportB2ParticleGroup(py::module & );
-// void exportEmitter(py::module &);
+void exportEmitter(py::module &);
 #endif
 
 
 
 // Python Module and Docstrings
-PYBIND11_MODULE(_pybox2d , pybox2dModule)
+PYBIND11_MODULE(_b2d , pybox2dModule)
 {
     //xt::import_numpy();
 
@@ -80,13 +74,13 @@ PYBIND11_MODULE(_pybox2d , pybox2dModule)
     exportB2Particle(pybox2dModule);
     exportB2ParticleSystem(pybox2dModule);
     exportB2ParticleGroup(pybox2dModule);
-    //exportEmitter(pybox2dModule);
+    exportEmitter(pybox2dModule);
     #endif
 
-    // make version string
-    std::stringstream ss;
-    ss<<PYBOX2D_VERSION_MAJOR<<"."
-      <<PYBOX2D_VERSION_MINOR<<"."
-      <<PYBOX2D_VERSION_PATCH;
-    pybox2dModule.attr("__version__") = ss.str().c_str();
+    // // make version string
+    // std::stringstream ss;
+    // ss<<PYBOX2D_VERSION_MAJOR<<"."
+    //   <<PYBOX2D_VERSION_MINOR<<"."
+    //   <<PYBOX2D_VERSION_PATCH;
+    // pybox2dModule.attr("__version__") = ss.str().c_str();
 }

@@ -1,4 +1,4 @@
-import pybox2d as b2d
+import b2d
 
 def n_bodies(world):
     return len(list(world.bodies))
