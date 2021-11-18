@@ -141,9 +141,6 @@ set(BOX2D_INCLUDE_DIRS
 ENDIF()
 
 
-set(PY_MOD_NAME b2d )
-set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
-
 
 
 
@@ -181,7 +178,6 @@ pybind11_add_module(${PY_MOD_LIB_NAME}
     b2Contact.cxx
     b2Collision.cxx
     b2Draw.cxx
-    export_batch_debug_draw.cxx
 )
 
 

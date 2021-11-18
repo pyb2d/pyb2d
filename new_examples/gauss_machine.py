@@ -1,7 +1,8 @@
-from testbed import TestbedBase
 import random
 import numpy
-import b2d as b2
+import b2d
+from testbed import TestbedBase
+
 
 class GaussMachine(TestbedBase):
 
@@ -13,11 +14,11 @@ class GaussMachine(TestbedBase):
         self.box_shape= 30,20
         box_shape = self.box_shape
             
-        #  outer box
+        # outer box
         verts =numpy.array([
             (0, box_shape[1]),(0,0),(box_shape[0],0), (box_shape[0], box_shape[1])
         ])
-        shape =  b2.chain_shape(
+        shape =  b2d.chain_shape(
             vertices=numpy.flip(verts,axis=0)
         )
         box = self.world.create_static_body( position=(0, 0), shape = shape)
@@ -26,10 +27,8 @@ class GaussMachine(TestbedBase):
         bin_height = box_shape[1] / 3
         bin_width = 1
         for x in range(0,box_shape[0], bin_width):
-
-            shape = b2.EdgeShape()
-            shape.set_two_sided((x, 0), (x,bin_height))
-            box = self.world.create_static_body( position=(0, 0), shape =shape)
+            box = self.world.create_static_body(position=(0, 0), 
+                shape=b2d.two_sided_edge_shape((x, 0), (x,bin_height)))
 
         # reflectors
         ref_start_y = int(bin_height + box_shape[1]/10.0)
@@ -38,16 +37,33 @@ class GaussMachine(TestbedBase):
             
             for y in range(ref_start_y, ref_stop_y):
                 s = [0.5,0][y % 2 == 0]
-                shape = b2.circle_shape(radius=0.3)
+                shape = b2d.circle_shape(radius=0.3)
                 box = self.world.create_static_body( position=(x+s, y), shape =shape)
 
+
+        # particle system
+        pdef = b2d.particle_system_def(viscous_strength=0.9,spring_strength=0.0, 
+            damping_strength=100.5,pressure_strength=1.0,
+            color_mixing_strength=0.05,density=2)
+
+        psystem = self.world.create_particle_system(pdef)
+        psystem.radius = 0.1
+        psystem.damping = 0.5
+
+        # linear emitter
+        emitter_pos = (self.box_shape[0]/2, self.box_shape[1] + 10)
+        emitter_def = b2d.LinearEmitterDef()
+        emitter_def.emite_rate = 200
+        emitter_def.lifetime = 1000
+        emitter_def.size = (10,1)
+        emitter_def.transform = b2d.Transform(emitter_pos, b2d.Rot(0))
+
+
+        self.emitter = b2d.LinearEmitter(psystem, emitter_def)
+
     def pre_step(self, dt):
-        for x in range(3):
-            box = self.world.create_dynamic_body(
-                    position=(self.box_shape[0]/2+random.random()*0.4-0.25, self.box_shape[1]),
-                    shape=b2.circle_shape(pos=(0,0), radius=0.1),
-                    density=1.0,
-                )
+        self.emitter.step(dt)
+
 
 
 if __name__ == "__main__":

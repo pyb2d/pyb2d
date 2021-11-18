@@ -4,7 +4,7 @@ import pygame
 import pygame.locals 
 import time
 
-from .pygame_debug_draw import PygameDebugDraw
+from .pygame_debug_draw import PyGameBatchDebugDraw
 
 class PygameGui(object):
     def __init__(self, testbed_cls, settings=None, testbed_kwargs=None):
@@ -59,7 +59,8 @@ class PygameGui(object):
 
 
         # debug draw
-        self.debug_draw = PygameDebugDraw(surface=self._surface)
+        # self.debug_draw = PygameDebugDraw(surface=self._surface)
+        self.debug_draw = PyGameBatchDebugDraw(surface=self._surface)
         self.debug_draw.flip_y = True
         self.debug_draw.scale = 50.0
         self.debug_draw.translate = (0, self.resolution[1]/2)

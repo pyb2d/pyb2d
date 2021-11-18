@@ -113,9 +113,9 @@ public:
 
     virtual void DrawCircle(const b2Vec2& center, float radius, const b2Color& color) {
         const auto c = this->world_to_screen(center);
-        m_solid_circle_coords.push_back(c.x);
-        m_solid_circle_coords.push_back(c.y);
-        m_solid_circle_radii.push_back(this->world_to_screen_scale(radius));
+        m_circle_coords.push_back(c.x);
+        m_circle_coords.push_back(c.y);
+        m_circle_radii.push_back(this->world_to_screen_scale(radius));
         add_color(color, m_circle_colors);
     }
 
@@ -167,6 +167,41 @@ public:
     #endif
     void trigger_callbacks(){
 
+
+        #ifdef PYBOX2D_LIQUID_FUN
+        //py::object f = m_object.attr("draw_particles");
+        auto coord_offset = 0;
+        auto color_offset = 0;
+        for(auto psi=0; psi<m_particle_systems_radii.size(); ++psi)
+        {
+            const auto radius = m_particle_systems_radii[psi];
+            const auto n_particels = m_particle_systems_size[psi];
+            const auto has_colors = m_particle_systems_has_colors[psi];
+
+            auto centers_ptr = m_particle_systems_centers.data() + coord_offset;
+
+            if(!has_colors)
+            {
+                m_object.attr("draw_particles")(
+                    np_view(centers_ptr, {n_particels, 2}),
+                    radius
+                );
+            } 
+            else
+            {
+                auto color_ptr = m_particle_systems_colors.data() + color_offset;
+                m_object.attr("draw_particles")(
+                    np_view(centers_ptr, {n_particels, 2}),
+                    radius, 
+                    np_view(color_ptr, {n_particels, 4})
+                );
+                color_offset += 4 * n_particels;
+            }
+
+            coord_offset += 2* n_particels;
+        }
+        #endif
+        
         if(!m_solid_polygon_sizes.empty())
         {
             m_object.attr("draw_solid_polygons")(
@@ -213,40 +248,6 @@ public:
             );
         }
 
-
-        #ifdef PYBOX2D_LIQUID_FUN
-        //py::object f = m_object.attr("draw_particles");
-        auto coord_offset = 0;
-        auto color_offset = 0;
-        for(auto psi=0; psi<m_particle_systems_radii.size(); ++psi)
-        {
-            const auto radius = m_particle_systems_radii[psi];
-            const auto n_particels = m_particle_systems_size[psi];
-            const auto has_colors = m_particle_systems_has_colors[psi];
-
-            auto centers_ptr = m_particle_systems_centers.data() + coord_offset;
-
-            if(!has_colors)
-            {
-                m_object.attr("draw_particles")(
-                    np_view(centers_ptr, {n_particels, 2}),
-                    radius
-                );
-            } 
-            else
-            {
-                auto color_ptr = m_particle_systems_colors.data() + color_offset;
-                m_object.attr("draw_particles")(
-                    np_view(centers_ptr, {n_particels, 2}),
-                    radius, 
-                    np_view(color_ptr, {n_particels, 4})
-                );
-                color_offset += 4 * n_particels;
-            }
-
-            coord_offset += 2* n_particels;
-        }
-        #endif
 
         this->reset();
     }

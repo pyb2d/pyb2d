@@ -30,7 +30,6 @@ void exportb2JointDef(py::module & );
 void exportB2WorldCallbacks(py::module & );
 void exportB2Draw(py::module & );
 void exportb2Collision(py::module & );
-void exportExtendedDebugDraw(py::module & );
 #ifdef PYBOX2D_LIQUID_FUN
 void exportB2Particle(py::module & );
 void exportB2ParticleSystem(py::module & );
@@ -69,7 +68,6 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     exportB2WorldCallbacks(pybox2dModule);
     exportB2Draw(pybox2dModule);
     exportb2Collision(pybox2dModule);
-    exportExtendedDebugDraw(pybox2dModule);
     #ifdef PYBOX2D_LIQUID_FUN
     exportB2Particle(pybox2dModule);
     exportB2ParticleSystem(pybox2dModule);

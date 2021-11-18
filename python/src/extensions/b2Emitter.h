@@ -42,7 +42,6 @@ class b2EmitterBase
 public:
     b2EmitterBase(
         b2ParticleSystem * particleSystem, 
-        b2ParticleGroup * particleGroup, 
         const b2EmitterDefBase & def
     );
     void CreateParticle(b2ParticleDef  def);
@@ -62,7 +61,6 @@ private:
 
 
     b2ParticleSystem * m_particleSystem;
-    b2ParticleGroup  * m_particleGroup;
 
     b2Body * m_body;
     b2Transform m_transform;
@@ -75,7 +73,6 @@ class b2LinearEmitter: public b2EmitterBase {
 public:
     b2LinearEmitter( 
         b2ParticleSystem * particleSystem, 
-        b2ParticleGroup * particleGroup, 
         const b2LinearEmitterDef & def
     );
 
@@ -94,7 +91,6 @@ class b2RadialEmitter : b2EmitterBase
 public:
     b2RadialEmitter( 
         b2ParticleSystem * particleSystem, 
-        b2ParticleGroup * particleGroup, 
         const b2RadialEmitterDef & def
     );
 

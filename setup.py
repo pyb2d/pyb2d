@@ -32,9 +32,7 @@ binding_sources = [
     "python/src/b2Math.cxx",
     "python/src/b2Shape.cxx",
     "python/src/b2WorldCallbacks.cxx",
-    "python/src/b2World.cxx",
-    "python/src/export_batch_debug_draw.cxx",
-
+    "python/src/b2World.cxx"
 ]
 
 include_dirs = []
@@ -176,7 +174,7 @@ else:
 
 
 ext_modules = [
-    Pybind11Extension("b2d._pybox2d",
+    Pybind11Extension("b2d._b2d",
 
         binding_sources + box2d_sources,
         include_dirs=box2d_include_dirs+include_dirs,

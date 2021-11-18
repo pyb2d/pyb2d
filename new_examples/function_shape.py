@@ -16,8 +16,6 @@ class FuncShape(TestbedBase):
         verts = numpy.stack([x,y],-1)
         verts = numpy.require(verts, requirements=['C'])
 
-        # print("verts",verts.shape)
-        # verts = [b2.b2Vec2(x,y) for x,y in verts]
         shape =  b2.chain_shape(
             vertices=numpy.flip(verts,axis=0)
         )
