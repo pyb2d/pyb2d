@@ -6,7 +6,7 @@ import b2d
 
 class GaussMachine(TestbedBase):
 
-    name = "the func shape"
+    name = "Gauss Machine"
     
     def __init__(self): 
         super(GaussMachine, self).__init__()

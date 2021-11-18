@@ -10,7 +10,7 @@ from . extend_world import *
 from . extend_body import *
 from . extend_fixture import *
 from . extend_shapes import *
-from . extend_shapes import EdgeShape, fobar
+from . extend_shapes import EdgeShape
 from . extend_joints import *
 from . extend_collision import *
 from . extend_contact import *

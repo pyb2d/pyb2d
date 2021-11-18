@@ -3,34 +3,6 @@ from . extend_math import vec2
 from . tools import _classExtender
 
 
-
-class FooBat(object):
-    pass
-
-def fobar():
-    pass
-
-
-
-
-# EdgeShape = b2EdgeShape
-# PolygonShape = b2PolygonShape
-# CircleShape = b2CircleShape
-# ChainShape = b2ChainShape
-# Filter = b2Filter
-
-# class ShapeType(object):
-#     circle = Shape.ShapeType.circle
-#     edge = Shape.ShapeType.edge
-#     chain = Shape.ShapeType.chain
-#     polygon = Shape.ShapeType.polygon
-
-    # circle = b2Shape.ShapeType.circle
-    # edge = b2Shape.ShapeType.edge
-    # chain = b2Shape.ShapeType.chain
-    # polygon = b2Shape.ShapeType.polygon
-
-
 def shape_filter(category_bits=None, mask_bits=None, group_index=None):
     f = Filter()
     if category_bits is not None:
@@ -39,7 +11,6 @@ def shape_filter(category_bits=None, mask_bits=None, group_index=None):
         f.mask_bits = mask_bits
     if group_index is not None:
         f.group_index = group_index
-
 
 
 def two_sided_edge_shape(v0, v1):
@@ -80,12 +51,6 @@ def loop_shape(vertices):
     s.create_loop(v)
 
 
-def box_loop_shape(w,h):
-    verts = [
-        vec2(0,0),vec2(0,w),vec2(h,w),vec2(h,0)
-    ]
-    return chain_shape(verts,True)
-
 def circle_shape(radius, pos = (0,0)):
     s = CircleShape()
     s.radius = radius
@@ -112,12 +77,6 @@ def extend_polygon_shape():
 
     PolygonShape._vertices = _vertices
     PolygonShape.vertices = property(lambda self: self._vertices())
-
-
-    # def set(self, vertices):
-    #     self._set(numpy.require(vertices, requirements=['C']))
-    
-    # PolygonShape.vertices_setter = vertices_setter
 
 
 extend_polygon_shape()

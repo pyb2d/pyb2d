@@ -60,7 +60,7 @@ class ColorMixing(TestbedBase):
             group = psystem.create_particle_group(pgDef)
             
 if __name__ == "__main__":
-    from testbed.backend.pygame import PygameGui
+    from b2d.testbed.backend.pygame import PygameGui
     gui_settings = {
         "fps" : 30,
         "resolution" : (1000,1000)
