@@ -141,9 +141,6 @@ set(BOX2D_INCLUDE_DIRS
 ENDIF()
 
 
-set(PY_MOD_NAME b2d )
-set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
-
 
 
 
