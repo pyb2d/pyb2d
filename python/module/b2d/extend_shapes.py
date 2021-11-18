@@ -41,6 +41,19 @@ def shape_filter(category_bits=None, mask_bits=None, group_index=None):
         f.group_index = group_index
 
 
+
+def two_sided_edge_shape(v0, v1):
+    if BuildConfiguration.LIQUID_FUN:
+        s = ChainShape()
+        s.create_loop([
+            v0,v1,v0
+        ])
+        return s
+    else:
+        shape = b2.EdgeShape()
+        shape.set_two_sided(v0, v1)
+        return shape;
+
 # shape factories
 def edge_shape(vertices):
     assert len(vertices) == 2

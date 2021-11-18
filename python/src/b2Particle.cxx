@@ -10,10 +10,6 @@
 namespace py = pybind11;
 
 
-
-
-
-
 void exportB2Particle(py::module & pybox2dModule){
 
 

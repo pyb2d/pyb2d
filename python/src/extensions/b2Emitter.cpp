@@ -46,11 +46,9 @@ b2LinearEmitterDef::b2LinearEmitterDef()
 
 b2EmitterBase::b2EmitterBase(
     b2ParticleSystem * particleSystem, 
-    b2ParticleGroup * particleGroup, 
     const b2EmitterDefBase & def
 )
 :   m_particleSystem(particleSystem),
-    m_particleGroup(particleGroup),
     m_body(def.body),
     m_transform(def.transform),
     m_lifetime(def.lifetime),
@@ -61,7 +59,6 @@ b2EmitterBase::b2EmitterBase(
 
 void b2EmitterBase::CreateParticle(b2ParticleDef  def)
 {
-    def.group = m_particleGroup;
     def.lifetime = m_lifetime;
     //def.emitRate = m_emitRate;
 
@@ -125,10 +122,9 @@ void b2EmitterBase::SetAngle(const float32 angle)
 
 b2LinearEmitter::b2LinearEmitter( 
     b2ParticleSystem * particleSystem, 
-    b2ParticleGroup * particleGroup, 
     const b2LinearEmitterDef & def
 )
-:   b2EmitterBase(particleSystem, particleGroup, def),
+:   b2EmitterBase(particleSystem, def),
     m_emmiter_def(def),
     m_remainder(0.0),
     m_uniform01(0.0f,1.0f),
@@ -189,10 +185,9 @@ int b2LinearEmitter::Step(const float dt){
 
 b2RadialEmitter::b2RadialEmitter( 
     b2ParticleSystem * particleSystem, 
-    b2ParticleGroup * particleGroup, 
     const b2RadialEmitterDef & def
 )
-:   b2EmitterBase(particleSystem, particleGroup, def),
+:   b2EmitterBase(particleSystem, def),
     m_emmiter_def(def),
     m_remainder(0.0),
     m_uniform_r(

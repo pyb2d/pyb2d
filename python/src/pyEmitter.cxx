@@ -57,7 +57,7 @@ void exportEmitter(py::module & pybox2dModule){
 
     py::class_<b2EmitterBase> emitterBaseCls(pybox2dModule, "EmitterBase");
     emitterBaseCls
-        .def(py::init<b2ParticleSystem *, b2ParticleGroup *, const b2EmitterDefBase&>())
+        .def(py::init<b2ParticleSystem *, const b2EmitterDefBase&>())
         .def_property("position", &b2EmitterBase::GetPosition, &b2EmitterBase::SetPosition)
         .def_property("angle", &b2EmitterBase::GetAngle, &b2EmitterBase::SetAngle)
         .def_property("transform", &b2EmitterBase::GetTransform, &b2EmitterBase::SetTransform)
@@ -67,13 +67,13 @@ void exportEmitter(py::module & pybox2dModule){
 
     py::class_<b2LinearEmitter> lineEmitterCls(pybox2dModule, "LinearEmitter", emitterBaseCls);
     lineEmitterCls
-        .def(py::init<b2ParticleSystem *, b2ParticleGroup *, const b2LinearEmitterDef&>())
+        .def(py::init<b2ParticleSystem *, const b2LinearEmitterDef&>())
         .def("step", &b2LinearEmitter::Step)
     ;
 
     py::class_<b2RadialEmitter> radialEmitterCls(pybox2dModule, "RadialEmitter", emitterBaseCls);
     radialEmitterCls
-        .def(py::init<b2ParticleSystem *, b2ParticleGroup *, const b2RadialEmitterDef&>())
+        .def(py::init<b2ParticleSystem *, const b2RadialEmitterDef&>())
         .def("step", &b2RadialEmitter::Step)
     ;
 
