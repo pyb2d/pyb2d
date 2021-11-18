@@ -9,7 +9,8 @@ dependencies:
   - sphinx_rtd_theme
   - sphinxcontrib-apidoc 
   - pytest
-  - python >=3.
+  - pytest-lazy-fixture
+  - python >=3.6
   - numpy
   - pybind11
   - pip

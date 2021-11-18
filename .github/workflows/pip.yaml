@@ -33,6 +33,7 @@ jobs:
     - name: Test
       run: |
         python -m pip install pytest
+        python -m pip install pytest-lazy-fixture
         python -m pytest python/tests
 
   build-mingw64:
