@@ -1,7 +1,7 @@
+from b2d.testbed import TestbedBase
 import random
 import numpy
 import b2d
-from testbed import TestbedBase
 
 
 class GaussMachine(TestbedBase):

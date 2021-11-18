@@ -1,7 +1,7 @@
-from testbed import TestbedBase
+from b2d.testbed import TestbedBase
 import random
 import numpy
-import b2d as b2
+import b2d
 
 class ColorMixing(TestbedBase):
 
@@ -12,7 +12,7 @@ class ColorMixing(TestbedBase):
         dimensions = [10,10]
         
         # the outer box
-        box_shape = b2.ChainShape()
+        box_shape = b2d.ChainShape()
         box_shape.create_loop([
                 (0,0),
                 (0,dimensions[1]),
@@ -23,13 +23,13 @@ class ColorMixing(TestbedBase):
         box = self.world.create_static_body( position=(0, 0), shape = box_shape)
 
 
-        fixtureA = b2.fixture_def(shape=b2.circle_shape(0.5),density=2.2, friction=0.2, restitution=0.5)
+        fixtureA = b2d.fixture_def(shape=b2d.circle_shape(0.5),density=2.2, friction=0.2, restitution=0.5)
         body = self.world.create_dynamic_body(
             position=(1,2.5),
             fixtures=fixtureA
         ) 
 
-        pdef = b2.particle_system_def(viscous_strength=0.9,spring_strength=0.0, damping_strength=100.5,pressure_strength=1.0,
+        pdef = b2d.particle_system_def(viscous_strength=0.9,spring_strength=0.0, damping_strength=100.5,pressure_strength=1.0,
                                      color_mixing_strength=0.008,density=2)
         psystem = self.world.create_particle_system(pdef)
         psystem.radius = 0.1
@@ -50,10 +50,10 @@ class ColorMixing(TestbedBase):
         ]
         for color,pos in zip(colors, posiitons):
 
-            shape = b2.polygon_shape(box=(10/5,10/5),center=pos,angle=0)
-            pgDef = b2.particle_group_def(
-                                     flags=b2.ParticleFlag.waterParticle | b2.ParticleFlag.colorMixingParticle, 
-                                     # group_flags=b2.ParticleGroupFlag.solidParticleGroup,
+            shape = b2d.polygon_shape(box=(10/5,10/5),center=pos,angle=0)
+            pgDef = b2d.particle_group_def(
+                                     flags=b2d.ParticleFlag.waterParticle | b2d.ParticleFlag.colorMixingParticle, 
+                                     # group_flags=b2d.ParticleGroupFlag.solidParticleGroup,
                                      shape=shape,strength=1.0,
                                       color=color
                                      )

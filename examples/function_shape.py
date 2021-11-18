@@ -1,4 +1,4 @@
-from testbed import TestbedBase
+from b2d.testbed import TestbedBase
 import random
 import numpy
 import b2d as b2
