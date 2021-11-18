@@ -178,7 +178,6 @@ pybind11_add_module(${PY_MOD_LIB_NAME}
     b2Contact.cxx
     b2Collision.cxx
     b2Draw.cxx
-    export_batch_debug_draw.cxx
 )
 
 

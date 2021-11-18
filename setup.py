@@ -32,9 +32,7 @@ binding_sources = [
     "python/src/b2Math.cxx",
     "python/src/b2Shape.cxx",
     "python/src/b2WorldCallbacks.cxx",
-    "python/src/b2World.cxx",
-    "python/src/export_batch_debug_draw.cxx",
-
+    "python/src/b2World.cxx"
 ]
 
 include_dirs = []
