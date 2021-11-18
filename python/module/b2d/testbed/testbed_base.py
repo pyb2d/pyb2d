@@ -68,7 +68,11 @@ class TestbedBase(
             t_now = time.time()
             dt = t_now - self.__time_last_step 
             self.__time_last_step = t_now
-            self.current_fps = 1.0/dt
+            try:
+                self.current_fps = 1.0/dt
+            except ZeroDivisionError:
+                self.current_fps = float('inf')
+                
         self.step_count += 1
         self.post_step(dt)
         self.iter += 1
