@@ -2,12 +2,12 @@ from b2d.testbed import TestbedBase
 import random
 import numpy
 import b2d as b2
-class FuncShape(TestbedBase):
+class FunctionShape(TestbedBase):
 
-    name = "the func shape"
+    name = "Function Shape"
     
     def __init__(self): 
-        super(FuncShape, self).__init__()
+        super(FunctionShape, self).__init__()
  
 
         
@@ -38,4 +38,4 @@ if __name__ == "__main__":
         "fps" : 40,
         "resolution" : (1000,1000)
     }
-    FuncShape.run(PygameGui, gui_settings=gui_settings)
+    FunctionShape.run(PygameGui, gui_settings=gui_settings)

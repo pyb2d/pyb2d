@@ -60,6 +60,11 @@ jobs:
           cd bld
           make install
 
+      - name: run examples
+        shell: bash -l {0}
+        run: |
+          python examples/run_all.py
+
       # - name: test
       #   shell: bash -l {0}
       #   run: |

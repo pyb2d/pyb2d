@@ -5,7 +5,7 @@ import b2d
 
 class ColorMixing(TestbedBase):
 
-    name = "the func shape"
+    name = "ColorMixing"
     
     def __init__(self): 
         super(ColorMixing, self).__init__()
