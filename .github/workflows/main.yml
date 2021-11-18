@@ -85,11 +85,11 @@ jobs:
           environment-name: pybox2d
 
 
-      - name: micromamba shell hook
-        shell: powershell
-        run: |
-          micromamba shell hook -s cmd.exe -p C:\Users\runneradmin\micromamba
-          Get-Content -Path C:\Users\runneradmin\micromamba\condabin\mamba_hook.bat
+      # - name: micromamba shell hook
+      #   shell: powershell
+      #   run: |
+      #     micromamba shell hook -s cmd.exe -p C:\Users\runneradmin\micromamba
+      #     Get-Content -Path C:\Users\runneradmin\micromamba\condabin\mamba_hook.bat
 
       - name: install cxx compiler
         shell: cmd
