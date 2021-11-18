@@ -201,7 +201,7 @@ setup(
     packages=find_packages(where='./python/module', exclude="test"),
     install_requires=install_requires,
     extras_require={"test": "pytest"},
-    package_dir = {'': 'python/module'},
+    package_dir = {'': './python/module'},
     # Currently, build_ext only provides an optional "highest supported C++
     # level" feature, but in the future it may provide more features.
     cmdclass={"build_ext": build_ext},
