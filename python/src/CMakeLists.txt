@@ -130,6 +130,13 @@ set(BOX2D_SOURCE_FILES
     ${BOX2D_BASE_DIR}/src/dynamics/b2_wheel_joint.cpp
     ${BOX2D_BASE_DIR}/src/dynamics/b2_world.cpp
     ${BOX2D_BASE_DIR}/src/dynamics/b2_world_callbacks.cpp
+
+    ${BOX2D_BASE_DIR}/src/particle/b2_particle.cpp
+    ${BOX2D_BASE_DIR}/src/particle/b2_particle_assembly.cpp
+    ${BOX2D_BASE_DIR}/src/particle/b2_particle_group.cpp
+    ${BOX2D_BASE_DIR}/src/particle/b2_particle_system.cpp
+    ${BOX2D_BASE_DIR}/src/particle/b2_voronoi_diagram.cpp
+
     ${BOX2D_BASE_DIR}/src/rope/b2_rope.cpp
 )
 
