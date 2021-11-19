@@ -54,8 +54,8 @@ public:
     const b2Vec2 & GetPosition()const;
     void SetPosition(const b2Vec2 & vec);
 
-    float32 GetAngle()const;
-    void SetAngle(const float32 angle);
+    float GetAngle()const;
+    void SetAngle(const float angle);
 
 private:
 

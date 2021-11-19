@@ -29,7 +29,7 @@ b2Vec2 operator+ (const py::tuple & lhs, const b2Vec2 & rhs)
 //     );
 // }
 
-#ifndef PYBOX2D_OLD_BOX2D
+#ifndef PYBOX2D_LIQUID_FUN
 b2Vec2 operator/ (const b2Vec2 & lhs, float rhs)
 {
     return b2Vec2(

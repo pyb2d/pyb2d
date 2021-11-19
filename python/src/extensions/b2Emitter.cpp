@@ -106,12 +106,12 @@ void b2EmitterBase::SetPosition(const b2Vec2 & vec)
     m_transform.p=vec;
 }
 
-float32 b2EmitterBase::GetAngle()const
+float b2EmitterBase::GetAngle()const
 {
     return m_transform.q.GetAngle();
 }
 
-void b2EmitterBase::SetAngle(const float32 angle)
+void b2EmitterBase::SetAngle(const float angle)
 {
     m_transform.Set(this->GetPosition(), angle);
 }

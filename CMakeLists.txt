@@ -33,7 +33,7 @@ endif()
 
 if(PYBOX2D_LIQUID_FUN)
     add_compile_definitions(PYBOX2D_LIQUID_FUN)
-    add_compile_definitions(PYBOX2D_OLD_BOX2D)
+    # add_compile_definitions(PYBOX2D_OLD_BOX2D)
 endif()
 
 # Installation

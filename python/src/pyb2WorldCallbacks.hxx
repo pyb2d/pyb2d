@@ -60,7 +60,7 @@ public:
             py::object f = object_.attr("say_goodbye_particle_group");
             f(ParticleGroupHolder(group));
         }
-        delete_user_data_if_has_user_data(group);
+        //delete_user_data_if_has_user_data(group);
     }
 
     void SayGoodbye(b2ParticleSystem* particleSystem, int32 index) override {

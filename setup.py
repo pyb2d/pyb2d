@@ -1,5 +1,7 @@
 import sys
 import glob
+import os
+from pathlib import Path
 
 from pybind11 import get_cmake_dir,get_include
 # Available at setup time due to pyproject.toml
@@ -47,132 +49,23 @@ if liquidfun:
         "python/src/pyEmitter.cxx",
         "python/src/extensions/b2Emitter.cpp"
     ]
-    box2d_include_dirs = [
-        "external/liquidfun-1.1.0/liquidfun/Box2D"
-    ]
-    box2d_sources = [
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2BroadPhase.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2CollideCircle.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2CollideEdge.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2CollidePolygon.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2Collision.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2Distance.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2DynamicTree.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/b2TimeOfImpact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2BlockAllocator.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2Draw.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2FreeList.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2Math.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2Settings.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2StackAllocator.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2Stat.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2Timer.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Common/b2TrackedBlock.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/b2Body.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/b2ContactManager.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/b2Fixture.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/b2Island.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/b2World.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp",
-        # "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Particle/b2Particle.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Particle/b2ParticleGroup.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Particle/b2ParticleSystem.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Particle/b2VoronoiDiagram.cpp",
-        "external/liquidfun-1.1.0/liquidfun/Box2D/Box2D/Rope/b2Rope.cpp",
-
-    ]
     macros = [
         ('PYBOX2D_LIQUID_FUN',1),
-        ('PYBOX2D_OLD_BOX2D', 1)
     ]
+    base_dir = "external/box2d-ecf398ca73f31b282cf9e6a500d8af6665654617"
+    
+
 else:
-    box2d_include_dirs = [
-        "external/box2d-2.4.1/include",
-        "external/box2d-2.4.1/src"
-    ]
-    box2d_sources = [
-        "external/box2d-2.4.1/src/collision/b2_broad_phase.cpp",
-        "external/box2d-2.4.1/src/collision/b2_chain_shape.cpp",
-        "external/box2d-2.4.1/src/collision/b2_circle_shape.cpp",
-        "external/box2d-2.4.1/src/collision/b2_collide_circle.cpp",
-        "external/box2d-2.4.1/src/collision/b2_collide_edge.cpp",
-        "external/box2d-2.4.1/src/collision/b2_collide_polygon.cpp",
-        "external/box2d-2.4.1/src/collision/b2_collision.cpp",
-        "external/box2d-2.4.1/src/collision/b2_distance.cpp",
-        "external/box2d-2.4.1/src/collision/b2_dynamic_tree.cpp",
-        "external/box2d-2.4.1/src/collision/b2_edge_shape.cpp",
-        "external/box2d-2.4.1/src/collision/b2_polygon_shape.cpp",
-        "external/box2d-2.4.1/src/collision/b2_time_of_impact.cpp",
-        "external/box2d-2.4.1/src/common/b2_block_allocator.cpp",
-        "external/box2d-2.4.1/src/common/b2_draw.cpp",
-        "external/box2d-2.4.1/src/common/b2_math.cpp",
-        "external/box2d-2.4.1/src/common/b2_settings.cpp",
-        "external/box2d-2.4.1/src/common/b2_stack_allocator.cpp",
-        "external/box2d-2.4.1/src/common/b2_timer.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_body.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_chain_circle_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_chain_circle_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_chain_polygon_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_chain_polygon_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_circle_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_circle_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_contact.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_contact_manager.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_contact_solver.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_contact_solver.h",
-        "external/box2d-2.4.1/src/dynamics/b2_distance_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_edge_circle_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_edge_circle_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_edge_polygon_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_edge_polygon_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_fixture.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_friction_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_gear_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_island.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_island.h",
-        "external/box2d-2.4.1/src/dynamics/b2_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_motor_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_mouse_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_polygon_circle_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_polygon_circle_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_polygon_contact.cpp",
-        # "external/box2d-2.4.1/src/dynamics/b2_polygon_contact.h",
-        "external/box2d-2.4.1/src/dynamics/b2_prismatic_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_pulley_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_revolute_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_weld_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_wheel_joint.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_world.cpp",
-        "external/box2d-2.4.1/src/dynamics/b2_world_callbacks.cpp",
-        "external/box2d-2.4.1/src/rope/b2_rope.cpp",
-    ]
+    base_dir = "external/box2d-2.4.1"
     macros = []
+
+box2d_include_dirs = [
+    os.path.join(base_dir,"include"),
+    os.path.join(base_dir,"src"),
+]
+src_dir = os.path.join(base_dir,"src")
+box2d_sources = sorted([str(path) for path in Path(src_dir).rglob('*.cpp')])
+
 
 
 ext_modules = [
