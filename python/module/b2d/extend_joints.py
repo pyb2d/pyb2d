@@ -30,10 +30,6 @@ def wheel_joint_def(body_a, body_b, **kwargs):
     return _factory(WheelJointDef,
         body_a=body_a, body_b=body_b, **kwargs)
 
-def rope_joint_def(body_a, body_b, **kwargs):
-    return _factory(RevoluteJointDef,
-        body_a=body_a, body_b=body_b, **kwargs)
-
 def prismatic_joint_def(body_a, body_b, **kwargs):
     return _factory(PrismaticJointDef,
         body_a=body_a, body_b=body_b, **kwargs)
