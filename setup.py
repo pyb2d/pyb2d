@@ -36,7 +36,7 @@ binding_sources = [
 ]
 
 include_dirs = [
-    get_include()
+    "external/pybind11-2.8.1/include/"
 ]
 
 if liquidfun:
