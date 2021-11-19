@@ -11,8 +11,6 @@ class PygameGui(object):
 
         # settings
         resolution = settings.get("resolution", (640,480))
-        if resolution is None:
-            resolution = (640,480)
         self.resolution = resolution
         print("resolution",resolution)
 

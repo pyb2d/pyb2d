@@ -63,7 +63,7 @@ jobs:
       - name: run examples
         shell: bash -l {0}
         run: |
-          python examples/run_all.py
+          pytest examples
 
       # - name: test
       #   shell: bash -l {0}

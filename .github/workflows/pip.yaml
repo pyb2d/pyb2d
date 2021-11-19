@@ -38,4 +38,4 @@ jobs:
 
     - name: Run Examples
       run: |
-        python examples/run_all.py
+        pytest examples
