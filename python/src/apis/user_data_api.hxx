@@ -10,37 +10,19 @@ class UserData
 {   
 public:
     UserData()
-    :   m_int_data(),
-        m_has_int_data(false),
-        m_object_data(),
+    :  m_object_data(),
         m_has_object_data(false)
     {
 
     }
 
-    void clear_int_data()
-    {
-        m_has_int_data = false;
-    }
+   
     void clear_object_data()
     {
         m_has_object_data = false;
         m_object_data = pybind11::object();
     }
 
-    bool has_int_data() const
-    {
-        return m_has_int_data;
-    }
-    void set_int_data(const int64_t int_data)
-    {
-        m_has_int_data = true;
-        m_int_data = int_data;
-    }
-    int64_t get_int_data() const
-    {
-        return m_int_data;
-    }
 
     bool has_object_data() const
     {
@@ -56,8 +38,6 @@ public:
         return m_object_data;
     }
 private:
-    int64_t m_int_data;
-    bool m_has_int_data; 
     pybind11::object m_object_data;
     bool m_has_object_data;
 };
@@ -96,7 +76,29 @@ public:
     // }
 };
 
+#ifdef PYBOX2D_LIQUID_FUN
+template<>
+class PyDefExtender<b2ParticleDef> : public b2ParticleDef
+{
+public:
+    PyDefExtender(){}
+    ~PyDefExtender(){
+        // void* ud = get_user_data_from_def(this);
+        // if(ud != nullptr)
+        // {
+        //     delete static_cast<UserData*>(ud);
+        // }
+    }
 
+    void SetUserData(void* data){
+        //set_user_data_for_def(this, data);
+    }
+    // void *  GetUserData() {
+    //     return get_user_data_from_def(this);
+    // }
+};
+
+#endif
 
 
 template<class CLS, class PY_CLS>
