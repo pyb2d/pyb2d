@@ -177,5 +177,13 @@ void exportb2JointDef(py::module & pybox2dModule){
         #endif
     ;
 
+    typedef PyDefExtender<b2RopeJointDef> PyRopeJointDef;
+    py::class_<PyRopeJointDef>(pybox2dModule,"RopeJointDef",jdClass)
+        .def(py::init<>())
+        .def_readwrite("local_anchor_a",&PyRopeJointDef::localAnchorA)
+        .def_readwrite("local_anchor_b",&PyRopeJointDef::localAnchorB)
+        .def_readwrite("max_length", &PyRopeJointDef::maxLength)
+    ;
+
 }
 

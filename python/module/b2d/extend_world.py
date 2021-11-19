@@ -272,9 +272,15 @@ class World(_World):
     def create_revolute_joint(self,*args,**kwargs):
         d = revolute_joint_def(*args,**kwargs)
         return self.create_joint(d)
+        
     def create_wheel_joint(self,*args,**kwargs):
         d = wheel_joint_def(*args,**kwargs)
         return self.create_joint(d)
+
+    def create_rope_joint(self,*args,**kwargs):
+        d = rope_joint_def(*args,**kwargs)
+        return self.create_joint(d)
+
 
 
 

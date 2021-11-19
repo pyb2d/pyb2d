@@ -1,6 +1,8 @@
 from color_mixing import ColorMixing
 from function_shape import FunctionShape
 from gauss_machine import GaussMachine
+from newtons_cradle import NewtonsCradle
+
 import b2d
 from b2d.testbed.backend.no_gui import NoGui
 
@@ -11,6 +13,7 @@ import pytest
 
 examples = [
     FunctionShape,
+    NewtonsCradle
 ]
 
 lf_examples = [
