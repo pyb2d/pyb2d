@@ -22,6 +22,13 @@ namespace pybox2d {
         "This class show the compile/build configuration\n"
         "Of pybox2d\n"
         )
+        .def_property_readonly_static("BOX_2D_VERSION", [](py::object /* self */) {
+            #ifdef  PYBOX2D_LIQUID_FUN
+            return "2.3.0";
+            #else
+            return "2.4.1";
+            #endif
+        })
         .def_property_readonly_static("DEBUG", [](py::object /* self */) {
             #ifdef  NDEBUG
             return false;

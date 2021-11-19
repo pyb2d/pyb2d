@@ -36,8 +36,9 @@ void exportB2Particle(py::module & pybox2dModule){
 
     typedef PyDefExtender<b2ParticleDef> PyParticleDef;
 
-    py::class_<PyParticleDef> py_particle_def(pybox2dModule, "ParticleDef");
-    add_user_data_to_def_api<PyParticleDef>(py_particle_def);
+    py
+    ::class_<PyParticleDef> py_particle_def(pybox2dModule, "ParticleDef");
+    //add_user_data_to_def_api<PyParticleDef>(py_particle_def);
 
     py_particle_def
         .def(py::init<>())
