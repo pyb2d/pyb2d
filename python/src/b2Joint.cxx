@@ -303,9 +303,6 @@ void exportb2Joint(py::module & pybox2dModule){
         .def_property("damping",&b2MouseJoint::GetDamping, &b2MouseJoint::SetDamping)
         #endif
     ;
-   
-    py::class_<b2RopeJoint, Holder<b2RopeJoint>, b2Joint >(pybox2dModule,"RopeJoint")
-        .def_property("max_length",&b2RopeJoint::GetMaxLength, &b2RopeJoint::SetMaxLength)
-    ;
+
 }
 

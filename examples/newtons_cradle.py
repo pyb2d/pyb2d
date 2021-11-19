@@ -34,13 +34,14 @@ class NewtonsCradle(TestbedBase):
             dynamic_circles.append(circle)
 
             static_body = self.world.create_static_body(
-                position = (offset[0] + i*2*r, offset[1] + l),
+                position = (offset[0] + i*2*r, offset[1] + l)
             ) 
 
-            self.world.create_rope_joint(static_body, circle,
+            self.world.create_distance_joint(static_body, circle,
                 local_anchor_a=(0,0),
                 local_anchor_b=(0,0),
                 max_length=l,
+                stiffness=0,
             )
 
             static_bodies.append(static_body)

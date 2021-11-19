@@ -277,9 +277,6 @@ class World(_World):
         d = wheel_joint_def(*args,**kwargs)
         return self.create_joint(d)
 
-    def create_rope_joint(self,*args,**kwargs):
-        d = rope_joint_def(*args,**kwargs)
-        return self.create_joint(d)
 
 
 
