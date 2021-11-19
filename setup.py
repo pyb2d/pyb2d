@@ -3,7 +3,7 @@ import glob
 
 from pybind11 import get_cmake_dir
 # Available at setup time due to pyproject.toml
-from pybind11.setup_helpers import Pybind11Extension, build_ext
+from pybind11.setup_helpers import Pybind11Extension, build_ext,get_include
 from setuptools import setup, find_packages
 
 __version__ = "0.1.1"
@@ -35,7 +35,9 @@ binding_sources = [
     "python/src/b2World.cxx"
 ]
 
-include_dirs = []
+include_dirs = [
+    get_include()
+]
 
 if liquidfun:
     binding_sources += [
