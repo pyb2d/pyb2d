@@ -92,8 +92,8 @@ public:
 
                         b2Vec2 center = b2Mul(xf, circle->m_p);
                         const float radius = circle->m_radius;
-                        update_aabb(center + radius);
-                        update_aabb(center - radius);
+                        update_aabb(b2Vec2(center.x + radius, center.y + radius));
+                        update_aabb(b2Vec2(center.x - radius, center.y - radius));
                     }
                     break;
 
