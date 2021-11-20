@@ -42,6 +42,8 @@ jobs:
     - uses: pypa/cibuildwheel@v2.2.0
       env:
         CIBW_ARCHS_MACOS: auto universal2
+        CIBW_BEFORE_TEST: pip install pytest pytest-lazy-fixture
+        CIBW_TEST_COMMAND: python -m pytest python/tests  && pytest examples -s  
 
     - name: Verify clean directory
       run: git diff --exit-code
