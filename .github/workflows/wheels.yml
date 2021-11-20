@@ -42,7 +42,7 @@ jobs:
     - uses: pypa/cibuildwheel@v2.2.0
       env:
         CIBW_ARCHS_MACOS: auto universal2
-        CIBW_TEST_COMMAND: python -c "import b2d; import b2d.testbed"
+        CIBW_TEST_COMMAND: python -c "import b2d; import b2d.testbed; world = b2d.world(gravity=(10,-10));"
 
 
     - name: Verify clean directory
