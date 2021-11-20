@@ -21,7 +21,7 @@ class JupyterBatchDebugDraw(b2d.BatchDebugDrawNew):
     def draw_solid_polygons(self, points, sizes, colors):
         self._canvas.fill_styled_polygons(
             points=points.ravel(),
-            sizes=sizes,
+            points_per_polygon=sizes,
             color=colors.ravel(),
             alpha=1.0
         )
@@ -29,7 +29,7 @@ class JupyterBatchDebugDraw(b2d.BatchDebugDrawNew):
     def draw_polygons(self, points, sizes, colors):
         self._canvas.stroke_styled_polygons(
             points=points.ravel(),
-            sizes=sizes,
+            points_per_polygon=sizes,
             color=colors.ravel(),
             alpha=1.0
         )

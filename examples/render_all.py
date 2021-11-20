@@ -4,12 +4,10 @@ from gauss_machine import GaussMachine
 from newtons_cradle import NewtonsCradle
 from blender import Blender
 
+
 import b2d
 from b2d.testbed.backend.no_gui import NoGui
 
-
-
-import pytest
 
 
 examples = [
@@ -19,7 +17,7 @@ examples = [
 ]
 
 lf_examples = [
-    ColorMixing,
+    ColorMixing,`
     GaussMachine,
 ]
 
@@ -31,12 +29,16 @@ if b2d.BuildConfiguration.LIQUID_FUN:
 
 
 
+if __name__ == "__main__":
 
-@pytest.mark.parametrize("example_cls", 
-    examples
-)
-def test_eval(example_cls):
-    gui_settings = {
-    }
-    print(f"\nSimulate `{example_cls.name}:`")
-    example_cls.run(NoGui, gui_settings=gui_settings)
+    for example_cls in examples:
+
+        print(f"\nRender `{example_cls.name}:`")
+        from b2d.testbed.backend.gif_gui import GifGui
+        gui_settings = {
+            "fps" : 30,
+            "t" : 20,
+            "filename" : f"{example_cls.name}.gif"
+        }
+        testbed, gui = example_cls.run(GifGui, gui_settings=gui_settings)
+
