@@ -2,8 +2,6 @@ import numpy
 import b2d 
 import pygame
 import pygame.locals 
-from skimage.morphology import disk, binary_dilation
-
 
 class PyGameBatchDebugDraw(b2d.BatchDebugDrawNew):
 
