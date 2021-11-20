@@ -21,6 +21,7 @@ public:
         const py::object object
     )
     :   m_object(object),
+        m_screen_size{0,0},
         m_scale(1),
         m_translate(0,0),
         m_flip_y(true)
@@ -42,18 +43,47 @@ public:
 
     b2Vec2 world_to_screen(const b2Vec2 & world_vec)const
     {   
-        return b2Vec2(
-            world_vec.x * m_scale + m_translate.x,
-            world_vec.y * (m_flip_y ? -m_scale :  m_scale) + m_translate.y
-        );
+        if(!m_flip_y)
+        {
+
+            return b2Vec2(
+                world_vec.x * m_scale + m_translate.x,
+                world_vec.y * m_scale + m_translate.y
+            );
+        }
+        else
+        {
+            return b2Vec2(
+                world_vec.x * m_scale + m_translate.x,
+                m_screen_size[1] - world_vec.y * m_scale - m_translate.y
+            );
+        }
+        
     }
 
     b2Vec2 screen_to_world(const b2Vec2 & screen_vec)const
     {   
-        return b2Vec2(
-            (screen_vec.x  - m_translate.x) / m_scale,
-            (screen_vec.y  - m_translate.y) /  (m_flip_y ? -m_scale :  m_scale)
-        );
+
+        if(!m_flip_y)
+        {
+
+            return b2Vec2(
+                (screen_vec.x  - m_translate.x) / m_scale,
+                (screen_vec.y  - m_translate.y) / m_scale
+            );
+        }
+        else
+        {
+            return b2Vec2(
+                (screen_vec.x  - m_translate.x) / m_scale,
+                (m_screen_size[1] - (screen_vec.y + m_translate.y) )/ m_scale
+            );
+        }
+
+        // return b2Vec2(
+        //     (screen_vec.x  - m_translate.x) / m_scale,
+        //     (screen_vec.y  - m_translate.y) /  (m_flip_y ? -m_scale :  m_scale)
+        // );
     }
 
     float world_to_screen_scale(const float d) const
@@ -334,6 +364,7 @@ public:
     py::object m_object;
 
 public:
+    std::array<std::size_t, 2> m_screen_size;
     float m_scale;
     b2Vec2 m_translate;
     bool m_flip_y;

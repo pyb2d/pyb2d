@@ -31,17 +31,13 @@ class JupyterGui(object):
     def __init__(self, testbed_cls, settings, testbed_kwargs=None):
         
         self.id = settings["id"]
-        print(self.id)
-
         if self.id in _id_to_gui:
             old_self = _id_to_gui[self.id]
             old_self._terminate()
         _id_to_gui[self.id] = self
 
         # settings
-        resolution = settings.get("resolution", (640,480))
-        if resolution is None:
-            resolution = (640,480)
+        resolution = settings.get("resolution",  (1024,768))
         self.resolution = resolution
 
         self.settings = settings
@@ -64,8 +60,8 @@ class JupyterGui(object):
         # flag to stop loop
         self._exit = False
        
-        self.scale = settings.get("scale", 30) 
-        self.translate = settings.get("translate", (0, self.resolution[1]))
+        self.scale = settings.get("scale", 20) 
+        self.translate = settings.get("translate", (10,10))
 
 
         # Thread related
@@ -88,6 +84,7 @@ class JupyterGui(object):
         # make debug draw
         self.debug_draw = JupyterBatchDebugDraw(self.multi_canvas[self.flip_bit], 
             flags=self._debug_draw_flags)
+        self.debug_draw.screen_size = self.resolution
         self.debug_draw.scale = self.scale
         self.debug_draw.translate = self.translate
         self.debug_draw.flip_y = True

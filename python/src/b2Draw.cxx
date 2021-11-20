@@ -34,6 +34,8 @@ void exportB2Draw(py::module & pybox2dModule){
         .def_property_readonly("bounding_box", &PyB2Draw::getBoundingBox)
         .def("_append_flags_int",[](PyB2Draw * draw,const int flag){draw->AppendFlags(flag);})
         .def("_clear_flags_int",[](PyB2Draw * draw,const int flag){draw->ClearFlags(flag);})
+
+        .def_readwrite("screen_size",&PyB2Draw::m_screen_size)
         .def_readwrite("scale",&PyB2Draw::m_scale)
         .def_readwrite("translate",&PyB2Draw::m_translate)
         .def_readwrite("flip_y",&PyB2Draw::m_flip_y)
@@ -47,6 +49,8 @@ void exportB2Draw(py::module & pybox2dModule){
         .def(py::init<const py::object &>())
         .def("_append_flags_int",[](BatchDebugDrawCaller * draw,const int flag){draw->AppendFlags(flag);})
         .def("_clear_flags_int",[](BatchDebugDrawCaller * draw,const int flag){draw->ClearFlags(flag);})
+
+        .def_readwrite("screen_size",&BatchDebugDrawCaller::m_screen_size)
         .def_readwrite("scale",&BatchDebugDrawCaller::m_scale)
         .def_readwrite("translate",&BatchDebugDrawCaller::m_translate)
         .def_readwrite("flip_y",&BatchDebugDrawCaller::m_flip_y)

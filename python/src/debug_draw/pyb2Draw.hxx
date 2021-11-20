@@ -34,6 +34,7 @@ public:
     )
     :   m_object(object),
         m_float_colors(float_colors),
+        m_screen_size{0,0},
         m_scale(1),
         m_translate(0,0),
         m_flip_y(true)
@@ -309,7 +310,7 @@ public:
     std::array<float, 2> m_min_coord;
     std::array<float, 2> m_max_coord;
 public:
-
+    std::array<std::size_t, 2> m_screen_size;
     float m_scale;
     b2Vec2 m_translate;
     bool m_flip_y;

@@ -17,19 +17,17 @@ class GifGui(object):
         self._n = int(0.5 + self._t / self._dt)
 
         # settings
-        resolution = settings.get("resolution", (640,480))
+        resolution = settings.get("resolution",  (1000,1000))
         self.resolution = resolution
-        print("resolution",resolution)
-
 
         self.image = numpy.zeros(list(self.resolution) + [3], dtype='uint8')
         self._image_list = []
         self.debug_draw = OpenCvBatchDebugDraw(image=self.image)
         self._filename = settings['filename']
-
+        self.debug_draw.screen_size = self.resolution
         self.debug_draw.flip_y = True
-        self.debug_draw.scale =  settings.get("scale", 50.0)
-        self.debug_draw.translate =settings.get("translate", (0, self.resolution[1]/2.0))
+        self.debug_draw.scale =  settings.get("scale", 20.0)
+        self.debug_draw.translate =settings.get("translate", (10,10))
 
 
 
