@@ -68,15 +68,11 @@ class GaussMachine(TestbedBase):
 
 if __name__ == "__main__":
 
-    # from b2d.testbed.backend.pygame import PygameGui as Gui
+    from b2d.testbed.backend.pygame import PygameGui as Gui
+    GaussMachine.run(Gui)
+
+    # from b2d.testbed.backend.no_gui import NoGui as Gui
     # gui_settings = {
-    #     "fps" : 40,
-    #     "resolution" : (1000,1000)
     # }
+
     # GaussMachine.run(Gui, gui_settings=gui_settings)
-
-    from b2d.testbed.backend.no_gui import NoGui as Gui
-    gui_settings = {
-    }
-
-    GaussMachine.run(Gui, gui_settings=gui_settings)

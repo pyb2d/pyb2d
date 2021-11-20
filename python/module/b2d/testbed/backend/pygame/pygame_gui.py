@@ -10,7 +10,8 @@ class PygameGui(object):
     def __init__(self, testbed_cls, settings=None, testbed_kwargs=None):
 
         # settings
-        resolution = settings.get("resolution", (640,480))
+        resolution = settings.get("resolution", (1024,768))
+        self.settings = settings
         self.resolution = resolution
         print("resolution",resolution)
 
@@ -59,9 +60,10 @@ class PygameGui(object):
         # debug draw
         # self.debug_draw = PygameDebugDraw(surface=self._surface)
         self.debug_draw = PyGameBatchDebugDraw(surface=self._surface)
+        self.debug_draw.screen_size = self.resolution
         self.debug_draw.flip_y = True
-        self.debug_draw.scale = 50.0
-        self.debug_draw.translate = (0, self.resolution[1]/2)
+        self.debug_draw.scale = self.settings.get("scale",20.0)
+        self.debug_draw.translate = self.settings.get("translate", [10.0,10.0])
         self.debug_draw.append_flags([
             'shape',
             'joint',
@@ -116,7 +118,7 @@ class PygameGui(object):
             translate = self.debug_draw.translate
             self.debug_draw.translate = (
                 translate.x - delta[0],
-                translate.y - delta[1]
+                translate.y + delta[1]
             )
         # 
         self._last_was_drag = drag_mode

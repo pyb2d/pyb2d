@@ -11,18 +11,23 @@ class NewtonsCradle(TestbedBase):
         # radius of the circles
         r  = 1.0 
         # length of the rope
-        l  = 30.0
+        l  = 10.0
         # how many balls
-        n  =20
+        n  = 10
 
-        offset = (0,0)
+        offset = (l+r,2*r)
         dynamic_circles = []
         static_bodies = []
         for i in range(n):
+            if i + 1 == n:
+                position = (offset[0] +  i*2*r +l, offset[1] + l)
+            else:
+                position = (offset[0] +  i*2*r, offset[1])
+
             circle = self.world.create_dynamic_body(
-                position = (offset[0] +  i*2*r, offset[1]),
+                position = position,
                 fixtures=b2d.fixture_def(
-                    shape=b2d.circle_shape(radius=r*0.99),
+                    shape=b2d.circle_shape(radius=r*0.90),
                     density=1.0,
                     restitution=1.0,
                     friction=0.0
@@ -49,7 +54,5 @@ class NewtonsCradle(TestbedBase):
 if __name__ == "__main__":
     from b2d.testbed.backend.pygame import PygameGui
     gui_settings = {
-        "fps" : 40,
-        "resolution" : (1000,1000)
     }
     NewtonsCradle.run(PygameGui, gui_settings=gui_settings)

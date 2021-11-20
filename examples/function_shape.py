@@ -11,8 +11,8 @@ class FunctionShape(TestbedBase):
  
 
         
-        x = numpy.linspace(start=1,stop=100, num=500)
-        y = numpy.sin(x) * numpy.log(x)
+        x = numpy.linspace(start=1,stop=30, num=100)
+        y = numpy.sin(x) * numpy.log(x) + 5.5
         verts = numpy.stack([x,y],-1)
         verts = numpy.require(verts, requirements=['C'])
 
@@ -29,13 +29,6 @@ class FunctionShape(TestbedBase):
                 density=1.0,
             )
 
-
-
-
 if __name__ == "__main__":
     from b2d.testbed.backend.pygame import PygameGui
-    gui_settings = {
-        "fps" : 40,
-        "resolution" : (1000,1000)
-    }
-    FunctionShape.run(PygameGui, gui_settings=gui_settings)
+    FunctionShape.run(PygameGui)

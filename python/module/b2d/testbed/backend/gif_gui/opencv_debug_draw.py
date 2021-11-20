@@ -2,11 +2,6 @@ import numpy
 import b2d 
 import cv2 as cv
 
-import pygame
-import pygame.locals 
-from skimage.morphology import disk, binary_dilation
-
-
 class OpenCvBatchDebugDraw(b2d.BatchDebugDrawNew):
 
     def __init__(self, image, flags=None):
@@ -92,7 +87,7 @@ class OpenCvBatchDebugDraw(b2d.BatchDebugDrawNew):
         for i in range(n_particles):
 
             if colors is None:
-                c = default_color
+                color = default_color
             else:
                 color = tuple(map(int, colors[i,:]))
 

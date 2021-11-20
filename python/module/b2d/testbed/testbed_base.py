@@ -123,10 +123,10 @@ class TestbedBase(
                 body_a=self.groundbody,
                 body_b=body,
                 target=p,
-                max_force=50000.0 * body.mass
+                max_force=50000.0 * body.mass,
+                stiffness=1000.0
             )
-            if not b2d.BuildConfiguration.OLD_BOX2D:
-                kwargs["stiffness"] = 100.0
+
             self.mouse_joint = self.world.create_mouse_joint(**kwargs)
             body.awake = True
 
