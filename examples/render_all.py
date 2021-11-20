@@ -2,6 +2,8 @@ from color_mixing import ColorMixing
 from function_shape import FunctionShape
 from gauss_machine import GaussMachine
 from newtons_cradle import NewtonsCradle
+from blender import Blender
+
 
 import b2d
 from b2d.testbed.backend.no_gui import NoGui
@@ -15,7 +17,7 @@ examples = [
 ]
 
 lf_examples = [
-    ColorMixing,
+    ColorMixing,`
     GaussMachine,
 ]
 
