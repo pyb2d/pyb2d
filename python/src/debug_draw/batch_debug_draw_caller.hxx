@@ -37,6 +37,7 @@ public:
         this->trigger_callbacks();
         m_object.attr("end_draw")();
     }
+    
     bool ReleaseGilWhileDebugDraw() override {
         return true;
     }
@@ -91,13 +92,10 @@ public:
         return m_scale * d;
     }
 
-
     float screen_to_world_scale(const float d) const
     {
         return d/m_scale;
     }
-
-
 
     inline static UInt8Color make_uint8_color(const b2Color& color )
     {
@@ -107,7 +105,6 @@ public:
             (color.b * 255.0f) + 0.5f
         );
     }
-
    
     virtual void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
     {

@@ -1,3 +1,4 @@
+#pragma once
 namespace py = pybind11;
 
 template<class CLS, class PY_CLS>

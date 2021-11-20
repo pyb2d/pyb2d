@@ -13,7 +13,6 @@ public:
     virtual bool ReleaseGilWhileDebugDraw() {
         return false;
     }
-
 };
 
 #endif //PYBOX2D_DEBUG_DRAW_EXTENDED_DEBUG_DRAW_HXX
