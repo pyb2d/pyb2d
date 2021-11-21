@@ -7,7 +7,7 @@
 
 
 
-class BatchDebugDrawCaller : public ExtendedDebugDrawBase {
+class BatchDebugDrawCallerBase : public ExtendedDebugDrawBase {
 public:
 
     typedef std::pair<float,float> P;
@@ -15,9 +15,9 @@ public:
 
 
 
-    virtual ~BatchDebugDrawCaller() {}
+    virtual ~BatchDebugDrawCallerBase() {}
 
-    BatchDebugDrawCaller(
+    BatchDebugDrawCallerBase(
         const py::object object
     )
     :   m_object(object),
@@ -366,6 +366,11 @@ public:
     b2Vec2 m_translate;
     bool m_flip_y;
 
+};
+
+class BatchDebugDrawCaller : public BatchDebugDrawCallerBase{
+    using base_type = BatchDebugDrawCallerBase;
+    using base_type::base_type;
 };
 
 
