@@ -25,80 +25,9 @@ class World(_World):
     def set_destruction_listener(self, listener):
         self._set_destruction_listener(listener)
 
-    def set_batch_debug_draw(self, batch_debug_draw):
 
-        self._batch_debug_draw = batch_debug_draw
-        self._batch_debug_draw_options = batch_debug_draw.options
-        self._batch_debug_draw_collector = BatchDebugDrawCollector(self._batch_debug_draw_options)
-
-        self._inactive_body_color  = (0.5, 0.5, 0.3)
-        self._static_body_color    = (0.5, 0.9, 0.5)
-        self._kinematic_body_color = (0.5, 0.5, 0.9)
-        self._sleeping_body_color  = (0.6, 0.6, 0.6)
-        self._dynamic_body_color   = (0.9, 0.7, 0.7)
-
-        self._joint_color = (0.5, 0.8, 0.8)
-        self._axis_color = (0.2, 0.2, 0.2)
-        self._aabb_color = (0.9, 0.3, 0.9)
-
-    def batch_draw_debug_data(self):
-
-        if self._batch_debug_draw_collector is not None:
-            opts = self._batch_debug_draw_options
-            pseudo_body_types = [
-                "inactive_body",
-                "static_body",
-                "kinematic_body",
-                "sleeping_body",
-                "dynamic_body",
-            ]
-
-
-
-
-            batch_debug_draw = self._batch_debug_draw
-            collector = self._batch_debug_draw_collector
-
-            # collect the data
-            collector.collect(self)
-
-            # the bounding box of the overall drawin area
-            aabb = collector.drawing_aabb
-            batch_debug_draw.drawing_aabb(aabb)
-
-            if opts.draw_shapes:
-
-                for pseudo_body_type in pseudo_body_types:
-                    verts,connect = getattr(collector,"%s_polygon_shapes"%pseudo_body_type)()
-                    color = getattr(self,"_%s_color"%pseudo_body_type)
-                    batch_debug_draw.draw_solid_polygons(verts, connect, color)
-
-                verts = collector.circles_axis()
-                color = self._axis_color
-                batch_debug_draw.draw_segments(verts, 'pairs', color)
-
-                for pseudo_body_type in pseudo_body_types:
-                    verts,connect = getattr(collector,"%s_chain_shapes"%pseudo_body_type)()
-                    color = getattr(self,"_%s_color"%pseudo_body_type)
-                    batch_debug_draw.draw_segments(verts, connect, color)
-            
-            if opts.draw_joints:
-                points = collector.joint_segments()
-                color = self._joint_color
-                batch_debug_draw.draw_segments(points, 'pairs', color)
-
-            if opts.draw_aabbs:
-                verts,connect = collector.aabbs()
-                color = self._aabb_color
-                batch_debug_draw.draw_polygons(verts, connect, color)
-
-
-
-
-            collector.clear()
-
-        else:
-            pass
+    def draw_debug_data(self, callback=None):
+        self._draw_debug_data(callback)
 
     # helper functions
     def find_fixture(self, pos, margin=0.001):

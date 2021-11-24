@@ -72,7 +72,7 @@ class PygameGui(object):
             'center_of_mass',
             'particle'
         ])
-        self._testworld.world.set_debug_draw(self.debug_draw)
+        self._testworld.set_debug_draw(self.debug_draw)
 
         # Event loop
         while 1:
@@ -176,7 +176,7 @@ class PygameGui(object):
 
     def _draw_world(self):
         self._surface.fill((0,0,0))
-        self._testworld.world.draw_debug_data()
+        self._testworld.draw_debug_data()
         pygame.display.update()
 
     def _step_world(self):

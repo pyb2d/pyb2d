@@ -14,6 +14,7 @@ namespace py = pybind11;
 
 
 
+
 void exportB2World(py::module & pybox2dModule){
     typedef PyWorld world_type;
 
@@ -135,7 +136,7 @@ void exportB2World(py::module & pybox2dModule){
         )
         #endif
         .def("clearForces",&world_type::ClearForces)
-        .def("draw_debug_data",&world_type::ExtendedDebugDraw)
+        .def("_draw_debug_data",&world_type::ExtendedDebugDraw)
         .def("query_aabb", 
             [](const world_type & world, PyB2QueryCallbackCaller * cb, const b2AABB & aabb ){
                 return world.QueryAABB(cb, aabb);

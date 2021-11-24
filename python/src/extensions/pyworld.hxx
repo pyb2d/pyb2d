@@ -45,10 +45,19 @@ public:
     }
     #endif
 
-    void ExtendedDebugDraw()
+    void ExtendedDebugDraw(const py::object & object)
     {
+        bool has_pre_debug_draw = py::hasattr(object, "pre_debug_draw");
+        bool has_post_debug_draw = py::hasattr(object, "post_debug_draw");
+
         if(p_extended_debug_draw){
             p_extended_debug_draw->BeginDraw();
+            if(has_pre_debug_draw)
+            {
+                object.attr("pre_debug_draw")();
+            }
+
+            // 
             if(p_extended_debug_draw->ReleaseGilWhileDebugDraw())
             {
                 py::gil_scoped_release release;
@@ -58,6 +67,12 @@ public:
             {
                 this->DebugDraw();
             }
+
+            if(has_post_debug_draw)
+            {
+                object.attr("post_debug_draw")();
+            }
+
             p_extended_debug_draw->EndDraw();
         }
     }

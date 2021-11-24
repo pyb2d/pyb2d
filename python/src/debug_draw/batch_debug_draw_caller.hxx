@@ -135,7 +135,7 @@ public:
        m_point_coords.push_back(c.x);
        m_point_coords.push_back(c.y);
        m_point_sizes.push_back(this->world_to_screen_scale(size));
-       add_color(color, m_circle_colors);
+       add_color(color, m_point_colors);
     }
 
     virtual void DrawCircle(const b2Vec2& center, float radius, const b2Color& color) {

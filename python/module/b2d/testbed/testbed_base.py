@@ -12,7 +12,17 @@ import time
 #         super(TestbedConactListener, self).__init__()
 
 
+class DebugDrawCallback(object):
 
+    def __init__(self, pre_debug_draw, post_debug_draw):
+        self._pre_debug_draw = pre_debug_draw
+        self._post_debug_draw = post_debug_draw
+
+    def pre_debug_draw(self):
+        self._pre_debug_draw()
+
+    def post_debug_draw(self ):
+        self._post_debug_draw()
 
 
 class TestbedBase(
@@ -41,24 +51,51 @@ class TestbedBase(
         self.world = None
         self.bomb = None
         self.mouse_joint = None
+
         # self.framework_settings = FrameworkSettings
         self.step_count = 0
         self.is_paused = False
         self.__time_last_step = None
         self.current_fps = 0.0
 
+        # the b2d world itself
         self.world = b2d.world(gravity)
         self.groundbody = self.world.create_body()
         
         self.world.set_contact_listener(self)
         self.world.set_destruction_listener(self)
         self.iter = 0
+
+        # debug draw 
+        self.debug_draw = None
+
+    def set_debug_draw(self, debug_draw):
+        if self.debug_draw is not None:
+            raise RuntimeError("debug draw has already been set") 
+        self.debug_draw = debug_draw
+        self.world.set_debug_draw(self.debug_draw)
+
+    def pre_debug_draw(self):
+        pass
+    def post_debug_draw(self):
+        pass
+
+    def draw_debug_data(self):
+
+        callback = DebugDrawCallback(
+            pre_debug_draw=self.pre_debug_draw,
+            post_debug_draw=self.post_debug_draw
+        )
+        self.world.draw_debug_data(callback)
+
+
     def set_gui(self, gui):
         self._gui = gui
 
     def is_key_down(self, key):
         return self._gui.is_key_down(key)
-    
+
+
     def step(self, dt):
         self.pre_step(dt)
         self.world.step(dt, 5, 5)
@@ -74,13 +111,13 @@ class TestbedBase(
                 self.current_fps = float('inf')
                 
         self.step_count += 1
-        self.post_step(dt)
         self.iter += 1
+        self.post_step(dt)
+
+
     def say_goodbye_world(self):
         pass
 
-    def auto_step(self):
-        pass
 
     def pre_step(self, dt):
         pass
