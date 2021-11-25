@@ -1,3 +1,10 @@
+"""
+Color Mixing
+===========================
+
+This example show how to create particles which mix colors when they touch
+"""
+
 from b2d.testbed import TestbedBase
 import random
 import numpy
@@ -60,5 +67,4 @@ class ColorMixing(TestbedBase):
             group = psystem.create_particle_group(pgDef)
             
 if __name__ == "__main__":
-    from b2d.testbed.backend.pygame import PygameGui
-    ColorMixing.run(PygameGui)
+    b2d.testbed.run(ColorMixing)

@@ -17,6 +17,9 @@ import os
 
 import b2d
 
+
+os.environ["PYB2D_SPHINX_BUILD"] = 'True'
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -35,6 +38,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosummary',
     'sphinx.ext.napoleon',
+    'sphinx_gallery.gen_gallery',
 ]
 
 autosummary_generate = True
@@ -294,3 +298,12 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+
+
+sphinx_gallery_conf = {
+     'examples_dirs': '../examples',   # path to your example scripts
+     'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output\
+     'matplotlib_animations': True,
+     'ignore_pattern': r'.*\.ipynb|test_all.py',
+}
