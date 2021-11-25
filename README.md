@@ -5,6 +5,9 @@
 
 [![Pip](https://github.com/pyb2d/pyb2d/actions/workflows/pip.yml/badge.svg)](https://github.com/pyb2d/pyb2d/actions/workflows/pip.yml)
 
+[![Documentation Status](https://readthedocs.org/projects/pyb2d/badge/?version=latest)](https://pyb2d.readthedocs.io/en/latest/?badge=latest)
+
+
 Warning, this is a work in progress and all APIs are subject to changes!
 Nothing is stable yet.
 
