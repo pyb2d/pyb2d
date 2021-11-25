@@ -2,6 +2,8 @@ from ..gif_gui import GifGui
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import matplotlib
+matplotlib.rc('animation', html='html5')
 
 class MatplotlibGifGui(GifGui):
     def __init__(self, *args, **kwargs):

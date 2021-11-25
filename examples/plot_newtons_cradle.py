@@ -59,4 +59,6 @@ class NewtonsCradle(TestbedBase):
             static_bodies.append(static_body)
         
 if __name__ == "__main__":
+    import os
+    os.environ['PYB2D_SPHINX_BUILD'] = 'True'
     testbed, gui = b2d.testbed.run(NewtonsCradle)
