@@ -18,11 +18,25 @@ void exportB2Draw(py::module & pybox2dModule){
 
 
     py::class_<b2Color>(pybox2dModule, "Color")
+        .def(py::init([](py::tuple t) { 
+            if(py::len(t) != 3)
+            {
+                throw std::runtime_error("tuple has wrong length");
+            }
+            return new b2Color(
+                    t[0].cast<float>(), 
+                    t[1].cast<float>(),
+                    t[2].cast<float>()
+                ); 
+            }
+        )) 
+
+
         .def_readwrite("r",&b2Color::r)
         .def_readwrite("g",&b2Color::g)
         .def_readwrite("b",&b2Color::b)
     ;
-
+    py::implicitly_convertible<py::tuple, b2Color>();
 
     {
         auto pyCls = py::class_<PyB2Draw>(pybox2dModule,"DrawCaller");

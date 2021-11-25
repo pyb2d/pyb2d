@@ -37,8 +37,21 @@ class PyGameBatchDebugDraw(b2d.BatchDebugDrawNew):
 
 
     def draw_solid_circles(self, centers, radii, axis, colors):
+
+        # draw circles itself
         self._draw_circles(centers, radii, colors, lw=0)
-        
+
+        p = centers - numpy.flip(axis,1) * radii[:, None] 
+
+        n  = centers.shape[0]
+        for i in range(n):
+            pygame.draw.line(
+                self._surface,
+                (colors[i,:] * 0.5),
+                centers[i,...],
+                p[i,...]
+            )
+
     def draw_circles(self, centers, radii, colors):
         self._draw_circles(centers, radii, colors, lw=1)
 
