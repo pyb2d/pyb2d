@@ -1,3 +1,10 @@
+"""
+Newtons Cradle
+===========================
+
+This example shows how to implement newtons cradle with b2d
+"""
+
 from b2d.testbed import TestbedBase
 import b2d
 
@@ -52,7 +59,4 @@ class NewtonsCradle(TestbedBase):
             static_bodies.append(static_body)
         
 if __name__ == "__main__":
-    from b2d.testbed.backend.pygame import PygameGui
-    gui_settings = {
-    }
-    NewtonsCradle.run(PygameGui, gui_settings=gui_settings)
+    testbed, gui = b2d.testbed.run(NewtonsCradle)

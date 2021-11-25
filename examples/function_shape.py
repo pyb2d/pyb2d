@@ -1,3 +1,11 @@
+"""
+Function Shape
+===========================
+
+This example show how to create a shape from a mathematical function.
+In this example we use f(x) = sin(x) + log(x) + 5.5
+"""
+
 from b2d.testbed import TestbedBase
 import random
 import numpy
@@ -30,5 +38,4 @@ class FunctionShape(TestbedBase):
             )
 
 if __name__ == "__main__":
-    from b2d.testbed.backend.pygame import PygameGui
-    FunctionShape.run(PygameGui)
+    b2d.testbed.run(FunctionShape)

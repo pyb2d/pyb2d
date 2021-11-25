@@ -8,3 +8,4 @@ Contents:
 
    pyb2d 
 
+   auto_examples/index

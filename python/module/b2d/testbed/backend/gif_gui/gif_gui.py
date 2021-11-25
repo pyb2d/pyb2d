@@ -23,7 +23,7 @@ class GifGui(object):
         self.image = numpy.zeros(list(self.resolution) + [3], dtype='uint8')
         self._image_list = []
         self.debug_draw = OpenCvBatchDebugDraw(image=self.image)
-        self._filename = settings['filename']
+        self._filename = settings.get('filename', f"{str(testbed_cls.__name__)}.gif")
         self.debug_draw.screen_size = self.resolution
         self.debug_draw.flip_y = True
         self.debug_draw.scale =  settings.get("scale", 20.0)

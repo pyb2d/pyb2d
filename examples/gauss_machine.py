@@ -1,3 +1,9 @@
+"""
+Gauss Machine
+===========================
+
+This example shows how to approximate a gaussian function in a fun way 
+"""
 from b2d.testbed import TestbedBase
 import random
 import numpy
@@ -67,12 +73,4 @@ class GaussMachine(TestbedBase):
 
 
 if __name__ == "__main__":
-
-    from b2d.testbed.backend.pygame import PygameGui as Gui
-    GaussMachine.run(Gui)
-
-    # from b2d.testbed.backend.no_gui import NoGui as Gui
-    # gui_settings = {
-    # }
-
-    # GaussMachine.run(Gui, gui_settings=gui_settings)
+    b2d.testbed.run(GaussMachine)
