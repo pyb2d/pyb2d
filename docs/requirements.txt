@@ -1,2 +1,3 @@
 opencv-python
 sphinx-gallery
+matplotlib
