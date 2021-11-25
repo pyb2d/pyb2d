@@ -42,8 +42,7 @@ class GifGui(object):
 
         for i in range(self._n):
             self._testworld.step(self._dt)
-            self._testworld.world.draw_debug_data()
-
+            self._testworld.draw_debug_data()
 
             self._image_list.append(self.image.copy())
             self.image[...] = 0

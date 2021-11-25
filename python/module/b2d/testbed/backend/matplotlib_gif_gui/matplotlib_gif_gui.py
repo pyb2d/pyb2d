@@ -31,13 +31,13 @@ class MatplotlibGifGui(GifGui):
     def start_ui(self):
         
         self._testworld = self.testbed_cls(**self.testbed_kwargs)
-        self._testworld.world.set_debug_draw(self.debug_draw)
+        self._testworld.set_debug_draw(self.debug_draw)
         
         self._image_list = []
 
         def make_next_img():
             self._testworld.step(self._dt)
-            self._testworld.world.draw_debug_data()
+            self._testworld.draw_debug_data()
             ret =  self.image.copy()
             self.image[...] = 0
             return ret 
