@@ -41,16 +41,8 @@ class PyGameBatchDebugDraw(b2d.BatchDebugDrawNew):
         # draw circles itself
         self._draw_circles(centers, radii, colors, lw=0)
 
-        # # draw axis
-        # axis = axis.copy()
-        # axis[0] *= -1.0
-        # axis[1] *= -1.0
-        # axis *= radii[:,None]
-        # axis += centers
-
         p = centers - numpy.flip(axis,1) * radii[:, None] 
 
-        print("axis.shape2",axis.shape)
         n  = centers.shape[0]
         for i in range(n):
             pygame.draw.line(
