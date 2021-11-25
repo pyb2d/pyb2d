@@ -37,8 +37,7 @@ class GifGui(object):
     def start_ui(self):
         
         self._testworld = self.testbed_cls(**self.testbed_kwargs)
-        self._testworld.world.set_debug_draw(self.debug_draw)
-        
+        self._testworld.set_debug_draw(self.debug_draw)
         self._image_list = []
 
         for i in range(self._n):

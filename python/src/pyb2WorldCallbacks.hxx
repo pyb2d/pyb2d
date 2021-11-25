@@ -80,8 +80,6 @@ private:
 };
 
 
-
-
 class PyB2DestructionListenerCaller : public b2DestructionListener {
 public:
     /* Inherit the constructors */

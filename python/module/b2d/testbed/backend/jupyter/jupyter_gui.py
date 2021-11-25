@@ -88,7 +88,7 @@ class JupyterGui(object):
         self.debug_draw.scale = self.scale
         self.debug_draw.translate = self.translate
         self.debug_draw.flip_y = True
-        self._testworld.world.set_debug_draw(self.debug_draw)
+        self._testworld.set_debug_draw(self.debug_draw)
 
     def start_ui(self):
         # make the canvas

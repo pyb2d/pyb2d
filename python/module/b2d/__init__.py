@@ -28,7 +28,7 @@ class RayCastCallback(RayCastCallbackCaller):
     def __init__(self):
         super(RayCastCallback,self).__init__(self)
 
-    def report_fixture(self, fixture, point1, point2):
+    def report_fixture(self, fixture, point, normal, fraction):
         raise NotImplementedError 
     #def report_particle(self, particleSystem, index):
     #    return False
@@ -101,40 +101,6 @@ class DebugDraw(DrawCaller):
     def draw_transform(self, xf):
         raise NotImplementedError 
 
-class BatchDebugDrawOld(DebugDraw):
-
-    def __init__(self, options = None, float_colors=True):
-        super(BatchDebugDrawOld, self).__init__(float_colors=float_colors)
-        if options is None:
-            options = BatchDebugDrawOptions()
-
-        self.options = options
-
-    def begin_draw(self):
-        pass
-
-    def end_draw(self):
-        pass
-
-    def drawing_aabb(self, aabb):
-        pass
-
-    def draw_solid_polygons(self, points, connect, color):
-        pass
-
-    def draw_polygons(self, points, connect, color):
-        pass
-
-    def draw_segments(self, points, connect, color):
-        pass
-
-    def draw_circles(self, centers, radii, color):
-        pass
-
-    def draw_particles(self, centers, radius, colors):
-        pass
-
-
 
 class BatchDebugDrawNew(BatchDebugDrawCaller):
 
@@ -197,47 +163,3 @@ class DestructionListener(DestructionListenerCaller):
         pass
     def say_goodbye_particle_system(self, particleSystem,index):
         pass
-
-
-
-
-
-# class BatchDebugDraw(object):
-#     def __init__(self, world):
-#         opts = ExtendedDebugDrawOptions()
-#         self.edd = ExtendedDebugDraw(opts)
-#         self.world = world
-    
-
-#         self.inactive_body_color  = (0.5, 0.5, 0.3)
-#         self.static_body_color    = (0.5, 0.9, 0.5)
-#         self.kinematic_body_color = (0.5, 0.5, 0.9)
-#         self.sleeping_body_color  = (0.6, 0.6, 0.6)
-#         self.dynamic_body_color   = (0.9, 0.7, 0.7)
-
-#     def get_polygon_shapes(self):
-#         names = [
-#             "inactive_body",
-#             "static_body",
-#             "kinematic_body",
-#             "sleeping_body",
-#             "dynamic_body",
-#         ]
-#         ret = dict()
-#         for name in names:
-#             sub_dict = dict()
-            
-#             f = getattr(self.edd,"%s_polygon_shapes"%name)
-#             verts,connect = f()
-
-#             sub_dict['color'] = getattr(self, "%s_color"%name)
-#             sub_dict['vertices'] = verts.copy()
-#             sub_dict['connect'] = connect.copy()
-#             ret[name] = sub_dict
-#         return ret
-
-#     def fill(self):
-#         self.edd.fill(self.world)
-
-#     def clear(self):
-#         self.edd.clear()
