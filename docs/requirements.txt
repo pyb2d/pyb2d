@@ -1,3 +1,4 @@
 opencv-python
 sphinx-gallery
 matplotlib
+imageio
