@@ -1,35 +1,35 @@
-class EmptyDebugDraw(object):
+import b2d 
+
+class EmptyDebugDraw(b2d.BatchDebugDrawNew):
+
+    def __init__(self):
+        super(EmptyDebugDraw,self).__init__()
 
 
-    def begin_draw(self):
+    def draw_solid_polygons(self, points, sizes, colors):
         pass
 
-    def end_draw(self):
+    def draw_polygons(self, points, sizes, colors):
         pass
 
-    def draw_solid_circle(self, center, radius, axis, c):
-        pass 
+    def draw_solid_circles(self, centers, radii, axis, colors):
+        pass
 
-    def draw_point(self, center, size, c):
-        pass 
+    def draw_circles(self, centers, radii, colors):
+        pass
 
-    def draw_circle(self, center, radius, c):
-        pass 
+    def _draw_circles(self, centers, radii,  colors, lw):
+        pass
 
-    def draw_segment(self,v1, v2, c):
-        pass 
+    def draw_points(self, centers, sizes, colors):
+        pass
 
-    def draw_polygon(self,vertices, c):
-        pass 
+    def draw_segments(self, points, colors):
+        pass
 
-    def draw_solid_polygon(self,vertices, c):
-        pass 
+    def draw_particles(self, centers, radius, colors=None):
+        pass
 
-    def draw_particles(self, centers, radius,  c=None):
-        pass 
-    
-    def draw_transform(self, xf):
-        pass 
 
 class NoGui(object):
     def __init__(self, testbed_cls, settings, testbed_kwargs=None):
@@ -49,6 +49,6 @@ class NoGui(object):
         
         self._testworld = self.testbed_cls(**self.testbed_kwargs)
         self._testworld.set_debug_draw(self.debug_draw)
-        
+
         for i in range(self._n):
             self._testworld.step(self._dt)
