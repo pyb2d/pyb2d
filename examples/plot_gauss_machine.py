@@ -72,5 +72,8 @@ class GaussMachine(TestbedBase):
 
 
 
+
 if __name__ == "__main__":
-    b2d.testbed.run(GaussMachine)
+            
+    ani = b2d.testbed.run(GaussMachine)
+    ani

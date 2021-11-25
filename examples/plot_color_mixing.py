@@ -66,5 +66,8 @@ class ColorMixing(TestbedBase):
                                      )
             group = psystem.create_particle_group(pgDef)
             
+
 if __name__ == "__main__":
-    b2d.testbed.run(ColorMixing)
+        
+    ani = b2d.testbed.run(ColorMixing)
+    ani

@@ -1,5 +1,5 @@
 """
-Color Mixing
+Blender
 ===========================
 
 This example show how to create a blender with Box2D
@@ -74,7 +74,6 @@ class Blender(TestbedBase):
 
 
 if __name__ == "__main__":
-    import os
-    import matplotlib.pyplot as plt
-    os.environ["PYB2D_SPHINX_BUILD"]='True'
-    testbed, gui = b2d.testbed.run(Blender)
+
+    ani =  b2d.testbed.run(Blender)
+    ani
