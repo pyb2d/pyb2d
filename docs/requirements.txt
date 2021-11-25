@@ -2,3 +2,4 @@ opencv-python
 sphinx-gallery
 matplotlib
 imageio
+ffmpeg-python
