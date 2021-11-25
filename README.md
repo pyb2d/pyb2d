@@ -16,7 +16,7 @@ Nothing is stable yet.
 
 * Jupyter Integration
 
-![jupyter_integration](doc/img/jupyter_integration.gif)
+![jupyter_integration](docs/img/jupyter_integration.gif)
 
 
 
