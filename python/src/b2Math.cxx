@@ -88,7 +88,7 @@ void exportB2Math(py::module & pybox2dModule){
        // .def(py::self *= float())
        // .def(py::self +  float())
        // .def(py::self -  float())
-       // .def(float() *  py::self)
+       .def(float() *  py::self)
        .def(py::self *  float())
        .def(py::self /  float())
        .def(py::self +  py::self)
