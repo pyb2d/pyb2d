@@ -1,5 +1,9 @@
 # bld dir
 bld
+
+# sandbox dir
+sandbox
+
 # Prerequisites
 *.d
 

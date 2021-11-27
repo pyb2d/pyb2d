@@ -4,8 +4,29 @@ pyb2d Documentation
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   pyb2d 
+   introduction
+
+   world
+
+   bodies
+
+   joints
 
    auto_examples/index
+
+Drawing:
+
+.. toctree::
+   :maxdepth: 2
+
+   debug_draw/index
+
+API Documentation:
+
+.. toctree::
+   :maxdepth: 2
+    
+   pyb2d 
+
