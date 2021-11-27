@@ -24,7 +24,7 @@ class Blender(TestbedBase):
         box_shape.create_loop([
                 (0,0),
                 (0,dimensions[1]),
-                (dimensions[0],dimensions[1]),
+             (dimensions[0],dimensions[1]),
                 (dimensions[0],0)
             ]
         )

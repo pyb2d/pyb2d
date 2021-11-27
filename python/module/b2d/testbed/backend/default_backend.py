@@ -29,9 +29,15 @@ def default_backend():
     elif is_notebook():
         from b2d.testbed.backend.jupyter import JupyterGui
         return JupyterGui,{}
+
     else:
-        from b2d.testbed.backend.pygame import PygameGui
-        return PygameGui,{}
+        from b2d.testbed.backend.kivy import KivyGui
+        return KivyGui,{}
+
+  
+    # else:
+    #     from b2d.testbed.backend.pygame import PygameGui
+    #     return PygameGui,{}
 
 
 
