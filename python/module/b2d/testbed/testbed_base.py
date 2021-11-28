@@ -28,7 +28,7 @@ class DebugDrawCallback(object):
 #         fps=40, 
 #         ppm=30,
 #         offset=(0,0)
-#     )
+#         =)
 
 class TestbedBase(
     b2d.DestructionListener,
