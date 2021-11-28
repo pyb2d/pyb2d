@@ -50,6 +50,8 @@ def _extendDrawCaller():
 
     DrawCaller.clear_flags = clear_flags
     BatchDebugDrawCaller.clear_flags =clear_flags
+
+    
 _extendDrawCaller()
 del _extendDrawCaller
 

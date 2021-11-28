@@ -41,6 +41,7 @@ void exportB2Draw(py::module & pybox2dModule){
     {
         auto pyCls = py::class_<PyB2Draw>(pybox2dModule,"DrawCaller");
         add_debug_draw_api<PyB2Draw>(pyCls);
+        add_debug_draw_transform_api<PyB2Draw>(pyCls);
         pyCls
             .def(py::init<const py::object &, const bool >())
 
@@ -50,28 +51,39 @@ void exportB2Draw(py::module & pybox2dModule){
             )
             .def("reset_bounding_box",&PyB2Draw::resetBoundingBox)
             .def_property_readonly("bounding_box", &PyB2Draw::getBoundingBox)
-            .def("_append_flags_int",[](PyB2Draw * draw,const int flag){draw->AppendFlags(flag);})
-            .def("_clear_flags_int",[](PyB2Draw * draw,const int flag){draw->ClearFlags(flag);})
-
-            .def_readwrite("screen_size",&PyB2Draw::m_screen_size)
-            .def_readwrite("scale",&PyB2Draw::m_scale)
-            .def_readwrite("translate",&PyB2Draw::m_translate)
-            .def_readwrite("flip_y",&PyB2Draw::m_flip_y)
     
         ;
     }
     {
-        auto pyCls = py::class_<BatchDebugDrawCaller>(pybox2dModule, "BatchDebugDrawCaller");
-        add_debug_draw_api<BatchDebugDrawCaller>(pyCls);
+        using batch_debug_draw_type = BatchDebugDrawCaller<uint8_t, float, true>;
+        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller");
+        add_debug_draw_api<batch_debug_draw_type>(pyCls);
+        add_debug_draw_transform_api<batch_debug_draw_type>(pyCls);
         pyCls
             .def(py::init<const py::object &>())
-            .def("_append_flags_int",[](BatchDebugDrawCaller * draw,const int flag){draw->AppendFlags(flag);})
-            .def("_clear_flags_int",[](BatchDebugDrawCaller * draw,const int flag){draw->ClearFlags(flag);})
 
-            .def_readwrite("screen_size",&BatchDebugDrawCaller::m_screen_size)
-            .def_readwrite("scale",&BatchDebugDrawCaller::m_scale)
-            .def_readwrite("translate",&BatchDebugDrawCaller::m_translate)
-            .def_readwrite("flip_y",&BatchDebugDrawCaller::m_flip_y)
+        ;
+    }
+
+    // for kivy backend (float colors, float coordinates, no transform)
+    {
+        using batch_debug_draw_type = BatchDebugDrawCaller<float, float, false>;
+        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller_float_float_False");
+        add_debug_draw_api<batch_debug_draw_type>(pyCls);
+        pyCls
+            .def(py::init<const py::object &>())
+          
+        ;
+    }
+    // for ipycanvas and pygame backend (uint8 colors, int32 coordinates, with transform)
+    {
+        using batch_debug_draw_type = BatchDebugDrawCaller<uint8_t, int32_t, true>;
+        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller_uint8_int32_True");
+        add_debug_draw_api<batch_debug_draw_type>(pyCls);
+        add_debug_draw_transform_api<batch_debug_draw_type>(pyCls);
+        pyCls
+            .def(py::init<const py::object &>())
+          
         ;
     }
 }

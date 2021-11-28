@@ -47,11 +47,17 @@ void exportB2World(py::module & pybox2dModule){
         .def("set_debug_draw", [](world_type & w, PyB2Draw * d){
             w.SetExtendedDebugDraw(d);
         },  py::keep_alive<1, 2>())
-        .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller * d){
+
+        .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, float, true> * d){
             w.SetExtendedDebugDraw(d);
-        }
-        ,py::arg("debugDraw"), py::keep_alive<1, 2>()
-        )
+        },  py::keep_alive<1, 2>())
+        .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<float, float, false> * d){
+            w.SetExtendedDebugDraw(d);
+        },  py::keep_alive<1, 2>())
+        .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d){
+            w.SetExtendedDebugDraw(d);
+        }, py::arg("debugDraw"), py::keep_alive<1, 2>())
+        
         //.def("_createBodyCpp", &world_type::CreateBody, py::return_value_policy::reference_internal)
 
 

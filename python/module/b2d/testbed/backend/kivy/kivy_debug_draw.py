@@ -39,7 +39,7 @@ from kivy.graphics import *
 
 
 
-class KivyBatchDebugDraw(b2d.BatchDebugDrawNew):
+class KivyBatchDebugDraw(b2d.batch_debug_draw_cls(True, True, False)):
 
     def __init__(self, flags=None):
         super(KivyBatchDebugDraw,self).__init__()
@@ -54,8 +54,24 @@ class KivyBatchDebugDraw(b2d.BatchDebugDrawNew):
 
 
     def draw_solid_polygons(self, points, sizes, colors):
-        self._draw_polygons(points, sizes, colors, 0)
+        n_polygons = sizes.shape[0]
+        start = 0
+        for i in range(n_polygons):
+            s = sizes[i]
+            p = points[start:start+s,:]
 
+            v = [] 
+            indices = []
+            for j in range(p.shape[0]):
+                v.extend([p[j,0],p[j,1],0,0])
+                indices.append(j)
+            #with self.canvas:
+            Mesh(vertices=v,indices=indices,mode='triangle_fan',color=Color(*colors[i,:]))
+
+
+
+            # pygame.draw.polygon(self._surface, colors[i,:], p, lw)
+            start += s
     def draw_polygons(self, points, sizes, colors):
         self._draw_polygons(points, sizes, colors, 1)
 
@@ -83,7 +99,7 @@ class KivyBatchDebugDraw(b2d.BatchDebugDrawNew):
                 v.extend([p[j,0],p[j,1],0,0])
                 indices.append(j)
             #with self.canvas:
-            Mesh(vertices=v,indices=indices,mode='triangle_fan',color=Color(*colors[i,:]/255.0))
+            Mesh(vertices=v,indices=indices,mode='triangle_fan',color=Color(*colors[i,:]))
 
 
 
@@ -104,7 +120,7 @@ class KivyBatchDebugDraw(b2d.BatchDebugDrawNew):
             radius = radii[i]
             center = centers[i,:]-radius
             size = ([radius*2,radius*2])
-            e = Ellipse(pos=center,size=size,color=Color(*colors[i,:]/255.0))
+            e = Ellipse(pos=center,size=size,color=Color(*colors[i,:]))
             # pygame.draw.circle(self._surface, 
             #     colors[i,:], 
             #     centers[i,:],
@@ -125,7 +141,7 @@ class KivyBatchDebugDraw(b2d.BatchDebugDrawNew):
             #     points[i,1,:]
             # )
             p =  points[i,0,0],points[i,0,1],points[i,1,0],points[i,1,1],
-            Line(points=p, width=1.0, color=Color(*colors[i]/255.0))
+            Line(points=p, width=1.0, color=Color(*colors[i]))
 
     def draw_particles(self, centers, radius, colors=None):
         default_color = (255,255,255,255)

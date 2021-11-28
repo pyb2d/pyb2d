@@ -3,7 +3,10 @@ import b2d
 import pygame
 import pygame.locals 
 
-class PyGameBatchDebugDraw(b2d.BatchDebugDrawNew):
+
+
+
+class PyGameBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
 
     def __init__(self, surface, flags=None):
         super(PyGameBatchDebugDraw,self).__init__()
