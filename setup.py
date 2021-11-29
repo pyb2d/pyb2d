@@ -76,7 +76,7 @@ ext_modules = [
         # Example: passing in the version to the compiled code
         define_macros = [('VERSION_INFO', __version__)] + macros,
         ),
-
+]
 
 
 install_requires = [
