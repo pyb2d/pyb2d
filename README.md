@@ -7,9 +7,44 @@
 
 [![Documentation Status](https://readthedocs.org/projects/pyb2d/badge/?version=latest)](https://pyb2d.readthedocs.io/en/latest/?badge=latest)
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
 
 Warning, this is a work in progress and all APIs are subject to changes!
 Nothing is stable yet.
+
+
+### Installing from conda-forge
+
+Then you can install in this environment `pyb2d` and its dependencies
+
+```bash
+mamba install pyb2d -c conda-forge
+```
+
+### Installing from source
+
+Or you can install it from the sources, you will first need to install dependencies
+
+```bash
+mamba install cmake python numpy -c conda-forge
+```
+
+Then you can compile the sources (replace `$CONDA_PREFIX` with a custom installation
+prefix if need be)
+
+```bash
+mkdir build && cd build
+cmake .. -D CMAKE_PREFIX_PATH=$CONDA_PREFIX -D CMAKE_INSTALL_PREFIX=$CONDA_PREFIX -D CMAKE_INSTALL_LIBDIR=lib
+make && make install
+```
+
+## Trying it online
+
+To try out pyb2d interactively in your web browser, just click on the binder link:
+
+[![Binder](binder-logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
+
+
 
 ## Features:
 
