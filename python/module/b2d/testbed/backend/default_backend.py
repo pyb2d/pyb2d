@@ -1,24 +1,8 @@
 import sys
 import os
 
-_has_jupyter = True
-try:
-    from b2d.testbed.backend.jupyter import JupyterGui
-except:
-    _has_jupyter = False
 
-_has_pygame = True
-try:
-    from b2d.testbed.backend.pygame import PygameGui
-except:
-    _has_pygame = False
-
-_has_kivy = True
-try:
-    from b2d.testbed.backend.kivy import KivyGui
-except:
-    _has_kivy = False
-
+import os, sys
 
 
 def is_notebook():
@@ -49,16 +33,19 @@ def default_backend():
     elif is_notebook():
         from b2d.testbed.backend.jupyter import JupyterGui
         return JupyterGui,{}
-    elif _has_pygame:
-        from b2d.testbed.backend.pygame import PygameGui
-        return PygameGui,{}
-
-    elif _has_kivy:
-        from b2d.testbed.backend.kivy import KivyGui
-        return KivyGui,{}
 
     else:
-        raise RuntimeError("no backend found: try installing pygame or kivy")
+        try:
+            from b2d.testbed.backend.pygame import PygameGui
+            return PygameGui,{}
+        except:
+            pass
+
+        try:
+            from b2d.testbed.backend.kivy import KivyGui
+            return KivyGui,{}
+        except:
+            raise RuntimeError("no backend found: try installing pygame or kivy")
 
 
 

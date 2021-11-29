@@ -2,9 +2,9 @@
 from .kivy_debug_draw import *
 
 # kivy-md
-from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel
-from kivymd.app import MDApp
+# from kivymd.app import MDApp
+# from kivymd.uix.label import MDLabel
+# from kivymd.app import MDApp
 
 # kivy
 from kivy.uix.widget import Widget
@@ -16,7 +16,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scatter import Scatter
 from kivy.clock import Clock
 from kivy.config import Config
-from kivy.core.window import Window
+# from kivy.core.window import Window
 
 
 class KivyWidget(Scatter):
@@ -25,7 +25,7 @@ class KivyWidget(Scatter):
         super(KivyWidget, self).__init__(do_rotation=False)
 
         # dirty hack to resize window
-        Window.size = self.kivy_gui.resolution
+        # Window.size = self.kivy_gui.resolution
 
         # clock to trigger stepping of world and rendering
         Clock.schedule_interval(self.step, self.kivy_gui._dt)
