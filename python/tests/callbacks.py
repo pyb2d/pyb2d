@@ -140,11 +140,11 @@ class RecContactFilter(b2d.ContactFilter, RecMixIn):
 
 
 
-
-class RecBatchDebugDrawNew(b2d.BatchDebugDrawNew, RecMixIn):
+_batch_debug_dreaw_base_cls = b2d.batch_debug_draw_cls(False, False, True)
+class RecBatchDebugDrawNew(_batch_debug_dreaw_base_cls, RecMixIn):
 
     def __init__(self):
-        b2d.BatchDebugDrawNew.__init__(self)
+        _batch_debug_dreaw_base_cls.__init__(self)
         RecMixIn.__init__(self)
 
         flags = ['shape','joint','aabb','pair','center_of_mass','particle']
