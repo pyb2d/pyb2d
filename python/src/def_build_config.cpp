@@ -24,7 +24,7 @@ namespace pybox2d {
         )
         .def_property_readonly_static("BOX_2D_VERSION", [](py::object /* self */) {
             #ifdef  PYBOX2D_LIQUID_FUN
-            return "2.3.0";
+            return "2.4.1";
             #else
             return "2.4.1";
             #endif
