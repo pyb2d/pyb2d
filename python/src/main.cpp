@@ -80,5 +80,5 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     // ss<<PYBOX2D_VERSION_MAJOR<<"."
     //   <<PYBOX2D_VERSION_MINOR<<"."
     //   <<PYBOX2D_VERSION_PATCH;
-    pybox2dModule.attr("__version__") = "0.3.1";
+    pybox2dModule.attr("__version__") = "0.3.2";
 }
