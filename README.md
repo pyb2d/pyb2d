@@ -7,7 +7,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/pyb2d/badge/?version=latest)](https://pyb2d.readthedocs.io/en/latest/?badge=latest)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://main.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
 
 Warning, this is a work in progress and all APIs are subject to changes!
 Nothing is stable yet.
@@ -33,6 +33,9 @@ Then you can compile the sources (replace `$CONDA_PREFIX` with a custom installa
 prefix if need be)
 
 ```bash
+
+
+
 mkdir build && cd build
 cmake .. -D CMAKE_PREFIX_PATH=$CONDA_PREFIX -D CMAKE_INSTALL_PREFIX=$CONDA_PREFIX -D CMAKE_INSTALL_LIBDIR=lib
 make && make install
@@ -42,7 +45,7 @@ make && make install
 
 To try out pyb2d interactively in your web browser, just click on the binder link:
 
-[![Binder](docs/binder-logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
+[![Binder](docs/binder-logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/hello_world.ipynb)
 
 
 
