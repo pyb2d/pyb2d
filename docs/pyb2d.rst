@@ -37,9 +37,9 @@ Joint Defs:
     :members:
     :undoc-members:
 
-.. autoclass:: b2d.PulleyJointJoint
-    :members:
-    :undoc-members:
+.. .. autoclass:: b2d.PulleyJointJoint
+..     :members:
+..     :undoc-members:
 
 .. autoclass:: b2d.RevoluteJoint
     :members:
@@ -78,9 +78,9 @@ Joints Defs:
     :members:
     :undoc-members:
 
-.. autoclass:: b2d.PulleyJointJointDef
-    :members:
-    :undoc-members:
+.. .. autoclass:: b2d.PulleyJointJointDef
+..     :members:
+..     :undoc-members:
 
 .. autoclass:: b2d.RevoluteJointDef
     :members:

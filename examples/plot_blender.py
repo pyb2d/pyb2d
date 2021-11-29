@@ -75,5 +75,5 @@ class Blender(TestbedBase):
 
 if __name__ == "__main__":
 
-    ani =  b2d.testbed.run(Blender, backend="pygame")
-    # ani
+    ani =  b2d.testbed.run(Blender)
+    ani
