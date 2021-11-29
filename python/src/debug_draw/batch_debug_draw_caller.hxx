@@ -1,6 +1,5 @@
 #ifndef PYBOX2D_BATCH_DEBUG_DRAW_CALLER
 #define PYBOX2D_BATCH_DEBUG_DRAW_CALLER
-
 #include "../numpy.hxx"
 
 #include "extended_debug_draw_base.hxx"
@@ -396,17 +395,17 @@ public:
     #ifdef PYBOX2D_LIQUID_FUN
     void add_color(const b2ParticleColor & color, std::vector<float> & color_array)
     {
+        color_array.push_back(float(color.r)/255.0f);
+        color_array.push_back(float(color.g)/255.0f);
+        color_array.push_back(float(color.b)/255.0f);
+        color_array.push_back(float(color.a)/255.0f);
+    }
+    void add_color(const b2ParticleColor & color, std::vector<uint8_t> & color_array)
+    {
         color_array.push_back(color.r);
         color_array.push_back(color.g);
         color_array.push_back(color.b);
         color_array.push_back(color.a);
-    }
-    void add_color(const b2ParticleColor & color, std::vector<uint8_t> & color_array)
-    {
-        color_array.push_back(uint8_t(color.r * 255.0 + 0.5));
-        color_array.push_back(uint8_t(color.g * 255.0 + 0.5));
-        color_array.push_back(uint8_t(color.b * 255.0 + 0.5));
-        color_array.push_back(uint8_t(color.a * 255.0 + 0.5));
     }
     #endif
     std::array<coordinate_value_type, 2> m_min_coord;
