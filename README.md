@@ -42,7 +42,7 @@ make && make install
 
 To try out pyb2d interactively in your web browser, just click on the binder link:
 
-[![Binder](binder-logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
+[![Binder](docs/binder-logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/binder?urlpath=/lab/tree/examples/hello_world.ipynb)
 
 
 
