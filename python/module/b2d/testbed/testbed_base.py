@@ -7,11 +7,6 @@ import time
 
 
 
-# class TestbedConactListener(b2d.ContactListener):
-#     def __init__(self):
-#         super(TestbedConactListener, self).__init__()
-
-
 class DebugDrawCallback(object):
 
     def __init__(self, pre_debug_draw, post_debug_draw):
@@ -24,6 +19,16 @@ class DebugDrawCallback(object):
     def post_debug_draw(self ):
         self._post_debug_draw()
 
+
+
+
+# class TestbedSettings(object):
+#     def __init__(self, 
+#         resolution=(1000,1000), 
+#         fps=40, 
+#         ppm=30,
+#         offset=(0,0)
+#         =)
 
 class TestbedBase(
     b2d.DestructionListener,

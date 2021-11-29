@@ -29,10 +29,28 @@ void add_debug_draw_api(PY_CLS & py_cls)
             });
         })
 
+        .def("_append_flags_int",[](CLS * draw,const int flag){draw->AppendFlags(flag);})
+        .def("_clear_flags_int",[](CLS * draw,const int flag){draw->ClearFlags(flag);})
+
+    ;
+}  
+
+
+template<class CLS, class PY_CLS>
+void add_debug_draw_transform_api(PY_CLS & py_cls)
+{
+    py_cls
+
         // convert screen to world / world to screen
         .def("world_to_screen", &CLS::world_to_screen)
         .def("screen_to_world", &CLS::screen_to_world)
         .def("world_to_screen_scale", &CLS::world_to_screen_scale)
         .def("screen_to_world_scale", &CLS::screen_to_world_scale)
+
+        // get the scale
+        .def_readwrite("screen_size",&CLS::m_screen_size)
+        .def_readwrite("scale",&CLS::m_scale)
+        .def_readwrite("translate",&CLS::m_translate)
+        .def_readwrite("flip_y",&CLS::m_flip_y)
     ;
 }  

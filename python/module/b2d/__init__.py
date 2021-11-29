@@ -1,4 +1,5 @@
 from abc import ABC
+import numbers 
 
 
 from . _b2d import *
@@ -100,6 +101,81 @@ class DebugDraw(DrawCaller):
     
     def draw_transform(self, xf):
         raise NotImplementedError 
+
+
+
+
+
+
+
+
+def batch_debug_draw_caller_cls(float_colors, float_coordinates, with_transform):
+
+    color_type = ['uint8','float'][float_colors]
+    coordinate_type = ['int32','float'][float_coordinates]
+
+    cls_name = f"BatchDebugDrawCaller_{color_type}_{coordinate_type}_{with_transform}"
+
+    return getattr(_b2d, cls_name)
+
+
+def batch_debug_draw_cls(float_colors, float_coordinates, with_transform):
+
+    base_cls = batch_debug_draw_caller_cls(float_colors, float_coordinates, with_transform)
+
+    class BatchDebugDrawNew(base_cls):
+
+        def __init__(self):
+            super(BatchDebugDrawNew, self).__init__(self)
+
+        def begin_draw(self):
+            pass
+
+        def end_draw(self):
+            pass
+
+
+        def draw_solid_polygons(self, points, connect, color):
+            pass
+
+        def draw_polygons(self, points, connect, color):
+            pass
+
+        def draw_segments(self, points, connect, color):
+            pass
+
+        def draw_solid_circles(self, centers, radii, axis, color):
+            pass
+
+        def draw_circles(self, centers, radii, color):
+            pass
+
+        def draw_particles(self, centers, radius, colors):
+            pass
+
+
+        def append_flags(self, flag_list_or_int):
+            if isinstance(flag_list_or_int, numbers.Number):
+                self._append_flags_int(flag_list_or_int)
+            else:
+                flag_list = flag_list_or_int
+                if isinstance(flag_list, str):
+                    flag_list = [flag_list]
+                for flag in flag_list:
+                    self._append_flags_int(draw_flags_dict[flag])
+
+        def clear_flags(self, flag_list_or_int):
+            if isinstance(flag_list_or_int, numbers.Number):
+                self._clear_flags_int(flag_list_or_int)
+            else:
+                flag_list = flag_list_or_int
+                if isinstance(flag_list, str):
+                    flag_list = [flag_list]
+                for flag in flag_list:
+                    self._clear_flags_int(draw_flags_dict[flag])
+
+    return BatchDebugDrawNew
+
 
 
 class BatchDebugDrawNew(BatchDebugDrawCaller):
