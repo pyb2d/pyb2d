@@ -2,7 +2,7 @@ import numpy
 import b2d 
 import cv2 as cv
 
-class OpenCvBatchDebugDraw(b2d.BatchDebugDrawNew):
+class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
     def __init__(self, image, flags=None):
         super(OpenCvBatchDebugDraw,self).__init__()

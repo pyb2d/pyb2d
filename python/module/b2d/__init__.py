@@ -123,10 +123,10 @@ def batch_debug_draw_cls(float_colors, float_coordinates, with_transform):
 
     base_cls = batch_debug_draw_caller_cls(float_colors, float_coordinates, with_transform)
 
-    class BatchDebugDrawNew(base_cls):
+    class BatchDebugDraw(base_cls):
 
         def __init__(self):
-            super(BatchDebugDrawNew, self).__init__(self)
+            super(BatchDebugDraw, self).__init__(self)
 
         def begin_draw(self):
             pass
@@ -174,39 +174,9 @@ def batch_debug_draw_cls(float_colors, float_coordinates, with_transform):
                 for flag in flag_list:
                     self._clear_flags_int(draw_flags_dict[flag])
 
-    return BatchDebugDrawNew
+    return BatchDebugDraw
 
 
-
-class BatchDebugDrawNew(BatchDebugDrawCaller):
-
-    def __init__(self):
-        super(BatchDebugDrawNew, self).__init__(self)
-
-    def begin_draw(self):
-        pass
-
-    def end_draw(self):
-        pass
-
-
-    def draw_solid_polygons(self, points, connect, color):
-        pass
-
-    def draw_polygons(self, points, connect, color):
-        pass
-
-    def draw_segments(self, points, connect, color):
-        pass
-
-    def draw_solid_circles(self, centers, radii, axis, color):
-        pass
-
-    def draw_circles(self, centers, radii, color):
-        pass
-
-    def draw_particles(self, centers, radius, colors):
-        pass
 
 
 class ContactFilter(ContactFilterCaller):

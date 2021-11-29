@@ -1,7 +1,5 @@
-try:
-    from .kivy_debug_draw import *
-except:
-    from kivy_debug_draw import * 
+
+from .kivy_debug_draw import *
 
 # kivy-md
 from kivymd.app import MDApp

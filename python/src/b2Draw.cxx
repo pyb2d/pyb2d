@@ -56,7 +56,7 @@ void exportB2Draw(py::module & pybox2dModule){
     }
     {
         using batch_debug_draw_type = BatchDebugDrawCaller<uint8_t, float, true>;
-        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller");
+        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller_uint8_float_True");
         add_debug_draw_api<batch_debug_draw_type>(pyCls);
         add_debug_draw_transform_api<batch_debug_draw_type>(pyCls);
         pyCls

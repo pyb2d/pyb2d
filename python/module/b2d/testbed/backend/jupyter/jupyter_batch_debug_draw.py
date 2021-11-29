@@ -2,7 +2,7 @@ import b2d
 
 
 
-class JupyterBatchDebugDraw(b2d.BatchDebugDrawNew):
+class JupyterBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
 
     def __init__(self, canvas, flags=None):
         super(JupyterBatchDebugDraw,self).__init__()

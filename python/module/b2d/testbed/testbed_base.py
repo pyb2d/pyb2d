@@ -102,7 +102,7 @@ class TestbedBase(
 
     def step(self, dt):
         self.pre_step(dt)
-        self.world.step(dt, 10, 10)
+        self.world.step(dt, 1, 1)
         if self.__time_last_step is None:
             self.__time_last_step  = time.time()
         else:

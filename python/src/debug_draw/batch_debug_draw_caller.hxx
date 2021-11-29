@@ -165,10 +165,6 @@ public:
     using coordinate_value_type = COORDINATE_VALUE_TYPE;
     using coordinate_vector_type = std::vector<coordinate_value_type>;
 
-    typedef std::pair<float,float> P;
-    typedef std::tuple<uint8_t,uint8_t,uint8_t> UInt8Color;
-
-
 
     virtual ~BatchDebugDrawCallerBase() {}
 

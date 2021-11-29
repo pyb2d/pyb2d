@@ -1,4 +1,4 @@
-from . _b2d import DrawCaller, BatchDebugDrawCaller
+from . _b2d import DrawCaller
 from . tools import _classExtender, GenericB2dIter
 from contextlib import contextmanager
 
@@ -36,7 +36,6 @@ def _extendDrawCaller():
             for flag in flag_list:
                 self._append_flags_int(draw_flags_dict[flag])
     DrawCaller.append_flags =append_flags
-    BatchDebugDrawCaller.append_flags =append_flags
 
     def clear_flags(self, flag_list_or_int):
         if isinstance(flag_list_or_int, numbers.Number):
@@ -49,7 +48,6 @@ def _extendDrawCaller():
                 self._clear_flags_int(draw_flags_dict[flag])
 
     DrawCaller.clear_flags = clear_flags
-    BatchDebugDrawCaller.clear_flags =clear_flags
 
     
 _extendDrawCaller()

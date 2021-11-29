@@ -4,8 +4,6 @@ import pygame
 import pygame.locals 
 
 
-
-
 class PyGameBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
 
     def __init__(self, surface, flags=None):
@@ -35,7 +33,8 @@ class PyGameBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
         for i in range(n_polygons):
             s = sizes[i]
             p = points[start:start+s,:]
-            p = [p for p in ]
+            print(p.dtype)
+            # p = [p for p in ]
             pygame.draw.polygon(self._surface, colors[i,:], p, lw)
             start += s
 
