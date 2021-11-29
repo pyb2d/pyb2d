@@ -1,6 +1,6 @@
 import b2d 
 
-class EmptyDebugDraw(b2d.batch_debug_draw_cls(False, False, False)):
+class EmptyDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
     def __init__(self):
         super(EmptyDebugDraw,self).__init__()
