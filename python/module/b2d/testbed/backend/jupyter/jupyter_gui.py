@@ -70,6 +70,9 @@ class JupyterGui(object):
         self.reached_end = Event()
         self._world_lock = Lock()
 
+        self._last_screen_pos = None
+        self._mouse_is_down = False
+
     def _terminate(self):
         if not self.paused.isSet():
             self.paused.set()
@@ -107,10 +110,9 @@ class JupyterGui(object):
         self.make_testworld()
 
         def on_mouse_down( xpos, ypos):
-            # with self.out:
-            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
-            # self.multi_canvas[1].flush()
-            pos = self.debug_draw.screen_to_world((xpos, ypos))
+            self._mouse_is_down = True
+            self._last_screen_pos = xpos, ypos
+            pos = self.debug_draw.screen_to_world(self._last_screen_pos)
             pos = pos.x, pos.y
             with self._world_lock:
                 self._testworld.on_mouse_down(pos)
@@ -119,6 +121,8 @@ class JupyterGui(object):
 
         # moue callbacks
         def on_mouse_up( xpos, ypos):
+            self._mouse_is_down = False
+            self._last_screen_pos = xpos, ypos
             pos = self.debug_draw.screen_to_world((xpos, ypos))
             pos = pos.x, pos.y
             with self._world_lock:
@@ -126,14 +130,21 @@ class JupyterGui(object):
 
 
         def on_mouse_move( xpos, ypos):
-            # self.multi_canvas[1].fill_circle(xpos, ypos, 10)
-            # self.multi_canvas[1].flush()
-            # self.multi_canvas[0].fill_circle(xpos, ypos, 10)
-            # self.multi_canvas[0].flush()
+            lxpos, lypos = self._last_screen_pos
+            self._last_screen_pos = xpos, ypos
+
             pos = self.debug_draw.screen_to_world((xpos, ypos))
             pos = pos.x, pos.y
             with self._world_lock:
-                self._testworld.on_mouse_move(pos)
+                handled_event = self._testworld.on_mouse_move(pos)
+                if not handled_event and self._mouse_is_down and self._last_screen_pos is not None:
+                    dx,dy = xpos - lxpos, ypos - lypos
+
+                    translate = self.debug_draw.translate
+                    self.debug_draw.translate = (
+                        translate[0] + dx,
+                        translate[1] - dy
+                    )
 
         self.multi_canvas[1].on_mouse_down(on_mouse_down)
         self.multi_canvas[1].on_mouse_up(on_mouse_up)
@@ -186,6 +197,9 @@ class JupyterGui(object):
         pause_btn =         Button(icon='pause')
         reset_btn =         Button(icon='stop')
 
+        zoom_in_btn =         Button(icon='search-plus')
+        zoom_out_btn =         Button(icon='search-minus')
+
         # sliders speed / fps
         fps_slider = ipywidgets.IntSlider(
             value=self._fps,
@@ -230,6 +244,19 @@ class JupyterGui(object):
             # start()
         reset_btn.on_click(reset)
 
+        def zoom_in(btn=None):
+            s = self.debug_draw.scale 
+            self.debug_draw.scale = s * 1.2
+        zoom_in_btn.on_click(zoom_in)
+
+        def zoom_out(btn=None):
+            s = self.debug_draw.scale 
+            s /= 1.2
+            s = max(1, s)
+            self.debug_draw.scale = s 
+
+        zoom_out_btn.on_click(zoom_out)
+
 
         draw_checkboxes = dict(
             shapes=ipywidgets.Checkbox(value=True),
@@ -249,6 +276,15 @@ class JupyterGui(object):
             if self.paused.isSet():
                 self._draw_world(self.debug_draw._canvas)
 
+        # play buttons
+        play_buttons = HBox([start_btn,  step_forward_btn,  pause_btn, reset_btn])
+
+        # zoom 
+        zoom_buttons = HBox([zoom_in_btn, zoom_out_btn])
+
+
+
+        # debug draw flags
         items = []
         flags = ['shape','joint','aabb','pair','center_of_mass','particle']
         for f in flags:
@@ -257,19 +293,23 @@ class JupyterGui(object):
             checkbox.observe(functools.partial(on_flag_change, flag=f), names='value')
             items.append(label)
             items.append(checkbox)
-
-
         draw_flags = ipywidgets.GridBox(items, layout=ipywidgets.Layout(grid_template_columns="repeat(4, 200px)"))
 
-
+        # tab organizing everything
+        children = [
+            play_buttons,
+            zoom_buttons,
+            draw_flags
+        ]
+        tab = ipywidgets.Tab()
+        tab.children = children
+        for i,t in enumerate(['Stepping', 'Zoom', 'DebugDrawFlags']):
+             tab.set_title(i, str(t))
         # display
         IPython.display.display(self.out)
         with self.out:
             IPython.display.display(self.multi_canvas, 
-                VBox([
-                    HBox([start_btn,  step_forward_btn,  pause_btn, reset_btn]),
-                    draw_flags
-                ])
+                tab
             )
 
     def _single_step(self):
