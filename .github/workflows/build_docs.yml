@@ -9,18 +9,18 @@ on:
 
 jobs:
   unix:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
      
     strategy:
       fail-fast: false
-
-
+      matrix:
+        os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
 
       - name: Install apt-get dependencies
         run: |
-          sudo apt-get install -y ffmpeg python make build-essential python3-pip --yes
+          sudo apt-get install -y ffmpeg python3 make build-essential python3-pip --yes
 
       - name: Install b2d via pip
         run: |
