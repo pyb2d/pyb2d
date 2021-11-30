@@ -33,4 +33,4 @@ jobs:
       - name: Build the docs
         run: |
           cd docs
-          build html
+          make html
