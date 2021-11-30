@@ -1,4 +1,4 @@
-name: Check Do
+name: Build Docs
 on:
   push:
     branches:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Install apt-get dependencies
         run: |
-          sudo apt-get install -y ffmpeg python make build-essentials
+          sudo apt-get install -y ffmpeg python make build-essentials --yes
 
       - name: Install b2d via pip
         run: |
