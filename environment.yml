@@ -4,6 +4,6 @@ channels:
   - cf-staging
 dependencies:
   - pyb2d>=0.3.1
-  - notebook
+  - jupyterlab>=3.0
   - ipywidgets>=7.6
-  - ipycanvas>=0.10.0
+  - ipycanvas>=0.10.2
