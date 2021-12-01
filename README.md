@@ -9,6 +9,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
 
+
 Warning, this is a work in progress and all APIs are subject to changes!
 Nothing is stable yet.
 
