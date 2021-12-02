@@ -58,14 +58,14 @@ class GaussMachine(TestbedBase):
 
         # linear emitter
         emitter_pos = (self.box_shape[0]/2, self.box_shape[1] + 10)
-        emitter_def = b2d.LinearEmitterDef()
+        emitter_def = b2d.RandomizedLinearEmitterDef()
         emitter_def.emite_rate = 400
         emitter_def.lifetime = 1000
         emitter_def.size = (10,1)
         emitter_def.transform = b2d.Transform(emitter_pos, b2d.Rot(0))
 
 
-        self.emitter = b2d.LinearEmitter(psystem, emitter_def)
+        self.emitter = b2d.RandomizedLinearEmitter(psystem, emitter_def)
 
     def pre_step(self, dt):
         self.emitter.step(dt)
