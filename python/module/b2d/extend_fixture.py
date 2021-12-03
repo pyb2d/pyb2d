@@ -5,7 +5,7 @@ from .tools import _classExtender
 
 
 
-def fixture_def(shape=None, friction=None, restitution=None, density=None, isSensor=None, shape_filter=None, user_data=None, group_index=None):
+def fixture_def(shape=None, friction=None, restitution=None, density=None, is_sensor=None, shape_filter=None, user_data=None, group_index=None):
     fd = FixtureDef()
     if shape is not None : 
         fd.shape = shape
@@ -15,8 +15,8 @@ def fixture_def(shape=None, friction=None, restitution=None, density=None, isSen
         fd.restitution = restitution
     if density is not None : 
         fd.density = density
-    if isSensor is not None : 
-        fd.isSensor = isSensor
+    if is_sensor is not None : 
+        fd.is_sensor = is_sensor
 
     if group_index is not None:
         if shape_filter is None:

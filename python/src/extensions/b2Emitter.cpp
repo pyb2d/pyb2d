@@ -19,7 +19,7 @@ b2EmitterDefBase::b2EmitterDefBase()
 
 }
 
-b2RadialEmitterDef::b2RadialEmitterDef()
+b2RandomizedRadialEmitterDef::b2RandomizedRadialEmitterDef()
 :   b2EmitterDefBase(),
     innerRadius(0.0f),
     outerRadius(1.0f),
@@ -33,10 +33,20 @@ b2RadialEmitterDef::b2RadialEmitterDef()
 
 
 
-b2LinearEmitterDef::b2LinearEmitterDef()
+b2RandomizedLinearEmitterDef::b2RandomizedLinearEmitterDef()
 :   b2EmitterDefBase(),
     size(1,1),
     velocity(0,0)
+{
+
+}
+
+
+b2LinearEmitterArrayDef::b2LinearEmitterArrayDef()
+:   b2EmitterDefBase(),
+    length(1.0),
+    velocity(0,0),
+    n_emitter(1)
 {
 
 }
@@ -117,12 +127,71 @@ void b2EmitterBase::SetAngle(const float angle)
 }
 
 
-
-
-
-b2LinearEmitter::b2LinearEmitter( 
+b2LinearEmitterArray::b2LinearEmitterArray( 
     b2ParticleSystem * particleSystem, 
-    const b2LinearEmitterDef & def
+    const b2LinearEmitterArrayDef & def
+)
+:   b2EmitterBase(particleSystem, def),
+    m_emmiter_def(def),
+    m_remainder(0.0f)
+{
+
+}
+
+int b2LinearEmitterArray::Step(const float dt){
+    const auto & edef = m_emmiter_def;
+
+
+    const auto & center = this->GetPosition();
+    const auto angle = this->GetAngle();
+    const auto length = edef.length;
+    const auto n_emitter = edef.n_emitter;
+    const auto distance = length / (n_emitter -1);
+    m_remainder += dt * edef.emitRate;
+    const float dtPerParticle = dt / std::floor(m_remainder);
+
+    int num_created = 0;
+    while(m_remainder >= 1.0)
+    {   
+        const float dtp = dtPerParticle * num_created;
+
+        // get random pos in UNROTATED box
+
+        for(std::size_t i=0; i<n_emitter; ++i)
+        {
+            b2Vec2 pBox(distance * i, 0);
+
+            // rotate
+            b2Vec2 ppos = b2Mul(b2Rot(angle), pBox) + center;
+
+
+            // velocity in body coordinates 
+            // => rotate to world
+            auto v = edef.velocity;
+            b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
+
+            // move 
+            ppos += worldVelocity * dtp;
+
+
+
+            b2ParticleDef pdef;
+            pdef.velocity = worldVelocity;
+            pdef.position = ppos;
+            this->CreateParticle(pdef);        
+            ++num_created;   
+        }
+        m_remainder -= 1.0;
+    }
+    return num_created;
+}   
+
+
+
+
+b2RandomizedLinearEmitter::b2RandomizedLinearEmitter( 
+    b2ParticleSystem * particleSystem, 
+    const b2RandomizedLinearEmitterDef & def
 )
 :   b2EmitterBase(particleSystem, def),
     m_emmiter_def(def),
@@ -133,7 +202,7 @@ b2LinearEmitter::b2LinearEmitter(
 
 }
 
-int b2LinearEmitter::Step(const float dt){
+int b2RandomizedLinearEmitter::Step(const float dt){
     const auto & edef = m_emmiter_def;
 
 
@@ -183,9 +252,9 @@ int b2LinearEmitter::Step(const float dt){
 
 
 
-b2RadialEmitter::b2RadialEmitter( 
+b2RandomizedRadialEmitter::b2RandomizedRadialEmitter( 
     b2ParticleSystem * particleSystem, 
-    const b2RadialEmitterDef & def
+    const b2RandomizedRadialEmitterDef & def
 )
 :   b2EmitterBase(particleSystem, def),
     m_emmiter_def(def),
@@ -200,7 +269,7 @@ b2RadialEmitter::b2RadialEmitter(
 
 }
 
-int b2RadialEmitter::Step(const float dt)
+int b2RandomizedRadialEmitter::Step(const float dt)
 {
     const auto & edef = m_emmiter_def;
 

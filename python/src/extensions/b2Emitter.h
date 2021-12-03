@@ -15,9 +15,9 @@ struct b2EmitterDefBase
 };
 
 
-struct b2RadialEmitterDef : public b2EmitterDefBase
+struct b2RandomizedRadialEmitterDef : public b2EmitterDefBase
 {
-    b2RadialEmitterDef();
+    b2RandomizedRadialEmitterDef();
 
     float innerRadius;
     float outerRadius;
@@ -28,13 +28,23 @@ struct b2RadialEmitterDef : public b2EmitterDefBase
 };
 
 
-struct b2LinearEmitterDef : public b2EmitterDefBase
+struct b2RandomizedLinearEmitterDef : public b2EmitterDefBase
 {
-    b2LinearEmitterDef();
+    b2RandomizedLinearEmitterDef();
  
     b2Vec2 size;
     b2Vec2 velocity;
 };
+
+struct b2LinearEmitterArrayDef : public b2EmitterDefBase
+{
+    b2LinearEmitterArrayDef();
+    
+    std::size_t n_emitter;
+    float length;
+    b2Vec2 velocity;
+};
+
 
 
 class b2EmitterBase
@@ -69,35 +79,52 @@ private:
     int m_seed;
 };
 
-class b2LinearEmitter: public b2EmitterBase {
+
+
+class b2RandomizedLinearEmitter: public b2EmitterBase {
 public:
-    b2LinearEmitter( 
+    b2RandomizedLinearEmitter( 
         b2ParticleSystem * particleSystem, 
-        const b2LinearEmitterDef & def
+        const b2RandomizedLinearEmitterDef & def
     );
 
     int Step(const float dt);
 
 private:
-    b2LinearEmitterDef m_emmiter_def;
+    b2RandomizedLinearEmitterDef m_emmiter_def;
     float m_remainder;
     std::uniform_real_distribution<float> m_uniform01;
     std::mt19937 m_gen;
 };
 
 
-class b2RadialEmitter : b2EmitterBase
-{
+class b2LinearEmitterArray: public b2EmitterBase {
 public:
-    b2RadialEmitter( 
+    b2LinearEmitterArray( 
         b2ParticleSystem * particleSystem, 
-        const b2RadialEmitterDef & def
+        const b2LinearEmitterArrayDef & def
     );
 
     int Step(const float dt);
 
 private:
-    b2RadialEmitterDef m_emmiter_def;
+    b2LinearEmitterArrayDef m_emmiter_def;
+    float m_remainder;
+};
+
+
+class b2RandomizedRadialEmitter : b2EmitterBase
+{
+public:
+    b2RandomizedRadialEmitter( 
+        b2ParticleSystem * particleSystem, 
+        const b2RandomizedRadialEmitterDef & def
+    );
+
+    int Step(const float dt);
+
+private:
+    b2RandomizedRadialEmitterDef m_emmiter_def;
 
     float m_remainder;
     std::uniform_real_distribution<float> m_uniform_r;

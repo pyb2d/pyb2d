@@ -19,10 +19,12 @@ void exportContact(py::module & pybox2dModule){
     ;
 
     py::class_<b2Contact, ContactHolder>(pybox2dModule,"b2Contact")
-        .def_property_readonly("fixture_a",[](const b2Contact & c){return FixtureHolder(c.GetFixtureA());})
         .def_property_readonly("fixture_a",[](      b2Contact & c){return FixtureHolder(c.GetFixtureA());})
-        .def_property_readonly("fixture_b",[](const b2Contact & c){return FixtureHolder(c.GetFixtureB());})
         .def_property_readonly("fixture_b",[](      b2Contact & c){return FixtureHolder(c.GetFixtureB());})
+
+        .def_property_readonly("body_a",[](      b2Contact & c){return BodyHolder(c.GetFixtureA()->GetBody());})
+        .def_property_readonly("body_b",[](      b2Contact & c){return BodyHolder(c.GetFixtureB()->GetBody());})
+
         .def_property_readonly("world_manifold",[](b2Contact * contact){
             b2WorldManifold * wm;
             contact->GetWorldManifold(wm);

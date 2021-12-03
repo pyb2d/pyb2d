@@ -3,3 +3,4 @@ sphinx-gallery
 matplotlib
 imageio
 ffmpeg-python
+networkx

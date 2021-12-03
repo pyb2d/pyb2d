@@ -149,7 +149,6 @@ class TestbedBase(
         """
         Indicates that there was a left click at point p (world coordinates)
         """
-
        
         if self.mouse_joint is not None:
             self.world.destroy_joint(self.mouse_joint)
