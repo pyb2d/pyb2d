@@ -11,5 +11,5 @@ import b2d
 
 if __name__ == "__main__":
         
-    ani = b2d.testbed.run(WorldOfGooHomage, backend='pygame')
+    ani = b2d.testbed.run(WorldOfGooHomage)
     ani
