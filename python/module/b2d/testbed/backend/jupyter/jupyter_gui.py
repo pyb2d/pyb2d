@@ -110,41 +110,44 @@ class JupyterGui(object):
         self.make_testworld()
 
         def on_mouse_down( xpos, ypos):
-            self._mouse_is_down = True
-            self._last_screen_pos = xpos, ypos
-            pos = self.debug_draw.screen_to_world(self._last_screen_pos)
-            pos = pos.x, pos.y
-            with self._world_lock:
-                self._testworld.on_mouse_down(pos)
- 
+            if not self.paused.isSet():
+                self._mouse_is_down = True
+                self._last_screen_pos = xpos, ypos
+                pos = self.debug_draw.screen_to_world(self._last_screen_pos)
+                pos = pos.x, pos.y
+                with self._world_lock:
+                    self._testworld.on_mouse_down(pos)
+     
 
 
         # moue callbacks
         def on_mouse_up( xpos, ypos):
-            self._mouse_is_down = False
-            self._last_screen_pos = xpos, ypos
-            pos = self.debug_draw.screen_to_world((xpos, ypos))
-            pos = pos.x, pos.y
-            with self._world_lock:
-                self._testworld.on_mouse_up(pos)
+            if not self.paused.isSet():
+                self._mouse_is_down = False
+                self._last_screen_pos = xpos, ypos
+                pos = self.debug_draw.screen_to_world((xpos, ypos))
+                pos = pos.x, pos.y
+                with self._world_lock:
+                    self._testworld.on_mouse_up(pos)
 
 
         def on_mouse_move( xpos, ypos):
-            lxpos, lypos = self._last_screen_pos
-            self._last_screen_pos = xpos, ypos
+            if not self.paused.isSet():
+                lxpos, lypos = self._last_screen_pos
+                self._last_screen_pos = xpos, ypos
 
-            pos = self.debug_draw.screen_to_world((xpos, ypos))
-            pos = pos.x, pos.y
-            with self._world_lock:
-                handled_event = self._testworld.on_mouse_move(pos)
-                if not handled_event and self._mouse_is_down and self._last_screen_pos is not None:
-                    dx,dy = xpos - lxpos, ypos - lypos
+                pos = self.debug_draw.screen_to_world((xpos, ypos))
+                pos = pos.x, pos.y
+                with self._world_lock:
+                    handled_event = self._testworld.on_mouse_move(pos)
+                    if not handled_event and self._mouse_is_down and self._last_screen_pos is not None:
+                        dx,dy = xpos - lxpos, ypos - lypos
 
-                    translate = self.debug_draw.translate
-                    self.debug_draw.translate = (
-                        translate[0] + dx,
-                        translate[1] - dy
-                    )
+                        translate = self.debug_draw.translate
+                        self.debug_draw.translate = (
+                            translate[0] + dx,
+                            translate[1] - dy
+                        )
 
         self.multi_canvas[1].on_mouse_down(on_mouse_down)
         self.multi_canvas[1].on_mouse_up(on_mouse_up)
@@ -336,5 +339,5 @@ class JupyterGui(object):
         canvas.fill_style = 'black'
         canvas.fill_rect(0,0, self.resolution[0],self.resolution[1])
 
-        self._testworld.world.draw_debug_data()
+        self._testworld.draw_debug_data()
         canvas.fill_style = old_style
