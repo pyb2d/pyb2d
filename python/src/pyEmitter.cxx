@@ -13,21 +13,23 @@ void exportEmitter(py::module &pybox2dModule) {
     // BASE
     py::class_<b2EmitterDefBase> emitterDefBaseCls(pybox2dModule, "EmitterDefBase");
     emitterDefBaseCls.def(py::init<>())
-        .def_readwrite("transform", &b2RandomizedLinearEmitterDef::transform)
+        .def_readwrite("transform", &b2EmitterDefBase::transform)
         .def_property(
         "body",
         [](const b2EmitterDefBase *self) { return BodyHolder(self->body); },
         [](b2EmitterDefBase *self, b2Body *body) { self->body = body; })
-        .def_readwrite("emite_rate", &b2RandomizedLinearEmitterDef::emitRate)
-        .def_readwrite("lifetime", &b2RandomizedLinearEmitterDef::lifetime)
+        .def_readwrite("emite_rate", &b2EmitterDefBase::emitRate)
+        .def_readwrite("lifetime", &b2EmitterDefBase::lifetime)
+        .def_readwrite("enabled", &b2EmitterDefBase::enabled)
     ;
 
     py::class_<b2EmitterBase> emitterBaseCls(pybox2dModule, "EmitterBase");
     emitterBaseCls.def(py::init<b2ParticleSystem *, const b2EmitterDefBase &>())
     .def_property("position", &b2EmitterBase::GetPosition, &b2EmitterBase::SetPosition)
     .def_property("angle", &b2EmitterBase::GetAngle, &b2EmitterBase::SetAngle)
-    .def_property("transform", &b2EmitterBase::GetTransform, &b2EmitterBase::SetTransform);
-
+    .def_property("transform", &b2EmitterBase::GetTransform, &b2EmitterBase::SetTransform)
+    .def_property("enabled", &b2EmitterBase::GetEnabled, &b2EmitterBase::SetEnabled)
+    ;
 
 
     //  LINEAR Array

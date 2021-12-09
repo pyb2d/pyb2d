@@ -134,6 +134,11 @@ class TestbedBase(
         return 0
 
 
+    def on_keyboard_down(self, keycode):
+        return False
+
+    def on_keyboard_up(self, keycode):
+        return False
 
     def on_mouse_move(self, p):
         """

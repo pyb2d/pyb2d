@@ -31,6 +31,7 @@ class PygameGui(object):
         # mouse state
         self._last_was_drag = False
         self._last_pos = None
+        self._handle_click = False
 
         # steping settings
         self._fps = settings.get("fps", 30) 
@@ -105,11 +106,11 @@ class PygameGui(object):
         pressed_mouse_buttons = pygame.mouse.get_pressed()
 
 
-        ctrl_pressed = pressed_keys[pygame.K_LCTRL] or pressed_keys[pygame.K_RCTRL]
+        # ctrl_pressed = pressed_keys[pygame.K_LCTRL] or pressed_keys[pygame.K_RCTRL]
 
-        drag_mode = ctrl_pressed and pressed_mouse_buttons[0]
+        drag_mode = pressed_mouse_buttons[0]
 
-        if(drag_mode and self._last_was_drag):
+        if(drag_mode and self._last_was_drag and self._handle_click):
             pos = pygame.mouse.get_pos()
             delta = [
                 self._last_pos[0] - pos[0],
@@ -124,47 +125,41 @@ class PygameGui(object):
         self._last_was_drag = drag_mode
         self._last_pos = pygame.mouse.get_pos()
 
-        # TRANSLATION
-        if ctrl_pressed:
-            d = 0.1
-            if pressed_keys[pygame.K_UP]:
-                t = self.debug_draw.translate
-                self.debug_draw.translate = (t.x, t.y - d)
-            elif pressed_keys[pygame.K_DOWN]:
-                t = self.debug_draw.translate
-                self.debug_draw.translate = (t.x, t.y + d)
-            elif pressed_keys[pygame.K_LEFT]:
-                t = self.debug_draw.translate
-                self.debug_draw.translate = (t.x - d, t.y)
-            elif pressed_keys[pygame.K_RIGHT]:
-                t = self.debug_draw.translate
-                self.debug_draw.translate = (t.x + d, t.y)
 
         for event in pygame.event.get():
             if event.type == pygame.locals.QUIT:
                 self._exit = True
                 break
 
+            # key events
+            elif event.type == pygame.KEYDOWN:
+                keycode = event.key
+                name = pygame.key.name(event.key)
+                self._testworld.on_keyboard_down((event.key,name))
+            elif event.type == pygame.KEYUP:
+                keycode = event.key
+                name = pygame.key.name(event.key)
+                self._testworld.on_keyboard_up((event.key,name))
+            # mouse events
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     screen_pos = pos = pygame.mouse.get_pos()
                     world_pos = self.debug_draw.screen_to_world(screen_pos)
-                    self._testworld.on_mouse_down(world_pos)
-
+                    handled = self._testworld.on_mouse_down(world_pos)
+                    self._handle_click = not handled
 
                 # zoom
-                if ctrl_pressed:
-
-                    if event.button == 4:
-                        self._zoom_in()
-                    elif event.button == 5:
-                        self._zoom_out()
+                if event.button == 4:
+                    self._zoom_in()
+                elif event.button == 5:
+                    self._zoom_out()
 
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
                     screen_pos = pos = pygame.mouse.get_pos()
                     world_pos = self.debug_draw.screen_to_world(screen_pos)
                     self._testworld.on_mouse_up(world_pos)
+                self._handle_click = False
 
             elif event.type == pygame.MOUSEMOTION:
                 screen_pos = pos = pygame.mouse.get_pos()
