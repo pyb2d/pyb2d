@@ -22,19 +22,29 @@ class DebugDrawCallback(object):
 
 
 
-# class TestbedSettings(object):
-#     def __init__(self, 
-#         resolution=(1000,1000), 
-#         fps=40, 
-#         ppm=30,
-#         offset=(0,0)
-#         =)
+class TestbedDestructionListener(b2d.DestructionListener):
 
-class TestbedBase(
-    b2d.DestructionListener,
-    b2d.ContactListener
-    
-):
+    def __init__(self, testbed):
+        b2d.DestructionListener.__init__(self)
+        self.testbed = testbed
+
+    def say_goodbye_joint(self, joint):
+        self.testbed.internal_say_goodbye_joint(joint)
+        
+    def say_goodbye_fixture(self, fixture):
+        self.testbed.say_goodbye_fixture(fixture)
+        
+    def say_goodbye_particle_group(self, particleGroup):
+        self.testbed.say_goodbye_particle_group(particleGroup)
+        
+    def say_goodbye_particle_system(self, particleSystem,index):
+        self.testbed.say_goodbye_particle_system(particleSystem,index)
+        
+
+
+
+
+class TestbedBase(b2d.ContactListener):
     @classmethod
     def run(cls, gui_factory, gui_settings=None, testbed_kwargs=None):
         if gui_settings is None:
@@ -47,8 +57,8 @@ class TestbedBase(
         return ui.start_ui()
 
     def __init__(self, gravity=b2d.vec2(0,-9.81)):
+
         b2d.ContactListener.__init__(self)
-        b2d.DestructionListener.__init__(self)
 
         # Box2D-related
         self.points = []
@@ -66,8 +76,11 @@ class TestbedBase(
         self.world = b2d.world(gravity)
         self.groundbody = self.world.create_body()
         
+
+        # listeners
+        self.destruction_listener = TestbedDestructionListener(testbed=self)
         self.world.set_contact_listener(self)
-        self.world.set_destruction_listener(self)
+        self.world.set_destruction_listener(self.destruction_listener)
         self.iter = 0
 
         # debug draw 
@@ -181,7 +194,6 @@ class TestbedBase(
         """
         Left mouse button up.
         """
-
         if self.mouse_joint is not None:
             self.world.destroy_joint(self.mouse_joint)
             self.mouse_joint = None
@@ -218,6 +230,12 @@ class TestbedBase(
     #    pass
 
     # DestructionListener
+    def internal_say_goodbye_joint(self, joint):
+        if joint == self.mouse_joint:
+            self.mouse_joint = None
+        else:
+            self.say_goodbye_joint(joint)
+
     def say_goodbye_joint(self, joint):
         pass
 
