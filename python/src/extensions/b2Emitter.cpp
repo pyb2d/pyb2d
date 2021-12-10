@@ -62,28 +62,32 @@ b2EmitterBase::b2EmitterBase(
     m_body(def.body),
     m_transform(def.transform),
     m_lifetime(def.lifetime),
-    m_seed(def.seed)
+    m_seed(def.seed),
+    m_enabled(def.enabled)
 {
 
 }
 
 void b2EmitterBase::CreateParticle(b2ParticleDef  def)
 {
-    def.lifetime = m_lifetime;
-    //def.emitRate = m_emitRate;
-
-    m_particleSystem->CreateParticle(def);
-
-    if(m_body != nullptr)
+    if(m_enabled)
     {
-        //std::cout<<"ApplyLinearImpulse "<<std::endl;
-        const auto & pos = def.position;
-        const auto & velocity = def.velocity;
-        const auto density = m_particleSystem->GetDensity();
-        const auto radius = m_particleSystem->GetRadius();
-        const auto area = radius*radius * M_PI;
-        const auto m = area * density;
-        m_body->ApplyLinearImpulse(m*velocity * -1.0f, pos, true);
+        def.lifetime = m_lifetime;
+        //def.emitRate = m_emitRate;
+
+        m_particleSystem->CreateParticle(def);
+
+        if(m_body != nullptr)
+        {
+            //std::cout<<"ApplyLinearImpulse "<<std::endl;
+            const auto & pos = def.position;
+            const auto & velocity = def.velocity;
+            const auto density = m_particleSystem->GetDensity();
+            const auto radius = m_particleSystem->GetRadius();
+            const auto area = radius*radius * M_PI;
+            const auto m = area * density;
+            m_body->ApplyLinearImpulse(m*velocity * -1.0f, pos, true);
+        }
     }
 }
 
@@ -126,6 +130,18 @@ void b2EmitterBase::SetAngle(const float angle)
     m_transform.Set(this->GetPosition(), angle);
 }
 
+bool b2EmitterBase::GetEnabled()const
+{
+    return m_enabled;
+}
+
+void b2EmitterBase::SetEnabled(const bool e)
+{
+   m_enabled = e;
+}
+
+
+
 
 b2LinearEmitterArray::b2LinearEmitterArray( 
     b2ParticleSystem * particleSystem, 
@@ -139,51 +155,58 @@ b2LinearEmitterArray::b2LinearEmitterArray(
 }
 
 int b2LinearEmitterArray::Step(const float dt){
-    const auto & edef = m_emmiter_def;
+    if(this->m_enabled)
+    {
+        const auto & edef = m_emmiter_def;
 
 
-    const auto & center = this->GetPosition();
-    const auto angle = this->GetAngle();
-    const auto length = edef.length;
-    const auto n_emitter = edef.n_emitter;
-    const auto distance = length / (n_emitter -1);
-    m_remainder += dt * edef.emitRate;
-    const float dtPerParticle = dt / std::floor(m_remainder);
+        const auto & center = this->GetPosition();
+        const auto angle = this->GetAngle();
+        const auto length = edef.length;
+        const auto n_emitter = edef.n_emitter;
+        const auto distance = length / (n_emitter -1);
+        m_remainder += dt * edef.emitRate;
+        const float dtPerParticle = dt / std::floor(m_remainder);
 
-    int num_created = 0;
-    while(m_remainder >= 1.0)
-    {   
-        const float dtp = dtPerParticle * num_created;
+        int num_created = 0;
+        while(m_remainder >= 1.0)
+        {   
+            const float dtp = dtPerParticle * num_created;
 
-        // get random pos in UNROTATED box
+            // get random pos in UNROTATED box
 
-        for(std::size_t i=0; i<n_emitter; ++i)
-        {
-            b2Vec2 pBox(distance * i, 0);
+            for(std::size_t i=0; i<n_emitter; ++i)
+            {
+                b2Vec2 pBox(distance * i, 0);
 
-            // rotate
-            b2Vec2 ppos = b2Mul(b2Rot(angle), pBox) + center;
-
-
-            // velocity in body coordinates 
-            // => rotate to world
-            auto v = edef.velocity;
-            b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
-
-            // move 
-            ppos += worldVelocity * dtp;
+                // rotate
+                b2Vec2 ppos = b2Mul(b2Rot(angle), pBox) + center;
 
 
+                // velocity in body coordinates 
+                // => rotate to world
+                auto v = edef.velocity;
+                b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
 
-            b2ParticleDef pdef;
-            pdef.velocity = worldVelocity;
-            pdef.position = ppos;
-            this->CreateParticle(pdef);        
-            ++num_created;   
+                // move 
+                ppos += worldVelocity * dtp;
+
+
+
+                b2ParticleDef pdef;
+                pdef.velocity = worldVelocity;
+                pdef.position = ppos;
+                this->CreateParticle(pdef);        
+                ++num_created;   
+            }
+            m_remainder -= 1.0;
         }
-        m_remainder -= 1.0;
+        return num_created;
     }
-    return num_created;
+    else
+    {
+        return 0;
+    }
 }   
 
 
@@ -203,51 +226,57 @@ b2RandomizedLinearEmitter::b2RandomizedLinearEmitter(
 }
 
 int b2RandomizedLinearEmitter::Step(const float dt){
-    const auto & edef = m_emmiter_def;
+    if(this->m_enabled)
+    {
+        const auto & edef = m_emmiter_def;
 
 
-    const auto & center = this->GetPosition();
-    const auto & angle = this->GetAngle();
-    const auto & size = edef.size;
+        const auto & center = this->GetPosition();
+        const auto & angle = this->GetAngle();
+        const auto & size = edef.size;
 
-    m_remainder += dt * edef.emitRate;
-    const float dtPerParticle = dt / std::floor(m_remainder);
+        m_remainder += dt * edef.emitRate;
+        const float dtPerParticle = dt / std::floor(m_remainder);
 
-    int num_created = 0;
-    while(m_remainder >= 1.0)
-    {   
-        const float dtp = dtPerParticle * num_created;
+        int num_created = 0;
+        while(m_remainder >= 1.0)
+        {   
+            const float dtp = dtPerParticle * num_created;
 
-        // get random pos in UNROTATED box
-        b2Vec2 pBox;
-        pBox.x = size.x * (m_uniform01(m_gen) - 0.5f);
-        pBox.y = size.y * (m_uniform01(m_gen) - 0.5f);
+            // get random pos in UNROTATED box
+            b2Vec2 pBox;
+            pBox.x = size.x * (m_uniform01(m_gen) - 0.5f);
+            pBox.y = size.y * (m_uniform01(m_gen) - 0.5f);
 
-        // rotate
-        b2Vec2 ppos = b2Mul(b2Rot(angle), pBox) + center;
-
-
-        // create
-
-        // velocity in body coordinates 
-        // => rotate to world
-        auto v = edef.velocity;
-        b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
-
-        // move 
-        ppos += worldVelocity * dtp;
+            // rotate
+            b2Vec2 ppos = b2Mul(b2Rot(angle), pBox) + center;
 
 
+            // create
 
-        b2ParticleDef pdef;
-        pdef.velocity = worldVelocity;
-        pdef.position = ppos;
-        this->CreateParticle(pdef);
+            // velocity in body coordinates 
+            // => rotate to world
+            auto v = edef.velocity;
+            b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
 
-        m_remainder -= 1.0;
-        ++num_created;   
+            // move 
+            ppos += worldVelocity * dtp;
+
+
+
+            b2ParticleDef pdef;
+            pdef.velocity = worldVelocity;
+            pdef.position = ppos;
+            this->CreateParticle(pdef);
+
+            m_remainder -= 1.0;
+            ++num_created;   
+        }
+        return num_created;
     }
-    return num_created;
+    else{
+        return 0;
+    }
 }   
 
 
@@ -271,56 +300,66 @@ b2RandomizedRadialEmitter::b2RandomizedRadialEmitter(
 
 int b2RandomizedRadialEmitter::Step(const float dt)
 {
-    const auto & edef = m_emmiter_def;
+    if(this->m_enabled)
+    {
+        const auto & edef = m_emmiter_def;
 
-    const auto & position = edef.transform.p;
-    auto innerRadius = edef.innerRadius;
-    auto outerRadius = edef.outerRadius;
+        const auto & center = this->GetPosition();
+        const auto & angle = this->GetAngle();
 
-    innerRadius = std::min(innerRadius, innerRadius);
-    outerRadius = std::max(innerRadius, outerRadius);
+        auto innerRadius = edef.innerRadius;
+        auto outerRadius = edef.outerRadius;
 
-    m_remainder += dt * edef.emitRate;
-    const float dtPerParticle = dt / std::floor(m_remainder);
+        innerRadius = std::min(innerRadius, innerRadius);
+        outerRadius = std::max(innerRadius, outerRadius);
 
-    int num_created = 0;
-    while(m_remainder >= 1.0)
-    {   
-        const float dtp = dtPerParticle * num_created;
+        m_remainder += dt * edef.emitRate;
+        const float dtPerParticle = dt / std::floor(m_remainder);
 
-
-
-        // get random pos in circle
-        auto phi = m_uniform_angle(m_gen);
-        auto rho = std::sqrt(m_uniform_r(m_gen));
-
-        b2Vec2 circlePos(
-            std::sqrt(rho) * std::cos(phi),
-            std::sqrt(rho) * std::sin(phi)
-        );
-
-        b2Vec2 ppos = circlePos + position;
-        
-        // velocity
-        b2Vec2 unitCirclePos = circlePos / outerRadius;
-        b2Vec2 velocity = unitCirclePos * edef.velocityMagnitude;
+        int num_created = 0;
+        while(m_remainder >= 1.0)
+        {   
+            const float dtp = dtPerParticle * num_created;
 
 
-        // move 
-        ppos += velocity * dtp;
 
-        // create
-        b2ParticleDef pdef;
-        pdef.velocity = velocity;
-        pdef.position = ppos;
-        pdef.lifetime = edef.lifetime;
+            // get random pos in circle
+            auto phi = m_uniform_angle(m_gen) + angle;
+            auto rho = std::sqrt(m_uniform_r(m_gen));
 
-        this->CreateParticle(pdef);
-        //m_particleSystem->CreateParticle(pdef);
+            b2Vec2 circlePos(
+                std::sqrt(rho) * std::cos(phi),
+                std::sqrt(rho) * std::sin(phi)
+            );
 
-        m_remainder -= 1.0;
-        ++num_created;   
+            // b2Vec2 ppos = b2Mul(b2Rot(angle), circlePos) + center;
+            b2Vec2 ppos =  circlePos + center;
+
+            // velocity
+            b2Vec2 unitCirclePos = circlePos;
+            circlePos.Normalize();
+            b2Vec2 velocity = 1.0 * unitCirclePos * edef.velocityMagnitude;
+            b2Vec2 worldVelocity = b2Mul(b2Rot(angle), velocity);
+
+            // move 
+            // ppos += worldVelocity * dtp;
+
+            // create
+            b2ParticleDef pdef;
+            pdef.velocity = velocity;
+            pdef.position = ppos;
+            pdef.lifetime = edef.lifetime;
+
+            this->CreateParticle(pdef);
+            //m_particleSystem->CreateParticle(pdef);
+
+            m_remainder -= 1.0;
+            ++num_created;   
+        }
+        return num_created;
     }
-    return num_created;
+    else{
+        return 0;
+    }
 }   
 

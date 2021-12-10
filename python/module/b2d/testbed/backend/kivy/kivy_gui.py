@@ -16,7 +16,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scatter import Scatter
 from kivy.clock import Clock
 from kivy.config import Config
-# from kivy.core.window import Window
+from kivy.core.window import Window
 
 
 class KivyWidget(Scatter):
@@ -36,6 +36,21 @@ class KivyWidget(Scatter):
         self.apply_transform(Matrix().scale(scale, scale, scale),
                                      anchor=(0,0))
 
+        # keyboard
+        self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
+        self._keyboard.bind(
+            on_key_down=self.on_keyboard_down
+        )
+        self._keyboard.bind(
+            on_key_up=self.on_keyboard_up
+        )
+
+    def _keyboard_closed(self):
+        self._keyboard.unbind(on_key_down=self.on_keyboard_down)
+        self._keyboard = None
+
+
+
     def step(self, dt):
         self.canvas.clear()
         self.kivy_gui._testworld.step(dt)
@@ -54,6 +69,14 @@ class KivyWidget(Scatter):
         if factor is not None:
             self.apply_transform(Matrix().scale(factor, factor, factor),
                                  anchor=touch.pos)
+
+
+    def on_keyboard_down(self, keyboard, keycode, text, modifiers):
+        self.kivy_gui._testworld.on_keyboard_down(keycode)
+
+    def on_keyboard_up(self, keyboard, keycode):
+        self.kivy_gui._testworld.on_keyboard_up(keycode)
+
     def on_touch_down(self, touch):
         # Override Scatter's `on_touch_down` behavior for mouse scroll
         if touch.is_mouse_scrolling:

@@ -12,6 +12,7 @@ struct b2EmitterDefBase
     float  emitRate;
     float lifetime;
     int seed;
+    bool enabled;
 };
 
 
@@ -67,7 +68,10 @@ public:
     float GetAngle()const;
     void SetAngle(const float angle);
 
-private:
+    bool GetEnabled()const;
+    void SetEnabled(const bool e);
+
+protected:
 
 
     b2ParticleSystem * m_particleSystem;
@@ -77,6 +81,7 @@ private:
     float  m_emitRate;
     float m_lifetime;
     int m_seed;
+    bool m_enabled;
 };
 
 

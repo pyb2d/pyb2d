@@ -3,6 +3,8 @@ from time import sleep
 from threading import Event, Thread, Lock
 from ipycanvas import Canvas, hold_canvas
 from ipywidgets import Label, HTML, Button, HBox, VBox
+from ipyevents import Event as IPyEvent
+
 import functools
 import IPython
 import time
@@ -154,6 +156,26 @@ class JupyterGui(object):
         self.multi_canvas[1].on_mouse_move(on_mouse_move)
 
 
+        d = IPyEvent(source=self.multi_canvas, watched_events=['keydown','keyup','wheel'])
+
+        def handle_event(event):
+
+            scale = self.debug_draw.scale
+            etype = event['event']
+            if etype == "wheel":
+                if event['deltaY'] > 0:
+                    self.debug_draw.scale = scale * 0.9
+                elif event['deltaY'] < 0:
+                    self.debug_draw.scale = scale * 1.1
+                # self.event_info.value = f"WHEEEL {event['deltaY']}"
+            elif etype == 'keyup':
+                k = event['key']
+                self._testworld.on_keyboard_up((None, k))
+            elif etype == 'keydown':
+                k = event['key']
+                self._testworld.on_keyboard_down((None, k))
+
+        d.on_dom_event(handle_event)
 
     
         target_fps = 30
@@ -309,11 +331,13 @@ class JupyterGui(object):
         for i,t in enumerate(['Stepping', 'Zoom', 'DebugDrawFlags']):
              tab.set_title(i, str(t))
         # display
+        self.event_info= HTML('Event info')
         IPython.display.display(self.out)
         with self.out:
             IPython.display.display(self.multi_canvas, 
                 tab
             )
+            # IPython.display.display(self.event_info)
 
     def _single_step(self):
         self._step_world()
