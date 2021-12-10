@@ -29,7 +29,7 @@ class TestbedDestructionListener(b2d.DestructionListener):
         self.testbed = testbed
 
     def say_goodbye_joint(self, joint):
-        self.testbed.say_goodbye_joint(joint)
+        self.testbed.internal_say_goodbye_joint(joint)
         
     def say_goodbye_fixture(self, fixture):
         self.testbed.say_goodbye_fixture(fixture)
@@ -59,7 +59,6 @@ class TestbedBase(b2d.ContactListener):
     def __init__(self, gravity=b2d.vec2(0,-9.81)):
 
         b2d.ContactListener.__init__(self)
-        b2d.DestructionListener.__init__(self)
 
         # Box2D-related
         self.points = []
@@ -153,6 +152,7 @@ class TestbedBase(b2d.ContactListener):
         """
         Mouse moved to point p, in world coordinates.
         """
+        print("on_mouse_move")
         if self.mouse_joint is not None:
             self.mouse_joint.target = p
             return True
@@ -190,7 +190,7 @@ class TestbedBase(b2d.ContactListener):
         """
         Left mouse button up.
         """
-
+        print("on_mouse_up",self.mouse_joint)
         if self.mouse_joint is not None:
             self.world.destroy_joint(self.mouse_joint)
             self.mouse_joint = None
@@ -227,6 +227,12 @@ class TestbedBase(b2d.ContactListener):
     #    pass
 
     # DestructionListener
+    def internal_say_goodbye_joint(self, joint):
+        if joint == self.mouse_joint:
+            self.mouse_joint = None
+        else:
+            self.say_goodbye_joint(joint)
+
     def say_goodbye_joint(self, joint):
         pass
 
