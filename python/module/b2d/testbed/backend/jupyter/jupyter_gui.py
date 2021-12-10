@@ -159,11 +159,6 @@ class JupyterGui(object):
         d = IPyEvent(source=self.multi_canvas, watched_events=['keydown','keyup','wheel'])
 
         def handle_event(event):
-            # self.multi_canvas[1].clear()
-            # self.multi_canvas[1].fill_text(f"last_pressed: {event['key']}", 0, 32)
-            lines = ['{}: {}'.format(k, v) for k, v in event.items()]
-            content = '<br>'.join(lines)
-            self.event_info.value = content
 
             scale = self.debug_draw.scale
             etype = event['event']
@@ -342,7 +337,7 @@ class JupyterGui(object):
             IPython.display.display(self.multi_canvas, 
                 tab
             )
-            IPython.display.display(self.event_info)
+            # IPython.display.display(self.event_info)
 
     def _single_step(self):
         self._step_world()
