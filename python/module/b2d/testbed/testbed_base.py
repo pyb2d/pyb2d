@@ -152,7 +152,6 @@ class TestbedBase(b2d.ContactListener):
         """
         Mouse moved to point p, in world coordinates.
         """
-        print("on_mouse_move")
         if self.mouse_joint is not None:
             self.mouse_joint.target = p
             return True
@@ -190,7 +189,6 @@ class TestbedBase(b2d.ContactListener):
         """
         Left mouse button up.
         """
-        print("on_mouse_up",self.mouse_joint)
         if self.mouse_joint is not None:
             self.world.destroy_joint(self.mouse_joint)
             self.mouse_joint = None
