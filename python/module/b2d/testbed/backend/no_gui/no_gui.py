@@ -55,7 +55,7 @@ class NoGui(GuiBase):
     # run the world for a limited amount of steps
     def start_ui(self):
         
-        self._testworld = self.testbed_cls(**self.testbed_settings)
+        self._testworld = self.testbed_cls(settings=self.testbed_settings)
         self._testworld.set_debug_draw(self.debug_draw)
 
         for i in range(self._n):
