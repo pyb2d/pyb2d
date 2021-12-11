@@ -26,7 +26,7 @@ class GifGui(GuiBase):
 
         # settings
 
-        self.image = numpy.zeros(list(self.resolution) + [3], dtype='uint8')
+        self.image = numpy.zeros(list(self.settings.resolution) + [3], dtype='uint8')
         self._image_list = []
         self.debug_draw = OpenCvBatchDebugDraw(image=self.image)
         filename = self.settings.filename
