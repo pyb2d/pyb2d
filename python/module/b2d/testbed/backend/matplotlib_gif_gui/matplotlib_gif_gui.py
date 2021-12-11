@@ -19,15 +19,10 @@ class MatplotlibGifGui(GifGui):
         fps: int =  24 # this is normally a testbed settings param
                        # but here we need to overwrite it.
                        #..consider making it a gui parameter
+        t: float = 10.0
 
     def __init__(self, testbed_cls, settings, testbed_settings):
-        t = settings.get('t', 10)
-        settings['t'] = t
-
-        # overwrite? 
-
         testbed_settings.fps = settings.fps
-
         super(MatplotlibGifGui, self).__init__(testbed_cls=testbed_cls, settings=settings, testbed_settings=testbed_settings)
 
 

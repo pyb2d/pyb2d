@@ -10,6 +10,7 @@ class GifGui(GuiBase):
     @dataclass
     class Settings(GuiBase.Settings):
         filename: str = ""
+        t: float = 10.0
 
     def __init__(self, testbed_cls, settings, testbed_settings):
         
@@ -20,7 +21,7 @@ class GifGui(GuiBase):
 
         self._fps = testbed_settings.fps
         self._dt = 1.0 / self._fps
-        self._t = settings.get('t',10)
+        self._t = settings.t
         self._n = int(0.5 + self._t / self._dt)
 
         # settings
