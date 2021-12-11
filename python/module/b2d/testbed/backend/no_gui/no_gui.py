@@ -1,4 +1,5 @@
 import b2d 
+from ..gui_base import GuiBase
 
 class EmptyDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
@@ -31,15 +32,21 @@ class EmptyDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
         pass
 
 
-class NoGui(object):
-    def __init__(self, testbed_cls, settings, testbed_kwargs=None):
+class NoGui(GuiBase):
+
+    @dataclass
+    class Settings(GuiBase.Settings):
+        t: float = 10.0
+
+    def __init__(self, testbed_cls, settings, testbed_settings):
         
         self.testbed_cls = testbed_cls
-        self.testbed_kwargs = testbed_kwargs
+        self.testbed_settings = testbed_settings
         self._testworld = None
 
-        self._dt = settings.get('dt', 1.0/40.0)
-        self._t = settings.get('t',10)
+        fps = testbed_settings.fps
+        self._dt =1.0 / fps
+        self._t = settings.t
         self._n = int(0.5 + self._t / self._dt) 
         self.debug_draw = EmptyDebugDraw()
         
@@ -47,7 +54,7 @@ class NoGui(object):
     # run the world for a limited amount of steps
     def start_ui(self):
         
-        self._testworld = self.testbed_cls(**self.testbed_kwargs)
+        self._testworld = self.testbed_cls(**self.testbed_settings)
         self._testworld.set_debug_draw(self.debug_draw)
 
         for i in range(self._n):
