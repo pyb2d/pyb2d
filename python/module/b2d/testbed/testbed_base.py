@@ -82,7 +82,8 @@ class TestbedBase(b2d.ContactListener):
         self.world.set_contact_listener(self)
         self.world.set_destruction_listener(self.destruction_listener)
         self.iter = 0
-
+        self.elapsed_time = 0.0
+        
         # debug draw 
         self.debug_draw = None
 
@@ -126,7 +127,8 @@ class TestbedBase(b2d.ContactListener):
                 self.current_fps = 1.0/dt
             except ZeroDivisionError:
                 self.current_fps = float('inf')
-                
+        
+        self.elapsed_time += dt
         self.step_count += 1
         self.iter += 1
         self.post_step(dt)
