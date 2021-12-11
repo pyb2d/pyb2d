@@ -109,11 +109,12 @@ void exportB2Body(py::module & pybox2dModule){
         .def_property("angular_damping",&b2Body::GetAngularDamping,&b2Body::SetAngularDamping)
 
 
-        .def("apply_force", &b2Body::ApplyForce, py::arg("force"), py::arg("point"), py::arg("wake"))
-        .def("apply_force_to_center", &b2Body::ApplyForceToCenter, py::arg("force"), py::arg("wake"))
-        .def("apply_torque", &b2Body::ApplyTorque, py::arg("torque"), py::arg("wake"))
-        .def("apply_linear_impulse", &b2Body::ApplyLinearImpulse, py::arg("impulse"), py::arg("point"), py::arg("wake"))
-        .def("apply_angular_impulse", &b2Body::ApplyAngularImpulse, py::arg("impulse"), py::arg("wake"))
+        .def("apply_force", &b2Body::ApplyForce, py::arg("force"), py::arg("point"), py::arg("wake")=true)
+        .def("apply_force_to_center", &b2Body::ApplyForceToCenter, py::arg("force"), py::arg("wake")=true)
+        .def("apply_torque", &b2Body::ApplyTorque, py::arg("torque"), py::arg("wake")=true)
+        .def("apply_linear_impulse", &b2Body::ApplyLinearImpulse, py::arg("impulse"), py::arg("point"), py::arg("wake")=true)
+        .def("apply_linear_impulse_to_center", &b2Body::ApplyLinearImpulseToCenter, py::arg("impulse"), py::arg("wake")=true)
+        .def("apply_angular_impulse", &b2Body::ApplyAngularImpulse, py::arg("impulse"), py::arg("wake")=true)
 
         .def("reset_mass_data", &b2Body::ResetMassData)  
         .def("get_world_point", &b2Body::GetWorldPoint, py::arg("local_point"))

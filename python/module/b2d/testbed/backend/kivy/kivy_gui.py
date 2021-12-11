@@ -18,6 +18,9 @@ from kivy.clock import Clock
 from kivy.config import Config
 from kivy.core.window import Window
 
+from dataclasses import dataclass,field
+
+from ..gui_base import GuiBase
 
 class KivyWidget(Scatter):
     def __init__(self, kivy_gui, **kwargs):
@@ -32,7 +35,7 @@ class KivyWidget(Scatter):
 
 
         # apply initial scale
-        scale = self.kivy_gui.settings.get("scale", 30)
+        scale = self.kivy_gui.settings.scale
         self.apply_transform(Matrix().scale(scale, scale, scale),
                                      anchor=(0,0))
 
@@ -103,8 +106,8 @@ class KivyWidget(Scatter):
             super(KivyWidget, self).on_touch_move(touch)
 
 # this class implements the "GUI" interface for b2d
-class KivyGui(App):
-    def __init__(self, testbed_cls, settings, testbed_kwargs=None):
+class KivyGui(App,GuiBase):
+    def __init__(self, testbed_cls, settings, testbed_settings=None):
         
 
 
@@ -112,33 +115,27 @@ class KivyGui(App):
 
         self.settings = settings
         self.testbed_cls = testbed_cls
-        self.testbed_kwargs = testbed_kwargs
+        self.testbed_settings = testbed_settings
         self._testworld = None
 
-        self._fps = settings.get('fps', 40.0)
+        self._fps =  testbed_settings.fps
         self._dt = 1.0 / self._fps
-        self._t = settings.get('t',10)
-        self._n = int(0.5 + self._t / self._dt)
+        # self._t = settings.get('t',10)
+        # self._n = int(0.5 + self._t / self._dt)
 
         # settings
-        resolution = settings.get("resolution",  (1000,1000))
-        self.resolution = resolution
+        
+        Config.set('graphics', 'width', f'{settings.resolution[0]}')
+        Config.set('graphics', 'height', f'{settings.resolution[1]}')
 
-        Config.set('graphics', 'width', f'{resolution[0]}')
-        Config.set('graphics', 'height', f'{resolution[1]}')
-
-
-
-        self.image = numpy.zeros(list(self.resolution) + [3], dtype='uint8')
-        self._image_list = []
         self.debug_draw = KivyBatchDebugDraw()
 
-        self.debug_draw.screen_size = self.resolution
+        self.debug_draw.screen_size = self.settings.resolution
 
 
     # 
     def start_ui(self):
-        self._testworld = self.testbed_cls(**self.testbed_kwargs)
+        self._testworld = self.testbed_cls(settings=self.testbed_settings)
         self._testworld.set_debug_draw(self.debug_draw)
 
         # start the kivy ui

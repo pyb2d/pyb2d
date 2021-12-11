@@ -27,29 +27,29 @@ def is_doc_build():
 def default_backend():
     if is_doc_build():
         from b2d.testbed.backend.matplotlib_gif_gui import MatplotlibGifGui
-        return MatplotlibGifGui,{}
+        return MatplotlibGifGui
     elif is_pyodide():
         raise RuntimeError("pyodide has not yet a backend")
     elif is_notebook():
         from b2d.testbed.backend.jupyter import JupyterGui
-        return JupyterGui,{}
+        return JupyterGui
 
     else:
         try:
             from b2d.testbed.backend.pygame import PygameGui
-            return PygameGui,{}
+            return PygameGui
         except:
             pass
 
         try:
             from b2d.testbed.backend.kivy import KivyGui
-            return KivyGui,{}
+            return KivyGui
         except:
             raise RuntimeError("no backend found: try installing pygame or kivy")
 
 
 
-def run(example_cls, backend=None, gui_settings=None):
+def run(example_cls, backend=None, settings=None, gui_settings=None):
 
     if isinstance(backend, str):
         backend_name = backend
@@ -61,27 +61,22 @@ def run(example_cls, backend=None, gui_settings=None):
     if backend_name is not None:
         if backend_name == "pygame":
             from b2d.testbed.backend.pygame import PygameGui
-            backend_cls, default_gui_settings = PygameGui,{}
+            backend_cls = PygameGui
         elif backend_name == "kivy":
             from b2d.testbed.backend.kivy import KivyGui
-            backend_cls, default_gui_settings = KivyGui,{}
+            backend_cls = KivyGui
         elif backend_name == "matplotlib_gif":
             from b2d.testbed.backend.matplotlib_gif_gui import MatplotlibGifGui
-            backend_cls, default_gui_settings = MatplotlibGifGui,{}
+            backend_cls = MatplotlibGifGui
         elif backend_name == "jupyter":
             from b2d.testbed.backend.jupyter import JupyterGui
-            backend_cls, default_gui_settings = JupyterGui,{}
-
-        if gui_settings is None:
-            gui_settings = default_gui_settings
-
+            backend_cls = JupyterGui
 
     if backend_cls is None:
-        backend_cls, default_gui_settings = default_backend()
-        if gui_settings is None:
-            gui_settings = default_gui_settings
+        backend_cls = default_backend()
 
     if gui_settings is None:
-        gui_settings = dict()
+        gui_settings = backend_cls.Settings()
 
-    return example_cls.run(backend_cls, gui_settings=gui_settings)
+
+    return example_cls.run(backend_cls, settings=settings, gui_settings=gui_settings)

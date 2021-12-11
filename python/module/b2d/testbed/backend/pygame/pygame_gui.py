@@ -3,22 +3,24 @@ import b2d as b2
 import pygame
 import pygame.locals 
 import time
+from dataclasses import dataclass,field
 
+from ..gui_base import GuiBase
 from .pygame_debug_draw import PyGameBatchDebugDraw
 
-class PygameGui(object):
-    def __init__(self, testbed_cls, settings=None, testbed_kwargs=None):
+class PygameGui(GuiBase):
+    
+    @dataclass
+    class Settings(GuiBase.Settings):
+        pass
+
+    def __init__(self, testbed_cls, settings=None, testbed_settings=None):
 
         # settings
-        resolution = settings.get("resolution", (1024,768))
         self.settings = settings
-        self.resolution = resolution
-        print("resolution",resolution)
 
         # testworld
-        if testbed_kwargs is None:
-            testbed_kwargs = dict()
-        self.testbed_kwargs = testbed_kwargs
+        self.testbed_settings = testbed_settings
         self.testbed_cls = testbed_cls
         self._testworld  = None
 
@@ -34,7 +36,7 @@ class PygameGui(object):
         self._handle_click = False
 
         # steping settings
-        self._fps = settings.get("fps", 30) 
+        self._fps = testbed_settings.fps
         self._dt_s = 1.0 / self._fps
 
      
@@ -42,7 +44,7 @@ class PygameGui(object):
 
         if self._testworld is not None:
             self._testworld.say_goodbye_world()
-        self._testworld = self.testbed_cls(**self.testbed_kwargs)
+        self._testworld = self.testbed_cls(settings=self.testbed_settings)
 
 
 
@@ -54,17 +56,17 @@ class PygameGui(object):
 
         # Initialise screen
         pygame.init()
-        self._surface = pygame.display.set_mode(self.resolution)
+        self._surface = pygame.display.set_mode(self.settings.resolution)
         pygame.display.set_caption(self.testbed_cls.name)
 
 
         # debug draw
         # self.debug_draw = PygameDebugDraw(surface=self._surface)
         self.debug_draw = PyGameBatchDebugDraw(surface=self._surface)
-        self.debug_draw.screen_size = self.resolution
+        self.debug_draw.screen_size = self.settings.resolution
         self.debug_draw.flip_y = True
-        self.debug_draw.scale = self.settings.get("scale",20.0)
-        self.debug_draw.translate = self.settings.get("translate", [10.0,10.0])
+        self.debug_draw.scale = self.settings.scale
+        self.debug_draw.translate = self.settings.translate
         self.debug_draw.append_flags([
             'shape',
             'joint',

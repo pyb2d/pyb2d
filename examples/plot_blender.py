@@ -15,8 +15,8 @@ class Blender(TestbedBase):
 
     name = "blender"
     
-    def __init__(self): 
-        super(Blender, self).__init__()
+    def __init__(self, settings=None): 
+        super(Blender, self).__init__(settings=settings)
         dimensions = [30,30]
         
         # the outer box

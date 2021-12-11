@@ -14,8 +14,8 @@ class ColorMixing(TestbedBase):
 
     name = "ColorMixing"
     
-    def __init__(self): 
-        super(ColorMixing, self).__init__()
+    def __init__(self, settings=None): 
+        super(ColorMixing, self).__init__(settings=settings)
         dimensions = [30,30]
         
         # the outer box
