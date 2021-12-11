@@ -38,7 +38,5 @@ if b2d.BuildConfiguration.LIQUID_FUN:
     examples
 )
 def test_eval(example_cls):
-    gui_settings = {
-    }
     print(f"\nSimulate `{example_cls.name}:`")
-    example_cls.run(NoGui, gui_settings=gui_settings)
+    example_cls.run(NoGui, gui_settings=NoGui.Settings())
