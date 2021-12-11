@@ -118,7 +118,7 @@ class KivyGui(App,GuiBase):
         self.testbed_settings = testbed_settings
         self._testworld = None
 
-        self._fps =  testbed_settings.fps
+        self._fps =  settings.fps
         self._dt = 1.0 / self._fps
         # self._t = settings.get('t',10)
         # self._n = int(0.5 + self._t / self._dt)

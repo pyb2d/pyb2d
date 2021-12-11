@@ -14,7 +14,7 @@ class PygameGui(GuiBase):
     class Settings(GuiBase.Settings):
         pass
 
-    def __init__(self, testbed_cls, settings=None, testbed_settings=None):
+    def __init__(self, testbed_cls, settings, testbed_settings):
 
         # settings
         self.settings = settings
@@ -36,7 +36,7 @@ class PygameGui(GuiBase):
         self._handle_click = False
 
         # steping settings
-        self._fps = testbed_settings.fps
+        self._fps = settings.fps
         self._dt_s = 1.0 / self._fps
 
      

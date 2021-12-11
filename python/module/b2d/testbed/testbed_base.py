@@ -48,7 +48,6 @@ class TestbedBase(b2d.ContactListener):
 
     @dataclass
     class Settings:
-        fps: int = 40
         substeps: int = 1
         n_velocity_steps: int = 2
         n_position_iterations: int = 2

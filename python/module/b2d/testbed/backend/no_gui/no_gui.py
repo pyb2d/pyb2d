@@ -45,7 +45,7 @@ class NoGui(GuiBase):
         self.testbed_settings = testbed_settings
         self._testworld = None
 
-        fps = testbed_settings.fps
+        fps = settings.fps
         self._dt =1.0 / fps
         self._t = settings.t
         self._n = int(0.5 + self._t / self._dt) 

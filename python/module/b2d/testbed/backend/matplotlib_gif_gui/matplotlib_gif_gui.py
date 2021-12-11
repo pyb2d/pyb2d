@@ -16,13 +16,10 @@ class MatplotlibGifGui(GifGui):
     class Settings(GifGui.Settings):
         resolution: list = list_field([400,400])
         scale: float = 10
-        fps: int =  24 # this is normally a testbed settings param
-                       # but here we need to overwrite it.
-                       #..consider making it a gui parameter
+        fps: int =  24 # we overwrite this here!
         t: float = 10.0
 
     def __init__(self, testbed_cls, settings, testbed_settings):
-        testbed_settings.fps = settings.fps
         super(MatplotlibGifGui, self).__init__(testbed_cls=testbed_cls, settings=settings, testbed_settings=testbed_settings)
 
 

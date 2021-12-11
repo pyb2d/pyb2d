@@ -9,6 +9,13 @@ class GuiBase(object):
 
     @dataclass
     class Settings:
+
+        # the gui is responsible for "driving the world"
+        # at a certain fps
+        fps: float = 40
+
+
+
         resolution: list = list_field([1000,1000])
         scale: float = 20
         translate: list = list_field([200,200])
