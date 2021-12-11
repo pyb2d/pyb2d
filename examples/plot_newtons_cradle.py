@@ -12,8 +12,8 @@ class NewtonsCradle(TestbedBase):
 
     name = "newton's cradle"
     
-    def __init__(self): 
-        super(NewtonsCradle, self).__init__()
+    def __init__(self, settings=None): 
+        super(NewtonsCradle, self).__init__(settings=settings)
     
         # radius of the circles
         r  = 1.0 

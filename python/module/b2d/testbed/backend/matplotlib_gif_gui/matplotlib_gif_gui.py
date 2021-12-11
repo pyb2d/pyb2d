@@ -3,24 +3,24 @@ from ..gif_gui import GifGui
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib
+from dataclasses import dataclass,field
+
 matplotlib.rc('animation', html='html5')
 
+from ..gui_base import GuiBase,list_field
+
 class MatplotlibGifGui(GifGui):
-    def __init__(self, testbed_cls, settings, testbed_kwargs=None):
-        t = settings.get('t', 10)
-        settings['t'] = t
-
-        fps = settings.get('fps', 24)
-        settings['fps'] = t
 
 
-        res = settings.get('resolution', (400,400))
-        settings['resolution'] = res
+    @dataclass
+    class Settings(GifGui.Settings):
+        resolution: list = list_field([400,400])
+        scale: float = 10
+        fps: int =  24 # we overwrite this here!
+        t: float = 10.0
 
-        scale = settings.get('scale', 10)
-        settings['scale'] = scale
-
-        super(MatplotlibGifGui, self).__init__(testbed_cls=testbed_cls, settings=settings, testbed_kwargs=testbed_kwargs)
+    def __init__(self, testbed_cls, settings, testbed_settings):
+        super(MatplotlibGifGui, self).__init__(testbed_cls=testbed_cls, settings=settings, testbed_settings=testbed_settings)
 
 
 
@@ -30,7 +30,7 @@ class MatplotlibGifGui(GifGui):
     # run the world for a limited amount of steps
     def start_ui(self):
         
-        self._testworld = self.testbed_cls(**self.testbed_kwargs)
+        self._testworld = self.testbed_cls(settings=self.testbed_settings)
         self._testworld.set_debug_draw(self.debug_draw)
         
         self._image_list = []

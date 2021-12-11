@@ -15,11 +15,9 @@ class FunctionShape(TestbedBase):
 
     name = "Function Shape"
     
-    def __init__(self): 
-        super(FunctionShape, self).__init__()
- 
-
-        
+    def __init__(self, settings=None): 
+        super(FunctionShape, self).__init__(settings=settings)
+   
         x = numpy.linspace(start=1,stop=30, num=100)
         y = numpy.sin(x) * numpy.log(x) + 5.5
         verts = numpy.stack([x,y],-1)

@@ -14,8 +14,8 @@ class GaussMachine(TestbedBase):
 
     name = "Gauss Machine"
     
-    def __init__(self): 
-        super(GaussMachine, self).__init__()
+    def __init__(self, settings=None): 
+        super(GaussMachine, self).__init__(settings=settings)
  
         self.box_shape= 30,20
         box_shape = self.box_shape

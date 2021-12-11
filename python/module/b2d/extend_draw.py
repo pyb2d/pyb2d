@@ -28,7 +28,7 @@ def _extendDrawCaller():
     
     def append_flags(self, flag_list_or_int):
         if isinstance(flag_list_or_int, numbers.Number):
-            self._append_flags_int(flag_list_or_int)
+            selfy._append_flags_int(flag_list_or_int)
         else:
             flag_list = flag_list_or_int
             if isinstance(flag_list, str):

@@ -30,8 +30,8 @@ class Raycast(TestbedBase):
 
     name = "raycast"
     
-    def __init__(self): 
-        super(Raycast, self).__init__()
+    def __init__(self, settings=None): 
+        super(Raycast, self).__init__(settings=settings)
         dimensions = [30,30]
         
         # the outer box

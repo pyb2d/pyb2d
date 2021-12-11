@@ -3,6 +3,7 @@ import numpy
 import random
 import time
 
+from dataclasses import dataclass
 
 
 
@@ -43,27 +44,37 @@ class TestbedDestructionListener(b2d.DestructionListener):
 
 
 
-
 class TestbedBase(b2d.ContactListener):
-    @classmethod
-    def run(cls, gui_factory, gui_settings=None, testbed_kwargs=None):
-        if gui_settings is None:
-            gui_settings = dict()
-        if testbed_kwargs is None:
-            testbed_kwargs = dict()        
 
-        ui = gui_factory(testbed_cls=cls, testbed_kwargs=testbed_kwargs, settings=gui_settings)
+    @dataclass
+    class Settings:
+        substeps: int = 1
+        n_velocity_steps: int = 2
+        n_position_iterations: int = 2
+
+
+    @classmethod
+    def run(cls, gui_cls, gui_settings=None, settings=None):
+        if gui_settings is None:
+            gui_settings = gui_cls.Settings()
+        
+        if settings is None:
+            settings = cls.Settings()
+
+        ui = gui_cls(testbed_cls=cls, testbed_settings=settings, settings=gui_settings)
 
         return ui.start_ui()
 
-    def __init__(self, gravity=b2d.vec2(0,-9.81)):
-
+    def __init__(self, gravity=b2d.vec2(0,-9.81), settings=None):
+        if settings is None:
+            print("settings is none")
+            settings = self.Settings()
+        self.settings = settings
+        print(self.settings)
         b2d.ContactListener.__init__(self)
 
         # Box2D-related
-        self.points = []
         self.world = None
-        self.bomb = None
         self.mouse_joint = None
 
         # self.framework_settings = FrameworkSettings
@@ -116,7 +127,12 @@ class TestbedBase(b2d.ContactListener):
 
     def step(self, dt):
         self.pre_step(dt)
-        self.world.step(dt, 3, 3)
+        sub_dt = dt / self.settings.substeps
+        for i in range(self.settings.substeps):
+            self.world.step(sub_dt, 
+                self.settings.n_velocity_steps, 
+                self.settings.n_position_iterations
+            )
         if self.__time_last_step is None:
             self.__time_last_step  = time.time()
         else:
