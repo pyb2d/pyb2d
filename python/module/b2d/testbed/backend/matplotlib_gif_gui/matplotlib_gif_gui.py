@@ -3,6 +3,8 @@ from ..gif_gui import GifGui
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib
+from dataclasses import dataclass,field
+
 matplotlib.rc('animation', html='html5')
 
 from ..gui_base import GuiBase,list_field

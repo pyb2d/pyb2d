@@ -1,4 +1,5 @@
 import b2d 
+from dataclasses import dataclass,field
 from ..gui_base import GuiBase
 
 class EmptyDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
