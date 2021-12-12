@@ -18,7 +18,7 @@ class GuiBase(object):
 
         resolution: list = list_field([1000,1000])
         scale: float = 20
-        translate: list = list_field([200,200])
+        translate: list = list_field([0,0])
 
 
         draw_shape: bool = True
@@ -27,3 +27,22 @@ class GuiBase(object):
         draw_pair: bool = False
         draw_center_of_mass: bool = False
         draw_particle: bool = False
+
+
+        def get_debug_draw_flags(self):
+            flags = []
+
+            if self.draw_shape:
+                flags.append('shape')
+            if self.draw_joint:
+                flags.append('joint')
+            if self.draw_particle:
+                flags.append('particle')
+            if self.draw_pair:
+                flags.append('pair')
+            if self.draw_joint:
+                flags.append('joint')
+            if self.draw_aabb:
+                flags.append('aabb')
+
+            return flags

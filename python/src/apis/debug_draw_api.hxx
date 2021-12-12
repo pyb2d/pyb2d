@@ -8,26 +8,26 @@ void add_debug_draw_api(PY_CLS & py_cls)
 {
     py_cls
 
-        // draw from python
-        .def("draw_point",         &CLS::DrawPoint)
-        .def("draw_circle",        &CLS::DrawCircle)
-        .def("draw_solid_circle",  &CLS::DrawSolidCircle)
-        .def("draw_segment",       &CLS::DrawSegment)
+        // // draw from python
+        // .def("draw_point",         &CLS::DrawPoint)
+        // .def("draw_circle",        &CLS::DrawCircle)
+        // .def("draw_solid_circle",  &CLS::DrawSolidCircle)
+        // .def("draw_segment",       &CLS::DrawSegment)
 
-        .def("draw_polygon", [](CLS * self, const np_verts_row_major & verts, const b2Color& color)
-        {
-            with_vertices(verts, [&](auto ptr, auto n_verts)
-            {
-                self->DrawPolygon(ptr, n_verts, color);
-            });
-        })
-        .def("draw_solid_polygon", [](CLS * self, const np_verts_row_major & verts, const b2Color& color)
-        {
-            with_vertices(verts, [&](auto ptr, auto n_verts)
-            {
-                self->DrawSolidPolygon(ptr, n_verts, color);
-            });
-        })
+        // .def("draw_polygon", [](CLS * self, const np_verts_row_major & verts, const b2Color& color)
+        // {
+        //     with_vertices(verts, [&](auto ptr, auto n_verts)
+        //     {
+        //         self->DrawPolygon(ptr, n_verts, color);
+        //     });
+        // })
+        // .def("draw_solid_polygon", [](CLS * self, const np_verts_row_major & verts, const b2Color& color)
+        // {
+        //     with_vertices(verts, [&](auto ptr, auto n_verts)
+        //     {
+        //         self->DrawSolidPolygon(ptr, n_verts, color);
+        //     });
+        // })
 
         .def("_append_flags_int",[](CLS * draw,const int flag){draw->AppendFlags(flag);})
         .def("_clear_flags_int",[](CLS * draw,const int flag){draw->ClearFlags(flag);})

@@ -104,6 +104,11 @@ class TestbedBase(b2d.ContactListener):
         self.debug_draw = debug_draw
         self.world.set_debug_draw(self.debug_draw)
 
+
+        
+    def post_post_debug_draw(self):
+        pass
+
     def pre_debug_draw(self):
         pass
     def post_debug_draw(self):
@@ -111,12 +116,9 @@ class TestbedBase(b2d.ContactListener):
 
     def draw_debug_data(self):
 
-        callback = DebugDrawCallback(
-            pre_debug_draw=self.pre_debug_draw,
-            post_debug_draw=self.post_debug_draw
-        )
-        self.world.draw_debug_data(callback)
-
+        self.pre_debug_draw()
+        self.world.draw_debug_data()
+        self.post_debug_draw()
 
     def set_gui(self, gui):
         self._gui = gui
@@ -126,27 +128,26 @@ class TestbedBase(b2d.ContactListener):
 
 
     def step(self, dt):
+        # pre stepping
         self.pre_step(dt)
+
+        # stepping
         sub_dt = dt / self.settings.substeps
         for i in range(self.settings.substeps):
             self.world.step(sub_dt, 
                 self.settings.n_velocity_steps, 
                 self.settings.n_position_iterations
             )
-        if self.__time_last_step is None:
-            self.__time_last_step  = time.time()
-        else:
-            t_now = time.time()
-            dt = t_now - self.__time_last_step 
-            self.__time_last_step = t_now
-            try:
-                self.current_fps = 1.0/dt
-            except ZeroDivisionError:
-                self.current_fps = float('inf')
-        
+
+        # book-keeping
         self.elapsed_time += dt
         self.step_count += 1
         self.iter += 1
+
+        # draw debug data
+        self.draw_debug_data()
+
+        # post stepping
         self.post_step(dt)
 
 

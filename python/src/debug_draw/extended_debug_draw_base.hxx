@@ -10,6 +10,14 @@ public:
 
     virtual void BeginDraw() = 0 ;
     virtual void EndDraw() = 0;
+
+    // virtual void DrawScreenText(
+    //     const b2Vec  postion,
+    //     const std::string & text,
+    //     const float size,
+    //     const b2Color & color
+    // ) = 0;
+
     virtual bool ReleaseGilWhileDebugDraw() {
         return false;
     }

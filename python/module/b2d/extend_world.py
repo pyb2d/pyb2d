@@ -26,9 +26,6 @@ class World(_World):
         self._set_destruction_listener(listener)
 
 
-    def draw_debug_data(self, callback=None):
-        self._draw_debug_data(callback)
-
     # helper functions
     def find_fixture(self, pos, margin=0.001):
         pos = vec2(pos)

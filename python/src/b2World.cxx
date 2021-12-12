@@ -56,7 +56,7 @@ void exportB2World(py::module & pybox2dModule){
         },  py::keep_alive<1, 2>())
         .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d){
             w.SetExtendedDebugDraw(d);
-        }, py::arg("debugDraw"), py::keep_alive<1, 2>())
+        }, py::arg("debug_draw"), py::keep_alive<1, 2>())
         
         //.def("_createBodyCpp", &world_type::CreateBody, py::return_value_policy::reference_internal)
 
@@ -141,8 +141,8 @@ void exportB2World(py::module & pybox2dModule){
             py::arg("position_iterations")
         )
         #endif
-        .def("clearForces",&world_type::ClearForces)
-        .def("_draw_debug_data",&world_type::ExtendedDebugDraw)
+        .def("clear_forces",&world_type::ClearForces)
+        .def("draw_debug_data",&world_type::ExtendedDebugDraw)
         .def("query_aabb", 
             [](const world_type & world, PyB2QueryCallbackCaller * cb, const b2AABB & aabb ){
                 return world.QueryAABB(cb, aabb);

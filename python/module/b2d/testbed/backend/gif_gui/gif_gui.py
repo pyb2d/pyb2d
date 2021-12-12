@@ -3,13 +3,17 @@ import matplotlib.pyplot as plt
 import imageio
 from dataclasses import dataclass,field
 
-from ..gui_base import GuiBase
+from ..gui_base import GuiBase,list_field
 
 class GifGui(GuiBase):
 
     @dataclass
     class Settings(GuiBase.Settings):
         filename: str = ""
+        t: float = 10.0
+        resolution: list = list_field([400,400])
+        scale: float = 10
+        fps: int =  24 # we overwrite this here!
         t: float = 10.0
 
     def __init__(self, testbed_cls, settings, testbed_settings):

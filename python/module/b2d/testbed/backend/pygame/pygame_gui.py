@@ -86,8 +86,10 @@ class PygameGui(GuiBase):
             if self._exit:
                 break
 
+            self._surface.fill((0,0,0))
             self._step_world()
-            self._draw_world()
+            pygame.display.update()
+
             t1 = time.time()
 
             delta = t1 - t0
@@ -167,14 +169,6 @@ class PygameGui(GuiBase):
                 screen_pos = pos = pygame.mouse.get_pos()
                 world_pos = self.debug_draw.screen_to_world(screen_pos)
                 self._testworld.on_mouse_move(world_pos)
-
-
-
-
-    def _draw_world(self):
-        self._surface.fill((0,0,0))
-        self._testworld.draw_debug_data()
-        pygame.display.update()
 
     def _step_world(self):
         self._testworld.step(self._dt_s)
