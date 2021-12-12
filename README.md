@@ -5,8 +5,6 @@
 [![Pip](https://github.com/pyb2d/pyb2d/actions/workflows/pip.yml/badge.svg)](https://github.com/pyb2d/pyb2d/actions/workflows/pip.yml)
 [![Documentation Status](https://readthedocs.org/projects/pyb2d/badge/?version=latest)](https://pyb2d.readthedocs.io/en/latest/?badge=latest)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
-
-
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/license.svg)](https://anaconda.org/conda-forge/pyb2d)
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/platforms.svg)](https://anaconda.org/conda-forge/pyb2d)
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/version.svg)](https://anaconda.org/conda-forge/pyb2d)
