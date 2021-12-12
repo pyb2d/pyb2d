@@ -154,24 +154,24 @@ class RecBatchDebugDrawNew(_batch_debug_dreaw_base_cls, RecMixIn):
 
 
 
-    def draw_solid_polygons(self, points, sizes, colors):
+    def _draw_solid_polygons(self, points, sizes, colors):
         self.recordings["draw_solid_polygons"].append(dict(points=points, sizes=sizes, colors=colors))
 
-    def draw_polygons(self, points, sizes, colors):
+    def _draw_polygons(self, points, sizes, colors):
         self.recordings["draw_polygons"].append(dict(points=points, sizes=sizes, colors=colors))
 
-    def draw_segments(self, points, colors):
+    def _draw_segments(self, points, colors):
         self.recordings["draw_segments"].append(dict(points=points, colors=colors))
 
-    def draw_solid_circles(self, centers, radii, axis, colors):
+    def _draw_solid_circles(self, centers, radii, axis, colors):
         self.recordings["draw_solid_circles"].append(dict(centers=centers, radii=radii, axis=axis,colors=colors))
 
-    def draw_circles(self, centers, radii, colors):
+    def _draw_circles(self, centers, radii, colors):
         self.recordings["draw_circles"].append(dict(centers=centers, radii=radii, colors=colors))
 
-    def draw_points(self, centers, sizes, colors):
+    def _draw_points(self, centers, sizes, colors):
         self.recordings["draw_points"].append(dict(centers=centers, sizes=sizes, colors=colors))
 
-    def draw_particles(self, centers, radius, colors):
+    def _draw_particles(self, centers, radius, colors):
         self.recordings["draw_particles"].append(dict(centers=centers, radius=radius, colors=colors))
 
