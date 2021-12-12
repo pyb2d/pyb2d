@@ -11,7 +11,6 @@
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/platforms.svg)](https://anaconda.org/conda-forge/pyb2d)
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/version.svg)](https://anaconda.org/conda-forge/pyb2d)
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/latest_release_date.svg)](https://anaconda.org/conda-forge/pyb2d)
-
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/installer/conda.svg)](https://conda.anaconda.org/conda-forge)
 
 Warning, this is a work in progress and all APIs are subject to changes!
