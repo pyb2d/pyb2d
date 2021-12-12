@@ -5,6 +5,7 @@ from plot_newtons_cradle import NewtonsCradle
 from plot_blender import Blender
 from plot_raycast import Raycast
 from plot_angry_shapes import AngryShapes
+from plot_billiard import Billiard
 
 import b2d
 from b2d.testbed.backend.no_gui import NoGui
@@ -19,11 +20,13 @@ examples = [
     NewtonsCradle,
     Blender,
     Raycast,
+    Billiard
 ]
 
 lf_examples = [
     ColorMixing,
     GaussMachine,
+    AngryShapes
 ]
 
 

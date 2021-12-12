@@ -1,3 +1,11 @@
+"""
+AngryShapes
+===========================
+
+This example shows how to create games inspired by AngryBirds.
+"""
+
+
 from b2d.testbed import TestbedBase
 from dataclasses import dataclass
 import math
@@ -10,7 +18,7 @@ class AngryShapes(TestbedBase):
 
     @dataclass
     class Settings(TestbedBase.Settings):
-        substeps: int = 8
+        substeps: int = 2
 
     def draw_segment(self, p1, p2, color, line_width=1):
         screen_p1 = self._point(self.world_to_screen(p1))
@@ -145,10 +153,8 @@ class AngryShapes(TestbedBase):
                         self.build_target(pos=(px+offset[0]+bar_length/2,py+offset[1]+bar_width))
                         build_brick((px+bar_width/2,py+bar_length),(bar_length,bar_width))
 
-        build_pyramid(offset=(100,0), bar_shape=[40,4], n=5)
-        # build_pyramid(offset=(150,0), bar_shape=[20,2], n=5)
-        # build_pyramid(offset=(250,0), bar_shape=[30,3], n=5)
-        build_pyramid(offset=(400,0), bar_shape=[30,3], n=5)
+        build_pyramid(offset=(100,0), bar_shape=[40,4], n=4)
+        build_pyramid(offset=(400,0), bar_shape=[30,3], n=4)
 
     def build_launcher(self):
 
@@ -386,8 +392,6 @@ class AngryShapes(TestbedBase):
 
         for projectile in self.projectiles:
             self.draw_projectile(projectile)
-
-
 
 
 if __name__ == "__main__": 

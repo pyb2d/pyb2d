@@ -26,7 +26,7 @@ class GuiBase(object):
         draw_aabb: bool = False
         draw_pair: bool = False
         draw_center_of_mass: bool = False
-        draw_particle: bool = False
+        draw_particle: bool = True
 
 
         def get_debug_draw_flags(self):
