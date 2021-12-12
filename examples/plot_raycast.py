@@ -95,7 +95,7 @@ class Raycast(TestbedBase):
             p1 = float(x1[i]), float(y1[i])
 
             cb = RayCastCallback()
-            self.debug_draw.draw_segment(p0, p1, (1,1,1))
+            self.debug_draw.draw_segment(p0, p1, (1,1,1), line_width=0.1)
             self.world.ray_cast(cb, p0, p1)
             self._touched_circles.extend(cb._touched_circles)
 
