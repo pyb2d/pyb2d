@@ -80,6 +80,7 @@ class PyGameBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
             )
 
     def _draw_particles(self, centers, radius, colors=None):
+        print(centers.shape)
         default_color = (255,255,255,255)
 
         n_particles = centers.shape[0]

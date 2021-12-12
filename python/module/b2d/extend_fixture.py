@@ -73,12 +73,10 @@ class _Fixture(Fixture):
 
     @property
     def next(self):
-        if self._hasNext():
-            return self._getNext()
+        if self._has_next():
+            return self._get_next()
         else:
             return None
-    @property
-    def shape(self):
-        return self._get_shape()
-_classExtender(_Fixture,['user_data','next','shape'])
+
+_classExtender(_Fixture,['user_data','next'])
 
