@@ -1,6 +1,7 @@
-* pybox2d version:
+* pyb2d version:
+* python version:
 * Operating System:
-* Compiler:
+
 
 ### Description
 
