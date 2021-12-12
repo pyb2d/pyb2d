@@ -191,6 +191,15 @@ public:
 
 
 
+    // virtual void DrawScreenText(
+    //     const b2Vec  postion,
+    //     const std::string & text,
+    //     const float size,
+    //     const b2Color & color
+    // ){
+
+    // }
+
     virtual void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
     {
         m_polygon_sizes.push_back(vertexCount);
@@ -278,7 +287,7 @@ public:
 
             if(!has_colors)
             {
-                m_object.attr("draw_particles")(
+                m_object.attr("_draw_particles")(
                     np_view(centers_ptr, {n_particels, 2}),
                     radius
                 );
@@ -286,7 +295,7 @@ public:
             else
             {
                 auto color_ptr = m_particle_systems_colors.data() + color_offset;
-                m_object.attr("draw_particles")(
+                m_object.attr("_draw_particles")(
                     np_view(centers_ptr, {n_particels, 2}),
                     radius, 
                     np_view(color_ptr, {n_particels, 4})
@@ -300,7 +309,7 @@ public:
         
         if(!m_solid_polygon_sizes.empty())
         {
-            m_object.attr("draw_solid_polygons")(
+            m_object.attr("_draw_solid_polygons")(
                 np_view(m_solid_polygon_verts.data(),  {m_solid_polygon_verts.size()/2, std::size_t(2)}),
                 np_view(m_solid_polygon_sizes.data(),  {m_solid_polygon_sizes.size()}),
                 np_view(m_solid_polygon_colors.data(), {m_solid_polygon_colors.size()/3, 3})
@@ -308,7 +317,7 @@ public:
         }
         if(!m_solid_circle_coords.empty())
         {
-            m_object.attr("draw_solid_circles")(
+            m_object.attr("_draw_solid_circles")(
                 np_view(m_solid_circle_coords.data(), {m_solid_circle_coords.size()/2, std::size_t(2)}),
                 np_view(m_solid_circle_radii.data(),  {m_solid_circle_radii.size()}),
                 np_view(m_solid_circle_axis.data(),  {m_solid_circle_axis.size()/2, 2}),
@@ -317,7 +326,7 @@ public:
         }
         if(!m_polygon_sizes.empty())
         {
-            m_object.attr("draw_polygons")(
+            m_object.attr("_draw_polygons")(
                 np_view(m_polygon_verts.data(),  {m_polygon_verts.size()/2, std::size_t(2)}),
                 np_view(m_polygon_sizes.data(),  {m_polygon_sizes.size()}),
                 np_view(m_polygon_colors.data(), {m_polygon_colors.size()/3, 3})
@@ -325,20 +334,19 @@ public:
         }
         if(!m_circle_coords.empty())
         {
-            m_object.attr("draw_circles")(
+            m_object.attr("_draw_circles")(
                 np_view(m_circle_coords.data(), {m_circle_coords.size()/2, std::size_t(2)}),
                 np_view(m_circle_radii.data(),  {m_circle_radii.size()}),
                 np_view(m_circle_colors.data(), {m_circle_colors.size()/3, 3})
             );
         }
         {
-            py::object f = m_object.attr("draw_points");
+            py::object f = m_object.attr("_draw_points");
         }
         if(!m_segment_coords.empty())
         {
-            py::object f = m_object.attr("draw_segments");
 
-            m_object.attr("draw_segments")(
+            m_object.attr("_draw_segments")(
                 np_view(m_segment_coords.data(), {m_segment_coords.size()/4, std::size_t(2) ,std::size_t(2)}),
                 np_view(m_segment_colors.data(), {m_segment_colors.size()/3, 3})
             );

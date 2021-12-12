@@ -10,8 +10,10 @@ import IPython
 import time
 from ipycanvas import Canvas,MultiCanvas, hold_canvas
 import ipywidgets
-from . jupyter_batch_debug_draw import JupyterBatchDebugDraw
+from dataclasses import dataclass,field
 
+from . jupyter_batch_debug_draw import JupyterBatchDebugDraw
+from ..gui_base import GuiBase
 
 def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
     return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
@@ -29,41 +31,53 @@ def rgb(color):
 _id_to_gui = dict()
 
 
-class JupyterGui(object):
-    def __init__(self, testbed_cls, settings, testbed_kwargs=None):
-        
-        self.id = settings["id"]
-        if self.id in _id_to_gui:
-            old_self = _id_to_gui[self.id]
-            old_self._terminate()
-        _id_to_gui[self.id] = self
+class JupyterGui(GuiBase):
 
-        # settings
-        resolution = settings.get("resolution",  (1024,768))
-        self.resolution = resolution
+    @dataclass
+    class Settings(GuiBase.Settings):
+        id: object = None
+
+
+    def __init__(self, testbed_cls, settings, testbed_settings=None):
+        
+        self.id = settings.id
+        if settings.id is None:
+            settings.id = testbed_cls
+
+        if settings.id in _id_to_gui:
+            old_self = _id_to_gui[settings.id]
+            old_self._terminate()
+        _id_to_gui[settings.id] = self
+
+
 
         self.settings = settings
+        self.resolution = self.settings.resolution
+
         # steping settings
-        self._fps = settings.get("fps", 30) 
+        self._fps = settings.fps
         self._dt_s = 1.0 / self._fps
 
         # testworld
-        if testbed_kwargs is None:
-            testbed_kwargs = dict()
-        self.testbed_kwargs = testbed_kwargs
+        if testbed_settings is None:
+            testbed_settings = dict()
+        self.testbed_settings = testbed_settings
         self.testbed_cls = testbed_cls
         self._testworld  = None
 
         # debug_draw
         self.debug_draw = None
         self.flip_bit = False
-        self._debug_draw_flags = settings.get("draw_flags", ['shape','joint','particle'])
+
+        # todo!
+        self._debug_draw_flags = self.settings.get_debug_draw_flags()
+
 
         # flag to stop loop
         self._exit = False
        
-        self.scale = settings.get("scale", 20) 
-        self.translate = settings.get("translate", (10,10))
+        self.scale = settings.scale
+        self.translate = settings.translate
 
 
         # Thread related
@@ -84,7 +98,7 @@ class JupyterGui(object):
 
         if self._testworld is not None:
             self._testworld.say_goodbye_world()
-        self._testworld = self.testbed_cls(**self.testbed_kwargs)
+        self._testworld = self.testbed_cls(settings=self.testbed_settings)
 
         # make debug draw
         self.debug_draw = JupyterBatchDebugDraw(self.multi_canvas[self.flip_bit], 
@@ -102,11 +116,8 @@ class JupyterGui(object):
         self.out = ipywidgets.Output()
         self.flip_bit = False
 
-
         # _setup_ipywidgets_gui
         self._setup_ipywidgets_gui()
-
-
 
         #make the world
         self.make_testworld()
@@ -121,7 +132,6 @@ class JupyterGui(object):
                     self._testworld.on_mouse_down(pos)
      
 
-
         # moue callbacks
         def on_mouse_up( xpos, ypos):
             if not self.paused.isSet():
@@ -131,7 +141,6 @@ class JupyterGui(object):
                 pos = pos.x, pos.y
                 with self._world_lock:
                     self._testworld.on_mouse_up(pos)
-
 
         def on_mouse_move( xpos, ypos):
             if not self.paused.isSet():
@@ -178,19 +187,8 @@ class JupyterGui(object):
         d.on_dom_event(handle_event)
 
     
-        target_fps = 30
-        dt_desired_ms = (1.0/target_fps)*1000.0
-        dt_desired_s = dt_desired_ms/1000.0
-        
-
-
-
         for ci in range(2):
-            self.multi_canvas[ci].line_width = self.settings.get("line_width", 1)
-            # self.multi_canvas[ci].scale(self.scale, -1.0*self.scale)
-            # self.multi_canvas[ci].line_width = 1.0 / self.scale
-
-
+            self.multi_canvas[ci].line_width = 1
 
         Thread(target=self._loop).start() # Start it by default
 
@@ -340,28 +338,30 @@ class JupyterGui(object):
             # IPython.display.display(self.event_info)
 
     def _single_step(self):
-        self._step_world()
-
+        
         canvas = self.multi_canvas[self.flip_bit]
         self.flip_bit = not self.flip_bit
         next_canvas = self.multi_canvas[self.flip_bit]
-        assert canvas != next_canvas
+
+
         with hold_canvas(next_canvas):
             self.debug_draw._canvas = next_canvas
-            self._draw_world(next_canvas)
+
+            old_style = next_canvas.fill_style
+            next_canvas.fill_style = 'black'
+            next_canvas.fill_rect(0,0, self.resolution[0],self.resolution[1])
+
+            self._step_world()
+
+
+            next_canvas.fill_style = old_style
+
 
         # clear this one
         canvas.clear()
                 
 
     def _step_world(self):
+
         with self._world_lock:
             self._testworld.step(self._dt_s)
-
-    def _draw_world(self, canvas):
-        old_style = canvas.fill_style
-        canvas.fill_style = 'black'
-        canvas.fill_rect(0,0, self.resolution[0],self.resolution[1])
-
-        self._testworld.draw_debug_data()
-        canvas.fill_style = old_style

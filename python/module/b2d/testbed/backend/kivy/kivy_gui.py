@@ -13,7 +13,7 @@ from kivy.graphics.transformation import Matrix
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.scatter import Scatter
+from kivy.uix.scatter import Scatter,ScatterPlane
 from kivy.clock import Clock
 from kivy.config import Config
 from kivy.core.window import Window
@@ -127,8 +127,8 @@ class KivyGui(App,GuiBase):
         
         Config.set('graphics', 'width', f'{settings.resolution[0]}')
         Config.set('graphics', 'height', f'{settings.resolution[1]}')
-
-        self.debug_draw = KivyBatchDebugDraw()
+        self.kivy_widget =KivyWidget(kivy_gui=self)
+        self.debug_draw = KivyBatchDebugDraw(scatter=self.kivy_widget)
 
         self.debug_draw.screen_size = self.settings.resolution
 
@@ -144,5 +144,4 @@ class KivyGui(App,GuiBase):
 
 
     def build(self):
-        return KivyWidget(kivy_gui=self)
-
+        return self.kivy_widget

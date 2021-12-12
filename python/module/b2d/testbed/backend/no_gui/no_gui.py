@@ -8,30 +8,43 @@ class EmptyDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
         super(EmptyDebugDraw,self).__init__()
 
 
-    def draw_solid_polygons(self, points, sizes, colors):
+    def _draw_solid_polygons(self, points, sizes, colors):
         pass
 
-    def draw_polygons(self, points, sizes, colors):
+    def _draw_polygons(self, points, sizes, colors):
         pass
 
-    def draw_solid_circles(self, centers, radii, axis, colors):
+    def _draw_solid_circles(self, centers, radii, axis, colors):
         pass
 
-    def draw_circles(self, centers, radii, colors):
+    def _draw_circles(self, centers, radii, colors):
         pass
 
-    def _draw_circles(self, centers, radii,  colors, lw):
+    def _draw_points(self, centers, sizes, colors):
         pass
 
-    def draw_points(self, centers, sizes, colors):
+    def _draw_segments(self, points, colors):
         pass
 
-    def draw_segments(self, points, colors):
+    def _draw_particles(self, centers, radius, colors=None):
         pass
 
-    def draw_particles(self, centers, radius, colors=None):
+
+    # non-batch api
+    def draw_solid_circle(self, center, radius, axis, color):
         pass
 
+    def draw_circle(self, center, radius, color,line_width=1):
+        pass
+
+    def draw_segment(self, p1, p2, color, line_width=1):
+        pass
+
+    def draw_polygon(self, vertices, color, line_width=1):
+        pass
+
+    def draw_solid_polygon(self, vertices, color):
+        pass
 
 class NoGui(GuiBase):
 
