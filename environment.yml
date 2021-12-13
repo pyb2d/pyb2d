@@ -8,3 +8,4 @@ dependencies:
   - ipywidgets>=7.6
   - ipycanvas>=0.10.2
   - ipyevents>=2.0.1
+  - networkx

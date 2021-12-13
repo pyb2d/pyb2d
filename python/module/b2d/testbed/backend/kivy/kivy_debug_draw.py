@@ -106,8 +106,8 @@ class KivyBatchDebugDraw(b2d.batch_debug_draw_cls(True, True, False)):
     def draw_circle(self, center, radius, color,line_width=1):
         Line(circle = (*center, radius), width = line_width, color=Color(*color))
 
-    def draw_segment(self, p1, p2, color):
-        Line(points=list(p1)+list(p2), width=1.0, color=Color(*color))
+    def draw_segment(self, p1, p2, color, line_width=1):
+        Line(points=list(p1)+list(p2), width=line_width, color=Color(*color))
 
     def draw_polygon(self, vertices, color, line_width=1):
         Line(points = vertices, close=True, width = line_width,  color=Color(*color))
