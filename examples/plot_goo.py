@@ -482,5 +482,5 @@ class Goo(TestbedBase):
 
 
 if __name__ == "__main__": 
-    ani =  b2d.testbed.run(Goo ,backend='pygame')   
+    ani =  b2d.testbed.run(Goo)   
     ani
