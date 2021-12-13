@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - cf-staging
 dependencies:
-  - pyb2d>=0.4.1
+  - pyb2d>=0.4.3
   - jupyterlab>=3.0
   - ipywidgets>=7.6
   - ipycanvas>=0.10.2
