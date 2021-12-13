@@ -67,10 +67,8 @@ class TestbedBase(b2d.ContactListener):
 
     def __init__(self, gravity=b2d.vec2(0,-9.81), settings=None):
         if settings is None:
-            print("settings is none")
             settings = self.Settings()
         self.settings = settings
-        print(self.settings)
         b2d.ContactListener.__init__(self)
 
         # Box2D-related

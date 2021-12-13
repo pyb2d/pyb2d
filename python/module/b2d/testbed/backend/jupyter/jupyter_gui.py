@@ -63,7 +63,7 @@ class JupyterGui(GuiBase):
             testbed_settings = dict()
         self.testbed_settings = testbed_settings
         self.testbed_cls = testbed_cls
-        self._testworld  = None
+        self.testbed  = None
 
         # debug_draw
         self.debug_draw = None
@@ -84,7 +84,7 @@ class JupyterGui(GuiBase):
         # events
         self.paused = Event()
         self.reached_end = Event()
-        self._world_lock = Lock()
+        self.world_lock = Lock()
 
         self._last_screen_pos = None
         self._mouse_is_down = False
@@ -94,11 +94,11 @@ class JupyterGui(GuiBase):
             self.paused.set()
 
 
-    def make_testworld(self):
+    def make_testbed(self):
 
-        if self._testworld is not None:
-            self._testworld.say_goodbye_world()
-        self._testworld = self.testbed_cls(settings=self.testbed_settings)
+        if self.testbed is not None:
+            self.testbed.say_goodbye_world()
+        self.testbed = self.testbed_cls(settings=self.testbed_settings)
 
         # make debug draw
         self.debug_draw = JupyterBatchDebugDraw(self.multi_canvas[self.flip_bit], 
@@ -107,7 +107,7 @@ class JupyterGui(GuiBase):
         self.debug_draw.scale = self.scale
         self.debug_draw.translate = self.translate
         self.debug_draw.flip_y = True
-        self._testworld.set_debug_draw(self.debug_draw)
+        self.testbed.set_debug_draw(self.debug_draw)
 
     def start_ui(self):
         # make the canvas
@@ -120,7 +120,7 @@ class JupyterGui(GuiBase):
         self._setup_ipywidgets_gui()
 
         #make the world
-        self.make_testworld()
+        self.make_testbed()
 
         def on_mouse_down( xpos, ypos):
             if not self.paused.isSet():
@@ -128,8 +128,8 @@ class JupyterGui(GuiBase):
                 self._last_screen_pos = xpos, ypos
                 pos = self.debug_draw.screen_to_world(self._last_screen_pos)
                 pos = pos.x, pos.y
-                with self._world_lock:
-                    self._testworld.on_mouse_down(pos)
+                with self.world_lock:
+                    self.testbed.on_mouse_down(pos)
      
 
         # moue callbacks
@@ -139,8 +139,8 @@ class JupyterGui(GuiBase):
                 self._last_screen_pos = xpos, ypos
                 pos = self.debug_draw.screen_to_world((xpos, ypos))
                 pos = pos.x, pos.y
-                with self._world_lock:
-                    self._testworld.on_mouse_up(pos)
+                with self.world_lock:
+                    self.testbed.on_mouse_up(pos)
 
         def on_mouse_move( xpos, ypos):
             if not self.paused.isSet():
@@ -149,8 +149,8 @@ class JupyterGui(GuiBase):
 
                 pos = self.debug_draw.screen_to_world((xpos, ypos))
                 pos = pos.x, pos.y
-                with self._world_lock:
-                    handled_event = self._testworld.on_mouse_move(pos)
+                with self.world_lock:
+                    handled_event = self.testbed.on_mouse_move(pos)
                     if not handled_event and self._mouse_is_down and self._last_screen_pos is not None:
                         dx,dy = xpos - lxpos, ypos - lypos
 
@@ -179,10 +179,10 @@ class JupyterGui(GuiBase):
                 # self.event_info.value = f"WHEEEL {event['deltaY']}"
             elif etype == 'keyup':
                 k = event['key']
-                self._testworld.on_keyboard_up((None, k))
+                self.testbed.on_keyboard_up((None, k))
             elif etype == 'keydown':
                 k = event['key']
-                self._testworld.on_keyboard_down((None, k))
+                self.testbed.on_keyboard_down((None, k))
 
         d.on_dom_event(handle_event)
 
@@ -192,6 +192,7 @@ class JupyterGui(GuiBase):
 
         Thread(target=self._loop).start() # Start it by default
 
+        return self
 
     def _loop(self):
         if self.reached_end.isSet():
@@ -262,7 +263,7 @@ class JupyterGui(GuiBase):
             pause()
             while not self.reached_end.wait(0.02):
                 pass
-            self.make_testworld()
+            self.make_testbed()
             self._single_step()
             # start()
         reset_btn.on_click(reset)
@@ -363,5 +364,5 @@ class JupyterGui(GuiBase):
 
     def _step_world(self):
 
-        with self._world_lock:
-            self._testworld.step(self._dt_s)
+        with self.world_lock:
+            self.testbed.step(self._dt_s)
