@@ -6,6 +6,7 @@ from plot_blender import Blender
 from plot_raycast import Raycast
 from plot_angry_shapes import AngryShapes
 from plot_billiard import Billiard
+from plot_goo import Goo
 
 import b2d
 from b2d.testbed.backend.no_gui import NoGui
@@ -26,17 +27,11 @@ examples = [
 lf_examples = [
     ColorMixing,
     GaussMachine,
-    AngryShapes
+    AngryShapes,
+    Goo
 ]
-
-
 if b2d.BuildConfiguration.LIQUID_FUN:
     examples.extend(lf_examples)
-
-
-
-
-
 
 @pytest.mark.parametrize("example_cls", 
     examples
