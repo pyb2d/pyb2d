@@ -139,11 +139,11 @@ class PygameGui(GuiBase):
             elif event.type == pygame.KEYDOWN:
                 keycode = event.key
                 name = pygame.key.name(event.key)
-                self._testworld.on_keyboard_down((event.key,name))
+                self._testworld.on_keyboard_down(name)
             elif event.type == pygame.KEYUP:
                 keycode = event.key
                 name = pygame.key.name(event.key)
-                self._testworld.on_keyboard_up((event.key,name))
+                self._testworld.on_keyboard_up(name)
             # mouse events
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:

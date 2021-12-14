@@ -1,3 +1,4 @@
+from plot_rocket import Rocket
 from plot_color_mixing import ColorMixing
 from plot_function_shape import FunctionShape
 from plot_gauss_machine import GaussMachine
@@ -25,6 +26,7 @@ examples = [
 ]
 
 lf_examples = [
+    Rocket,
     ColorMixing,
     GaussMachine,
     AngryShapes,

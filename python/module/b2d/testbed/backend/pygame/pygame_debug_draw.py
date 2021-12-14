@@ -85,6 +85,7 @@ class PyGameBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
         n_particles = centers.shape[0]
         centers -= radius
         d = 2 * radius
+        d = max(1,d)
         for i in range(n_particles):
 
             if colors is None:

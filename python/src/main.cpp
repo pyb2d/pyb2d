@@ -75,10 +75,5 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     exportEmitter(pybox2dModule);
     #endif
 
-    // // make version string
-    // std::stringstream ss;
-    // ss<<PYBOX2D_VERSION_MAJOR<<"."
-    //   <<PYBOX2D_VERSION_MINOR<<"."
-    //   <<PYBOX2D_VERSION_PATCH;
-    pybox2dModule.attr("__version__") = "0.4.3";
+    pybox2dModule.attr("__version__") = "0.4.4";
 }
