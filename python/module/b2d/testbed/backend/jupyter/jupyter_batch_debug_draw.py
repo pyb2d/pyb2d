@@ -72,13 +72,14 @@ class JupyterBatchDebugDraw(b2d.batch_debug_draw_cls(False, False, True)):
 
     def _draw_particles(self, centers, radius, colors=None):
 
+        radius = max(1, radius)
         if colors is None:
 
             # print("draw_particles",centers.shape, radius)
             r = radius
             self._canvas.save()
             self._canvas.translate(x=-r, y=-r)
-            self._canvas.fill_style = "rgba(0,100,255,1)" 
+            self._canvas.fill_style = "rgba(255,255,255,1)" 
             self._canvas.fill_rects(centers[:,0], centers[:,1], r*2)
             self._canvas.restore()
 

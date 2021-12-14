@@ -22,7 +22,7 @@ from dataclasses import dataclass,field
 
 from ..gui_base import GuiBase
 
-class KivyWidget(Scatter):
+class KivyWidget(ScatterPlane):
     def __init__(self, kivy_gui, **kwargs):
         self.kivy_gui = kivy_gui
         super(KivyWidget, self).__init__(do_rotation=False)
@@ -75,10 +75,10 @@ class KivyWidget(Scatter):
 
 
     def on_keyboard_down(self, keyboard, keycode, text, modifiers):
-        self.kivy_gui._testworld.on_keyboard_down(keycode)
+        self.kivy_gui._testworld.on_keyboard_down(keycode[1])
 
     def on_keyboard_up(self, keyboard, keycode):
-        self.kivy_gui._testworld.on_keyboard_up(keycode)
+        self.kivy_gui._testworld.on_keyboard_up(keycode[1])
 
     def on_touch_down(self, touch):
         # Override Scatter's `on_touch_down` behavior for mouse scroll

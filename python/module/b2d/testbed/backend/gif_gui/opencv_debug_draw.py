@@ -78,7 +78,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
 
     def _draw_particles(self, centers, radius, colors=None):
-    
+        radius = min(1, radius)
         default_color = (255,255,255,255)
 
         n_particles = centers.shape[0]

@@ -179,10 +179,10 @@ class JupyterGui(GuiBase):
                 # self.event_info.value = f"WHEEEL {event['deltaY']}"
             elif etype == 'keyup':
                 k = event['key']
-                self.testbed.on_keyboard_up((None, k))
+                self.testbed.on_keyboard_up(k)
             elif etype == 'keydown':
                 k = event['key']
-                self.testbed.on_keyboard_down((None, k))
+                self.testbed.on_keyboard_down(k)
 
         d.on_dom_event(handle_event)
 
