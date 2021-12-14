@@ -26,7 +26,7 @@ examples = [
 ]
 
 lf_examples = [
-    Rocket
+    Rocket,
     ColorMixing,
     GaussMachine,
     AngryShapes,
