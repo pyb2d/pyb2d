@@ -32,7 +32,7 @@ py::array_t<T> make_numpy_array(
 }
 
 template<class T>
-auto np_view(T * ptr,  const std::vector<std::size_t> & shape)
+auto np_view(T * ptr,  const std::vector<std::size_t> & shape, bool readonly = false)
 {
     std::vector<std::size_t> strides(shape.size());
 
@@ -54,13 +54,14 @@ auto np_view(T * ptr,  const std::vector<std::size_t> & shape)
         py::format_descriptor<T>::value, /* Buffer format */
         shape.size(),                    /* How many dimensions? */
         shape,                           /* Number of elements for each dimension */
-        strides                          /* Strides for each dimension */
+        strides                          /* Strides for each dimension */,
+        readonly
     ));
 }
 
 
 template<class T>
-auto np_view(T * ptr,  const std::vector<std::size_t> & shape, const std::vector<std::size_t> & strides)
+auto np_view(T * ptr,  const std::vector<std::size_t> & shape, const std::vector<std::size_t> & strides, bool readonly = false)
 {
     return py::array(py::buffer_info(
         ptr,                             /* Pointer to data (nullptr -> ask NumPy to allocate!) */
@@ -68,6 +69,7 @@ auto np_view(T * ptr,  const std::vector<std::size_t> & shape, const std::vector
         py::format_descriptor<T>::value, /* Buffer format */
         shape.size(),                    /* How many dimensions? */
         shape,                           /* Number of elements for each dimension */
-        strides                          /* Strides for each dimension */
+        strides                          /* Strides for each dimension */,
+        readonly
     ));
 }

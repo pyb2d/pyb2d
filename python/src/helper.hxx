@@ -1,16 +1,20 @@
 #ifndef PYBOX2D_HELPER_HXX
+#define PYBOX2D_HELPER_HXX
 
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>            // Pybind11 import to define Python bindings
 // #include <xtensor-python/pytensor.hpp>     // Numpy bindings
-// #include <xtensor/xtensor.hpp>    
+// #include <xtensor/xtensor.hpp>   
+
+#include "numpy.hxx" 
 
 using np_verts_row_major = py::array_t<float, py::array::c_style | py::array::forcecast>;
 
 
 template<class F>
 void with_vertices(
-    const np_verts_row_major & verts, F && f)
+    const np_verts_row_major & verts, F && f
+)
 {
     py::buffer_info buf = verts.request();
 
@@ -25,5 +29,9 @@ void with_vertices(
 
     
 }
+
+
+
+
 
 #endif

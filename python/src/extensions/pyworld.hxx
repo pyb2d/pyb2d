@@ -39,11 +39,7 @@ public:
         this->SetDebugDraw(extended_debug_draw);
         p_extended_debug_draw = extended_debug_draw;
     }
-    #if PYBOX2D_OLD_BOX2D
-    void DebugDraw(){
-        return this->DrawDebugData();
-    }
-    #endif
+
 
     void ExtendedDebugDraw()
     {
@@ -66,7 +62,17 @@ public:
     }
 
 
-    std::pair<b2Vec2,b2Vec2> aabb()
+    void ExtendedDebugDraw(ExtendedDebugDrawBase * extended_debug_draw)
+    {
+        auto * to_restore = p_extended_debug_draw;
+        p_extended_debug_draw = extended_debug_draw;
+        this->SetDebugDraw(extended_debug_draw);
+        this->ExtendedDebugDraw();
+        this->SetDebugDraw(to_restore);
+        p_extended_debug_draw = to_restore;
+    }
+
+    std::pair<b2Vec2,b2Vec2> get_world_aabb()
     {
         b2Vec2  lower( std::numeric_limits<float>::infinity(),    
                        std::numeric_limits<float>::infinity());

@@ -14,6 +14,8 @@ Contents:
 
    joints
 
+   tutorials/index
+
    auto_examples/index
 
 Drawing:

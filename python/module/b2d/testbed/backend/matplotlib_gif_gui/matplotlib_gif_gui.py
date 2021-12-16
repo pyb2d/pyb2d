@@ -1,5 +1,5 @@
 from ..gif_gui import GifGui
-
+import numpy
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib
@@ -17,7 +17,7 @@ class MatplotlibGifGui(GifGui):
         resolution: list = list_field([400,400])
         scale: float = 10
         fps: int =  24 # we overwrite this here!
-        t: float = 10.0
+        t: float = 10
 
     def __init__(self, testbed_cls, settings, testbed_settings):
         super(MatplotlibGifGui, self).__init__(testbed_cls=testbed_cls, settings=settings, testbed_settings=testbed_settings)
@@ -40,7 +40,7 @@ class MatplotlibGifGui(GifGui):
             self._testworld.draw_debug_data()
             ret =  self.image.copy()
             self.image[...] = 0
-            return ret 
+            return numpy.swapaxes(ret,0,1)
 
 
         images = [make_next_img() for _ in range(self._n)]

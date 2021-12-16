@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 import b2d 
 import cv2 as cv
 
@@ -29,6 +29,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
         line_type = 8
         n_polygons = sizes.shape[0]
         start = 0
+        points = np.flip(points, axis=1)
         for i in range(n_polygons):
             s = sizes[i]
             p = points[start:start+s,:].astype('int32')
@@ -42,15 +43,17 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
 
     def _draw_solid_circles(self, centers, radii, axis, colors):
-        self._draw_circles_impl(centers, radii, colors, lw=-1)
+        self._draw_circles_impl(centers, radii, colors, axis=axis, lw=-1)
         
     def _draw_circles(self, centers, radii, colors):
-        self._draw_circles_impl(centers, radii, colors, lw=1)
+        self._draw_circles_impl(centers, radii, colors, axis=None,lw=1)
 
-    def _draw_circles_impl(self, centers, radii,  colors, lw):
+    def _draw_circles_impl(self, centers, radii, colors,axis, lw):
         line_type = 8
         thickness = 1
         n = centers.shape[0]
+        centers = np.flip(centers, axis=1)
+        # centers = centers.swapxes(0,1)
         for i in range(n):
             color = tuple(map(int, colors[i,:]))
             cv.circle(self._image,
@@ -60,6 +63,18 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
                        lw,
                        line_type)
 
+        if axis is not None:
+            p = centers - axis * radii[:, None] 
+
+            n  = centers.shape[0]
+            for i in range(n):
+                color = tuple(map(int, colors[i,:]*0.75))
+                cv.line(self._image,
+                centers[i,...].astype('int32'),
+                p[i,...].astype('int32'),  
+                color)
+
+
 
     def _draw_points(self, centers, sizes, colors):
         pass
@@ -67,7 +82,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
     def _draw_segments(self, points, colors):
         line_type = 8
         thickness = 1
-
+        points = np.flip(points, axis=2)
         n  = points.shape[0]
         for i in range(n):
             color = tuple(map(int, colors[i,:]))
@@ -80,7 +95,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
     def _draw_particles(self, centers, radius, colors=None):
         radius = min(1, radius)
         default_color = (255,255,255,255)
-
+        centers = np.flip(centers, axis=1)
         n_particles = centers.shape[0]
         centers -= radius
         d = 2 * radius
@@ -105,7 +120,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
         return  max(1, screen_line_width)
     
     def _point(self, point):
-        return int(point[0]), int(point[1])
+        return int(point[1]), int(point[0])
 
     def _draw_circle(self, center, radius, color,line_width):
         screen_center = self._point(self.world_to_screen(center))
@@ -122,6 +137,8 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
     # non-batch api
     def draw_solid_circle(self, center, radius, axis, color):
         self._draw_circle(center, radius, color, -1)
+
+
 
 
     def draw_circle(self, center, radius, color,line_width=1):
@@ -143,7 +160,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
     def draw_polygon(self, vertices, color, line_width=1):
         # todo add C++ function for this
-        screen_vertices = numpy.array([self._point(self.world_to_screen(v)) for v in vertices],dtype='int32')
+        screen_vertices = np.array([self._point(self.world_to_screen(v)) for v in vertices],dtype='int32')
         screen_color = self._uint8_color(color)
         screen_line_width = self._line_width(line_width)
 
@@ -152,7 +169,7 @@ class OpenCvBatchDebugDraw(b2d.batch_debug_draw_cls(False, True, True)):
 
     def draw_solid_polygon(self, vertices, color):
         # todo add C++ function for this
-        screen_vertices = numpy.array([self._point(self.world_to_screen(v)) for v in vertices],dtype='int32')
+        screen_vertices = np.array([self._point(self.world_to_screen(v)) for v in vertices],dtype='int32')
         screen_color = self._uint8_color(color)
 
         cv.fillPoly(self._image, [screen_vertices], screen_color, 8)

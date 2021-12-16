@@ -67,38 +67,36 @@ def polygon_shape(box=None,center=(0,0),angle=0.0,vertices=None):
     return s
 
 
-
-def extend_polygon_shape():
-    
-
-    def _vertices(self):
-        return [self.get_vertex(i) for i in range(self.vertex_count)]
+# def extend_polygon_shape():
 
 
-    PolygonShape._vertices = _vertices
-    PolygonShape.vertices = property(lambda self: self._vertices())
+#     def _vertices(self):
+#         return [self.get_vertex(i) for i in range(self.vertex_count)]
 
 
-extend_polygon_shape()
-del extend_polygon_shape
+#     PolygonShape._vertices = _vertices
+#     PolygonShape.vertices = property(lambda self: self._vertices())
 
+
+# extend_polygon_shape()
+# del extend_polygon_shape
 
 
 
 
-class _PolygonShape(PolygonShape):
+# class _PolygonShape(PolygonShape):
 
-    @property
-    def vertices(self):
-        return [self.getVertex(i) for i in range(self.vertexCount)]
+#     @property
+#     def vertices(self):
+#         return [self.getVertex(i) for i in range(self.vertexCount)]
 
-    @vertices.setter
-    def vertices(self, v):
-        verts = [vec2(vert) for vert in  v]
-        self.set(verts)
+#     @vertices.setter
+#     def vertices(self, v):
+#         verts = [vec2(vert) for vert in  v]
+#         self.set(verts)
         
 
-_classExtender(_PolygonShape, ['vertices'])
+# _classExtender(_PolygonShape, ['vertices'])
 
 
 

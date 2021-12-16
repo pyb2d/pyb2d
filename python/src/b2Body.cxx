@@ -92,17 +92,12 @@ void exportB2Body(py::module & pybox2dModule){
         .def_property("angular_velocity",&b2Body::GetAngularVelocity,&b2Body::SetAngularVelocity)
         .def_property("mass_data",&b2Body::GetMassData,&b2Body::SetMassData)
         .def_property("bullet",&b2Body::IsBullet,&b2Body::SetBullet)
-        .def_property("btype",&b2Body::GetType,&b2Body::SetType)
+        .def_property("btype",&b2Body::GetType,&b2Body::SetType)// deprecated
+        .def_property("type",&b2Body::GetType,&b2Body::SetType)
         .def_property("sleeping_allowed",&b2Body::IsSleepingAllowed,&b2Body::SetSleepingAllowed)
         .def_property("awake",&b2Body::IsAwake,&b2Body::SetAwake)
-        #ifdef PYBOX2D_OLD_BOX2D
-        .def_property("active",&b2Body::IsActive,&b2Body::SetActive)
-        .def_property("enabled",&b2Body::IsActive,&b2Body::SetActive)
-        #else
         .def_property("active",&b2Body::IsEnabled,&b2Body::SetEnabled)
         .def_property("enabled",&b2Body::IsEnabled,&b2Body::SetEnabled)
-        #endif
-
         .def_property("fixed_rotation",&b2Body::IsFixedRotation,&b2Body::SetFixedRotation)
         .def_property("gravity_scale",&b2Body::GetGravityScale,&b2Body::SetGravityScale)
         .def_property("linear_damping",&b2Body::GetLinearDamping,&b2Body::SetLinearDamping)

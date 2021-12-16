@@ -5,7 +5,6 @@ Goo
 This example shows how to implement a the basics of a WorldOfGoo clone
 """
 
-
 from b2d.testbed import TestbedBase
 from dataclasses import dataclass
 import math
@@ -31,6 +30,7 @@ def best_pairwise_distance(data, f, distance):
 
 def rand_color():
     return tuple([random.random() for i in range(3)])
+
 
 
 class Level(object):

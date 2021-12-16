@@ -51,7 +51,7 @@ void exportB2Fixture(py::module & pybox2dModule){
     b2FixtureCls
         .def_property_readonly("type", &b2Fixture::GetType)
         .def_property_readonly("shape", [](b2Fixture & f) {return ShapeHolder(f.GetShape());})
-        .def("set_Sensor", &b2Fixture::SetSensor,py::arg("sensor`"))
+        .def("set_sensor", &b2Fixture::SetSensor,py::arg("sensor`"))
         .def_property_readonly("is_sensor", &b2Fixture::IsSensor)
 
         .def_property_readonly("body", [](b2Fixture & f) {

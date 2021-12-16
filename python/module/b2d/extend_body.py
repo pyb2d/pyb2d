@@ -143,6 +143,10 @@ class _Body( Body):
             flist = self._get_fixture_list()
         return GenericB2dIter(flist)
 
+    def shapes_generator()
+        for fixture in self.fixtures:
+            yield fixture.shape
+
     @property
     def joints(self):
         jlist = None

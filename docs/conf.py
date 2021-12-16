@@ -304,8 +304,8 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 
 sphinx_gallery_conf = {
-     'examples_dirs': '../examples',   # path to your example scripts
-     'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output\
+     'examples_dirs': ['../examples','../tutorials'],   # path to your example scripts
+     'gallery_dirs': ['auto_examples', 'tutorials'],  # path to where to save gallery generated output
      'matplotlib_animations': True,
      'ignore_pattern': r'.*\.ipynb|test_all.py',
 }

@@ -44,21 +44,32 @@ void exportB2World(py::module & pybox2dModule){
         .def("set_contact_filter", [](world_type & w, PyB2ContactFilterCaller * listener){
             w.SetContactFilter(listener);
         },py::arg("listener"), py::keep_alive<1, 2>()) 
-        .def("set_debug_draw", [](world_type & w, PyB2Draw * d){
-            w.SetExtendedDebugDraw(d);
-        },  py::keep_alive<1, 2>())
+
+
 
         .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, float, true> * d){
             w.SetExtendedDebugDraw(d);
-        },  py::keep_alive<1, 2>())
+        },  py::arg("debug_draw"), py::keep_alive<1, 2>())
         .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<float, float, false> * d){
             w.SetExtendedDebugDraw(d);
-        },  py::keep_alive<1, 2>())
+        },  py::arg("debug_draw"), py::keep_alive<1, 2>())
         .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d){
             w.SetExtendedDebugDraw(d);
         }, py::arg("debug_draw"), py::keep_alive<1, 2>())
+    
+  
+
+        .def("draw_debug_data_with_temporary", [](world_type & w, BatchDebugDrawCaller<uint8_t, float, true> * d){
+            w.ExtendedDebugDraw(d);
+        }, py::arg("debug_draw"))
+        .def("draw_debug_data_with_temporary", [](world_type & w, BatchDebugDrawCaller<float, float, false> * d){
+            w.ExtendedDebugDraw(d);
+        }, py::arg("debug_draw"))
+        .def("draw_debug_data_with_temporary", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d){
+            w.ExtendedDebugDraw(d);
+        }, py::arg("debug_draw"))
         
-        //.def("_createBodyCpp", &world_type::CreateBody, py::return_value_policy::reference_internal)
+        .def("draw_debug_data",               py::overload_cast<>(&world_type::ExtendedDebugDraw))
 
 
         .def("_create_body_cpp", [](world_type * self, const PyDefExtender<b2BodyDef> * def)
@@ -142,7 +153,10 @@ void exportB2World(py::module & pybox2dModule){
         )
         #endif
         .def("clear_forces",&world_type::ClearForces)
-        .def("draw_debug_data",&world_type::ExtendedDebugDraw)
+
+
+
+
         .def("query_aabb", 
             [](const world_type & world, PyB2QueryCallbackCaller * cb, const b2AABB & aabb ){
                 return world.QueryAABB(cb, aabb);
@@ -195,7 +209,8 @@ void exportB2World(py::module & pybox2dModule){
 
 
 
-        // SPECIAL VECTORIZED FUNCTONS
+        // additional apo
+        .def("get_world_aabb", &world_type::get_world_aabb)
     ;
 
 }

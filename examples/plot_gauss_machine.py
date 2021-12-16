@@ -9,7 +9,6 @@ import random
 import numpy
 import b2d
 
-
 class GaussMachine(TestbedBase):
 
     name = "Gauss Machine"
