@@ -1,16 +1,27 @@
 from types import MethodType
 
-from . _b2d import *
-from . tools import _classExtender, GenericB2dIter
-from . extend_math import vec2
-from . extend_shapes import *
-from . extend_user_data import add_user_data_api
+from ._b2d import *
+from .tools import _classExtender, GenericB2dIter
+from .extend_math import vec2
+from .extend_shapes import *
+from .extend_user_data import add_user_data_api
 
 
-def body_def(btype=None,position=None,angle=None,linear_velocity=None,
-            angular_velocity=None,linear_damping=None,angular_damping=None,
-            allow_sleep=None, awake=None, fixed_rotation=None, bullet=None,
-            user_data=None, int_user_data=None):
+def body_def(
+    btype=None,
+    position=None,
+    angle=None,
+    linear_velocity=None,
+    angular_velocity=None,
+    linear_damping=None,
+    angular_damping=None,
+    allow_sleep=None,
+    awake=None,
+    fixed_rotation=None,
+    bullet=None,
+    user_data=None,
+    int_user_data=None,
+):
     d = BodyDef()
     if btype is not None:
         d.btype = btype
@@ -42,8 +53,6 @@ def body_def(btype=None,position=None,angle=None,linear_velocity=None,
 
 
 class _BodyDef(BodyDef):
-
-
     @property
     def user_data(self):
         if self._has_object_user_data():
@@ -56,43 +65,30 @@ class _BodyDef(BodyDef):
         self._set_object_user_data(ud)
 
 
-
-_classExtender(_BodyDef,['user_data'])
-
-
-
-
-
-
+_classExtender(_BodyDef, ["user_data"])
 
 
 add_user_data_api(Body)
 add_user_data_api(BodyDef)
 
 
-class _Body( Body):
-
-
-
-
-
-
+class _Body(Body):
     @property
     def world(self):
         return self._get_world()
 
-    def create_polygon_fixture(self, box=None,**kwargs):
+    def create_polygon_fixture(self, box=None, **kwargs):
 
         fixtureDef = b2FixtureDef()
 
         assert box is not None
         shape = b2PolygonShape()
-        shape.setAsBox(box[0],box[1])
+        shape.setAsBox(box[0], box[1])
 
-        fixtureDef.shape = shape 
+        fixtureDef.shape = shape
 
         for kw in kwargs:
-            setattr(fixtureDef,kw, kwargs[kw])
+            setattr(fixtureDef, kw, kwargs[kw])
 
         return self.create_fixture(fixtureDef)
 
@@ -103,16 +99,18 @@ class _Body( Body):
         shape.radius = radius
         fixtureDef.friction = friction
         fixtureDef.density = density
-        fixtureDef.shape = shape 
+        fixtureDef.shape = shape
         return self.create_fixture(fixtureDef)
 
-    def create_chain_fixture(self, vertices, prev_vertex, next_vertex, density=1, friction=0.2):
+    def create_chain_fixture(
+        self, vertices, prev_vertex, next_vertex, density=1, friction=0.2
+    ):
         fixtureDef = b2FixtureDef()
-        shape = chain_shape(vertices=vertices,prev_vertex=prev_vertex, next_vertex=next_vertex)
-        fixtureDef.shape = shape 
+        shape = chain_shape(
+            vertices=vertices, prev_vertex=prev_vertex, next_vertex=next_vertex
+        )
+        fixtureDef.shape = shape
         return self.create_fixture(fixtureDef)
-
-
 
     def create_fixtures_from_shapes(self, shapes, density=1.0):
         if isinstance(shapes, b2Shape):
@@ -121,8 +119,8 @@ class _Body( Body):
         for shape in shapes:
             fixtureDef = b2FixtureDef()
             fixtureDef.density = density
-            fixtureDef.shape = shape 
-            fixtures.append( self.create_fixture(fixtureDef))
+            fixtureDef.shape = shape
+            fixtures.append(self.create_fixture(fixtureDef))
         return fixtures
 
     @property
@@ -143,7 +141,7 @@ class _Body( Body):
             flist = self._get_fixture_list()
         return GenericB2dIter(flist)
 
-    def shapes_generator()
+    def shape_iter(self):
         for fixture in self.fixtures:
             yield fixture.shape
 
@@ -157,18 +155,25 @@ class _Body( Body):
     @property
     def joint_list(self):
         return list(self.joints)
-        
+
     @property
     def joint_list(self):
         return list(self.joints)
 
 
-
-
-
-_classExtender(_Body,[ 'type','world','create_polygon_fixture','create_circle_fixture',
-                      'create_chain_fixture',
-                    'create_fixtures_from_shapes',
-                     'next','fixtures','joints'], baseCls=Body)
-
-
+_classExtender(
+    _Body,
+    [
+        "type",
+        "world",
+        "create_polygon_fixture",
+        "create_circle_fixture",
+        "create_chain_fixture",
+        "shape_iter",
+        "create_fixtures_from_shapes",
+        "next",
+        "fixtures",
+        "joints",
+    ],
+    baseCls=Body,
+)
