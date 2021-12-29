@@ -37,6 +37,7 @@ binding_sources = [
     "python/src/b2WorldCallbacks.cxx",
     "python/src/b2World.cxx",
     "python/src/batch_api.cxx",
+    "python/src/b2_user_settings.cpp",
 ]
 
 include_dirs = ["external/pybind11-2.8.1/include/", "python/src/"]
