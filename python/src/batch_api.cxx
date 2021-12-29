@@ -194,7 +194,8 @@ void exportBodyBatchApi(py::module & pybox2dModule){
                     {
                         auto delta = pos - body->GetPosition();
                         const auto d = delta.Normalize();
-                        const auto force = delta * strength * body->GetMass() / (d*d);
+                        const auto fac = strength * body->GetMass() / (d*d);
+                        const auto force = b2Vec2(delta.x * fac, delta.y * fac); 
                         body->ApplyForceToCenter(force, wake);
                     }
                 }
