@@ -44,6 +44,14 @@ void exportB2Body(py::module & pybox2dModule){
         .def_readwrite("fixed_rotation", &PyBodyDef::fixedRotation)
         .def_readwrite("bullet", &PyBodyDef::bullet)
         .def_readwrite("gravity_scale", &PyBodyDef::gravityScale)
+
+        // special pybox2d stuff, not part of c++ Box2D
+        .def_property("report_contact_filter", 
+            [](PyBodyDef & self){return self.userData.reportContactFilter;},
+            [](PyBodyDef & self, const b2ReportFilter & filter ){ self.userData.reportContactFilter = filter;}
+        )
+
+
     ;
 
     py::class_<b2Body, BodyHolder > body_py_cls(pybox2dModule,"Body");
@@ -92,17 +100,12 @@ void exportB2Body(py::module & pybox2dModule){
         .def_property("angular_velocity",&b2Body::GetAngularVelocity,&b2Body::SetAngularVelocity)
         .def_property("mass_data",&b2Body::GetMassData,&b2Body::SetMassData)
         .def_property("bullet",&b2Body::IsBullet,&b2Body::SetBullet)
-        .def_property("btype",&b2Body::GetType,&b2Body::SetType)
+        .def_property("btype",&b2Body::GetType,&b2Body::SetType)// deprecated
+        .def_property("type",&b2Body::GetType,&b2Body::SetType)
         .def_property("sleeping_allowed",&b2Body::IsSleepingAllowed,&b2Body::SetSleepingAllowed)
         .def_property("awake",&b2Body::IsAwake,&b2Body::SetAwake)
-        #ifdef PYBOX2D_OLD_BOX2D
-        .def_property("active",&b2Body::IsActive,&b2Body::SetActive)
-        .def_property("enabled",&b2Body::IsActive,&b2Body::SetActive)
-        #else
         .def_property("active",&b2Body::IsEnabled,&b2Body::SetEnabled)
         .def_property("enabled",&b2Body::IsEnabled,&b2Body::SetEnabled)
-        #endif
-
         .def_property("fixed_rotation",&b2Body::IsFixedRotation,&b2Body::SetFixedRotation)
         .def_property("gravity_scale",&b2Body::GetGravityScale,&b2Body::SetGravityScale)
         .def_property("linear_damping",&b2Body::GetLinearDamping,&b2Body::SetLinearDamping)
@@ -133,6 +136,18 @@ void exportB2Body(py::module & pybox2dModule){
         .def("_has_contact_list",[]( b2Body & body){return body.GetContactList()!= nullptr;})
         .def("_get_contact_list",[]( b2Body & body){return body.GetContactList();}, py::return_value_policy::reference_internal)
         .def("_get_world",[]( b2Body & body){return body.GetWorld();}, py::return_value_policy::reference_internal)
+
+
+
+        // special pybox2d stuff, not part of c++ Box2D
+        .def_property("report_contact_filter", 
+            [](b2Body & self){return self.GetUserData().reportContactFilter;},
+            [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}
+        )
+        .def_property("report_contact_filter", 
+            [](b2Body & self){return self.GetUserData().reportContactFilter;},
+            [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}
+        )
     
     ;
 

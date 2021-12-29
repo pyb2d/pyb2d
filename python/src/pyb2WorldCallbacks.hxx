@@ -169,17 +169,41 @@ public:
     virtual void BeginContact(b2Contact* contact) { 
         if(m_has_begin_contact)
         {
-            py::gil_scoped_acquire acquire;
-            py::object f = object_.attr("begin_contact");
-            f(ContactHolder(contact));
+            if(report_collision(
+                contact->GetFixtureA()->GetBody()->GetUserData().reportContactFilter,
+                contact->GetFixtureB()->GetBody()->GetUserData().reportContactFilter
+            ))
+            {
+                if(report_collision(
+                    contact->GetFixtureA()->GetUserData().reportContactFilter,
+                    contact->GetFixtureB()->GetUserData().reportContactFilter
+                ))
+                {
+                    py::gil_scoped_acquire acquire;
+                    py::object f = object_.attr("begin_contact");
+                    f(ContactHolder(contact));
+                }
+            }
         }
     }
 
     virtual void EndContact(b2Contact* contact) { 
         if(m_has_end_contact){
-            py::gil_scoped_acquire acquire;
-            py::object f = object_.attr("end_contact");
-            f(ContactHolder(contact));
+            if(report_collision(
+                contact->GetFixtureA()->GetBody()->GetUserData().reportContactFilter,
+                contact->GetFixtureB()->GetBody()->GetUserData().reportContactFilter
+            ))
+            {
+                if(report_collision(
+                    contact->GetFixtureA()->GetUserData().reportContactFilter,
+                    contact->GetFixtureB()->GetUserData().reportContactFilter
+                ))
+                {
+                    py::gil_scoped_acquire acquire;
+                    py::object f = object_.attr("end_contact");
+                    f(ContactHolder(contact));
+                }
+            }
         }
 
     }

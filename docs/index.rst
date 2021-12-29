@@ -14,6 +14,10 @@ Contents:
 
    joints
 
+   batch_api
+
+   tutorials/index
+
    auto_examples/index
 
 Drawing:

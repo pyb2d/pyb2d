@@ -18,6 +18,15 @@ inline void setShape(PyDefExtender<b2FixtureDef> & f, b2Shape * s){
 void exportB2Fixture(py::module & pybox2dModule){
 
 
+
+    py::class_<b2ReportFilter>(pybox2dModule,"ReportFilter")
+        .def(py::init<>())
+        .def_readwrite("category_bits", &b2ReportFilter::categoryBits)
+        .def_readwrite("mask_bits", &b2ReportFilter::maskBits)
+        .def_readwrite("group_index", &b2ReportFilter::groupIndex)
+    ;
+
+
     py::class_<b2Filter>(pybox2dModule,"Filter")
         .def(py::init<>())
         .def_readwrite("category_bits", &b2Filter::categoryBits)
@@ -51,7 +60,7 @@ void exportB2Fixture(py::module & pybox2dModule){
     b2FixtureCls
         .def_property_readonly("type", &b2Fixture::GetType)
         .def_property_readonly("shape", [](b2Fixture & f) {return ShapeHolder(f.GetShape());})
-        .def("set_Sensor", &b2Fixture::SetSensor,py::arg("sensor`"))
+        .def("set_sensor", &b2Fixture::SetSensor,py::arg("sensor`"))
         .def_property_readonly("is_sensor", &b2Fixture::IsSensor)
 
         .def_property_readonly("body", [](b2Fixture & f) {

@@ -4,6 +4,7 @@
 
 #include "extended_debug_draw_base.hxx"
 
+
 // the RoundingHelper class helps to generalize between floating
 // point and non floating point coordinate value types.
 

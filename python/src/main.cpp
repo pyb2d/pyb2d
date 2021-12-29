@@ -30,6 +30,7 @@ void exportb2JointDef(py::module & );
 void exportB2WorldCallbacks(py::module & );
 void exportB2Draw(py::module & );
 void exportb2Collision(py::module & );
+void exportBatchApi(py::module & );
 #ifdef PYBOX2D_LIQUID_FUN
 void exportB2Particle(py::module & );
 void exportB2ParticleSystem(py::module & );
@@ -68,6 +69,7 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     exportB2WorldCallbacks(pybox2dModule);
     exportB2Draw(pybox2dModule);
     exportb2Collision(pybox2dModule);
+    exportBatchApi(pybox2dModule);
     #ifdef PYBOX2D_LIQUID_FUN
     exportB2Particle(pybox2dModule);
     exportB2ParticleSystem(pybox2dModule);
@@ -75,5 +77,5 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     exportEmitter(pybox2dModule);
     #endif
 
-    pybox2dModule.attr("__version__") = "0.4.4";
+    pybox2dModule.attr("__version__") = "0.5.0";
 }

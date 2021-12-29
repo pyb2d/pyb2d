@@ -1,8 +1,8 @@
 from .opencv_debug_draw import *
 import matplotlib.pyplot as plt
 import imageio
+import numpy
 from dataclasses import dataclass,field
-
 from ..gui_base import GuiBase,list_field
 
 class GifGui(GuiBase):

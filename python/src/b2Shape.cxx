@@ -13,6 +13,32 @@ namespace py = pybind11;
 
 #include "holder.hxx"
 #include "helper.hxx"
+#include "numpy.hxx"
+
+
+py::array_t<float> vertices_to_numpy(b2Vec2 * vertices, std::size_t n_vertices, b2Body * body){
+
+    auto np_vertices = make_numpy_array<float>({int(n_vertices),2});
+    auto ptr = const_cast<float*>(np_vertices.data(0,0));
+
+    if(body != nullptr)
+    {
+        const b2Transform& xf = body->GetTransform();
+        for (int i = 0; i < n_vertices; ++i)
+        {
+            auto vert = b2Mul(xf, vertices[i]);
+            ptr[0] = vert.x;
+            ptr[1] = vert.y;
+            ptr += 2;
+        }
+    }
+    else
+    {   
+        auto src_begin = &(vertices[0].x);
+        std::copy(src_begin, src_begin + n_vertices * 2, ptr);
+    }
+    return np_vertices;
+}
 
 
 class PyB2Shape : public b2Shape {
@@ -119,17 +145,9 @@ void exportB2Shape(py::module & pybox2dModule){
         .def(py::init<>())
         .def_property_readonly("type",&b2Shape::GetType)
         .def_property_readonly("child_count",&b2Shape::GetChildCount)
-        .def("testPoint",&b2Shape::TestPoint,py::arg("xf"),py::arg("p"))
-        //.def("compute_distance",&b2Shape::ComputeDistance)
-        .def_property_readonly("is_circle_shape",&isType<b2CircleShape>)
-        .def_property_readonly("is_chain_shape",&isType<b2ChainShape>)
-        .def_property_readonly("is_edge_shape",&isType<b2EdgeShape>)
-        .def_property_readonly("is_polygon_shape",&isType<b2PolygonShape>)
+        .def("test_point",&b2Shape::TestPoint,py::arg("xf"),py::arg("p"))
         .def_readwrite("radius", &b2Shape::m_radius)
 
-        //.defIseadwrite("categoryBits", &b2Shape::categoryBits)
-        //.def_readwrite("maskBits", &b2Shape::maskBits)
-        //.def_readwrite("groupIndex", &b2Shape::groupIndex)
     ;
 
 
@@ -140,66 +158,62 @@ void exportB2Shape(py::module & pybox2dModule){
         .value("chain", b2Shape::Type::e_chain)
         .value("polygon", b2Shape::Type::e_polygon)
         .value("type_count", b2Shape::Type::e_typeCount)
-        //.exportValues()
     ;
     
     
     
     // derived shapes
-    py::class_<b2CircleShape, Holder<b2CircleShape>, b2Shape
-    >(pybox2dModule,"CircleShape")
+    py::class_<b2CircleShape, Holder<b2CircleShape>, b2Shape>(pybox2dModule,"CircleShape")
         .def(py::init<>())
+        // pos is deprecated
         .def_readwrite("pos", &b2CircleShape::m_p)
+        .def_readwrite("position", &b2CircleShape::m_p)
+        .def("vertices", [](b2CircleShape * self, b2Body * body){
+            return vertices_to_numpy(&self->m_p, 1, body);
+        }, py::arg("body") = nullptr)
     ;
-    py::class_<b2EdgeShape
-    , Holder<b2EdgeShape>,b2Shape
-    >(pybox2dModule,"EdgeShape")
+
+
+
+    py::class_<b2EdgeShape, Holder<b2EdgeShape>,b2Shape>(pybox2dModule,"EdgeShape")
         .def(py::init<>())
-        #ifdef PYBOX2D_OLD_BOX2D
-        .def("set",[](b2EdgeShape * s,const b2Vec2 & v1,const b2Vec2 & v2)
-             {s->Set(v1,v2);},py::arg("v1"),py::arg("v2"))
-        #else
-        .def("set_one_sided",[](b2EdgeShape * s,const b2Vec2 & v0,const b2Vec2 & v1,const b2Vec2 & v2, const b2Vec2 & v3)
-             {s->SetOneSided(v0, v1,v2, v3);},py::arg("v0"), py::arg("v1"),py::arg("v2"),py::arg("v3"))
-        .def("set_two_sided",[](b2EdgeShape * s,const b2Vec2 & v1,const b2Vec2 & v2)
-             {s->SetTwoSided(v1,v2);},py::arg("v1"),py::arg("v2"))
-        #endif
+
+        .def("set_one_sided",[](b2EdgeShape * s,const b2Vec2 & v0,const b2Vec2 & v1,const b2Vec2 & v2, const b2Vec2 & v3){
+            s->SetOneSided(v0, v1,v2, v3);
+        },
+            py::arg("v0"), 
+            py::arg("v1"),
+            py::arg("v2"),
+            py::arg("v3")
+        )
+        .def("set_two_sided",[](b2EdgeShape * s,const b2Vec2 & v1,const b2Vec2 & v2){
+                s->SetTwoSided(v1,v2);
+            },
+            py::arg("v1"),
+            py::arg("v2")
+        )
+        .def_property_readonly("one_sided", [](b2EdgeShape * self){
+            return self->m_oneSided;
+        })
+
+        .def("adjacent_vertices", [](b2EdgeShape * self, b2Body * body){
+            return vertices_to_numpy(&self->m_vertex0, 2, body);
+        }, py::arg("body") = nullptr)
+
+        .def("vertices", [](b2EdgeShape * self, b2Body * body){
+            return vertices_to_numpy(&self->m_vertex1, 2, body);
+        }, py::arg("body") = nullptr)
     ;
-    py::class_<b2ChainShape
-        , Holder<b2ChainShape>,b2Shape 
-    >(pybox2dModule,"ChainShape")
+
+
+
+
+    py::class_<b2ChainShape, Holder<b2ChainShape>,b2Shape >(pybox2dModule,"ChainShape")
         .def(py::init<>())
         .def("create_loop",[](b2ChainShape *s, const std::vector<b2Vec2> & verts ){
             s->CreateLoop(verts.data(), verts.size());
         })
-        #ifdef PYBOX2D_OLD_BOX2D
-        .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts){
-                with_vertices(verts, [&](auto ptr, auto n_verts){
-                    s->CreateChain(ptr, n_verts);
-                });
-            }
-        )
-        .def("create_chain",[](b2ChainShape *s, const std::vector<b2Vec2> & verts){
-            s->CreateChain(verts.data(), verts.size());
-        })
-        .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts,
-            const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
-                with_vertices(verts, [&](auto ptr, auto n_verts){
-                    s->CreateChain(ptr, n_verts);
-                    s->SetPrevVertex(prevVertex);
-                    s->SetNextVertex(nextVertex);
-                });
-            }
-        )
-        .def("create_chain",[](b2ChainShape *s, const std::vector<b2Vec2> & verts,
-        const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
-            s->CreateChain(verts.data(), verts.size());
-            s->SetPrevVertex(prevVertex);
-            s->SetNextVertex(nextVertex);
-        })
-
-
-        #else
+       
 
         .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts,
             const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
@@ -213,27 +227,15 @@ void exportB2Shape(py::module & pybox2dModule){
         const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
             s->CreateChain(verts.data(), verts.size(), prevVertex, nextVertex);
         })
-        #endif
 
-        // .def("set", [](b2ChainShape *s, const np_verts_dynamic & verts){
-        //         with_vertices(verts, [s](auto ptr, auto n_verts){
-        //             s->Set(ptr, n_verts);
-        //         });
-        //     }
-        // )
+
         .def_readonly("vertex_count", &b2ChainShape::m_count)
-        .def_property_readonly("vertices",[](const b2ChainShape * shape){
-            std::vector<b2Vec2> vec(shape->m_count);
-            for(size_t i=0; i<vec.size(); ++i){
-                vec[i]  = shape->m_vertices[i];
-            }
-            return vec;
-        })
+        .def("vertices", [](b2ChainShape * self, b2Body * body){
+            return vertices_to_numpy(self->m_vertices, self->m_count, body);
+        }, py::arg("body") = nullptr)
     ;
 
-    py::class_<b2PolygonShape
-    , Holder<b2PolygonShape>,b2Shape
-    >(pybox2dModule,"PolygonShape")
+    py::class_<b2PolygonShape, Holder<b2PolygonShape>,b2Shape>(pybox2dModule,"PolygonShape")
         .def(py::init<>())
         .def("set_as_box",
             [&](
@@ -250,6 +252,9 @@ void exportB2Shape(py::module & pybox2dModule){
             py::arg("center_y") = 0,
             py::arg("angle") = 0
         )
+        .def("vertices", [](b2PolygonShape * self, b2Body * body){
+            return vertices_to_numpy(self->m_vertices, self->m_count, body);
+        }, py::arg("body") = nullptr)
         #if 0
         .def("set", []( b2PolygonShape *s, const np_verts_row_major & verts){
                 with_vertices(verts, [s](auto ptr, auto n_verts){
@@ -272,11 +277,6 @@ void exportB2Shape(py::module & pybox2dModule){
         //.def_property_readonly("vertex_count", &b2PolygonShape::GetVertexCount)
         //.def("get_vertex", &b2PolygonShape::GetVertex,py::return_value_policy::reference_internal)
     ;
-
-    //pybox2dModule.def("b2PolygonShapeCast", &asType<b2PolygonShape>,
-    //    py::return_value_policy::dont_cache_cast,py::keep_alive<1,0>());
-
-
 
 }
 
