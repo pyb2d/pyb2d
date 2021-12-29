@@ -51,7 +51,7 @@ struct B2_API b2ReportFilter
 // if both groupIndex values are the same and positive, report collision
 // if both groupIndex values are the same and negative, don't report collision
 
-bool report_collision(const b2ReportFilter & filterA, const b2ReportFilter & filterB);
+B2_API bool report_collision(const b2ReportFilter & filterA, const b2ReportFilter & filterB);
 // {   
 //     const auto ga = filterA.groupIndex;
 //     const auto gb = filterB.groupIndex;
