@@ -16,6 +16,7 @@ class RecMixIn(object):
 class RecDestructionListener(b2d.DestructionListener, RecMixIn):
     def __init__(self):
         b2d.DestructionListener.__init__(self)
+
         RecMixIn.__init__(self)
 
     def say_goodbye_joint(self, joint):

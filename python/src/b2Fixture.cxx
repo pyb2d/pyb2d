@@ -18,6 +18,15 @@ inline void setShape(PyDefExtender<b2FixtureDef> & f, b2Shape * s){
 void exportB2Fixture(py::module & pybox2dModule){
 
 
+
+    py::class_<b2ReportFilter>(pybox2dModule,"ReportFilter")
+        .def(py::init<>())
+        .def_readwrite("category_bits", &b2ReportFilter::categoryBits)
+        .def_readwrite("mask_bits", &b2ReportFilter::maskBits)
+        .def_readwrite("group_index", &b2ReportFilter::groupIndex)
+    ;
+
+
     py::class_<b2Filter>(pybox2dModule,"Filter")
         .def(py::init<>())
         .def_readwrite("category_bits", &b2Filter::categoryBits)

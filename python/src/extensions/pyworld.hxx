@@ -61,6 +61,13 @@ public:
         }
     }
 
+    // void MyDebugDraw()
+    // {
+    //     if(p_extended_debug_draw == nullptr)
+    //     {
+    //         return
+    //     }
+    // }
 
     void ExtendedDebugDraw(ExtendedDebugDrawBase * extended_debug_draw)
     {

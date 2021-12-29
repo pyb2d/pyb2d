@@ -38,7 +38,6 @@
 #include "b2_user_settings.h"
 
 #else
-
 #include <stdarg.h>
 #include <stdint.h>
 

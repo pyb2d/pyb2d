@@ -39,6 +39,8 @@
 
 #else
 
+#error "WE SET THIS"
+
 #include <stdarg.h>
 #include <stdint.h>
 

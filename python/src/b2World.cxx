@@ -124,7 +124,7 @@ void exportB2World(py::module & pybox2dModule){
             }
         )
         .def("destroy_particle_system",&world_type::DestroyParticleSystem)
-        .def("calculateReasonableParticleIterations",&world_type::CalculateReasonableParticleIterations)
+        .def("calculate_reasonable_particle_iterations",&world_type::CalculateReasonableParticleIterations)
         #endif
 
         #ifdef PYBOX2D_LIQUID_FUN
@@ -132,7 +132,7 @@ void exportB2World(py::module & pybox2dModule){
             (world_type & self, float timeStep, 
             int32 velocityIterations, int32 positionIterations,
             int32 particleIterations){
-                py::gil_scoped_release release;
+                
                 self.Step(timeStep, velocityIterations, positionIterations,particleIterations);
             },
             py::arg("time_step"),
@@ -144,7 +144,7 @@ void exportB2World(py::module & pybox2dModule){
         .def("step",[&]
             (world_type & self, float timeStep, 
             int32 velocityIterations, int32 positionIterations){
-
+                py::gil_scoped_release release;
                 self.Step(timeStep, velocityIterations, positionIterations);
             },
             py::arg("time_step"),

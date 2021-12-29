@@ -14,6 +14,7 @@ from .extend_shapes import EdgeShape
 from .extend_joints import *
 from .extend_collision import *
 from .extend_contact import *
+from .extend_batch_api import *
 from .query_callback import *
 
 if BuildConfiguration.LIQUID_FUN:

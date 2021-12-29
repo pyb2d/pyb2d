@@ -44,6 +44,14 @@ void exportB2Body(py::module & pybox2dModule){
         .def_readwrite("fixed_rotation", &PyBodyDef::fixedRotation)
         .def_readwrite("bullet", &PyBodyDef::bullet)
         .def_readwrite("gravity_scale", &PyBodyDef::gravityScale)
+
+        // special pybox2d stuff, not part of c++ Box2D
+        .def_property("report_contact_filter", 
+            [](PyBodyDef & self){return self.userData.reportContactFilter;},
+            [](PyBodyDef & self, const b2ReportFilter & filter ){ self.userData.reportContactFilter = filter;}
+        )
+
+
     ;
 
     py::class_<b2Body, BodyHolder > body_py_cls(pybox2dModule,"Body");
@@ -128,6 +136,18 @@ void exportB2Body(py::module & pybox2dModule){
         .def("_has_contact_list",[]( b2Body & body){return body.GetContactList()!= nullptr;})
         .def("_get_contact_list",[]( b2Body & body){return body.GetContactList();}, py::return_value_policy::reference_internal)
         .def("_get_world",[]( b2Body & body){return body.GetWorld();}, py::return_value_policy::reference_internal)
+
+
+
+        // special pybox2d stuff, not part of c++ Box2D
+        .def_property("report_contact_filter", 
+            [](b2Body & self){return self.GetUserData().reportContactFilter;},
+            [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}
+        )
+        .def_property("report_contact_filter", 
+            [](b2Body & self){return self.GetUserData().reportContactFilter;},
+            [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}
+        )
     
     ;
 
