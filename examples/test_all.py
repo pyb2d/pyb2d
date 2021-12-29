@@ -13,31 +13,17 @@ import b2d
 from b2d.testbed.backend.no_gui import NoGui
 
 
-
 import pytest
 
 
-examples = [
-    FunctionShape,
-    NewtonsCradle,
-    Blender,
-    Raycast,
-    Billiard
-]
+examples = [FunctionShape, NewtonsCradle, Blender, Raycast, Billiard]
 
-lf_examples = [
-    Rocket,
-    ColorMixing,
-    GaussMachine,
-    AngryShapes,
-    Goo
-]
+lf_examples = [Rocket, ColorMixing, GaussMachine, AngryShapes, Goo]
 if b2d.BuildConfiguration.LIQUID_FUN:
     examples.extend(lf_examples)
 
-@pytest.mark.parametrize("example_cls", 
-    examples
-)
+
+@pytest.mark.parametrize("example_cls", examples)
 def test_eval(example_cls):
     print(f"\nSimulate `{example_cls.name}:`")
     example_cls.run(NoGui, gui_settings=NoGui.Settings())

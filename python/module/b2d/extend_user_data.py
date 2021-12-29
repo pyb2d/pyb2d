@@ -1,6 +1,4 @@
-
 def add_user_data_api(cls):
-
     @property
     def user_data(self):
         if self.has_object_user_data:
@@ -16,4 +14,5 @@ def add_user_data_api(cls):
             self._clear_object_user_data()
         else:
             self._set_object_user_data(ud)
+
     cls.user_data = user_data
