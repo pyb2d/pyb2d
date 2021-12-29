@@ -38,7 +38,7 @@ binding_sources = [
     "python/src/b2World.cxx",
 ]
 
-include_dirs = ["external/pybind11-2.8.1/include/"]
+include_dirs = ["external/pybind11-2.8.1/include/", "python/src/"]
 macros = [
     ("B2_USER_SETTINGS", 1),
 ]
