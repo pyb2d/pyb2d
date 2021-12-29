@@ -174,7 +174,7 @@ void exportBodyBatchApi(py::module & pybox2dModule){
             {
                 throw std::runtime_error("wrong shape: needs to be [X,2]");
             }
-            if(gravity_source_location.shape(0) != gravity_source_strength.shape(0) and gravity_source_strength.shape(0) != 1)
+            if(gravity_source_location.shape(0) != gravity_source_strength.shape(0) && gravity_source_strength.shape(0) != 1)
             {
                 throw std::runtime_error("gravity_source_location and gravity_source_strength shape mismatch");
             }
