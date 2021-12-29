@@ -14,7 +14,8 @@ b2EmitterDefBase::b2EmitterDefBase()
     transform(),
     emitRate(1),
     lifetime(0.0f),
-    seed(42)
+    seed(42),
+    enabled(true)
 {
 
 }
