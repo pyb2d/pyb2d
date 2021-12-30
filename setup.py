@@ -81,7 +81,7 @@ ext_modules = [
 ]
 
 
-install_requires = ["numpy"]
+install_requires = ["numpy", "pydantic"]
 setup(
     name="b2d",
     version=__version__,

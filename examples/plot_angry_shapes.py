@@ -7,7 +7,6 @@ This example shows how to create games inspired by AngryBirds.
 
 
 from b2d.testbed import TestbedBase
-from dataclasses import dataclass
 import math
 import numpy
 import b2d
@@ -17,7 +16,6 @@ class AngryShapes(TestbedBase):
 
     name = "AngryShapes"
 
-    @dataclass
     class Settings(TestbedBase.Settings):
         substeps: int = 2
 

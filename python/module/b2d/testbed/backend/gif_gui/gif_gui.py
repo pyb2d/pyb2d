@@ -2,22 +2,21 @@ from .opencv_debug_draw import *
 import matplotlib.pyplot as plt
 import imageio
 import numpy
-from dataclasses import dataclass,field
-from ..gui_base import GuiBase,list_field
+from ..gui_base import GuiBase, list_field
+from typing import List, Optional
+
 
 class GifGui(GuiBase):
-
-    @dataclass
     class Settings(GuiBase.Settings):
         filename: str = ""
         t: float = 10.0
-        resolution: list = list_field([400,400])
+        resolution: List[int] = [400, 400]
         scale: float = 10
-        fps: int =  24 # we overwrite this here!
+        fps: int = 24  # we overwrite this here!
         t: float = 10.0
 
     def __init__(self, testbed_cls, settings, testbed_settings):
-        
+
         self.settings = settings
         self.testbed_cls = testbed_cls
         self.testbed_settings = testbed_settings
@@ -30,7 +29,7 @@ class GifGui(GuiBase):
 
         # settings
 
-        self.image = numpy.zeros(list(self.settings.resolution) + [3], dtype='uint8')
+        self.image = numpy.zeros(list(self.settings.resolution) + [3], dtype="uint8")
         self._image_list = []
         self.debug_draw = OpenCvBatchDebugDraw(image=self.image)
         filename = self.settings.filename
@@ -39,16 +38,12 @@ class GifGui(GuiBase):
         self._filename = filename
         self.debug_draw.screen_size = settings.resolution
         self.debug_draw.flip_y = True
-        self.debug_draw.scale =  settings.scale
-        self.debug_draw.translate =settings.translate
-
-
-
-
+        self.debug_draw.scale = settings.scale
+        self.debug_draw.translate = settings.translate
 
     # run the world for a limited amount of steps
     def start_ui(self):
-        
+
         self._testworld = self.testbed_cls(settings=self.testbed_settings)
         self._testworld.set_debug_draw(self.debug_draw)
         self._image_list = []

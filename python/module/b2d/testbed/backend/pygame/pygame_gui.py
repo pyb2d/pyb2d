@@ -1,16 +1,14 @@
 import numpy
 import b2d as b2
 import pygame
-import pygame.locals 
+import pygame.locals
 import time
-from dataclasses import dataclass,field
 
 from ..gui_base import GuiBase
 from .pygame_debug_draw import PyGameBatchDebugDraw
 
+
 class PygameGui(GuiBase):
-    
-    @dataclass
     class Settings(GuiBase.Settings):
         pass
 
@@ -22,7 +20,7 @@ class PygameGui(GuiBase):
         # testworld
         self.testbed_settings = testbed_settings
         self.testbed_cls = testbed_cls
-        self._testworld  = None
+        self._testworld = None
 
         # flag to stop loop
         self._exit = False
@@ -39,15 +37,11 @@ class PygameGui(GuiBase):
         self._fps = settings.fps
         self._dt_s = 1.0 / self._fps
 
-     
     def make_testworld(self):
 
         if self._testworld is not None:
             self._testworld.say_goodbye_world()
         self._testworld = self.testbed_cls(settings=self.testbed_settings)
-
-
-
 
     def start_ui(self):
 
@@ -59,7 +53,6 @@ class PygameGui(GuiBase):
         self._surface = pygame.display.set_mode(self.settings.resolution)
         pygame.display.set_caption(self.testbed_cls.name)
 
-
         # debug draw
         # self.debug_draw = PygameDebugDraw(surface=self._surface)
         self.debug_draw = PyGameBatchDebugDraw(surface=self._surface)
@@ -67,26 +60,28 @@ class PygameGui(GuiBase):
         self.debug_draw.flip_y = True
         self.debug_draw.scale = self.settings.scale
         self.debug_draw.translate = self.settings.translate
-        self.debug_draw.append_flags([
-            'shape',
-            'joint',
-            # 'aabb',
-            # 'pair',
-            'center_of_mass',
-            'particle'
-        ])
+        self.debug_draw.append_flags(
+            [
+                "shape",
+                "joint",
+                # 'aabb',
+                # 'pair',
+                "center_of_mass",
+                "particle",
+            ]
+        )
         self._testworld.set_debug_draw(self.debug_draw)
 
         # Event loop
         while 1:
-            
+
             t0 = time.time()
             self._handle_events()
 
             if self._exit:
                 break
 
-            self._surface.fill((0,0,0))
+            self._surface.fill((0, 0, 0))
             self._step_world()
             pygame.display.update()
 
@@ -95,8 +90,6 @@ class PygameGui(GuiBase):
             delta = t1 - t0
             if delta < self._dt_s:
                 time.sleep(self._dt_s - delta)
-
-     
 
     def _zoom_in(self):
         self.debug_draw.scale *= 1.25
@@ -109,26 +102,18 @@ class PygameGui(GuiBase):
         pressed_keys = pygame.key.get_pressed()
         pressed_mouse_buttons = pygame.mouse.get_pressed()
 
-
         # ctrl_pressed = pressed_keys[pygame.K_LCTRL] or pressed_keys[pygame.K_RCTRL]
 
         drag_mode = pressed_mouse_buttons[0]
 
-        if(drag_mode and self._last_was_drag and self._handle_click):
+        if drag_mode and self._last_was_drag and self._handle_click:
             pos = pygame.mouse.get_pos()
-            delta = [
-                self._last_pos[0] - pos[0],
-                self._last_pos[1] - pos[1]
-            ]
+            delta = [self._last_pos[0] - pos[0], self._last_pos[1] - pos[1]]
             translate = self.debug_draw.translate
-            self.debug_draw.translate = (
-                translate.x - delta[0],
-                translate.y + delta[1]
-            )
-        # 
+            self.debug_draw.translate = (translate.x - delta[0], translate.y + delta[1])
+        #
         self._last_was_drag = drag_mode
         self._last_pos = pygame.mouse.get_pos()
-
 
         for event in pygame.event.get():
             if event.type == pygame.locals.QUIT:
