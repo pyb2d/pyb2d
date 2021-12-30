@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 
 matplotlib.rc("animation", html="html5")
 
-from ..gui_base import GuiBase, list_field
+from ..gui_base import GuiBase
 
 
 class MatplotlibGifGui(GifGui):
