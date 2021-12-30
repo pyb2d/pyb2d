@@ -236,7 +236,6 @@ class AngryShapes(TestbedBase):
 
             if ud_b == "target" or ud_b == "brick":
                 self.marked_for_destruction.append(body_a)
-                print("WUP")
                 emitter_def = b2d.RandomizedRadialEmitterDef()
                 emitter_def.emite_rate = 20000
                 emitter_def.lifetime = 0.7

@@ -2,7 +2,7 @@ from .opencv_debug_draw import *
 import matplotlib.pyplot as plt
 import imageio
 import numpy
-from ..gui_base import GuiBase, list_field
+from ..gui_base import GuiBase
 from typing import List, Optional
 
 
