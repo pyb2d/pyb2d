@@ -3,7 +3,7 @@ import numpy
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib
-from dataclasses import dataclass, field
+from typing import List, Optional
 
 matplotlib.rc("animation", html="html5")
 
