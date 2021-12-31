@@ -71,6 +71,7 @@ void exportB2Math(py::module & pybox2dModule){
             return new b2Vec2(t[0].cast<float>(), t[1].cast<float>()); }
         )) 
        .def(py::init<>())
+       .def(py::init<b2Vec2>())
        .def(py::init<float,float>(),py::arg("x"),py::arg("y"))
        .def_readwrite("x", &b2Vec2::x)
        .def_readwrite("y", &b2Vec2::y)
