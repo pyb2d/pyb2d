@@ -205,6 +205,22 @@ class World(_World):
         d = wheel_joint_def(*args, **kwargs)
         return self.create_joint(d)
 
+    def create_friction_joint(self, *args, **kwargs):
+        d = friction_joint_def(*args, **kwargs)
+        return self.create_joint(d)
+
+    def create_gear_joint(self, *args, **kwargs):
+        d = gear_joint_def(*args, **kwargs)
+        return self.create_joint(d)
+
+    def create_pully_joint(self, *args, **kwargs):
+        d = pully_joint_def(*args, **kwargs)
+        return self.create_joint(d)
+
+    def create_weld_joint(self, *args, **kwargs):
+        d = weld_joint_def(*args, **kwargs)
+        return self.create_joint(d)
+
 
 def world(gravity=(0, -9.81)):
     return World(vec2(gravity))

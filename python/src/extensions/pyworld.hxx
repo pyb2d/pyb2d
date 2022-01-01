@@ -69,12 +69,15 @@ public:
     //     }
     // }
 
-    void ExtendedDebugDraw(ExtendedDebugDrawBase * extended_debug_draw)
+    void WithTemporaryExtendedDebugDraw(
+        ExtendedDebugDrawBase * extended_debug_draw,
+        py::object callback
+    )
     {
         auto * to_restore = p_extended_debug_draw;
         p_extended_debug_draw = extended_debug_draw;
         this->SetDebugDraw(extended_debug_draw);
-        this->ExtendedDebugDraw();
+        callback();
         this->SetDebugDraw(to_restore);
         p_extended_debug_draw = to_restore;
     }
