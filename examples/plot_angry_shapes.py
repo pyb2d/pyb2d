@@ -7,7 +7,6 @@ This example shows how to create games inspired by AngryBirds.
 
 
 from b2d.testbed import TestbedBase
-from dataclasses import dataclass
 import math
 import numpy
 import b2d
@@ -17,7 +16,6 @@ class AngryShapes(TestbedBase):
 
     name = "AngryShapes"
 
-    @dataclass
     class Settings(TestbedBase.Settings):
         substeps: int = 2
 
@@ -238,7 +236,6 @@ class AngryShapes(TestbedBase):
 
             if ud_b == "target" or ud_b == "brick":
                 self.marked_for_destruction.append(body_a)
-                print("WUP")
                 emitter_def = b2d.RandomizedRadialEmitterDef()
                 emitter_def.emite_rate = 20000
                 emitter_def.lifetime = 0.7

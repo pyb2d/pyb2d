@@ -14,7 +14,7 @@ bool report_collision(const b2ReportFilter & filterA, const b2ReportFilter & fil
     // std::cout<<"ga "<<ga<<" "<<gb<<"\n";
     if((ga == 0 || gb == 0) || (ga != gb))
     {
-        return  (filterA.maskBits & filterB.categoryBits) != 0 && (filterA.categoryBits & filterB.maskBits) != 0;
+    return  (filterA.maskBits & filterB.categoryBits) != 0 && (filterA.categoryBits & filterB.maskBits) != 0;
     }
     else { // here ga == gb 
         return ga > 0;

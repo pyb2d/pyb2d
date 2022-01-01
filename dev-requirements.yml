@@ -15,3 +15,4 @@ dependencies:
   - pybind11
   - pip
   - networkx
+  - pydantic

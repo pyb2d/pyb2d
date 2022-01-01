@@ -154,6 +154,9 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def_readwrite("enable_motor", &PyWheelJointDef::enableMotor)
         .def_readwrite("max_motor_torque", &PyWheelJointDef::maxMotorTorque)
         .def_readwrite("motor_speed", &PyWheelJointDef::motorSpeed)
+        .def_readwrite("enable_limit", &PyWheelJointDef::enableLimit)
+        .def_readwrite("lower_translation", &PyWheelJointDef::lowerTranslation)
+        .def_readwrite("upper_translation", &PyWheelJointDef::upperTranslation)
         #ifdef PYBOX2D_OLD_BOX2D
         .def_readwrite("frequency_hz", &PyWheelJointDef::frequencyHz)
         .def_readwrite("damping_ratio", &PyWheelJointDef::dampingRatio)

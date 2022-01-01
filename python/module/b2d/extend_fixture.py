@@ -2,6 +2,20 @@ from ._b2d import *
 from .tools import _classExtender
 
 
+def report_filter(**kwargs):
+    f = ReportFilter()
+    for k, v in kwargs.items():
+        setattr(f, k, v)
+    return f
+
+
+def filter(**kwargs):
+    f = Filter()
+    for k, v in kwargs.items():
+        setattr(f, k, v)
+    return f
+
+
 def fixture_def(
     shape=None,
     friction=None,
