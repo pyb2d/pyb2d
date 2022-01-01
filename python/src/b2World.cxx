@@ -59,19 +59,20 @@ void exportB2World(py::module & pybox2dModule){
     
   
 
-        .def("draw_debug_data_with_temporary", [](world_type & w, BatchDebugDrawCaller<uint8_t, float, true> * d){
-            w.ExtendedDebugDraw(d);
-        }, py::arg("debug_draw"))
-        .def("draw_debug_data_with_temporary", [](world_type & w, BatchDebugDrawCaller<float, float, false> * d){
-            w.ExtendedDebugDraw(d);
-        }, py::arg("debug_draw"))
-        .def("draw_debug_data_with_temporary", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d){
-            w.ExtendedDebugDraw(d);
-        }, py::arg("debug_draw"))
+        .def("with_temporary_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, float, true> * d, py::object callback){
+            w.WithTemporaryExtendedDebugDraw(d, callback);
+        }, py::arg("debug_draw"), py::arg("callback"))
+        .def("with_temporary_debug_draw", [](world_type & w, BatchDebugDrawCaller<float, float, false> * d, py::object callback){
+            w.WithTemporaryExtendedDebugDraw(d, callback);
+        }, py::arg("debug_draw"), py::arg("callback"))
+        .def("with_temporary_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d, py::object callback){
+            w.WithTemporaryExtendedDebugDraw(d, callback);
+        }, py::arg("debug_draw"), py::arg("callback"))
+
+
+
         
         .def("draw_debug_data",               py::overload_cast<>(&world_type::ExtendedDebugDraw))
-
-
         .def("_create_body_cpp", [](world_type * self, const PyDefExtender<b2BodyDef> * def)
         {
             

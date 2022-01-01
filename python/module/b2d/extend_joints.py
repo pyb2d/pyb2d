@@ -16,6 +16,22 @@ def _factory(cls, **kwargs):
     return obj
 
 
+def friction_joint_def(body_a, body_b, **kwargs):
+    return _factory(FrictionJointDef, body_a=body_a, body_b=body_b, **kwargs)
+
+
+def gear_joint_def(body_a, body_b, **kwargs):
+    return _factory(GearJointDef, body_a=body_a, body_b=body_b, **kwargs)
+
+
+def pully_joint_def(body_a, body_b, **kwargs):
+    return _factory(PulleyJointDef, body_a=body_a, body_b=body_b, **kwargs)
+
+
+def weld_joint_def(body_a, body_b, **kwargs):
+    return _factory(WeldJointDef, body_a=body_a, body_b=body_b, **kwargs)
+
+
 def distance_joint_def(body_a, body_b, **kwargs):
     return _factory(DistanceJointDef, body_a=body_a, body_b=body_b, **kwargs)
 
