@@ -4,3 +4,4 @@ matplotlib
 imageio
 ffmpeg-python
 networkx
+sphinx-rtd-theme

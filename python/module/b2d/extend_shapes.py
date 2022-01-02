@@ -49,6 +49,7 @@ def loop_shape(vertices):
     s = ChainShape()
     v = [vec2(vert) for vert in vertices]
     s.create_loop(v)
+    return s
 
 
 def circle_shape(radius, pos=(0, 0)):
