@@ -284,42 +284,42 @@ prismatic joint
      </style>
 
      <div class="animation">
-       <img id="_anim_img96adfdcab9c142fdb3ae6bccbc2714d8">
+       <img id="_anim_img3884a96a85a04af8b3e08324090eb071">
        <div class="anim-controls">
-         <input id="_anim_slider96adfdcab9c142fdb3ae6bccbc2714d8" type="range" class="anim-slider"
+         <input id="_anim_slider3884a96a85a04af8b3e08324090eb071" type="range" class="anim-slider"
                 name="points" min="0" max="1" step="1" value="0"
-                oninput="anim96adfdcab9c142fdb3ae6bccbc2714d8.set_frame(parseInt(this.value));"></input>
+                oninput="anim3884a96a85a04af8b3e08324090eb071.set_frame(parseInt(this.value));"></input>
          <div class="anim-buttons">
-           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.slower()">
+           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim3884a96a85a04af8b3e08324090eb071.slower()">
                <i class="fa fa-minus"></i></button>
-           <button title="First frame" aria-label="First frame" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.first_frame()">
+           <button title="First frame" aria-label="First frame" onclick="anim3884a96a85a04af8b3e08324090eb071.first_frame()">
              <i class="fa fa-fast-backward"></i></button>
-           <button title="Previous frame" aria-label="Previous frame" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.previous_frame()">
+           <button title="Previous frame" aria-label="Previous frame" onclick="anim3884a96a85a04af8b3e08324090eb071.previous_frame()">
                <i class="fa fa-step-backward"></i></button>
-           <button title="Play backwards" aria-label="Play backwards" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.reverse_animation()">
+           <button title="Play backwards" aria-label="Play backwards" onclick="anim3884a96a85a04af8b3e08324090eb071.reverse_animation()">
                <i class="fa fa-play fa-flip-horizontal"></i></button>
-           <button title="Pause" aria-label="Pause" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.pause_animation()">
+           <button title="Pause" aria-label="Pause" onclick="anim3884a96a85a04af8b3e08324090eb071.pause_animation()">
                <i class="fa fa-pause"></i></button>
-           <button title="Play" aria-label="Play" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.play_animation()">
+           <button title="Play" aria-label="Play" onclick="anim3884a96a85a04af8b3e08324090eb071.play_animation()">
                <i class="fa fa-play"></i></button>
-           <button title="Next frame" aria-label="Next frame" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.next_frame()">
+           <button title="Next frame" aria-label="Next frame" onclick="anim3884a96a85a04af8b3e08324090eb071.next_frame()">
                <i class="fa fa-step-forward"></i></button>
-           <button title="Last frame" aria-label="Last frame" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.last_frame()">
+           <button title="Last frame" aria-label="Last frame" onclick="anim3884a96a85a04af8b3e08324090eb071.last_frame()">
                <i class="fa fa-fast-forward"></i></button>
-           <button title="Increase speed" aria-label="Increase speed" onclick="anim96adfdcab9c142fdb3ae6bccbc2714d8.faster()">
+           <button title="Increase speed" aria-label="Increase speed" onclick="anim3884a96a85a04af8b3e08324090eb071.faster()">
                <i class="fa fa-plus"></i></button>
          </div>
-         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select96adfdcab9c142fdb3ae6bccbc2714d8"
+         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select3884a96a85a04af8b3e08324090eb071"
                class="anim-state">
-           <input type="radio" name="state" value="once" id="_anim_radio1_96adfdcab9c142fdb3ae6bccbc2714d8"
+           <input type="radio" name="state" value="once" id="_anim_radio1_3884a96a85a04af8b3e08324090eb071"
                   >
-           <label for="_anim_radio1_96adfdcab9c142fdb3ae6bccbc2714d8">Once</label>
-           <input type="radio" name="state" value="loop" id="_anim_radio2_96adfdcab9c142fdb3ae6bccbc2714d8"
+           <label for="_anim_radio1_3884a96a85a04af8b3e08324090eb071">Once</label>
+           <input type="radio" name="state" value="loop" id="_anim_radio2_3884a96a85a04af8b3e08324090eb071"
                   checked>
-           <label for="_anim_radio2_96adfdcab9c142fdb3ae6bccbc2714d8">Loop</label>
-           <input type="radio" name="state" value="reflect" id="_anim_radio3_96adfdcab9c142fdb3ae6bccbc2714d8"
+           <label for="_anim_radio2_3884a96a85a04af8b3e08324090eb071">Loop</label>
+           <input type="radio" name="state" value="reflect" id="_anim_radio3_3884a96a85a04af8b3e08324090eb071"
                   >
-           <label for="_anim_radio3_96adfdcab9c142fdb3ae6bccbc2714d8">Reflect</label>
+           <label for="_anim_radio3_3884a96a85a04af8b3e08324090eb071">Reflect</label>
          </form>
        </div>
      </div>
@@ -329,9 +329,9 @@ prismatic joint
        /* Instantiate the Animation class. */
        /* The IDs given should match those used in the template above. */
        (function() {
-         var img_id = "_anim_img96adfdcab9c142fdb3ae6bccbc2714d8";
-         var slider_id = "_anim_slider96adfdcab9c142fdb3ae6bccbc2714d8";
-         var loop_select_id = "_anim_loop_select96adfdcab9c142fdb3ae6bccbc2714d8";
+         var img_id = "_anim_img3884a96a85a04af8b3e08324090eb071";
+         var slider_id = "_anim_slider3884a96a85a04af8b3e08324090eb071";
+         var loop_select_id = "_anim_loop_select3884a96a85a04af8b3e08324090eb071";
          var frames = new Array(73);
     
        frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -16520,7 +16520,7 @@ prismatic joint
          /* set a timeout to make sure all the above elements are created before
             the object is initialized. */
          setTimeout(function() {
-             anim96adfdcab9c142fdb3ae6bccbc2714d8 = new Animation(frames, img_id, slider_id, 41.0,
+             anim3884a96a85a04af8b3e08324090eb071 = new Animation(frames, img_id, slider_id, 41.0,
                                       loop_select_id);
          }, 0);
        })()
@@ -16534,7 +16534,7 @@ prismatic joint
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.026 seconds)
+   **Total running time of the script:** ( 0 minutes  21.394 seconds)
 
 
 .. _sphx_glr_download_tutorials_joints_plot_prismatic_joint.py:
