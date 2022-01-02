@@ -31,7 +31,7 @@ public:
     }
 
     void SetExtendedDebugDraw(ExtendedDebugDrawBase * extended_debug_draw)
-    {   
+    {
         if(p_extended_debug_draw)
         {
             throw std::runtime_error("PyWorld has already a debug draw");
@@ -84,7 +84,7 @@ public:
 
     std::pair<b2Vec2,b2Vec2> get_world_aabb()
     {
-        b2Vec2  lower( std::numeric_limits<float>::infinity(),    
+        b2Vec2  lower( std::numeric_limits<float>::infinity(),
                        std::numeric_limits<float>::infinity());
         b2Vec2  upper(-std::numeric_limits<float>::infinity(),
                       -std::numeric_limits<float>::infinity());
@@ -123,7 +123,7 @@ public:
                         b2Vec2 v2 = b2Mul(xf, edge->m_vertex2);
                         update_aabb(v1);
                         update_aabb(v2);
-                        
+
                     }
                     break;
 

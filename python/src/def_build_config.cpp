@@ -14,7 +14,7 @@ namespace pybox2d {
     {
 
         struct BuildConfiguration        {
-            
+
         };
 
 

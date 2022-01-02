@@ -13,7 +13,7 @@
 namespace py = pybind11;
 
 
-// functions without any argument 
+// functions without any argument
 // and b2Vec2 as output
 #define VEC2_GETTER(PY_NAME, CPP_NAME)\
     .def(#PY_NAME, [](self_type & self, np_vec2_row_major & out){\
@@ -68,7 +68,7 @@ public:
 
 template<class CLS, class PY_CLS>
 void add_batch_api(
-    PY_CLS & py_cls, 
+    PY_CLS & py_cls,
     const std::string & cls_name,
     const std::string & entity_name
 )
@@ -147,7 +147,7 @@ void exportBodyBatchApi(py::module & pybox2dModule){
             });
         },
             py::arg("force"),
-            py::arg("wake") = true, 
+            py::arg("wake") = true,
             R"""(
                 Apply a force to center of each body.
 
@@ -156,10 +156,10 @@ void exportBodyBatchApi(py::module & pybox2dModule){
                 Args:
                     force (numpy.ndarray[numpy.float32]): [n_bodies x 2] or [1 x 2] arrays
                         with the force vector for each body.
-                    wake (bool): wake sleeping bodies 
+                    wake (bool): wake sleeping bodies
             )"""
         )
-        
+
         .def("apply_gravitonal_forces_to_center", [](
             self_type & self,
             np_vec2_row_major gravity_source_location,
@@ -195,7 +195,7 @@ void exportBodyBatchApi(py::module & pybox2dModule){
                         auto delta = pos - body->GetPosition();
                         const auto d = delta.Normalize();
                         const auto fac = strength * body->GetMass() / (d*d);
-                        const auto force = b2Vec2(delta.x * fac, delta.y * fac); 
+                        const auto force = b2Vec2(delta.x * fac, delta.y * fac);
                         body->ApplyForceToCenter(force, wake);
                     }
                 }
@@ -218,7 +218,7 @@ void exportBodyBatchApi(py::module & pybox2dModule){
                 the mass of the `gravitational source`. We can reinterpret/abuse
                 `G * m2` as the `gravitational strength`. This quantity is passed
                 to the functions with the argument `strength`.
-                
+
 
                 Args:
                     position (numpy.ndarray[numpy.float32]): [n x 2] array with locations
@@ -232,7 +232,7 @@ void exportBodyBatchApi(py::module & pybox2dModule){
         )
 
 
-        
+
         VEC2_GETTER(_position,         GetPosition)
         VEC2_GETTER(_world_center,     GetWorldCenter)
         VEC2_GETTER(_local_center,     GetLocalCenter)
@@ -243,15 +243,15 @@ void exportBodyBatchApi(py::module & pybox2dModule){
         SCALAR_GETTER(_angle,              GetAngle,           float)
         SCALAR_GETTER(_angular_velocity,   GetAngularVelocity, float)
         SCALAR_GETTER(_mass,               GetMass,            float)
-        SCALAR_GETTER(_inertia,            GetInertia,         float)       
-        SCALAR_GETTER(_linear_damping,     GetLinearDamping,   float)     
-        SCALAR_GETTER(_angular_damping,    GetAngularDamping,  float)    
+        SCALAR_GETTER(_inertia,            GetInertia,         float)
+        SCALAR_GETTER(_linear_damping,     GetLinearDamping,   float)
+        SCALAR_GETTER(_angular_damping,    GetAngularDamping,  float)
 
-        SCALAR_GETTER(_bullet,              IsBullet,           bool)     
-        SCALAR_GETTER(_sleeping_allowed,    IsSleepingAllowed,  bool)     
-        SCALAR_GETTER(_awake,               IsAwake,            bool)     
-        SCALAR_GETTER(_enabled,             IsEnabled,          bool)     
-        SCALAR_GETTER(_fixed_rotation,      IsFixedRotation,    bool)     
+        SCALAR_GETTER(_bullet,              IsBullet,           bool)
+        SCALAR_GETTER(_sleeping_allowed,    IsSleepingAllowed,  bool)
+        SCALAR_GETTER(_awake,               IsAwake,            bool)
+        SCALAR_GETTER(_enabled,             IsEnabled,          bool)
+        SCALAR_GETTER(_fixed_rotation,      IsFixedRotation,    bool)
         // #undef SCALAR_GETTER
 
     ;

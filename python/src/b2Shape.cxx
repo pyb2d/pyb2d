@@ -33,7 +33,7 @@ py::array_t<float> vertices_to_numpy(b2Vec2 * vertices, std::size_t n_vertices, 
         }
     }
     else
-    {   
+    {
         auto src_begin = &(vertices[0].x);
         std::copy(src_begin, src_begin + n_vertices * 2, ptr);
     }
@@ -159,9 +159,9 @@ void exportB2Shape(py::module & pybox2dModule){
         .value("polygon", b2Shape::Type::e_polygon)
         .value("type_count", b2Shape::Type::e_typeCount)
     ;
-    
-    
-    
+
+
+
     // derived shapes
     py::class_<b2CircleShape, Holder<b2CircleShape>, b2Shape>(pybox2dModule,"CircleShape")
         .def(py::init<>())
@@ -181,7 +181,7 @@ void exportB2Shape(py::module & pybox2dModule){
         .def("set_one_sided",[](b2EdgeShape * s,const b2Vec2 & v0,const b2Vec2 & v1,const b2Vec2 & v2, const b2Vec2 & v3){
             s->SetOneSided(v0, v1,v2, v3);
         },
-            py::arg("v0"), 
+            py::arg("v0"),
             py::arg("v1"),
             py::arg("v2"),
             py::arg("v3")
@@ -213,7 +213,7 @@ void exportB2Shape(py::module & pybox2dModule){
         .def("create_loop",[](b2ChainShape *s, const std::vector<b2Vec2> & verts ){
             s->CreateLoop(verts.data(), verts.size());
         })
-       
+
 
         .def("create_chain", []( b2ChainShape *s, const np_verts_row_major & verts,
             const b2Vec2 & prevVertex, const b2Vec2 & nextVertex ){
@@ -279,4 +279,3 @@ void exportB2Shape(py::module & pybox2dModule){
     ;
 
 }
-

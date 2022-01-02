@@ -44,10 +44,7 @@ class EllipticBillardTable(TestbedBase):
             box = self.world.create_dynamic_body(
                 position=self.f1,
                 fixtures=b2d.fixture_def(
-                    shape=b2d.circle_shape(
-                        pos=(0, 0),
-                        radius=1,
-                    ),
+                    shape=b2d.circle_shape(pos=(0, 0), radius=1),
                     density=1.0,
                     restitution=0.9,
                 ),

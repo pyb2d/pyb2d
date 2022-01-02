@@ -35,21 +35,19 @@ void exportB2WorldCallbacks(py::module & pybox2dModule){
         .def(py::init<const py::object &>(),py::arg("destruction_listener")
         )
     ;
-  
+
     py::class_<PyB2ContactListenerCaller>(pybox2dModule,"ContactListenerCaller")
         .def(py::init<const py::object &>(),py::arg("contact_listener")
         )
     ;
-   
+
     py::class_<PyB2ContactFilterCaller>(pybox2dModule,"ContactFilterCaller")
         .def(py::init<const py::object &>(),py::arg("contact_filter")
         )
     ;
- 
 
 
-   
+
+
 
 }
-
-

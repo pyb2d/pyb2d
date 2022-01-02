@@ -10,7 +10,7 @@ on:
 jobs:
   unix:
     runs-on: ${{ matrix.os }}
-     
+
     strategy:
       fail-fast: false
       matrix:

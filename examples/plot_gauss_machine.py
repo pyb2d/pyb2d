@@ -2,7 +2,7 @@
 Gauss Machine
 ===========================
 
-This example shows how to approximate a gaussian function in a fun way 
+This example shows how to approximate a gaussian function in a fun way
 """
 from b2d.testbed import TestbedBase
 import random

@@ -30,7 +30,7 @@ void exportB2Body(py::module & pybox2dModule){
     py::class_<PyBodyDef> body_def_py_cls(pybox2dModule,"BodyDef");
     add_user_data_to_def_api<PyBodyDef>(body_def_py_cls);
     body_def_py_cls
-        .def(py::init<>())          
+        .def(py::init<>())
         .def_readwrite("btype", &PyBodyDef::type)
         .def_readwrite("type", &PyBodyDef::type)
         .def_readwrite("position", &PyBodyDef::position)
@@ -46,7 +46,7 @@ void exportB2Body(py::module & pybox2dModule){
         .def_readwrite("gravity_scale", &PyBodyDef::gravityScale)
 
         // special pybox2d stuff, not part of c++ Box2D
-        .def_property("report_contact_filter", 
+        .def_property("report_contact_filter",
             [](PyBodyDef & self){return self.userData.reportContactFilter;},
             [](PyBodyDef & self, const b2ReportFilter & filter ){ self.userData.reportContactFilter = filter;}
         )
@@ -119,7 +119,7 @@ void exportB2Body(py::module & pybox2dModule){
         .def("apply_linear_impulse_to_center", &b2Body::ApplyLinearImpulseToCenter, py::arg("impulse"), py::arg("wake")=true)
         .def("apply_angular_impulse", &b2Body::ApplyAngularImpulse, py::arg("impulse"), py::arg("wake")=true)
 
-        .def("reset_mass_data", &b2Body::ResetMassData)  
+        .def("reset_mass_data", &b2Body::ResetMassData)
         .def("get_world_point", &b2Body::GetWorldPoint, py::arg("local_point"))
         .def("get_world_vector", &b2Body::GetWorldVector, py::arg("local_vector"))
         .def("get_local_point", &b2Body::GetLocalPoint, py::arg("world_point"))
@@ -127,7 +127,7 @@ void exportB2Body(py::module & pybox2dModule){
         .def("get_linear_velocity_from_world_point", &b2Body::GetLinearVelocityFromWorldPoint, py::arg("world_point"))
         .def("get_linear_velocity_from_local_point", &b2Body::GetLinearVelocityFromLocalPoint, py::arg("local_point"))
 
-     
+
         // will be extended on the python side
         .def("_has_fixture_list",[]( b2Body & body){return body.GetFixtureList()!= nullptr;})
         .def("_get_fixture_list",[]( b2Body & body){return body.GetFixtureList();}, py::return_value_policy::reference_internal)
@@ -140,15 +140,15 @@ void exportB2Body(py::module & pybox2dModule){
 
 
         // special pybox2d stuff, not part of c++ Box2D
-        .def_property("report_contact_filter", 
+        .def_property("report_contact_filter",
             [](b2Body & self){return self.GetUserData().reportContactFilter;},
             [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}
         )
-        .def_property("report_contact_filter", 
+        .def_property("report_contact_filter",
             [](b2Body & self){return self.GetUserData().reportContactFilter;},
             [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}
         )
-    
+
     ;
 
 

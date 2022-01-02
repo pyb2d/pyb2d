@@ -94,10 +94,7 @@ class Billiard(TestbedBase):
             colors.append((color, (1, 1, 1)))
 
         random.shuffle(colors)
-        colors.insert(
-            4,
-            ((0, 0, 0), (0, 0, 0)),  # black
-        )
+        colors.insert(4, ((0, 0, 0), (0, 0, 0)))  # black
 
         n_y = 5
         c_x = self.dimensions[0] / 2

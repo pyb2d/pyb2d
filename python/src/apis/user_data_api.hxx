@@ -1,13 +1,13 @@
 #pragma once
 
 #include <pybind11/pybind11.h>
-#include <iostream> 
+#include <iostream>
 
 #include "../box2d_wrapper.hpp"
 
 
 class UserData
-{   
+{
 public:
     UserData()
     :  m_object_data(),
@@ -16,7 +16,7 @@ public:
 
     }
 
-   
+
     void clear_object_data()
     {
         m_has_object_data = false;
@@ -45,7 +45,7 @@ private:
 
 template<class ENTITY>
 inline void delete_user_data_if_has_user_data(ENTITY * entity)
-{   
+{
 
     void* ud = get_user_data(entity);
     if(ud != nullptr)

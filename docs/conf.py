@@ -233,7 +233,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "pyb2d.tex", u"pyb2d Documentation", u"Thorsten Beier", "manual"),
+    (master_doc, "pyb2d.tex", u"pyb2d Documentation", u"Thorsten Beier", "manual")
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -281,7 +281,7 @@ texinfo_documents = [
         "pyb2d",
         "One line description of project.",
         "Miscellaneous",
-    ),
+    )
 ]
 
 # Documents to append as an appendix to all manuals.

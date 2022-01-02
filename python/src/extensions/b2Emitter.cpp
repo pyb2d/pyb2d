@@ -30,7 +30,7 @@ b2RandomizedRadialEmitterDef::b2RandomizedRadialEmitterDef()
 {
 
 }
- 
+
 
 
 
@@ -56,7 +56,7 @@ b2LinearEmitterArrayDef::b2LinearEmitterArrayDef()
 
 
 b2EmitterBase::b2EmitterBase(
-    b2ParticleSystem * particleSystem, 
+    b2ParticleSystem * particleSystem,
     const b2EmitterDefBase & def
 )
 :   m_particleSystem(particleSystem),
@@ -95,7 +95,7 @@ void b2EmitterBase::CreateParticle(b2ParticleDef  def)
 
 
 b2Body* b2EmitterBase::GetBody()const
-{    
+{
     return m_body;
 }
 void b2EmitterBase::SetBody(b2Body * body){
@@ -144,8 +144,8 @@ void b2EmitterBase::SetEnabled(const bool e)
 
 
 
-b2LinearEmitterArray::b2LinearEmitterArray( 
-    b2ParticleSystem * particleSystem, 
+b2LinearEmitterArray::b2LinearEmitterArray(
+    b2ParticleSystem * particleSystem,
     const b2LinearEmitterArrayDef & def
 )
 :   b2EmitterBase(particleSystem, def),
@@ -171,7 +171,7 @@ int b2LinearEmitterArray::Step(const float dt){
 
         int num_created = 0;
         while(m_remainder >= 1.0)
-        {   
+        {
             const float dtp = dtPerParticle * num_created;
 
             // get random pos in UNROTATED box
@@ -184,12 +184,12 @@ int b2LinearEmitterArray::Step(const float dt){
                 b2Vec2 ppos = b2Mul(b2Rot(angle), pBox) + center;
 
 
-                // velocity in body coordinates 
+                // velocity in body coordinates
                 // => rotate to world
                 auto v = edef.velocity;
                 b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
 
-                // move 
+                // move
                 ppos += worldVelocity * dtp;
 
 
@@ -197,8 +197,8 @@ int b2LinearEmitterArray::Step(const float dt){
                 b2ParticleDef pdef;
                 pdef.velocity = worldVelocity;
                 pdef.position = ppos;
-                this->CreateParticle(pdef);        
-                ++num_created;   
+                this->CreateParticle(pdef);
+                ++num_created;
             }
             m_remainder -= 1.0;
         }
@@ -208,13 +208,13 @@ int b2LinearEmitterArray::Step(const float dt){
     {
         return 0;
     }
-}   
+}
 
 
 
 
-b2RandomizedLinearEmitter::b2RandomizedLinearEmitter( 
-    b2ParticleSystem * particleSystem, 
+b2RandomizedLinearEmitter::b2RandomizedLinearEmitter(
+    b2ParticleSystem * particleSystem,
     const b2RandomizedLinearEmitterDef & def
 )
 :   b2EmitterBase(particleSystem, def),
@@ -241,7 +241,7 @@ int b2RandomizedLinearEmitter::Step(const float dt){
 
         int num_created = 0;
         while(m_remainder >= 1.0)
-        {   
+        {
             const float dtp = dtPerParticle * num_created;
 
             // get random pos in UNROTATED box
@@ -255,12 +255,12 @@ int b2RandomizedLinearEmitter::Step(const float dt){
 
             // create
 
-            // velocity in body coordinates 
+            // velocity in body coordinates
             // => rotate to world
             auto v = edef.velocity;
             b2Vec2 worldVelocity = b2Mul(b2Rot(angle), v);
 
-            // move 
+            // move
             ppos += worldVelocity * dtp;
 
 
@@ -271,19 +271,19 @@ int b2RandomizedLinearEmitter::Step(const float dt){
             this->CreateParticle(pdef);
 
             m_remainder -= 1.0;
-            ++num_created;   
+            ++num_created;
         }
         return num_created;
     }
     else{
         return 0;
     }
-}   
+}
 
 
 
-b2RandomizedRadialEmitter::b2RandomizedRadialEmitter( 
-    b2ParticleSystem * particleSystem, 
+b2RandomizedRadialEmitter::b2RandomizedRadialEmitter(
+    b2ParticleSystem * particleSystem,
     const b2RandomizedRadialEmitterDef & def
 )
 :   b2EmitterBase(particleSystem, def),
@@ -319,7 +319,7 @@ int b2RandomizedRadialEmitter::Step(const float dt)
 
         int num_created = 0;
         while(m_remainder >= 1.0)
-        {   
+        {
             const float dtp = dtPerParticle * num_created;
 
 
@@ -342,7 +342,7 @@ int b2RandomizedRadialEmitter::Step(const float dt)
             b2Vec2 velocity = 1.0 * unitCirclePos * edef.velocityMagnitude;
             b2Vec2 worldVelocity = b2Mul(b2Rot(angle), velocity);
 
-            // move 
+            // move
             // ppos += worldVelocity * dtp;
 
             // create
@@ -355,12 +355,11 @@ int b2RandomizedRadialEmitter::Step(const float dt)
             //m_particleSystem->CreateParticle(pdef);
 
             m_remainder -= 1.0;
-            ++num_created;   
+            ++num_created;
         }
         return num_created;
     }
     else{
         return 0;
     }
-}   
-
+}

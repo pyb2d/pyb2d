@@ -46,7 +46,7 @@ void exportContact(py::module & pybox2dModule){
 
         // .def_property_readonly("getWorldManifold",
         //     &b2Contact::GetWorldManifold)
-        // .def_property_readonly("worldManifold",   
+        // .def_property_readonly("worldManifold",
         //     &b2Contact::GetWorldManifold)
     ;
 

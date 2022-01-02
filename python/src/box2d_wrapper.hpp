@@ -13,7 +13,7 @@
 template<class T>
 void set_user_data(T * obj, void * ud)
 {
-    return obj->SetUserData(ud); 
+    return obj->SetUserData(ud);
 }
 
 template<class T>

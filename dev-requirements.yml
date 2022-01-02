@@ -5,9 +5,9 @@ channels:
 dependencies:
   - make
   - cmake >=3.1
-  - sphinx 
+  - sphinx
   - sphinx_rtd_theme
-  - sphinxcontrib-apidoc 
+  - sphinxcontrib-apidoc
   - pytest
   - pytest-lazy-fixture
   - python >=3.6

@@ -17,7 +17,7 @@ public:
     {
 
     }
-    T * operator->() 
+    T * operator->()
     {
         return this->get();
     }

@@ -239,10 +239,7 @@ class Goo(TestbedBase):
 
         goo = f(
             position=pos,
-            fixtures=b2d.fixture_def(
-                shape=b2d.circle_shape(radius=1),
-                density=1,
-            ),
+            fixtures=b2d.fixture_def(shape=b2d.circle_shape(radius=1), density=1),
             user_data="goo",
         )
         self.goo_graph.add_node(goo)
