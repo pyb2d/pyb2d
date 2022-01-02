@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**02:17.608** total execution time for **tutorials_joints** files:
+**02:15.600** total execution time for **tutorials_joints** files:
 
 +----------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_joints_plot_wheel_joint.py` (``plot_wheel_joint.py``)         | 00:35.959 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_joints_plot_wheel_joint.py` (``plot_wheel_joint.py``)         | 00:37.207 | 0.0 MB |
 +----------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_joints_plot_revolute_joint.py` (``plot_revolute_joint.py``)   | 00:25.478 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_joints_plot_revolute_joint.py` (``plot_revolute_joint.py``)   | 00:23.610 | 0.0 MB |
 +----------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_joints_plot_pully_joint.py` (``plot_pully_joint.py``)         | 00:23.365 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_joints_plot_pully_joint.py` (``plot_pully_joint.py``)         | 00:22.074 | 0.0 MB |
 +----------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_joints_plot_prismatic_joint.py` (``plot_prismatic_joint.py``) | 00:21.394 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_joints_plot_prismatic_joint.py` (``plot_prismatic_joint.py``) | 00:21.285 | 0.0 MB |
 +----------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py` (``plot_distance_joint.py``)   | 00:17.153 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py` (``plot_distance_joint.py``)   | 00:16.873 | 0.0 MB |
 +----------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_joints_plot_weld_joint.py` (``plot_weld_joint.py``)           | 00:14.259 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_joints_plot_weld_joint.py` (``plot_weld_joint.py``)           | 00:14.551 | 0.0 MB |
 +----------------------------------------------------------------------------------------+-----------+--------+
