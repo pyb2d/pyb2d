@@ -344,42 +344,42 @@ connect bodies with distance joints
      </style>
 
      <div class="animation">
-       <img id="_anim_imga9496a126cf6486aae4d5dd8d9d7f2df">
+       <img id="_anim_img85d3ba35a4d643419a24608c5ba11d8a">
        <div class="anim-controls">
-         <input id="_anim_slidera9496a126cf6486aae4d5dd8d9d7f2df" type="range" class="anim-slider"
+         <input id="_anim_slider85d3ba35a4d643419a24608c5ba11d8a" type="range" class="anim-slider"
                 name="points" min="0" max="1" step="1" value="0"
-                oninput="anima9496a126cf6486aae4d5dd8d9d7f2df.set_frame(parseInt(this.value));"></input>
+                oninput="anim85d3ba35a4d643419a24608c5ba11d8a.set_frame(parseInt(this.value));"></input>
          <div class="anim-buttons">
-           <button title="Decrease speed" aria-label="Decrease speed" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.slower()">
+           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.slower()">
                <i class="fa fa-minus"></i></button>
-           <button title="First frame" aria-label="First frame" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.first_frame()">
+           <button title="First frame" aria-label="First frame" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.first_frame()">
              <i class="fa fa-fast-backward"></i></button>
-           <button title="Previous frame" aria-label="Previous frame" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.previous_frame()">
+           <button title="Previous frame" aria-label="Previous frame" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.previous_frame()">
                <i class="fa fa-step-backward"></i></button>
-           <button title="Play backwards" aria-label="Play backwards" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.reverse_animation()">
+           <button title="Play backwards" aria-label="Play backwards" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.reverse_animation()">
                <i class="fa fa-play fa-flip-horizontal"></i></button>
-           <button title="Pause" aria-label="Pause" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.pause_animation()">
+           <button title="Pause" aria-label="Pause" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.pause_animation()">
                <i class="fa fa-pause"></i></button>
-           <button title="Play" aria-label="Play" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.play_animation()">
+           <button title="Play" aria-label="Play" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.play_animation()">
                <i class="fa fa-play"></i></button>
-           <button title="Next frame" aria-label="Next frame" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.next_frame()">
+           <button title="Next frame" aria-label="Next frame" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.next_frame()">
                <i class="fa fa-step-forward"></i></button>
-           <button title="Last frame" aria-label="Last frame" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.last_frame()">
+           <button title="Last frame" aria-label="Last frame" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.last_frame()">
                <i class="fa fa-fast-forward"></i></button>
-           <button title="Increase speed" aria-label="Increase speed" onclick="anima9496a126cf6486aae4d5dd8d9d7f2df.faster()">
+           <button title="Increase speed" aria-label="Increase speed" onclick="anim85d3ba35a4d643419a24608c5ba11d8a.faster()">
                <i class="fa fa-plus"></i></button>
          </div>
-         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selecta9496a126cf6486aae4d5dd8d9d7f2df"
+         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select85d3ba35a4d643419a24608c5ba11d8a"
                class="anim-state">
-           <input type="radio" name="state" value="once" id="_anim_radio1_a9496a126cf6486aae4d5dd8d9d7f2df"
+           <input type="radio" name="state" value="once" id="_anim_radio1_85d3ba35a4d643419a24608c5ba11d8a"
                   >
-           <label for="_anim_radio1_a9496a126cf6486aae4d5dd8d9d7f2df">Once</label>
-           <input type="radio" name="state" value="loop" id="_anim_radio2_a9496a126cf6486aae4d5dd8d9d7f2df"
+           <label for="_anim_radio1_85d3ba35a4d643419a24608c5ba11d8a">Once</label>
+           <input type="radio" name="state" value="loop" id="_anim_radio2_85d3ba35a4d643419a24608c5ba11d8a"
                   checked>
-           <label for="_anim_radio2_a9496a126cf6486aae4d5dd8d9d7f2df">Loop</label>
-           <input type="radio" name="state" value="reflect" id="_anim_radio3_a9496a126cf6486aae4d5dd8d9d7f2df"
+           <label for="_anim_radio2_85d3ba35a4d643419a24608c5ba11d8a">Loop</label>
+           <input type="radio" name="state" value="reflect" id="_anim_radio3_85d3ba35a4d643419a24608c5ba11d8a"
                   >
-           <label for="_anim_radio3_a9496a126cf6486aae4d5dd8d9d7f2df">Reflect</label>
+           <label for="_anim_radio3_85d3ba35a4d643419a24608c5ba11d8a">Reflect</label>
          </form>
        </div>
      </div>
@@ -389,9 +389,9 @@ connect bodies with distance joints
        /* Instantiate the Animation class. */
        /* The IDs given should match those used in the template above. */
        (function() {
-         var img_id = "_anim_imga9496a126cf6486aae4d5dd8d9d7f2df";
-         var slider_id = "_anim_slidera9496a126cf6486aae4d5dd8d9d7f2df";
-         var loop_select_id = "_anim_loop_selecta9496a126cf6486aae4d5dd8d9d7f2df";
+         var img_id = "_anim_img85d3ba35a4d643419a24608c5ba11d8a";
+         var slider_id = "_anim_slider85d3ba35a4d643419a24608c5ba11d8a";
+         var loop_select_id = "_anim_loop_select85d3ba35a4d643419a24608c5ba11d8a";
          var frames = new Array(73);
     
        frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -16929,7 +16929,7 @@ connect bodies with distance joints
          /* set a timeout to make sure all the above elements are created before
             the object is initialized. */
          setTimeout(function() {
-             anima9496a126cf6486aae4d5dd8d9d7f2df = new Animation(frames, img_id, slider_id, 41.0,
+             anim85d3ba35a4d643419a24608c5ba11d8a = new Animation(frames, img_id, slider_id, 41.0,
                                       loop_select_id);
          }, 0);
        })()
@@ -16943,7 +16943,7 @@ connect bodies with distance joints
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.325 seconds)
+   **Total running time of the script:** ( 0 minutes  18.526 seconds)
 
 
 .. _sphx_glr_download_tutorials_joints_plot_distance_joint.py:
