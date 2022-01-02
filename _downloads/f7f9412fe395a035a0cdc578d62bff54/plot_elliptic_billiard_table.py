@@ -14,9 +14,10 @@ import math
 
 
 def ellipse_chain_shape(positon, a, b, n=50):
-    t = np.linspace(start=0, stop=2.0 * math.pi, num=n)
-    x = a * np.cos(t) + positon[0]
-    y = b * np.sin(t) + positon[1]
+
+    t = np.linspace(start=0, stop=2.0 * math.pi, num=n + 1)
+    x = (a * np.cos(t) + positon[0])[:-1]
+    y = (b * np.sin(t) + positon[1])[:-1]
     verts = np.stack([x, y], -1)
     verts = np.require(verts, requirements=["C"])
     return b2d.loop_shape(np.flip(verts, axis=0))

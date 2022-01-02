@@ -291,42 +291,42 @@ revolute joints
      </style>
 
      <div class="animation">
-       <img id="_anim_img35720c04fdf64971a0c9dbc2b1935c26">
+       <img id="_anim_img47cedd8628d9488aaa4d2fa8e27372a9">
        <div class="anim-controls">
-         <input id="_anim_slider35720c04fdf64971a0c9dbc2b1935c26" type="range" class="anim-slider"
+         <input id="_anim_slider47cedd8628d9488aaa4d2fa8e27372a9" type="range" class="anim-slider"
                 name="points" min="0" max="1" step="1" value="0"
-                oninput="anim35720c04fdf64971a0c9dbc2b1935c26.set_frame(parseInt(this.value));"></input>
+                oninput="anim47cedd8628d9488aaa4d2fa8e27372a9.set_frame(parseInt(this.value));"></input>
          <div class="anim-buttons">
-           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.slower()">
+           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.slower()">
                <i class="fa fa-minus"></i></button>
-           <button title="First frame" aria-label="First frame" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.first_frame()">
+           <button title="First frame" aria-label="First frame" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.first_frame()">
              <i class="fa fa-fast-backward"></i></button>
-           <button title="Previous frame" aria-label="Previous frame" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.previous_frame()">
+           <button title="Previous frame" aria-label="Previous frame" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.previous_frame()">
                <i class="fa fa-step-backward"></i></button>
-           <button title="Play backwards" aria-label="Play backwards" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.reverse_animation()">
+           <button title="Play backwards" aria-label="Play backwards" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.reverse_animation()">
                <i class="fa fa-play fa-flip-horizontal"></i></button>
-           <button title="Pause" aria-label="Pause" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.pause_animation()">
+           <button title="Pause" aria-label="Pause" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.pause_animation()">
                <i class="fa fa-pause"></i></button>
-           <button title="Play" aria-label="Play" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.play_animation()">
+           <button title="Play" aria-label="Play" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.play_animation()">
                <i class="fa fa-play"></i></button>
-           <button title="Next frame" aria-label="Next frame" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.next_frame()">
+           <button title="Next frame" aria-label="Next frame" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.next_frame()">
                <i class="fa fa-step-forward"></i></button>
-           <button title="Last frame" aria-label="Last frame" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.last_frame()">
+           <button title="Last frame" aria-label="Last frame" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.last_frame()">
                <i class="fa fa-fast-forward"></i></button>
-           <button title="Increase speed" aria-label="Increase speed" onclick="anim35720c04fdf64971a0c9dbc2b1935c26.faster()">
+           <button title="Increase speed" aria-label="Increase speed" onclick="anim47cedd8628d9488aaa4d2fa8e27372a9.faster()">
                <i class="fa fa-plus"></i></button>
          </div>
-         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select35720c04fdf64971a0c9dbc2b1935c26"
+         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select47cedd8628d9488aaa4d2fa8e27372a9"
                class="anim-state">
-           <input type="radio" name="state" value="once" id="_anim_radio1_35720c04fdf64971a0c9dbc2b1935c26"
+           <input type="radio" name="state" value="once" id="_anim_radio1_47cedd8628d9488aaa4d2fa8e27372a9"
                   >
-           <label for="_anim_radio1_35720c04fdf64971a0c9dbc2b1935c26">Once</label>
-           <input type="radio" name="state" value="loop" id="_anim_radio2_35720c04fdf64971a0c9dbc2b1935c26"
+           <label for="_anim_radio1_47cedd8628d9488aaa4d2fa8e27372a9">Once</label>
+           <input type="radio" name="state" value="loop" id="_anim_radio2_47cedd8628d9488aaa4d2fa8e27372a9"
                   checked>
-           <label for="_anim_radio2_35720c04fdf64971a0c9dbc2b1935c26">Loop</label>
-           <input type="radio" name="state" value="reflect" id="_anim_radio3_35720c04fdf64971a0c9dbc2b1935c26"
+           <label for="_anim_radio2_47cedd8628d9488aaa4d2fa8e27372a9">Loop</label>
+           <input type="radio" name="state" value="reflect" id="_anim_radio3_47cedd8628d9488aaa4d2fa8e27372a9"
                   >
-           <label for="_anim_radio3_35720c04fdf64971a0c9dbc2b1935c26">Reflect</label>
+           <label for="_anim_radio3_47cedd8628d9488aaa4d2fa8e27372a9">Reflect</label>
          </form>
        </div>
      </div>
@@ -336,9 +336,9 @@ revolute joints
        /* Instantiate the Animation class. */
        /* The IDs given should match those used in the template above. */
        (function() {
-         var img_id = "_anim_img35720c04fdf64971a0c9dbc2b1935c26";
-         var slider_id = "_anim_slider35720c04fdf64971a0c9dbc2b1935c26";
-         var loop_select_id = "_anim_loop_select35720c04fdf64971a0c9dbc2b1935c26";
+         var img_id = "_anim_img47cedd8628d9488aaa4d2fa8e27372a9";
+         var slider_id = "_anim_slider47cedd8628d9488aaa4d2fa8e27372a9";
+         var loop_select_id = "_anim_loop_select47cedd8628d9488aaa4d2fa8e27372a9";
          var frames = new Array(73);
     
        frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -19847,7 +19847,7 @@ revolute joints
          /* set a timeout to make sure all the above elements are created before
             the object is initialized. */
          setTimeout(function() {
-             anim35720c04fdf64971a0c9dbc2b1935c26 = new Animation(frames, img_id, slider_id, 41.0,
+             anim47cedd8628d9488aaa4d2fa8e27372a9 = new Animation(frames, img_id, slider_id, 41.0,
                                       loop_select_id);
          }, 0);
        })()
@@ -19861,7 +19861,7 @@ revolute joints
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.223 seconds)
+   **Total running time of the script:** ( 0 minutes  21.070 seconds)
 
 
 .. _sphx_glr_download_tutorials_joints_plot_revolute_joint.py:
