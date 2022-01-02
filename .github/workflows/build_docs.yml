@@ -36,7 +36,7 @@ jobs:
           cd docs
           make html
           cd _build
-          cd _html
+          cd html
           touch .nojekyll
 
       - name: Deploy 🚀
