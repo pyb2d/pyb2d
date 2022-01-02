@@ -1,9 +1,9 @@
 # pyb2d
-
+![jupyter_integration](docs/img/pyb2d_logo.png)
 
 [![Micromamba + CMake](https://github.com/pyb2d/pyb2d/actions/workflows/main.yml/badge.svg)](https://github.com/pyb2d/pyb2d/actions/workflows/main.yml)
 [![Pip](https://github.com/pyb2d/pyb2d/actions/workflows/pip.yml/badge.svg)](https://github.com/pyb2d/pyb2d/actions/workflows/pip.yml)
-[![Documentation Status](https://readthedocs.org/projects/pyb2d/badge/?version=latest)](https://pyb2d.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://img.shields.io/badge/docs%3A-pass-brightgreen)](https://pyb2d.github.io/pyb2d)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/license.svg)](https://anaconda.org/conda-forge/pyb2d)
 [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyb2d/badges/platforms.svg)](https://anaconda.org/conda-forge/pyb2d)
