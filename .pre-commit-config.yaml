@@ -12,11 +12,9 @@ repos:
     -   id: check-merge-conflict
     -   id: no-commit-to-branch
         args: ['--branch', 'main']
+
 -   repo: https://github.com/psf/black
-    rev: 19.3b0
+    rev: '21.12b0'
     hooks:
     -   id: black
-
-# -   repo: github.com/pocc/pre-commit-hooks
-#     hooks:
-#     -   id: clang-format
+    -   id: black-jupyter
