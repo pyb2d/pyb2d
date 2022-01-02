@@ -1,20 +1,53 @@
 name: Build Docs
 on:
+  workflow_dispatch:
+  pull_request:
   push:
     branches:
-    - main
-  pull_request:
-    branches:
-    - main
+     - main
+  release:
+    types:
+      - published
 
 jobs:
-  unix:
+  build_doc:
     runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install apt-get dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg python3 make build-essential python3-pip --yes
+
+      - name: Install b2d via pip
+        run: |
+          python -m pip install .
+
+      - name: Install pip doc dependencies
+        run: |
+          python -m pip install -r docs/requirements.txt
+
+      - name: Build the docs
+        run: |
+          cd docs
+          make html
+
+  build_and_deploy_docs:
+    runs-on: ${{ matrix.os }}
+    needs: [build_doc]
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+
+    if: github.event_name == 'release' && github.event.action == 'published'
+
     steps:
       - uses: actions/checkout@v2
 
