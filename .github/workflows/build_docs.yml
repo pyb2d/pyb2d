@@ -35,6 +35,9 @@ jobs:
         run: |
           cd docs
           make html
+          cd _build
+          cd _html
+          touch .nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
