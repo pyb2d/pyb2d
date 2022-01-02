@@ -13,7 +13,7 @@ import b2d
 import math
 
 
-def ellipse_chain_shape(positon, a, b, n=200):
+def ellipse_chain_shape(positon, a, b, n=50):
     t = np.linspace(start=0, stop=2.0 * math.pi, num=n)
     x = a * np.cos(t) + positon[0]
     y = b * np.sin(t) + positon[1]
@@ -34,7 +34,7 @@ class EllipticBillardTable(TestbedBase):
 
         e = np.sqrt(self.a ** 2 - self.b ** 2)
         center = (self.a, self.b)
-        shape = ellipse_chain_shape(center, self.a, self.b, n=200)
+        shape = ellipse_chain_shape(center, self.a, self.b, n=50)
         self.f0 = center[0] - e, center[1]
         self.f1 = center[0] + e, center[1]
         box = self.world.create_static_body(position=(0, 0), shape=shape)
