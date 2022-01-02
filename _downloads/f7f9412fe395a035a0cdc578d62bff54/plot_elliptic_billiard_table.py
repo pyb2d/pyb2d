@@ -34,7 +34,7 @@ class EllipticBillardTable(TestbedBase):
 
         e = np.sqrt(self.a ** 2 - self.b ** 2)
         center = (self.a, self.b)
-        shape = ellipse_chain_shape(center, self.a, self.b, n=1000)
+        shape = ellipse_chain_shape(center, self.a, self.b, n=200)
         self.f0 = center[0] - e, center[1]
         self.f1 = center[0] + e, center[1]
         box = self.world.create_static_body(position=(0, 0), shape=shape)
