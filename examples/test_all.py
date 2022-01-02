@@ -7,6 +7,7 @@ from plot_blender import Blender
 from plot_raycast import Raycast
 from plot_angry_shapes import AngryShapes
 from plot_billiard import Billiard
+from plot_elliptic_billiard_table.py import EllipticBillardTable
 from plot_goo import Goo
 
 import b2d
@@ -16,7 +17,14 @@ from b2d.testbed.backend.no_gui import NoGui
 import pytest
 
 
-examples = [FunctionShape, NewtonsCradle, Blender, Raycast, Billiard]
+examples = [
+    FunctionShape,
+    NewtonsCradle,
+    Blender,
+    Raycast,
+    Billiard,
+    EllipticBillardTable,
+]
 
 lf_examples = [Rocket, ColorMixing, GaussMachine, AngryShapes, Goo]
 if b2d.BuildConfiguration.LIQUID_FUN:

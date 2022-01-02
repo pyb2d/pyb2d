@@ -21,6 +21,8 @@ if BuildConfiguration.LIQUID_FUN:
     from .extend_particles import *
 # from . destruction_listener import DestructionListener
 
+__version__ = _b2d.__version__
+
 
 class RayCastCallback(RayCastCallbackCaller):
     def __init__(self):
