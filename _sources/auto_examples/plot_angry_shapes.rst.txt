@@ -216,42 +216,42 @@ This example shows how to create games inspired by AngryBirds.
      </style>
 
      <div class="animation">
-       <img id="_anim_img1b0eca0a598c49d0ba3dc206a722bb2a">
+       <img id="_anim_img3c23293936984aa18e89a2d5d0ceb80b">
        <div class="anim-controls">
-         <input id="_anim_slider1b0eca0a598c49d0ba3dc206a722bb2a" type="range" class="anim-slider"
+         <input id="_anim_slider3c23293936984aa18e89a2d5d0ceb80b" type="range" class="anim-slider"
                 name="points" min="0" max="1" step="1" value="0"
-                oninput="anim1b0eca0a598c49d0ba3dc206a722bb2a.set_frame(parseInt(this.value));"></input>
+                oninput="anim3c23293936984aa18e89a2d5d0ceb80b.set_frame(parseInt(this.value));"></input>
          <div class="anim-buttons">
-           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.slower()">
+           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.slower()">
                <i class="fa fa-minus"></i></button>
-           <button title="First frame" aria-label="First frame" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.first_frame()">
+           <button title="First frame" aria-label="First frame" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.first_frame()">
              <i class="fa fa-fast-backward"></i></button>
-           <button title="Previous frame" aria-label="Previous frame" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.previous_frame()">
+           <button title="Previous frame" aria-label="Previous frame" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.previous_frame()">
                <i class="fa fa-step-backward"></i></button>
-           <button title="Play backwards" aria-label="Play backwards" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.reverse_animation()">
+           <button title="Play backwards" aria-label="Play backwards" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.reverse_animation()">
                <i class="fa fa-play fa-flip-horizontal"></i></button>
-           <button title="Pause" aria-label="Pause" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.pause_animation()">
+           <button title="Pause" aria-label="Pause" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.pause_animation()">
                <i class="fa fa-pause"></i></button>
-           <button title="Play" aria-label="Play" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.play_animation()">
+           <button title="Play" aria-label="Play" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.play_animation()">
                <i class="fa fa-play"></i></button>
-           <button title="Next frame" aria-label="Next frame" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.next_frame()">
+           <button title="Next frame" aria-label="Next frame" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.next_frame()">
                <i class="fa fa-step-forward"></i></button>
-           <button title="Last frame" aria-label="Last frame" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.last_frame()">
+           <button title="Last frame" aria-label="Last frame" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.last_frame()">
                <i class="fa fa-fast-forward"></i></button>
-           <button title="Increase speed" aria-label="Increase speed" onclick="anim1b0eca0a598c49d0ba3dc206a722bb2a.faster()">
+           <button title="Increase speed" aria-label="Increase speed" onclick="anim3c23293936984aa18e89a2d5d0ceb80b.faster()">
                <i class="fa fa-plus"></i></button>
          </div>
-         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select1b0eca0a598c49d0ba3dc206a722bb2a"
+         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select3c23293936984aa18e89a2d5d0ceb80b"
                class="anim-state">
-           <input type="radio" name="state" value="once" id="_anim_radio1_1b0eca0a598c49d0ba3dc206a722bb2a"
+           <input type="radio" name="state" value="once" id="_anim_radio1_3c23293936984aa18e89a2d5d0ceb80b"
                   >
-           <label for="_anim_radio1_1b0eca0a598c49d0ba3dc206a722bb2a">Once</label>
-           <input type="radio" name="state" value="loop" id="_anim_radio2_1b0eca0a598c49d0ba3dc206a722bb2a"
+           <label for="_anim_radio1_3c23293936984aa18e89a2d5d0ceb80b">Once</label>
+           <input type="radio" name="state" value="loop" id="_anim_radio2_3c23293936984aa18e89a2d5d0ceb80b"
                   checked>
-           <label for="_anim_radio2_1b0eca0a598c49d0ba3dc206a722bb2a">Loop</label>
-           <input type="radio" name="state" value="reflect" id="_anim_radio3_1b0eca0a598c49d0ba3dc206a722bb2a"
+           <label for="_anim_radio2_3c23293936984aa18e89a2d5d0ceb80b">Loop</label>
+           <input type="radio" name="state" value="reflect" id="_anim_radio3_3c23293936984aa18e89a2d5d0ceb80b"
                   >
-           <label for="_anim_radio3_1b0eca0a598c49d0ba3dc206a722bb2a">Reflect</label>
+           <label for="_anim_radio3_3c23293936984aa18e89a2d5d0ceb80b">Reflect</label>
          </form>
        </div>
      </div>
@@ -261,9 +261,9 @@ This example shows how to create games inspired by AngryBirds.
        /* Instantiate the Animation class. */
        /* The IDs given should match those used in the template above. */
        (function() {
-         var img_id = "_anim_img1b0eca0a598c49d0ba3dc206a722bb2a";
-         var slider_id = "_anim_slider1b0eca0a598c49d0ba3dc206a722bb2a";
-         var loop_select_id = "_anim_loop_select1b0eca0a598c49d0ba3dc206a722bb2a";
+         var img_id = "_anim_img3c23293936984aa18e89a2d5d0ceb80b";
+         var slider_id = "_anim_slider3c23293936984aa18e89a2d5d0ceb80b";
+         var loop_select_id = "_anim_loop_select3c23293936984aa18e89a2d5d0ceb80b";
          var frames = new Array(240);
     
        frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -46034,7 +46034,7 @@ This example shows how to create games inspired by AngryBirds.
          /* set a timeout to make sure all the above elements are created before
             the object is initialized. */
          setTimeout(function() {
-             anim1b0eca0a598c49d0ba3dc206a722bb2a = new Animation(frames, img_id, slider_id, 41.0,
+             anim3c23293936984aa18e89a2d5d0ceb80b = new Animation(frames, img_id, slider_id, 41.0,
                                       loop_select_id);
          }, 0);
        })()
@@ -46405,7 +46405,7 @@ This example shows how to create games inspired by AngryBirds.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  40.117 seconds)
+   **Total running time of the script:** ( 0 minutes  38.282 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_angry_shapes.py:
