@@ -5,28 +5,28 @@
 
 Computation times
 =================
-**06:01.295** total execution time for **auto_examples** files:
+**08:33.596** total execution time for **auto_examples** files:
 
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_color_mixing.py` (``plot_color_mixing.py``)                       | 00:42.452 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_color_mixing.py` (``plot_color_mixing.py``)                       | 00:58.022 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_gauss_machine.py` (``plot_gauss_machine.py``)                     | 00:40.810 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_gauss_machine.py` (``plot_gauss_machine.py``)                     | 00:55.644 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_blender.py` (``plot_blender.py``)                                 | 00:31.449 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_blender.py` (``plot_blender.py``)                                 | 00:44.934 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_angry_shapes.py` (``plot_angry_shapes.py``)                       | 00:31.437 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_angry_shapes.py` (``plot_angry_shapes.py``)                       | 00:44.854 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_billiard.py` (``plot_billiard.py``)                               | 00:31.295 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_billiard.py` (``plot_billiard.py``)                               | 00:44.824 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_goo.py` (``plot_goo.py``)                                         | 00:31.177 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_goo.py` (``plot_goo.py``)                                         | 00:44.749 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_newtons_cradle.py` (``plot_newtons_cradle.py``)                   | 00:31.139 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_elliptic_billiard_table.py` (``plot_elliptic_billiard_table.py``) | 00:44.608 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_elliptic_billiard_table.py` (``plot_elliptic_billiard_table.py``) | 00:31.128 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_newtons_cradle.py` (``plot_newtons_cradle.py``)                   | 00:44.461 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_rocket.py` (``plot_rocket.py``)                                   | 00:31.115 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_raycast.py` (``plot_raycast.py``)                                 | 00:44.370 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_raycast.py` (``plot_raycast.py``)                                 | 00:31.008 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_rocket.py` (``plot_rocket.py``)                                   | 00:44.280 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_function_shape.py` (``plot_function_shape.py``)                   | 00:28.286 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_function_shape.py` (``plot_function_shape.py``)                   | 00:42.849 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------+-----------+--------+
