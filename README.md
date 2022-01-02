@@ -73,7 +73,7 @@ One should pay attention to the [tutorials](https://pyb2d.github.io/pyb2d/tutori
     * jupyter (vian ipycanvas)
     * opencv (for gif-rendering only)
 * Fun Examples:
-The examples can be started from various backend: Here we show screenshots from the jupyter integration. These examples can be tried out online with [Binder](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
+The examples can be started from various backend: Below we show screenshots from the jupyter integration. These examples can be tried out online with [Binder](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
 
 ![billiard](https://cdn-images-1.medium.com/max/2000/1*ZkV-0GDc_0Kxdbc6CHzB0w.gif)
 ![angry_shapes](https://cdn-images-1.medium.com/max/2000/1*cIqICNLl2CTGoW5vdmyr-w.gif)
@@ -85,7 +85,7 @@ The examples can be started from various backend: Here we show screenshots from 
 
 ### Jupyter Games
 
-A [medium blogpost](https://medium.com/p/cda20dc15a21/edit) about the Jupyter integration of pyb2d. Disclaimer: The article was written @DerThorsten (the main author of pyb2d)
+A [medium blogpost](https://medium.com/p/cda20dc15a21/edit) about the Jupyter integration of pyb2d. Disclaimer: The article was written [@DerThorsten](https://github.com/DerThorsten)/[@ThorstenBeier](https://twitter.com/ThorstenBeier) (the main author of pyb2d)
 
 [<img src="https://cdn-images-1.medium.com/max/2600/1*gXbeqCDvKyaRySdAX6SnKg.png" width="500">](https://medium.com/p/cda20dc15a21/edit).
 
