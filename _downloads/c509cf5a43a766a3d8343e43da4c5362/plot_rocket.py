@@ -29,27 +29,21 @@ class Rocket(TestbedBase):
         # home planet
         home_planet = self.world.create_kinematic_body(
             position=(10, 0),
-            fixtures=b2d.fixture_def(
-                shape=b2d.circle_shape(radius=20),
-            ),
+            fixtures=b2d.fixture_def(shape=b2d.circle_shape(radius=20)),
             user_data="home_planet",
         )
 
         # target planet
         target_planet = self.world.create_kinematic_body(
             position=(100, 100),
-            fixtures=b2d.fixture_def(
-                shape=b2d.circle_shape(radius=10),
-            ),
+            fixtures=b2d.fixture_def(shape=b2d.circle_shape(radius=10)),
             user_data="target_planet",
         )
 
         # black hole
         black_hole = self.world.create_kinematic_body(
             position=(0, 400),
-            fixtures=b2d.fixture_def(
-                shape=b2d.circle_shape(radius=1),
-            ),
+            fixtures=b2d.fixture_def(shape=b2d.circle_shape(radius=1)),
             user_data="black_hole",
         )
 
@@ -91,11 +85,7 @@ class Rocket(TestbedBase):
         psystem.damping = 0.5
 
         self.emitters = []
-        self.key_map = {
-            "w": 0,
-            "a": 1,
-            "d": 2,
-        }
+        self.key_map = {"w": 0, "a": 1, "d": 2}
 
         angle_width = (math.pi * 2) / 16
         emitter_def = b2d.RandomizedRadialEmitterDef()

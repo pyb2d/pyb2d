@@ -93,4 +93,3 @@ Joints Defs:
 .. autoclass:: b2d.WheelJointDef
     :members:
     :undoc-members:
-

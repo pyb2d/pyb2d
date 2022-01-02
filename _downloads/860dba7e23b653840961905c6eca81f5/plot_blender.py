@@ -45,7 +45,7 @@ class Blender(TestbedBase):
             )
 
         body_a = self.world.create_static_body(
-            position=(dimensions[0] / 2, dimensions[1] / 2),
+            position=(dimensions[0] / 2, dimensions[1] / 2)
         )
         l = 7.2
         body_b = self.world.create_dynamic_body(

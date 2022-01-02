@@ -10,6 +10,7 @@ Tutorials
 Below is a gallery of examples
 
 
+
 .. raw:: html
 
     <div class="sphx-glr-thumbcontainer" tooltip="The same as Tutorial 0.0, but way more pythonic">
@@ -63,6 +64,7 @@ Joint Tutorials
 ==================
 
 Below is a gallery of simple examples on how to create different joints
+
 
 
 .. raw:: html
@@ -202,6 +204,7 @@ Particle Tutorials
 ==================
 
 Below is a gallery of examples using particles
+
 
 
 .. raw:: html

@@ -26,9 +26,7 @@ import matplotlib.pyplot as plt
 # revolute joints
 world = b2d.world(gravity=(0, -10))
 bodies = []
-b = world.create_static_body(
-    position=(0, 15),
-)
+b = world.create_static_body(position=(0, 15))
 bodies.append(b)
 for i in range(5):
     b = world.create_dynamic_body(

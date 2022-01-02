@@ -36,8 +36,7 @@ bodies = []
 
 # create  a static body as anchor
 b = world.create_static_body(
-    position=(0, 4),
-    fixtures=b2d.fixture_def(shape=b2d.polygon_shape(box=[0.3, 0.5])),
+    position=(0, 4), fixtures=b2d.fixture_def(shape=b2d.polygon_shape(box=[0.3, 0.5]))
 )
 bodies.append(b)
 

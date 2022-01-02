@@ -31,6 +31,5 @@ API Documentation:
 
 .. toctree::
    :maxdepth: 2
-    
-   pyb2d 
 
+   pyb2d

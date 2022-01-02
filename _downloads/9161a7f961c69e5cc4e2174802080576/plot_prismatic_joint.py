@@ -26,9 +26,7 @@ import matplotlib.pyplot as plt
 # prismatic joint
 world = b2d.world(gravity=(0, -10))
 
-anchor_body = world.create_static_body(
-    position=(0, 0),
-)
+anchor_body = world.create_static_body(position=(0, 0))
 
 
 b = world.create_dynamic_body(
