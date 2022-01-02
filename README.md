@@ -57,6 +57,12 @@ To try out pyb2d interactively in your web browser, just click on the binder lin
 [![Binder](docs/binder-logo.svg)](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
 
 
+## Documentation:
+
+The documentation can be found [here](https://pyb2d.github.io/pyb2d).
+One should pay attention to the [tutorials](https://pyb2d.github.io/pyb2d/tutorials/index.html) and the [examples](https://pyb2d.github.io/pyb2d/auto_examples/index.html) section.
+
+
 
 ## Features:
 
@@ -74,12 +80,6 @@ The examples can be started from various backend: Here we show screenshots from 
 ![world_of_goo](https://cdn-images-1.medium.com/max/2000/1*Mr_2vTFlIfad2Wsbz6gmTQ.gif)
 ![rocket](https://cdn-images-1.medium.com/max/2000/1*8f05EGZrQyBxZr-Byn_vxg.gif)
 
-## Documentation:
-
-The documentation can be found [here](https://pyb2d.github.io/pyb2d).
-One should pay attention to the [tutorials](https://pyb2d.github.io/pyb2d/tutorials/index.html) and the [examples](https://pyb2d.github.io/pyb2d/auto_examples/index.html) section.
-
-
 
 ## Resources
 
@@ -91,7 +91,6 @@ A medium blogpost about the jupyter integration of pyb2d. Disclaimer: The articl
 ### pythonbytes
 
 [Episode #264: of pythonbytes  We're just playing games with Jupyter at this point](https://pythonbytes.fm/episodes/show/264/we-re-just-playing-games-with-jupyter-at-this-point)
-
 
 
 ## History
