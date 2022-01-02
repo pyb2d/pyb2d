@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:28.361** total execution time for **tutorials_particles** files:
+**00:26.285** total execution time for **tutorials_particles** files:
 
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_particles_plot_randomized_linear_emitter.py` (``plot_randomized_linear_emitter.py``) | 00:28.361 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_particles_plot_randomized_linear_emitter.py` (``plot_randomized_linear_emitter.py``) | 00:26.285 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
