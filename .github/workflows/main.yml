@@ -1,11 +1,10 @@
 name: Micromamba + CMake
 on:
+  workflow_dispatch:
+  pull_request:
   push:
     branches:
-    - main
-  pull_request:
-    branches:
-    - main
+     - main
 
   schedule:
     - cron: "0 0 * * *"
