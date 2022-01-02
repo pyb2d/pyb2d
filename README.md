@@ -85,11 +85,12 @@ The examples can be started from various backend: Here we show screenshots from 
 
 ### Jupyter Games
 
-A medium blogpost about the jupyter integration of pyb2d. Disclaimer: The article was written @DerThorsten (the main author of pyb2d)
+A [medium blogpost](https://medium.com/p/cda20dc15a21/edit) about the Jupyter integration of pyb2d. Disclaimer: The article was written @DerThorsten (the main author of pyb2d)
 
 [<img src="https://cdn-images-1.medium.com/max/2600/1*gXbeqCDvKyaRySdAX6SnKg.png" width="500">](https://medium.com/p/cda20dc15a21/edit).
 
 ### pythonbytes
+The pythonbytes podcast talked about the jupyter integration of pyb2d:
 
 [Episode #264: of pythonbytes  We're just playing games with Jupyter at this point](https://pythonbytes.fm/episodes/show/264/we-re-just-playing-games-with-jupyter-at-this-point)
 
