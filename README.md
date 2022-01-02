@@ -90,8 +90,7 @@ A medium blogpost about the jupyter integration of pyb2d. Disclaimer: The articl
 
 ### pythonbytes
 
-[Episode #264: of pythonbytes  We're just playing games with Jupyter at this point]
-(https://pythonbytes.fm/episodes/show/264/we-re-just-playing-games-with-jupyter-at-this-point)
+[Episode #264: of pythonbytes  We're just playing games with Jupyter at this point](https://pythonbytes.fm/episodes/show/264/we-re-just-playing-games-with-jupyter-at-this-point)
 
 
 
