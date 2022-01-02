@@ -7,7 +7,7 @@ from plot_blender import Blender
 from plot_raycast import Raycast
 from plot_angry_shapes import AngryShapes
 from plot_billiard import Billiard
-from plot_elliptic_billiard_table.py import EllipticBillardTable
+from plot_elliptic_billiard_table import EllipticBillardTable
 from plot_goo import Goo
 
 import b2d
