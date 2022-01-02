@@ -1,52 +1,108 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>Emitter &#8212; pyb2d 0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emitter &mdash; pyb2d 0.5.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Examples" href="../../auto_examples/index.html" />
-    <link rel="prev" title="Wheel Joint" href="../joints/plot_wheel_joint.html" />
-   
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Distance Joint" href="../joints/plot_distance_joint.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> pyb2d
+          </a>
+              <div class="version">
+                0.5.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../world.html">World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bodies.html">Bodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../batch_api.html">Batch API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#joint-tutorials">Joint Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#particle-tutorials">Particle Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Emitter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#imports">Imports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../debug_draw/index.html">Debug Draw</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyb2d.html">pyb2d</a></li>
+</ul>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+        </div>
+      </div>
+    </nav>
 
-          <div class="body" role="main">
-            
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyb2d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+      <li>Emitter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorials/particles/plot_randomized_linear_emitter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-particles-plot-randomized-linear-emitter-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="emitter">
-<span id="sphx-glr-tutorials-particles-plot-randomized-linear-emitter-py"></span><h1>Emitter<a class="headerlink" href="#emitter" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-tutorials-particles-plot-randomized-linear-emitter-py"></span><h1>Emitter<a class="headerlink" href="#emitter" title="Permalink to this headline"></a></h1>
 <p>Create a RandomizedLinearEmitter</p>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">b2d</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">b2d.plot</span>
@@ -263,42 +319,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img289d946626e84bb6b10df822d2c533b4">
+  <img id="_anim_img801e91587b8d459791ae68fbeadb57fa">
   <div class="anim-controls">
-    <input id="_anim_slider289d946626e84bb6b10df822d2c533b4" type="range" class="anim-slider"
+    <input id="_anim_slider801e91587b8d459791ae68fbeadb57fa" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim289d946626e84bb6b10df822d2c533b4.set_frame(parseInt(this.value));"></input>
+           oninput="anim801e91587b8d459791ae68fbeadb57fa.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim289d946626e84bb6b10df822d2c533b4.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim801e91587b8d459791ae68fbeadb57fa.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="anim289d946626e84bb6b10df822d2c533b4.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="anim801e91587b8d459791ae68fbeadb57fa.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="anim289d946626e84bb6b10df822d2c533b4.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="anim801e91587b8d459791ae68fbeadb57fa.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="anim289d946626e84bb6b10df822d2c533b4.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="anim801e91587b8d459791ae68fbeadb57fa.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="anim289d946626e84bb6b10df822d2c533b4.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="anim801e91587b8d459791ae68fbeadb57fa.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="anim289d946626e84bb6b10df822d2c533b4.play_animation()">
+      <button title="Play" aria-label="Play" onclick="anim801e91587b8d459791ae68fbeadb57fa.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="anim289d946626e84bb6b10df822d2c533b4.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="anim801e91587b8d459791ae68fbeadb57fa.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="anim289d946626e84bb6b10df822d2c533b4.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="anim801e91587b8d459791ae68fbeadb57fa.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="anim289d946626e84bb6b10df822d2c533b4.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="anim801e91587b8d459791ae68fbeadb57fa.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select289d946626e84bb6b10df822d2c533b4"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select801e91587b8d459791ae68fbeadb57fa"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_289d946626e84bb6b10df822d2c533b4"
+      <input type="radio" name="state" value="once" id="_anim_radio1_801e91587b8d459791ae68fbeadb57fa"
              >
-      <label for="_anim_radio1_289d946626e84bb6b10df822d2c533b4">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_289d946626e84bb6b10df822d2c533b4"
+      <label for="_anim_radio1_801e91587b8d459791ae68fbeadb57fa">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_801e91587b8d459791ae68fbeadb57fa"
              checked>
-      <label for="_anim_radio2_289d946626e84bb6b10df822d2c533b4">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_289d946626e84bb6b10df822d2c533b4"
+      <label for="_anim_radio2_801e91587b8d459791ae68fbeadb57fa">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_801e91587b8d459791ae68fbeadb57fa"
              >
-      <label for="_anim_radio3_289d946626e84bb6b10df822d2c533b4">Reflect</label>
+      <label for="_anim_radio3_801e91587b8d459791ae68fbeadb57fa">Reflect</label>
     </form>
   </div>
 </div>
@@ -308,9 +364,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img289d946626e84bb6b10df822d2c533b4";
-    var slider_id = "_anim_slider289d946626e84bb6b10df822d2c533b4";
-    var loop_select_id = "_anim_loop_select289d946626e84bb6b10df822d2c533b4";
+    var img_id = "_anim_img801e91587b8d459791ae68fbeadb57fa";
+    var slider_id = "_anim_slider801e91587b8d459791ae68fbeadb57fa";
+    var loop_select_id = "_anim_loop_select801e91587b8d459791ae68fbeadb57fa";
     var frames = new Array(121);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -39550,12 +39606,12 @@ AAA4HIEPAADA4Qh8AAAADkfgAwAAcLj/Bwlq2djxR2A4AAAAAElFTkSuQmCC\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim289d946626e84bb6b10df822d2c533b4 = new Animation(frames, img_id, slider_id, 41.0,
+        anim801e91587b8d459791ae68fbeadb57fa = new Animation(frames, img_id, slider_id, 41.0,
                                  loop_select_id);
     }, 0);
   })()
 </script></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  21.529 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  21.422 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-particles-plot-randomized-linear-emitter-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/5c384254a194df29e2dc6aceb8de073c/plot_randomized_linear_emitter.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_randomized_linear_emitter.py</span></code></a></p>
@@ -39569,90 +39625,34 @@ AAA4HIEPAADA4Qh8AAAADkfgAwAAcLj/Bwlq2djxR2A4AAAAAElFTkSuQmCC\
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../joints/plot_distance_joint.html" class="btn btn-neutral float-left" title="Distance Joint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../auto_examples/index.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016, Thorsten Beier.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../index.html">pyb2d</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../world.html">World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bodies.html">Bodies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../joints.html">Joints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../batch_api.html">Batch API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#joint-tutorials">Joint Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#particle-tutorials">Particle Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Emitter</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../debug_draw/index.html">Debug Draw</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyb2d.html">pyb2d</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Tutorials</a><ul>
-      <li>Previous: <a href="../joints/plot_wheel_joint.html" title="previous chapter">Wheel Joint</a></li>
-      <li>Next: <a href="../../auto_examples/index.html" title="next chapter">Examples</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Thorsten Beier.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../../_sources/tutorials/particles/plot_randomized_linear_emitter.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

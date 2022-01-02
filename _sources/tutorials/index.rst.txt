@@ -130,27 +130,6 @@ Below is a gallery of simple examples on how to create different joints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create distance joints">
-
-.. only:: html
-
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_distance_joint_thumb.gif
-     :alt: Distance Joint
-
-     :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_distance_joint
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Create weld joints">
 
 .. only:: html
@@ -190,6 +169,27 @@ Below is a gallery of simple examples on how to create different joints
    :hidden:
 
    /tutorials/joints/plot_wheel_joint
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Create distance joints">
+
+.. only:: html
+
+ .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_distance_joint_thumb.gif
+     :alt: Distance Joint
+
+     :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorials/joints/plot_distance_joint
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

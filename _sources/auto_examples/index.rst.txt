@@ -54,6 +54,27 @@ Below is a gallery of examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a shape from a mathematical function. In this example we use f(...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_elliptic_billiard_table_thumb.gif
+     :alt: Function Shape
+
+     :ref:`sphx_glr_auto_examples_plot_elliptic_billiard_table.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_elliptic_billiard_table
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a blender with Box2D">
 
 .. only:: html
