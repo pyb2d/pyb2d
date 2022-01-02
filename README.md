@@ -15,28 +15,35 @@ Warning, this is a work in progress and all APIs are subject to changes!
 Nothing is stable yet.
 
 
+## Installation
+
 ### Installing from conda-forge
 
-Then you can install in this environment `pyb2d` and its dependencies
+One  can install `pyb2d` and its dependencies via conda:
 
 ```bash
 mamba install pyb2d -c conda-forge
 ```
+### Installing with pip
+
+`pyb2d` can be also installed via pip (conda is recommended and should be preferred over pip)
+
+```bash
+pip install pyb2d
+```
 
 ### Installing from source
 
-Or you can install it from the sources, you will first need to install dependencies
+`pyb2d` can also be install it from the sources but you will first need to install dependencies:
 
 ```bash
-mamba install cmake python numpy -c conda-forge
+mamba install cmake python numpy pydantic -c conda-forge
 ```
 
 Then you can compile the sources (replace `$CONDA_PREFIX` with a custom installation
 prefix if need be)
 
 ```bash
-
-
 
 mkdir build && cd build
 cmake .. -D CMAKE_PREFIX_PATH=$CONDA_PREFIX -D CMAKE_INSTALL_PREFIX=$CONDA_PREFIX -D CMAKE_INSTALL_LIBDIR=lib
@@ -54,12 +61,30 @@ To try out pyb2d interactively in your web browser, just click on the binder lin
 ## Features:
 
 * Liquidfun Integration
+* Examples / Testbed for various backends:
+    * pygame
+    * kivy
+    * jupyter (vian ipycanvas)
+    * opencv (for gif-rendering only)
+* Fun Examples:
+The examples can be started from various backend: Here we show screenshots from the jupyter integration. These examples can be tried out online with [Binder](https://mybinder.org/v2/gh/pyb2d/pyb2d/main?urlpath=/lab/tree/examples/jupyter_integration.ipynb)
 
-* Pygame Integration
+![billiard](https://cdn-images-1.medium.com/max/2000/1*ZkV-0GDc_0Kxdbc6CHzB0w.gif)
+![angry_shapes](https://cdn-images-1.medium.com/max/2000/1*cIqICNLl2CTGoW5vdmyr-w.gif)
+![world_of_goo](https://cdn-images-1.medium.com/max/2000/1*Mr_2vTFlIfad2Wsbz6gmTQ.gif)
+![rocket](https://cdn-images-1.medium.com/max/2000/1*8f05EGZrQyBxZr-Byn_vxg.gif)
 
-* Jupyter Integration
+## Documentation:
 
-![jupyter_integration](docs/img/jupyter_integration.gif)
+The documentation can be found [here](https://pyb2d.github.io/pyb2d)
+
+## Resources
+
+### Jupyter Games
+
+[<img src="https://cdn-images-1.medium.com/max/2600/1*gXbeqCDvKyaRySdAX6SnKg.png" width="500">](https://medium.com/p/cda20dc15a21/edit).
+
+One should pay attention to the [tutorials](https://pyb2d.github.io/pyb2d/tutorials/index.html) and the [examples](https://pyb2d.github.io/pyb2d/auto_examples/index.html) section.
 
 
 
