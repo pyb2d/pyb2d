@@ -30,7 +30,7 @@ void exportb2Collision(py::module & pybox2dModule){
         .def_readonly("tangent_impulse",     &b2ManifoldPoint::tangentImpulse)
         .def_readonly("id",                 &b2ManifoldPoint::id)
     ;
-    
+
 
 
     auto b2ManifoldCls = py::class_<b2Manifold, ManifoldHolder>(pybox2dModule,"b2Manifold");

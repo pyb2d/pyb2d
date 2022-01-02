@@ -19,7 +19,7 @@ void exportB2World(py::module & pybox2dModule){
     typedef PyWorld world_type;
 
 
-    
+
     py::class_<world_type>(pybox2dModule,"_World")
         .def(py::init<const b2Vec2 & >(),py::arg("gravity"))
 
@@ -31,11 +31,11 @@ void exportB2World(py::module & pybox2dModule){
 
         .def("set_contact_listener", [](world_type & w, PyB2ContactListenerCaller * listener){
             w.SetContactListener(listener);
-        },py::arg("listener"), py::keep_alive<1, 2>()) 
+        },py::arg("listener"), py::keep_alive<1, 2>())
 
         .def("_set_destruction_listener", [](world_type & w, py::object listener_obj){
             w.set_py_destruction_listener(listener_obj);
-        },py::arg("listener"), py::keep_alive<1, 2>()) 
+        },py::arg("listener"), py::keep_alive<1, 2>())
 
         // .def("set_destruction_listener", [](world_type & w, PyB2DestructionListenerCaller * listener){
         //     w.SetDestructionListener(listener);
@@ -43,7 +43,7 @@ void exportB2World(py::module & pybox2dModule){
 
         .def("set_contact_filter", [](world_type & w, PyB2ContactFilterCaller * listener){
             w.SetContactFilter(listener);
-        },py::arg("listener"), py::keep_alive<1, 2>()) 
+        },py::arg("listener"), py::keep_alive<1, 2>())
 
 
 
@@ -56,8 +56,8 @@ void exportB2World(py::module & pybox2dModule){
         .def("set_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, int32_t, true> * d){
             w.SetExtendedDebugDraw(d);
         }, py::arg("debug_draw"), py::keep_alive<1, 2>())
-    
-  
+
+
 
         .def("with_temporary_debug_draw", [](world_type & w, BatchDebugDrawCaller<uint8_t, float, true> * d, py::object callback){
             w.WithTemporaryExtendedDebugDraw(d, callback);
@@ -71,18 +71,18 @@ void exportB2World(py::module & pybox2dModule){
 
 
 
-        
+
         .def("draw_debug_data",               py::overload_cast<>(&world_type::ExtendedDebugDraw))
         .def("_create_body_cpp", [](world_type * self, const PyDefExtender<b2BodyDef> * def)
         {
-            
+
             b2Body * body = self->CreateBody(def);
             set_user_data_from_def(def, body);
             return BodyHolder(body);
 
         },py::return_value_policy::copy)
 
-        .def("destroy_body", 
+        .def("destroy_body",
             [](world_type & world, b2Body *  body){
                 auto vud = get_user_data(body);
                 if(vud!=0){
@@ -96,7 +96,7 @@ void exportB2World(py::module & pybox2dModule){
         )
         .def("create_joint", []
         (
-            world_type * self, 
+            world_type * self,
             const PyDefExtender<b2JointDef> * def
         )
         {
@@ -104,7 +104,7 @@ void exportB2World(py::module & pybox2dModule){
             set_user_data_from_def(def, joint);
             return JointHolder(joint);
         },py::arg("def"))
-        .def("destroy_joint", 
+        .def("destroy_joint",
             [](world_type & world, b2Joint *  joint){
                 auto vud = get_user_data(joint);
                 if(vud!=nullptr){
@@ -130,10 +130,10 @@ void exportB2World(py::module & pybox2dModule){
 
         #ifdef PYBOX2D_LIQUID_FUN
         .def("step",[&]
-            (world_type & self, float timeStep, 
+            (world_type & self, float timeStep,
             int32 velocityIterations, int32 positionIterations,
             int32 particleIterations){
-                
+
                 self.Step(timeStep, velocityIterations, positionIterations,particleIterations);
             },
             py::arg("time_step"),
@@ -143,7 +143,7 @@ void exportB2World(py::module & pybox2dModule){
         )
         #else
         .def("step",[&]
-            (world_type & self, float timeStep, 
+            (world_type & self, float timeStep,
             int32 velocityIterations, int32 positionIterations){
                 py::gil_scoped_release release;
                 self.Step(timeStep, velocityIterations, positionIterations);
@@ -158,15 +158,15 @@ void exportB2World(py::module & pybox2dModule){
 
 
 
-        .def("query_aabb", 
+        .def("query_aabb",
             [](const world_type & world, PyB2QueryCallbackCaller * cb, const b2AABB & aabb ){
                 return world.QueryAABB(cb, aabb);
         })
-        .def("ray_cast", 
+        .def("ray_cast",
             [](const world_type & world, PyB2RayCastCallbackCaller * cb, const b2Vec2 & pa,const b2Vec2 & pb ){
                 return world.RayCast(cb, pa, pb);
         })
-        
+
         .def("shift_origin",&world_type::ShiftOrigin)
 
 
@@ -206,7 +206,7 @@ void exportB2World(py::module & pybox2dModule){
         .def_property_readonly("tree_balance",&world_type::GetTreeBalance)
         .def_property_readonly("tree_quality",&world_type::GetTreeQuality)
         .def_property_readonly("contact_manager",&world_type::GetContactManager)
-        .def_property_readonly("profile",&world_type::GetProfile) 
+        .def_property_readonly("profile",&world_type::GetProfile)
 
 
 
@@ -215,4 +215,3 @@ void exportB2World(py::module & pybox2dModule){
     ;
 
 }
-

@@ -48,7 +48,7 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     pybox2dModule.doc() = R"pbdoc(
         _pybox2d  python bindings
 
-        .. currentmodule:: _pybox2d 
+        .. currentmodule:: _pybox2d
 
         .. autosummary::
            :toctree: _generate

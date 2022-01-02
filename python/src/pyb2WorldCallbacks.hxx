@@ -151,7 +151,7 @@ public:
 
     virtual ~PyB2ContactListenerCaller() {}
     PyB2ContactListenerCaller(const py::object & object)
-    : object_(object){ 
+    : object_(object){
 
         m_has_begin_contact = py::hasattr(object_, "begin_contact");
         m_has_end_contact = py::hasattr(object_, "end_contact");
@@ -166,7 +166,7 @@ public:
     }
 
 
-    virtual void BeginContact(b2Contact* contact) { 
+    virtual void BeginContact(b2Contact* contact) {
         if(m_has_begin_contact)
         {
             if(report_collision(
@@ -187,7 +187,7 @@ public:
         }
     }
 
-    virtual void EndContact(b2Contact* contact) { 
+    virtual void EndContact(b2Contact* contact) {
         if(m_has_end_contact){
             if(report_collision(
                 contact->GetFixtureA()->GetBody()->GetUserData().reportContactFilter,
@@ -225,7 +225,7 @@ public:
         if(m_has_end_contact_fixture_particle){
             py::gil_scoped_acquire acquire;
             py::object f = object_.attr("end_contact_fixture_particle");
-            f(FixtureHolder(fixture), ParticleSystemHolder(particleSystem), index);  
+            f(FixtureHolder(fixture), ParticleSystemHolder(particleSystem), index);
         }
     }
 
@@ -235,7 +235,7 @@ public:
         if(m_has_begin_contact_particle){
             py::gil_scoped_acquire acquire;
             py::object f = object_.attr("begin_contact_particle");
-            f(ParticleSystemHolder(particleSystem),  particleContact);  
+            f(ParticleSystemHolder(particleSystem),  particleContact);
         }
     }
 
@@ -244,7 +244,7 @@ public:
         if(m_has_end_pontact_particle){
             py::gil_scoped_acquire acquire;
             py::object f = object_.attr("end_pontact_particle");
-            f(ParticleSystemHolder(particleSystem),  indexA, indexB);  
+            f(ParticleSystemHolder(particleSystem),  indexA, indexB);
         }
     }
     #endif
@@ -252,7 +252,7 @@ public:
         if(m_has_pre_solve){
             py::gil_scoped_acquire acquire;
             py::object f = object_.attr("pre_solve");
-            f(ContactHolder(contact),  ManifoldHolder(oldManifold)); 
+            f(ContactHolder(contact),  ManifoldHolder(oldManifold));
         }
     }
 
@@ -260,7 +260,7 @@ public:
         if(m_has_post_solve){
             py::gil_scoped_acquire acquire;
             py::object f = object_.attr("post_solve");
-            f(ContactHolder(contact),  ContactImpulseHolder(impulse));  
+            f(ContactHolder(contact),  ContactImpulseHolder(impulse));
         }
     }
 private:

@@ -18,18 +18,18 @@ void exportB2Draw(py::module & pybox2dModule){
 
 
     py::class_<b2Color>(pybox2dModule, "Color")
-        .def(py::init([](py::tuple t) { 
+        .def(py::init([](py::tuple t) {
             if(py::len(t) != 3)
             {
                 throw std::runtime_error("tuple has wrong length");
             }
             return new b2Color(
-                    t[0].cast<float>(), 
+                    t[0].cast<float>(),
                     t[1].cast<float>(),
                     t[2].cast<float>()
-                ); 
+                );
             }
-        )) 
+        ))
 
 
         .def_readwrite("r",&b2Color::r)
@@ -51,7 +51,7 @@ void exportB2Draw(py::module & pybox2dModule){
             )
             .def("reset_bounding_box",&PyB2Draw::resetBoundingBox)
             .def_property_readonly("bounding_box", &PyB2Draw::getBoundingBox)
-    
+
         ;
     }
     {
@@ -72,7 +72,7 @@ void exportB2Draw(py::module & pybox2dModule){
         add_debug_draw_api<batch_debug_draw_type>(pyCls);
         pyCls
             .def(py::init<const py::object &>())
-          
+
         ;
     }
     // for ipycanvas and pygame backend (uint8 colors, int32 coordinates, with transform)
@@ -83,9 +83,7 @@ void exportB2Draw(py::module & pybox2dModule){
         add_debug_draw_transform_api<batch_debug_draw_type>(pyCls);
         pyCls
             .def(py::init<const py::object &>())
-          
+
         ;
     }
 }
-
-

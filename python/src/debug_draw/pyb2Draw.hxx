@@ -43,7 +43,7 @@ public:
     }
 
     b2Vec2 world_to_screen(const b2Vec2 & world_vec)const
-    {   
+    {
         return b2Vec2(
             world_vec.x * m_scale + m_translate.x,
             world_vec.y * (m_flip_y ? -m_scale :  m_scale) + m_translate.y
@@ -51,7 +51,7 @@ public:
     }
 
     b2Vec2 screen_to_world(const b2Vec2 & screen_vec)const
-    {   
+    {
         return b2Vec2(
             (screen_vec.x  - m_translate.x) / m_scale,
             (screen_vec.y  - m_translate.y) /  (m_flip_y ? -m_scale :  m_scale)
@@ -99,7 +99,7 @@ public:
 
     void DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
     {
-        
+
         //typedef long unsigned int ShapeType;
 
         auto npVertices = py::array(py::buffer_info(
@@ -111,7 +111,7 @@ public:
             { 2*sizeof(float),sizeof(float)}  /* Strides for each dimension */
         ));
 
-        float * ptr  = static_cast<float* >(npVertices.request().ptr);        
+        float * ptr  = static_cast<float* >(npVertices.request().ptr);
         for(size_t i=0;  i<size_t(vertexCount); ++i){
             auto v = this->world_to_screen(vertices[i]);
             this->updateBoundingBox(v);
@@ -140,7 +140,7 @@ public:
             { 2*sizeof(float),sizeof(float)}  /* Strides for each dimension */
         ));
 
-        float * ptr  = static_cast<float* >(npVertices.request().ptr);        
+        float * ptr  = static_cast<float* >(npVertices.request().ptr);
         for(size_t i=0;  i<size_t(vertexCount); ++i){
             auto v = this->world_to_screen(vertices[i]);
             this->updateBoundingBox(v);
@@ -214,7 +214,7 @@ public:
             { 2*sizeof(float),sizeof(float)}  /* Strides for each dimension */
         ));
 
-        
+
 
         float * ptrCenters  = static_cast<float* >(npCenters.request().ptr);
         if(colors != nullptr){
@@ -234,7 +234,7 @@ public:
                 this->updateBoundingBox(b2Vec2(ce.x - radius, ce.y -radius));
 
                 ptrCenters[i*2 ]   = ce.x ;
-                ptrCenters[i*2 +1] = ce.y ; 
+                ptrCenters[i*2 +1] = ce.y ;
                 const b2ParticleColor c = colors[i];
                 ptrColors[i*4 ]   = c.r;
                 ptrColors[i*4 +1] = c.g;
@@ -250,7 +250,7 @@ public:
                 this->updateBoundingBox(b2Vec2(ce.x - radius, ce.y -radius));
 
                 ptrCenters[i*2 ]   = ce.x ;
-                ptrCenters[i*2 +1] = ce.y ; 
+                ptrCenters[i*2 +1] = ce.y ;
             }
             f(npCenters,this->world_to_screen_scale(radius));
         }

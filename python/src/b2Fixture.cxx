@@ -41,7 +41,7 @@ void exportB2Fixture(py::module & pybox2dModule){
 
     b2FixtureDefCls
         .def(py::init<>())
-        .def("_set_shape",  //[](PyFixtureDef & f, b2Shape * s){f.shape = s;}, 
+        .def("_set_shape",  //[](PyFixtureDef & f, b2Shape * s){f.shape = s;},
                 &setShape,
             py::keep_alive<1,2>()
         )

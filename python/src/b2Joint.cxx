@@ -16,9 +16,9 @@ public:
     /// Get the anchor point on bodyA in world coordinates.
     virtual b2Vec2 GetAnchorA() const {
         PYBIND11_OVERLOAD_PURE(
-            b2Vec2,       // Return type 
-            b2Joint,      // Parent class 
-            GetAnchorA    // Name of function 
+            b2Vec2,       // Return type
+            b2Joint,      // Parent class
+            GetAnchorA    // Name of function
         );
         return b2Vec2();
     }
@@ -26,9 +26,9 @@ public:
     /// Get the anchor point on bodyB in world coordinates.
     virtual b2Vec2 GetAnchorB() const {
         PYBIND11_OVERLOAD_PURE(
-            b2Vec2,       // Return type 
-            b2Joint,      // Parent class 
-            GetAnchorB    // Name of function 
+            b2Vec2,       // Return type
+            b2Joint,      // Parent class
+            GetAnchorB    // Name of function
         );
         return b2Vec2();
     }
@@ -36,9 +36,9 @@ public:
     /// Get the reaction force on bodyB at the joint anchor in Newtons.
     virtual b2Vec2 GetReactionForce(float inv_dt) const {
         PYBIND11_OVERLOAD_PURE(
-            b2Vec2,       // Return type 
-            b2Joint,      // Parent class 
-            GetReactionForce,    // Name of function 
+            b2Vec2,       // Return type
+            b2Joint,      // Parent class
+            GetReactionForce,    // Name of function
             inv_dt
         )
         return b2Vec2();
@@ -47,9 +47,9 @@ public:
     /// Get the reaction torque on bodyB in N*m.
     virtual float GetReactionTorque(float inv_dt) const {
         PYBIND11_OVERLOAD_PURE(
-            float,       // Return type 
-            b2Joint,      // Parent class 
-            GetReactionTorque,    // Name of function 
+            float,       // Return type
+            b2Joint,      // Parent class
+            GetReactionTorque,    // Name of function
             inv_dt
         );
         return float();
@@ -58,25 +58,25 @@ public:
     // They are protected
     virtual void InitVelocityConstraints(const b2SolverData& data){
         PYBIND11_OVERLOAD_PURE(
-            void,       // Return type 
-            b2Joint,      // Parent class 
-            InitVelocityConstraints,    // Name of function 
+            void,       // Return type
+            b2Joint,      // Parent class
+            InitVelocityConstraints,    // Name of function
             data
         );
     }
     virtual void SolveVelocityConstraints(const b2SolverData& data){
         PYBIND11_OVERLOAD_PURE(
-            void,       // Return type 
-            b2Joint,      // Parent class 
-            SolveVelocityConstraints,    // Name of function 
+            void,       // Return type
+            b2Joint,      // Parent class
+            SolveVelocityConstraints,    // Name of function
             data
         );
     }
     virtual bool SolvePositionConstraints(const b2SolverData& data){
         PYBIND11_OVERLOAD_PURE(
-            bool,       // Return type 
-            b2Joint,      // Parent class 
-            SolvePositionConstraints,    // Name of function 
+            bool,       // Return type
+            b2Joint,      // Parent class
+            SolvePositionConstraints,    // Name of function
             data
         );
         return false;
@@ -167,20 +167,20 @@ void exportb2Joint(py::module & pybox2dModule){
         //.alias<b2Joint>()
        // .def(py::init<const b2JointDef* >())
         //
-        .def_property_readonly("type",&b2Joint::GetType) 
+        .def_property_readonly("type",&b2Joint::GetType)
         .def_property_readonly("body_a", [](b2Joint * self){
             return self->GetBodyA();
         })
         .def_property_readonly("body_b", [](b2Joint * self){
             return self->GetBodyB();
-        })  
+        })
         .def_property_readonly("anchor_a",&b2Joint::GetAnchorA)
-        .def_property_readonly("anchor_b",&b2Joint::GetAnchorB)     
+        .def_property_readonly("anchor_b",&b2Joint::GetAnchorB)
         .def("get_reaction_force",&b2Joint::GetReactionForce, py::arg("iv_dt"))
         .def("get_reaction_torque",&b2Joint::GetReactionTorque, py::arg("iv_dt"))
     ;
-   
-   
+
+
     py::class_<b2DistanceJoint,DistanceJointHolder, b2Joint>(pybox2dModule,"DistanceJoint")
         .def_property("length",&b2DistanceJoint::GetLength, &b2DistanceJoint::SetLength)
         #ifdef PYBOX2D_OLD_BOX2D
@@ -190,7 +190,7 @@ void exportb2Joint(py::module & pybox2dModule){
         .def_property("stiffness",&b2DistanceJoint::GetStiffness, &b2DistanceJoint::SetStiffness)
         .def_property("damping",&b2DistanceJoint::GetDamping, &b2DistanceJoint::SetDamping)
         #endif
-    ;  
+    ;
 
     py::class_<b2FrictionJoint,Holder<b2FrictionJoint>, b2Joint>(pybox2dModule,"FrictionJoint")
         .def_property("max_force", &b2FrictionJoint::GetMaxForce,  &b2FrictionJoint::SetMaxForce)
@@ -291,7 +291,7 @@ void exportb2Joint(py::module & pybox2dModule){
 
 
     ;
-    py::class_<b2MouseJoint, Holder<b2MouseJoint>, b2Joint 
+    py::class_<b2MouseJoint, Holder<b2MouseJoint>, b2Joint
     >(pybox2dModule,"MouseJoint")
         .def_property("max_force",&b2MouseJoint::GetMaxForce, &b2MouseJoint::SetMaxForce)
         .def_property("target", &b2MouseJoint::GetTarget, &b2MouseJoint::SetTarget)
@@ -305,4 +305,3 @@ void exportb2Joint(py::module & pybox2dModule){
     ;
 
 }
-

@@ -27,8 +27,7 @@ import matplotlib.pyplot as plt
 # The world and ground body
 world = b2d.world(gravity=(0, -10))
 edge = world.create_static_body(
-    position=(0, 0),
-    fixtures=b2d.fixture_def(shape=b2d.edge_shape([(-20, 0), (5, 0)])),
+    position=(0, 0), fixtures=b2d.fixture_def(shape=b2d.edge_shape([(-20, 0), (5, 0)]))
 )
 
 # random slope

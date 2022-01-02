@@ -18,24 +18,24 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def(py::init<>())
         .def_readwrite("jtype", &PyJointDef::type)
         .def_readwrite("collide_connected", &PyJointDef::collideConnected)
-        .def_property("body_a", 
+        .def_property("body_a",
             [](PyJointDef * self){
                 BodyHolder(self->bodyA);
-            }, 
+            },
             [](PyJointDef * self, b2Body * bodyA){
                 self->bodyA = bodyA;
             }
         )
-        .def_property("body_b", 
+        .def_property("body_b",
             [](PyJointDef * self){
                 BodyHolder(self->bodyB);
-            }, 
+            },
             [](PyJointDef * self, b2Body * bodyB){
                 self->bodyB = bodyB;
             }
         )
     ;
-   
+
 
     typedef PyDefExtender<b2DistanceJointDef> PyDistanceJointDef;
     py::class_<PyDistanceJointDef> b2DistanceJointDefCls(pybox2dModule,"DistanceJointDef",jdClass);
@@ -55,7 +55,7 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def_readwrite("damping", &PyDistanceJointDef::damping)
         #endif
     ;
-    
+
     typedef PyDefExtender<b2FrictionJointDef> PyFrictionJointDef;
     py::class_<PyFrictionJointDef>(pybox2dModule,"FrictionJointDef",jdClass)
         .def(py::init<>())
@@ -181,4 +181,3 @@ void exportb2JointDef(py::module & pybox2dModule){
     ;
 
 }
-

@@ -4,9 +4,9 @@
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>            // Pybind11 import to define Python bindings
 // #include <xtensor-python/pytensor.hpp>     // Numpy bindings
-// #include <xtensor/xtensor.hpp>   
+// #include <xtensor/xtensor.hpp>
 
-#include "numpy.hxx" 
+#include "numpy.hxx"
 
 using np_verts_row_major = py::array_t<float, py::array::c_style | py::array::forcecast>;
 using np_vec2_row_major = py::array_t<float, py::array::c_style | py::array::forcecast>;
@@ -29,7 +29,7 @@ void with_vertices(
     }
 
     auto ptr = reinterpret_cast<b2Vec2 *>(buf.ptr);
-    f(ptr, std::size_t(verts2d.shape(0)));   
+    f(ptr, std::size_t(verts2d.shape(0)));
 }
 
 
@@ -47,7 +47,7 @@ void with_vec2_array(
     }
 
     auto ptr = reinterpret_cast<b2Vec2 *>(buf.ptr);
-    f(ptr, std::size_t(verts2d.shape(0)));   
+    f(ptr, std::size_t(verts2d.shape(0)));
 }
 
 

@@ -56,7 +56,7 @@ class CoordinateHelper<COORDINATE_VALUE_TYPE, true> : public RoundingHelper<COOR
 {
 public:
     CoordinateHelper()
-    :    
+    :
         m_screen_size{0,0},
         m_scale(1),
         m_translate(0,0),
@@ -66,7 +66,7 @@ public:
     }
 
     b2Vec2 world_to_screen(const b2Vec2 & world_vec)const
-    {   
+    {
         if(!m_flip_y)
         {
 
@@ -82,11 +82,11 @@ public:
                 m_screen_size[1] - world_vec.y * m_scale - m_translate.y
             );
         }
-        
+
     }
 
     b2Vec2 screen_to_world(const b2Vec2 & screen_vec)const
-    {   
+    {
 
         if(!m_flip_y)
         {
@@ -135,7 +135,7 @@ template<class COORDINATE_VALUE_TYPE>
 class CoordinateHelper<COORDINATE_VALUE_TYPE, false> : public RoundingHelper<COORDINATE_VALUE_TYPE>
 {
 public:
-   
+
     void add(const b2Vec2 & point, std::vector<COORDINATE_VALUE_TYPE> & vec)
     {
         this->round_and_add(point, vec);
@@ -155,7 +155,7 @@ template<
     class COORDINATE_VALUE_TYPE,
     bool WITH_TRANSFORM
 >
-class BatchDebugDrawCallerBase : 
+class BatchDebugDrawCallerBase :
     public ExtendedDebugDrawBase, public CoordinateHelper<COORDINATE_VALUE_TYPE, WITH_TRANSFORM>
 {
 public:
@@ -185,7 +185,7 @@ public:
         this->trigger_callbacks();
         m_object.attr("end_draw")();
     }
-    
+
     bool ReleaseGilWhileDebugDraw() override {
         return true;
     }
@@ -292,13 +292,13 @@ public:
                     np_view(centers_ptr, {n_particels, 2}),
                     radius
                 );
-            } 
+            }
             else
             {
                 auto color_ptr = m_particle_systems_colors.data() + color_offset;
                 m_object.attr("_draw_particles")(
                     np_view(centers_ptr, {n_particels, 2}),
-                    radius, 
+                    radius,
                     np_view(color_ptr, {n_particels, 4})
                 );
                 color_offset += 4 * n_particels;
@@ -307,7 +307,7 @@ public:
             coord_offset += 2* n_particels;
         }
         #endif
-        
+
         if(!m_solid_polygon_sizes.empty())
         {
             m_object.attr("_draw_solid_polygons")(
@@ -435,7 +435,7 @@ public:
     // solid circle
     coordinate_vector_type      m_solid_circle_coords;
     coordinate_vector_type      m_solid_circle_radii;
-    color_vector_type           m_solid_circle_colors;  
+    color_vector_type           m_solid_circle_colors;
 
     // points
     coordinate_vector_type      m_point_coords;

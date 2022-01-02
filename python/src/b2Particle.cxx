@@ -14,19 +14,19 @@ void exportB2Particle(py::module & pybox2dModule){
 
 
     py::class_<b2ParticleColor>(pybox2dModule, "ParticleColor")
-        .def(py::init([](py::tuple t) { 
+        .def(py::init([](py::tuple t) {
             if(py::len(t) != 4)
             {
                 throw std::runtime_error("tuple has wrong length");
             }
             return new b2ParticleColor(
-                    t[0].cast<uint8_t>(), 
+                    t[0].cast<uint8_t>(),
                     t[1].cast<uint8_t>(),
                     t[2].cast<uint8_t>(),
                     t[3].cast<uint8_t>()
-                ); 
+                );
             }
-        )) 
+        ))
 
         .def(py::init<uint8,uint8,uint8,uint8>(),
             py::arg("r"),py::arg("g"),py::arg("b"),py::arg("a")
@@ -50,5 +50,3 @@ void exportB2Particle(py::module & pybox2dModule){
         .def_readwrite("group",&PyParticleDef::group)
     ;
 }
-
-

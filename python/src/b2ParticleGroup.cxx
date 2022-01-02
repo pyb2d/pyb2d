@@ -19,7 +19,7 @@ void exportB2ParticleGroup(py::module & pybox2dModule){
         //.def("SetRadius",&b2ParticleSystem::SetRadius)
         //.def("SetDamping",&b2ParticleSystem::SetDamping)
         //
-        //      
+        //
 
 
     .def_readwrite("flags",&b2ParticleGroupDef::flags)
@@ -59,5 +59,3 @@ void exportB2ParticleGroup(py::module & pybox2dModule){
     ;
 
 }
-
-

@@ -32,7 +32,7 @@ struct b2RandomizedRadialEmitterDef : public b2EmitterDefBase
 struct b2RandomizedLinearEmitterDef : public b2EmitterDefBase
 {
     b2RandomizedLinearEmitterDef();
- 
+
     b2Vec2 size;
     b2Vec2 velocity;
 };
@@ -40,7 +40,7 @@ struct b2RandomizedLinearEmitterDef : public b2EmitterDefBase
 struct b2LinearEmitterArrayDef : public b2EmitterDefBase
 {
     b2LinearEmitterArrayDef();
-    
+
     std::size_t n_emitter;
     float length;
     b2Vec2 velocity;
@@ -52,7 +52,7 @@ class b2EmitterBase
 {
 public:
     b2EmitterBase(
-        b2ParticleSystem * particleSystem, 
+        b2ParticleSystem * particleSystem,
         const b2EmitterDefBase & def
     );
     void CreateParticle(b2ParticleDef  def);
@@ -88,8 +88,8 @@ protected:
 
 class b2RandomizedLinearEmitter: public b2EmitterBase {
 public:
-    b2RandomizedLinearEmitter( 
-        b2ParticleSystem * particleSystem, 
+    b2RandomizedLinearEmitter(
+        b2ParticleSystem * particleSystem,
         const b2RandomizedLinearEmitterDef & def
     );
 
@@ -105,8 +105,8 @@ private:
 
 class b2LinearEmitterArray: public b2EmitterBase {
 public:
-    b2LinearEmitterArray( 
-        b2ParticleSystem * particleSystem, 
+    b2LinearEmitterArray(
+        b2ParticleSystem * particleSystem,
         const b2LinearEmitterArrayDef & def
     );
 
@@ -121,8 +121,8 @@ private:
 class b2RandomizedRadialEmitter : b2EmitterBase
 {
 public:
-    b2RandomizedRadialEmitter( 
-        b2ParticleSystem * particleSystem, 
+    b2RandomizedRadialEmitter(
+        b2ParticleSystem * particleSystem,
         const b2RandomizedRadialEmitterDef & def
     );
 
@@ -136,5 +136,3 @@ private:
     std::uniform_real_distribution<float> m_uniform_angle;
     std::mt19937 m_gen;
 };
-
-

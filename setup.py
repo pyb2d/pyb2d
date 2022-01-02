@@ -41,9 +41,7 @@ binding_sources = [
 ]
 
 include_dirs = ["external/pybind11-2.8.1/include/", "python/src/"]
-macros = [
-    ("B2_USER_SETTINGS", 1),
-]
+macros = [("B2_USER_SETTINGS", 1)]
 if liquidfun:
     binding_sources += [
         "python/src/b2Particle.cxx",
@@ -52,9 +50,7 @@ if liquidfun:
         "python/src/pyEmitter.cxx",
         "python/src/extensions/b2Emitter.cpp",
     ]
-    macros += [
-        ("PYBOX2D_LIQUID_FUN", 1),
-    ]
+    macros += [("PYBOX2D_LIQUID_FUN", 1)]
     base_dir = "external/box2d-ecf398ca73f31b282cf9e6a500d8af6665654617"
 
 
@@ -62,10 +58,7 @@ else:
     base_dir = "external/box2d-2.4.1"
 
 
-box2d_include_dirs = [
-    os.path.join(base_dir, "include"),
-    os.path.join(base_dir, "src"),
-]
+box2d_include_dirs = [os.path.join(base_dir, "include"), os.path.join(base_dir, "src")]
 src_dir = os.path.join(base_dir, "src")
 box2d_sources = sorted([str(path) for path in Path(src_dir).rglob("*.cpp")])
 
@@ -77,7 +70,7 @@ ext_modules = [
         include_dirs=box2d_include_dirs + include_dirs,
         # Example: passing in the version to the compiled code
         define_macros=[("VERSION_INFO", __version__)] + macros,
-    ),
+    )
 ]
 
 

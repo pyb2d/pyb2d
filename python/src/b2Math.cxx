@@ -10,14 +10,14 @@ b2Vec2 operator+ (const b2Vec2 & lhs, const py::tuple & rhs)
 {
     return b2Vec2(
         lhs.x + rhs[0].cast<float>()  ,
-        lhs.y + rhs[1].cast<float>()  
+        lhs.y + rhs[1].cast<float>()
     );
 }
 b2Vec2 operator+ (const py::tuple & lhs, const b2Vec2 & rhs)
 {
     return b2Vec2(
          lhs[0].cast<float>() + rhs.x   ,
-         lhs[1].cast<float>() + rhs.y   
+         lhs[1].cast<float>() + rhs.y
     );
 }
 
@@ -25,7 +25,7 @@ b2Vec2 operator+ (const py::tuple & lhs, const b2Vec2 & rhs)
 // {
 //     return b2Vec2(
 //          lhs.x + rhs.x   ,
-//          lhs.y + rhs.y   
+//          lhs.y + rhs.y
 //     );
 // }
 
@@ -34,14 +34,14 @@ b2Vec2 operator/ (const b2Vec2 & lhs, float rhs)
 {
     return b2Vec2(
          lhs.x / rhs  ,
-         lhs.y / rhs    
+         lhs.y / rhs
     );
 }
 b2Vec2 operator* (const b2Vec2 & lhs, float rhs)
 {
     return b2Vec2(
          lhs.x * rhs  ,
-         lhs.y * rhs    
+         lhs.y * rhs
     );
 }
 #endif
@@ -56,20 +56,20 @@ void exportB2Math(py::module & pybox2dModule){
 
     py::class_<b2Vec2>(pybox2dModule,"Vec2")
 
-       .def(py::init([](py::tuple t) { 
+       .def(py::init([](py::tuple t) {
             if(py::len(t) != 2)
             {
                 throw std::runtime_error("tuple has wrong length");
             }
             return new b2Vec2(t[0].cast<float>(), t[1].cast<float>()); }
-        )) 
-       .def(py::init([](py::list t) { 
+        ))
+       .def(py::init([](py::list t) {
             if(py::len(t) != 2)
             {
                 throw std::runtime_error("list has wrong length");
             }
             return new b2Vec2(t[0].cast<float>(), t[1].cast<float>()); }
-        )) 
+        ))
        .def(py::init<>())
        .def(py::init<b2Vec2>())
        .def(py::init<float,float>(),py::arg("x"),py::arg("y"))
@@ -162,7 +162,7 @@ void exportB2Math(py::module & pybox2dModule){
         .def("get_inverse_22",&b2Mat33::GetInverse22,py::arg("M"))
         .def("get_sym_inverse_33",&b2Mat33::GetSymInverse33,py::arg("M"))
         // operators
-        // 
+        //
     ;
 
     py::class_<b2Rot>(pybox2dModule,"Rot")
@@ -177,7 +177,7 @@ void exportB2Math(py::module & pybox2dModule){
         .def("get_x_axis",&b2Rot::GetXAxis)
         .def("get_y_axis",&b2Rot::GetYAxis)
         // operators
-        // 
+        //
     ;
 
     py::class_<b2Transform>(pybox2dModule,"Transform")
@@ -193,7 +193,7 @@ void exportB2Math(py::module & pybox2dModule){
         // .def("GetPositionY",&b2Transform::GetPositionY)
         //.def("GetRotationCos",&b2Transform::GetRotationCos)
         // operators
-        // 
+        //
     ;
 
     py::class_<b2Sweep>(pybox2dModule,"Sweep")
@@ -209,7 +209,7 @@ void exportB2Math(py::module & pybox2dModule){
         .def("Advance",&b2Sweep::Advance,py::arg("alpha"))
         .def("Normalize",&b2Sweep::Normalize)
         // operators
-        // 
+        //
     ;
 
 

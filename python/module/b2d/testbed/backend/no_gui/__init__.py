@@ -1,1 +1,1 @@
-from .no_gui import NoGui 
+from .no_gui import NoGui

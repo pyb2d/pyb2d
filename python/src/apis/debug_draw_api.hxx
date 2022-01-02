@@ -33,7 +33,7 @@ void add_debug_draw_api(PY_CLS & py_cls)
         .def("_clear_flags_int",[](CLS * draw,const int flag){draw->ClearFlags(flag);})
 
     ;
-}  
+}
 
 
 template<class CLS, class PY_CLS>
@@ -53,4 +53,4 @@ void add_debug_draw_transform_api(PY_CLS & py_cls)
         .def_readwrite("translate",&CLS::m_translate)
         .def_readwrite("flip_y",&CLS::m_flip_y)
     ;
-}  
+}

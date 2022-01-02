@@ -51,22 +51,20 @@ void exportB2ParticleSystem(py::module & pybox2dModule){
         )
         .def("destroy_oldest_particle", &b2ParticleSystem::DestroyOldestParticle,
             py::arg("index"), py::arg("call_destruction_listener"))
-        .def("destroy_particles_in_shape", 
+        .def("destroy_particles_in_shape",
         [](b2ParticleSystem * self,  const b2Shape& shape, const b2Transform& xf,bool callDestructionListener)
             {
                 self->DestroyParticlesInShape(shape, xf, callDestructionListener);
-            }, 
+            },
             py::arg("shape"), py::arg("xf"), py::arg("call_destruction_listener") = false
         )
         .def("create_particle",
         [](b2ParticleSystem * self,  PyDefExtender<b2ParticleDef>  & def)
             {
                 self->CreateParticle(def);
-            }, 
+            },
             py::arg("def")
         )
     ;
 
 }
-
-
