@@ -77,5 +77,5 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
     exportEmitter(pybox2dModule);
     #endif
 
-    pybox2dModule.attr("__version__") = "0.7.1";
+    pybox2dModule.attr("__version__") = "0.7.2";
 }
