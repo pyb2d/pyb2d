@@ -1,7 +1,7 @@
-#ifndef PYBOX2D_BOX2D_WRAPPER_HPP
-#define PYBOX2D_BOX2D_WRAPPER_HPP
+#ifndef PYB2D_BOX2D_WRAPPER_HPP
+#define PYB2D_BOX2D_WRAPPER_HPP
 
-#ifdef PYBOX2D_OLD_BOX2D
+#ifdef PYB2D_OLD_BOX2D
     #include <Box2D/Box2D.h>
 #else
     #include <box2d/box2d.h>
@@ -9,7 +9,7 @@
 
 
 
-#ifdef PYBOX2D_OLD_BOX2D
+#ifdef PYB2D_OLD_BOX2D
 template<class T>
 void set_user_data(T * obj, void * ud)
 {
@@ -56,4 +56,4 @@ void set_user_data_for_def(T * def, void * ud)
 #endif
 
 
-#endif //PYBOX2D_BOX2D_WRAPPER_HPP
+#endif //PYB2D_BOX2D_WRAPPER_HPP

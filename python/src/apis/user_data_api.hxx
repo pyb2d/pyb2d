@@ -76,7 +76,7 @@ public:
     // }
 };
 
-#ifdef PYBOX2D_LIQUID_FUN
+#ifdef PYB2D_LIQUID_FUN
 template<>
 class PyDefExtender<b2ParticleDef> : public b2ParticleDef
 {

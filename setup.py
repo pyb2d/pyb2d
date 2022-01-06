@@ -50,7 +50,7 @@ if liquidfun:
         "python/src/pyEmitter.cxx",
         "python/src/extensions/b2Emitter.cpp",
     ]
-    macros += [("PYBOX2D_LIQUID_FUN", 1)]
+    macros += [("PYB2D_LIQUID_FUN", 1)]
     base_dir = "external/box2d-ecf398ca73f31b282cf9e6a500d8af6665654617"
 
 

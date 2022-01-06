@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.1)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
-project (pybox2d)
+project (pyb2d)
 
 
 set(PROJECT_INCLUDE_DIR    ${CMAKE_CURRENT_SOURCE_DIR}/include)
-set(CPP_ROOT_FOLDER_NAME   pybox2d)
+set(CPP_ROOT_FOLDER_NAME   pyb2d)
 include_directories(${PROJECT_INCLUDE_DIR})
 
 # C++ 14
@@ -25,15 +25,15 @@ endif()
 # Python
 # ============
 OPTION(BUILD_PYTHON "${PROJECT_NAME} python binding" ON)
-OPTION(PYBOX2D_LIQUID_FUN "${PROJECT_NAME} liquidfun" ON)
+OPTION(PYB2D_LIQUID_FUN "${PROJECT_NAME} liquidfun" ON)
 if(BUILD_PYTHON)
     add_subdirectory(python)
     # add_subdirectory(old_python)
 endif()
 
-if(PYBOX2D_LIQUID_FUN)
-    add_compile_definitions(PYBOX2D_LIQUID_FUN)
-    # add_compile_definitions(PYBOX2D_OLD_BOX2D)
+if(PYB2D_LIQUID_FUN)
+    add_compile_definitions(PYB2D_LIQUID_FUN)
+    # add_compile_definitions(PYB2D_OLD_BOX2D)
 endif()
 
 # Installation

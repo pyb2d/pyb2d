@@ -53,7 +53,7 @@ public:
         }
         delete_user_data_if_has_user_data(fixture);
     }
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     void SayGoodbye(b2ParticleGroup* group) override {
         if(m_has_obj)
         {
@@ -98,7 +98,7 @@ public:
         py::object f = object_.attr("say_goodbye_fixture");
         f(FixtureHolder(fixture));
     }
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     virtual void SayGoodbye(b2ParticleGroup* group){
         py::object f = object_.attr("say_goodbye_particle_group");
         f(ParticleGroupHolder(group));
@@ -128,7 +128,7 @@ public:
         bool ret = f(FixtureHolder(fixtureA), FixtureHolder(fixtureB)).cast<bool>();
         return ret;
     }
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     virtual bool ShouldCollide(b2Fixture* fixtureA, b2ParticleSystem* particleSystem, int32 particleIndex) {
         py::object f = object_.attr("should_collide_fixture_particle");
         bool ret = f(FixtureHolder(fixtureA), ParticleSystemHolder(particleSystem), particleIndex).cast<bool>();
@@ -155,7 +155,7 @@ public:
 
         m_has_begin_contact = py::hasattr(object_, "begin_contact");
         m_has_end_contact = py::hasattr(object_, "end_contact");
-        #ifdef PYBOX2D_LIQUID_FUN
+        #ifdef PYB2D_LIQUID_FUN
         m_has_begin_contact_particle_body  = py::hasattr(object_, "begin_contact_particle_body");
         m_has_end_contact_fixture_particle  = py::hasattr(object_, "end_contact_fixture_particle");
         m_has_begin_contact_particle  = py::hasattr(object_, "begin_contact_particle");
@@ -208,7 +208,7 @@ public:
 
     }
 
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     virtual void BeginContact(b2ParticleSystem* particleSystem,
                               b2ParticleBodyContact* particleBodyContact){
 
@@ -268,7 +268,7 @@ private:
 
     bool m_has_begin_contact;
     bool m_has_end_contact;
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     bool m_has_begin_contact_particle_body;
     bool m_has_end_contact_fixture_particle;
     bool m_has_begin_contact_particle;
@@ -293,7 +293,7 @@ public:
         return ret;
     }
 
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     /// Called for each particle found in the query AABB.
     /// @return false to terminate the query.
     virtual bool ReportParticle(const b2ParticleSystem* particleSystem,
@@ -350,7 +350,7 @@ public:
     }
 
 
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
 
     /// cast proceeds by returning a float:
     /// return <=0: ignore the remaining particles in this particle system

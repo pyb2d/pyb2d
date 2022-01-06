@@ -29,7 +29,7 @@ b2Vec2 operator+ (const py::tuple & lhs, const b2Vec2 & rhs)
 //     );
 // }
 
-#ifndef PYBOX2D_LIQUID_FUN
+#ifndef PYB2D_LIQUID_FUN
 b2Vec2 operator/ (const b2Vec2 & lhs, float rhs)
 {
     return b2Vec2(
@@ -46,15 +46,15 @@ b2Vec2 operator* (const b2Vec2 & lhs, float rhs)
 }
 #endif
 
-void exportB2Math(py::module & pybox2dModule){
+void exportB2Math(py::module & pyb2dModule){
 
-    pybox2dModule.def("b2IsValid",&b2IsValid, py::arg("x"));
-    //pybox2dModule.def("b2InvSqrt",&b2InvSqrt, py::arg("x"));
-    pybox2dModule.def("b2Sqrt",&sqrtf, py::arg("x"));
-    pybox2dModule.def("b2Atan2",&atan2f, py::arg("x"),py::arg("y"));
+    pyb2dModule.def("b2IsValid",&b2IsValid, py::arg("x"));
+    //pyb2dModule.def("b2InvSqrt",&b2InvSqrt, py::arg("x"));
+    pyb2dModule.def("b2Sqrt",&sqrtf, py::arg("x"));
+    pyb2dModule.def("b2Atan2",&atan2f, py::arg("x"),py::arg("y"));
 
 
-    py::class_<b2Vec2>(pybox2dModule,"Vec2")
+    py::class_<b2Vec2>(pyb2dModule,"Vec2")
 
        .def(py::init([](py::tuple t) {
             if(py::len(t) != 2)
@@ -105,7 +105,7 @@ void exportB2Math(py::module & pybox2dModule){
     py::implicitly_convertible<py::tuple, b2Vec2>();
     py::implicitly_convertible<py::list, b2Vec2>();
 
-    py::class_<b2Vec3>(pybox2dModule,"Vec3")
+    py::class_<b2Vec3>(pyb2dModule,"Vec3")
         .def(py::init<>())
         .def(py::init<float,float,float>(),py::arg("x"),py::arg("y"),py::arg("z"))
         .def_readwrite("x", &b2Vec3::x)
@@ -123,7 +123,7 @@ void exportB2Math(py::module & pybox2dModule){
         // .def_property_readonly("length_squared",&b2Vec3::LengthSquared)
     ;
 
-    // py::class_<b2Vec4>(pybox2dModule,"b2Vec4")
+    // py::class_<b2Vec4>(pyb2dModule,"b2Vec4")
     //     .def(py::init<>())
     //     .def(py::init<float,float,float,float>(),py::arg("x"),py::arg("y"),py::arg("z"),py::arg("w"))
     //     .def_readwrite("x", &b2Vec4::x)
@@ -134,7 +134,7 @@ void exportB2Math(py::module & pybox2dModule){
     //     //.def_property_readonly("length_squared",&b2Vec4::LengthSquared)
     // ;
 
-    py::class_<b2Mat22>(pybox2dModule,"Mat22")
+    py::class_<b2Mat22>(pyb2dModule,"Mat22")
         .def(py::init<>())
         .def(py::init<const b2Vec2 &,const b2Vec2 &>(),py::arg("c1"),py::arg("c2"))
         .def(py::init<float,float,float,float>(),py::arg("a11"),py::arg("a12"),py::arg("a21"),py::arg("a22"))
@@ -149,7 +149,7 @@ void exportB2Math(py::module & pybox2dModule){
         // operators
     ;
 
-    py::class_<b2Mat33>(pybox2dModule,"Mat33")
+    py::class_<b2Mat33>(pyb2dModule,"Mat33")
         .def(py::init<>())
         .def(py::init<const b2Vec3 &,const b2Vec3 &,const b2Vec3 &>(),py::arg("c1"),py::arg("c2"),py::arg("c3"))
         .def_readwrite("ex", &b2Mat33::ex)
@@ -165,7 +165,7 @@ void exportB2Math(py::module & pybox2dModule){
         //
     ;
 
-    py::class_<b2Rot>(pybox2dModule,"Rot")
+    py::class_<b2Rot>(pyb2dModule,"Rot")
         .def(py::init<>())
         .def(py::init<float>(),py::arg("angle"))
         .def_readwrite("s", &b2Rot::s)
@@ -180,7 +180,7 @@ void exportB2Math(py::module & pybox2dModule){
         //
     ;
 
-    py::class_<b2Transform>(pybox2dModule,"Transform")
+    py::class_<b2Transform>(pyb2dModule,"Transform")
         .def(py::init<>())
         .def(py::init<const b2Vec2 &, const b2Rot & >(),py::arg("position"),py::arg("rotation"))
         .def_readwrite("p", &b2Transform::p)
@@ -196,7 +196,7 @@ void exportB2Math(py::module & pybox2dModule){
         //
     ;
 
-    py::class_<b2Sweep>(pybox2dModule,"Sweep")
+    py::class_<b2Sweep>(pyb2dModule,"Sweep")
         .def(py::init<>())
         .def_readwrite("local_center", &b2Sweep::localCenter)
         .def_readwrite("c0", &b2Sweep::c0)
@@ -213,63 +213,63 @@ void exportB2Math(py::module & pybox2dModule){
     ;
 
 
-    pybox2dModule.def("dot", [](const b2Vec2& a, const b2Vec2& b){
+    pyb2dModule.def("dot", [](const b2Vec2& a, const b2Vec2& b){
         return b2Dot(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("dot", [](const b2Vec3& a, const b2Vec3& b){
+    pyb2dModule.def("dot", [](const b2Vec3& a, const b2Vec3& b){
         return b2Dot(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("cross", [](const b2Vec2& a, const b2Vec2& b){
+    pyb2dModule.def("cross", [](const b2Vec2& a, const b2Vec2& b){
         return b2Cross(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("cross", [](const b2Vec3& a, const b2Vec3& b){
+    pyb2dModule.def("cross", [](const b2Vec3& a, const b2Vec3& b){
         return b2Cross(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("cross", [](const b2Vec2& a, float b){
+    pyb2dModule.def("cross", [](const b2Vec2& a, float b){
         return b2Cross(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("cross", [](float a, const b2Vec2& b){
+    pyb2dModule.def("cross", [](float a, const b2Vec2& b){
         return b2Cross(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("mulT", [](const b2Mat22 & A, const b2Vec2& v){
+    pyb2dModule.def("mulT", [](const b2Mat22 & A, const b2Vec2& v){
         return b2MulT(A,v);
     },py::arg("A"),py::arg("v"));
 
-    pybox2dModule.def("mulT", [](const b2Rot & q, const b2Vec2& v){
+    pyb2dModule.def("mulT", [](const b2Rot & q, const b2Vec2& v){
         return b2MulT(q,v);
     },py::arg("q"),py::arg("v"));
 
-    pybox2dModule.def("distance", [](const b2Vec2& a, const b2Vec2& b){
+    pyb2dModule.def("distance", [](const b2Vec2& a, const b2Vec2& b){
         return b2Distance(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("distance_squared", [](const b2Vec2& a, const b2Vec2& b){
+    pyb2dModule.def("distance_squared", [](const b2Vec2& a, const b2Vec2& b){
         return b2DistanceSquared(a,b);
     },py::arg("a"),py::arg("b"));
 
-    pybox2dModule.def("mul", [](const b2Mat22 & A, const b2Mat22& B){
+    pyb2dModule.def("mul", [](const b2Mat22 & A, const b2Mat22& B){
         return b2Mul(A,B);
     },py::arg("A"),py::arg("B"));
 
-    pybox2dModule.def("mul", [](const b2Mat33 & A, const b2Vec3& v){
+    pyb2dModule.def("mul", [](const b2Mat33 & A, const b2Vec3& v){
         return b2Mul(A,v);
     },py::arg("A"),py::arg("v"));
 
-    pybox2dModule.def("mul", [](const b2Rot & q, const b2Rot& r){
+    pyb2dModule.def("mul", [](const b2Rot & q, const b2Rot& r){
         return b2Mul(q,r);
     },py::arg("q"),py::arg("r"));
 
-    pybox2dModule.def("mul", [](const b2Rot & q, const b2Vec2& v){
+    pyb2dModule.def("mul", [](const b2Rot & q, const b2Vec2& v){
         return b2Mul(q,v);
     },py::arg("q"),py::arg("v"));
 
-    pybox2dModule.def("mul", [](const b2Transform & T, const b2Vec2& v){
+    pyb2dModule.def("mul", [](const b2Transform & T, const b2Vec2& v){
         return b2Mul(T,v);
     },py::arg("T"),py::arg("v"));
 }

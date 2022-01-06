@@ -1,5 +1,5 @@
-#ifndef PYBOX2D_BATCH_DEBUG_DRAW_CALLER
-#define PYBOX2D_BATCH_DEBUG_DRAW_CALLER
+#ifndef PYB2D_BATCH_DEBUG_DRAW_CALLER
+#define PYB2D_BATCH_DEBUG_DRAW_CALLER
 #include "../numpy.hxx"
 
 #include "extended_debug_draw_base.hxx"
@@ -254,7 +254,7 @@ public:
 
     }
 
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     virtual void DrawParticles(const b2Vec2 *centers, float radius, const b2ParticleColor *colors, const int32 count) {
         m_particle_systems_size.push_back(count);
         this->add(radius, m_particle_systems_radii);
@@ -274,7 +274,7 @@ public:
     void trigger_callbacks(){
 
 
-        #ifdef PYBOX2D_LIQUID_FUN
+        #ifdef PYB2D_LIQUID_FUN
         //py::object f = m_object.attr("draw_particles");
         auto coord_offset = 0;
         auto color_offset = 0;
@@ -376,7 +376,7 @@ public:
         m_point_colors.resize(0);
         m_segment_coords.resize(0);
         m_segment_colors.resize(0);
-        #ifdef PYBOX2D_LIQUID_FUN
+        #ifdef PYB2D_LIQUID_FUN
         m_particle_systems_centers.resize(0);
         m_particle_systems_size.resize(0);
         m_particle_systems_radii.resize(0);
@@ -397,7 +397,7 @@ public:
         color_array.push_back(uint8_t(color.g * 255.0 + 0.5));
         color_array.push_back(uint8_t(color.b * 255.0 + 0.5));
     }
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     void add_color(const b2ParticleColor & color, std::vector<float> & color_array)
     {
         color_array.push_back(float(color.r)/255.0f);
@@ -446,7 +446,7 @@ public:
     coordinate_vector_type      m_segment_coords;
     color_vector_type           m_segment_colors;
 
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
 
     // particles
     coordinate_vector_type      m_particle_systems_centers;

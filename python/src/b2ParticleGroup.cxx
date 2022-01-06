@@ -10,11 +10,11 @@ namespace py = pybind11;
 
 
 
-void exportB2ParticleGroup(py::module & pybox2dModule){
+void exportB2ParticleGroup(py::module & pyb2dModule){
 
 
 
-    py::class_<b2ParticleGroupDef>(pybox2dModule, "ParticleGroupDef")
+    py::class_<b2ParticleGroupDef>(pyb2dModule, "ParticleGroupDef")
     .def(py::init<>())
         //.def("SetRadius",&b2ParticleSystem::SetRadius)
         //.def("SetDamping",&b2ParticleSystem::SetDamping)
@@ -54,7 +54,7 @@ void exportB2ParticleGroup(py::module & pybox2dModule){
     ;
 
 
-    py::class_<b2ParticleGroup, ParticleGroupHolder>(pybox2dModule, "b2ParticleGroup")
+    py::class_<b2ParticleGroup, ParticleGroupHolder>(pyb2dModule, "b2ParticleGroup")
         //.def(py::init<>())
     ;
 

@@ -14,10 +14,10 @@ namespace py = pybind11;
 
 
 
-void exportB2Draw(py::module & pybox2dModule){
+void exportB2Draw(py::module & pyb2dModule){
 
 
-    py::class_<b2Color>(pybox2dModule, "Color")
+    py::class_<b2Color>(pyb2dModule, "Color")
         .def(py::init([](py::tuple t) {
             if(py::len(t) != 3)
             {
@@ -39,7 +39,7 @@ void exportB2Draw(py::module & pybox2dModule){
     py::implicitly_convertible<py::tuple, b2Color>();
 
     {
-        auto pyCls = py::class_<PyB2Draw>(pybox2dModule,"DrawCaller");
+        auto pyCls = py::class_<PyB2Draw>(pyb2dModule,"DrawCaller");
         add_debug_draw_api<PyB2Draw>(pyCls);
         add_debug_draw_transform_api<PyB2Draw>(pyCls);
         pyCls
@@ -56,7 +56,7 @@ void exportB2Draw(py::module & pybox2dModule){
     }
     {
         using batch_debug_draw_type = BatchDebugDrawCaller<uint8_t, float, true>;
-        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller_uint8_float_True");
+        auto pyCls = py::class_<batch_debug_draw_type >(pyb2dModule, "BatchDebugDrawCaller_uint8_float_True");
         add_debug_draw_api<batch_debug_draw_type>(pyCls);
         add_debug_draw_transform_api<batch_debug_draw_type>(pyCls);
         pyCls
@@ -68,7 +68,7 @@ void exportB2Draw(py::module & pybox2dModule){
     // for kivy backend (float colors, float coordinates, no transform)
     {
         using batch_debug_draw_type = BatchDebugDrawCaller<float, float, false>;
-        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller_float_float_False");
+        auto pyCls = py::class_<batch_debug_draw_type >(pyb2dModule, "BatchDebugDrawCaller_float_float_False");
         add_debug_draw_api<batch_debug_draw_type>(pyCls);
         pyCls
             .def(py::init<const py::object &>())
@@ -78,7 +78,7 @@ void exportB2Draw(py::module & pybox2dModule){
     // for ipycanvas and pygame backend (uint8 colors, int32 coordinates, with transform)
     {
         using batch_debug_draw_type = BatchDebugDrawCaller<uint8_t, int32_t, true>;
-        auto pyCls = py::class_<batch_debug_draw_type >(pybox2dModule, "BatchDebugDrawCaller_uint8_int32_True");
+        auto pyCls = py::class_<batch_debug_draw_type >(pyb2dModule, "BatchDebugDrawCaller_uint8_int32_True");
         add_debug_draw_api<batch_debug_draw_type>(pyCls);
         add_debug_draw_transform_api<batch_debug_draw_type>(pyCls);
         pyCls

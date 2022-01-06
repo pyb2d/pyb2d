@@ -122,10 +122,10 @@ void add_batch_api(
 }
 
 
-void exportBodyBatchApi(py::module & pybox2dModule){
+void exportBodyBatchApi(py::module & pyb2dModule){
 
     using self_type = BodyVector;
-    auto py_cls =  py::class_<self_type>(pybox2dModule, "_BodyVector");
+    auto py_cls =  py::class_<self_type>(pyb2dModule, "_BodyVector");
     add_batch_api<self_type>(py_cls, "Body", "body");
 
     py_cls
@@ -275,11 +275,11 @@ void add_joint_base_batch_api(
 
 
 
-void exportJointBatchApi(py::module & pybox2dModule){
+void exportJointBatchApi(py::module & pyb2dModule){
 
     {
         using self_type = BatchVector<b2Joint>;
-        auto py_cls =  py::class_<self_type>(pybox2dModule, "_JointVector");
+        auto py_cls =  py::class_<self_type>(pyb2dModule, "_JointVector");
         add_batch_api<self_type>(py_cls, "Joint", "joint");
         add_joint_base_batch_api<self_type>(py_cls);
 
@@ -288,7 +288,7 @@ void exportJointBatchApi(py::module & pybox2dModule){
     }
     {
         using self_type = BatchVector<b2DistanceJoint>;
-        auto py_cls =  py::class_<self_type>(pybox2dModule, "_DistanceJointVector");
+        auto py_cls =  py::class_<self_type>(pyb2dModule, "_DistanceJointVector");
         add_batch_api<self_type>(py_cls, "DistanceJoint", "joint");
         add_joint_base_batch_api<self_type>(py_cls);
 
@@ -298,7 +298,7 @@ void exportJointBatchApi(py::module & pybox2dModule){
     }
 }
 
-void exportBatchApi(py::module & pybox2dModule){
-    exportBodyBatchApi(pybox2dModule);
-    exportJointBatchApi(pybox2dModule);
+void exportBatchApi(py::module & pyb2dModule){
+    exportBodyBatchApi(pyb2dModule);
+    exportJointBatchApi(pyb2dModule);
 }

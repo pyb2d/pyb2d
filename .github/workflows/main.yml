@@ -25,7 +25,7 @@ jobs:
         uses: mamba-org/provision-with-micromamba@main
         with:
           environment-file: dev-requirements.yml
-          environment-name: pybox2d
+          environment-name: pyb2d
 
       - name: install cxx compiler
         shell: bash -l {0}
@@ -39,7 +39,7 @@ jobs:
           cd bld
           cmake .. \
            -DBUILD_PYTHON=ON\
-           -DPYBOX2D_LIQUID_FUN=${{matrix.liquidfun}} \
+           -DPYB2D_LIQUID_FUN=${{matrix.liquidfun}} \
            -DCMAKE_PREFIX_PATH=$CONDA_PREFIX \
            -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
 
@@ -88,7 +88,7 @@ jobs:
         uses: mamba-org/provision-with-micromamba@main
         with:
           environment-file: dev-requirements.yml
-          environment-name: pybox2d
+          environment-name: pyb2d
 
 
       # - name: micromamba shell hook
@@ -100,21 +100,21 @@ jobs:
       - name: install cxx compiler
         shell: cmd
         run: |
-          call C:\Users\runneradmin\micromamba\condabin\micromamba.bat activate pybox2d
+          call C:\Users\runneradmin\micromamba\condabin\micromamba.bat activate pyb2d
           micromamba install cxx-compiler -c conda-forge -y
 
 
       - name: cmake configure
         shell: cmd
         run: |
-          call C:\Users\runneradmin\micromamba\condabin\micromamba.bat activate pybox2d
+          call C:\Users\runneradmin\micromamba\condabin\micromamba.bat activate pyb2d
           mkdir -p build
           cd build
-          cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DPYBOX2D_LIQUID_FUN=ON -DDEPENDENCY_SEARCH_PREFIX="%CONDA_PREFIX%\Library" -DCMAKE_PREFIX_PATH="%CONDA_PREFIX%\Library" -DCMAKE_INSTALL_PREFIX="%CONDA_PREFIX%"
+          cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DPYB2D_LIQUID_FUN=ON -DDEPENDENCY_SEARCH_PREFIX="%CONDA_PREFIX%\Library" -DCMAKE_PREFIX_PATH="%CONDA_PREFIX%\Library" -DCMAKE_INSTALL_PREFIX="%CONDA_PREFIX%"
       - name: build
         shell: cmd
         run: |
-          call C:\Users\runneradmin\micromamba\condabin\micromamba.bat activate pybox2d
+          call C:\Users\runneradmin\micromamba\condabin\micromamba.bat activate pyb2d
           cd build
           set CL=/MP
           nmake install
