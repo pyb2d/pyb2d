@@ -14,17 +14,17 @@ namespace py = pybind11;
 
 
 
-void exportb2Collision(py::module & pybox2dModule){
+void exportb2Collision(py::module & pyb2dModule){
 
 
 
-    py::class_<b2AABB>(pybox2dModule,"b2AABB")
+    py::class_<b2AABB>(pyb2dModule,"b2AABB")
         .def(py::init<>())
         .def_readwrite("lower_bound",&b2AABB::lowerBound)
         .def_readwrite("upper_bound",&b2AABB::upperBound)
     ;
 
-    py::class_<b2ManifoldPoint>(pybox2dModule,"b2ManifoldPoint")
+    py::class_<b2ManifoldPoint>(pyb2dModule,"b2ManifoldPoint")
         .def_readonly("local_point",         &b2ManifoldPoint::localPoint)
         .def_readonly("normal_impulse",      &b2ManifoldPoint::normalImpulse)
         .def_readonly("tangent_impulse",     &b2ManifoldPoint::tangentImpulse)
@@ -33,7 +33,7 @@ void exportb2Collision(py::module & pybox2dModule){
 
 
 
-    auto b2ManifoldCls = py::class_<b2Manifold, ManifoldHolder>(pybox2dModule,"b2Manifold");
+    auto b2ManifoldCls = py::class_<b2Manifold, ManifoldHolder>(pyb2dModule,"b2Manifold");
     b2ManifoldCls
         .def(py::init<>())
 
@@ -58,7 +58,7 @@ void exportb2Collision(py::module & pybox2dModule){
     ;
 
 
-    py::class_<b2WorldManifold, WorldManifoldHolder >(pybox2dModule,"b2WorldManifold")
+    py::class_<b2WorldManifold, WorldManifoldHolder >(pyb2dModule,"b2WorldManifold")
         .def(py::init<>())
 
         .def_property_readonly("points",[](const b2Manifold * self){

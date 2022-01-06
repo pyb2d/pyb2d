@@ -15,12 +15,12 @@ namespace py = pybind11;
 
 
 
-void exportB2World(py::module & pybox2dModule){
+void exportB2World(py::module & pyb2dModule){
     typedef PyWorld world_type;
 
 
 
-    py::class_<world_type>(pybox2dModule,"_World")
+    py::class_<world_type>(pyb2dModule,"_World")
         .def(py::init<const b2Vec2 & >(),py::arg("gravity"))
 
 
@@ -117,7 +117,7 @@ void exportB2World(py::module & pybox2dModule){
             ,py::arg("joint")
         )
 
-        #ifdef PYBOX2D_LIQUID_FUN
+        #ifdef PYB2D_LIQUID_FUN
         .def("create_particle_system",
             [](world_type * w, const b2ParticleSystemDef * def)
             {
@@ -128,7 +128,7 @@ void exportB2World(py::module & pybox2dModule){
         .def("calculate_reasonable_particle_iterations",&world_type::CalculateReasonableParticleIterations)
         #endif
 
-        #ifdef PYBOX2D_LIQUID_FUN
+        #ifdef PYB2D_LIQUID_FUN
         .def("step",[&]
             (world_type & self, float timeStep,
             int32 velocityIterations, int32 positionIterations,
@@ -182,7 +182,7 @@ void exportB2World(py::module & pybox2dModule){
         }, py::return_value_policy::reference_internal)
 
 
-        #ifdef PYBOX2D_LIQUID_FUN
+        #ifdef PYB2D_LIQUID_FUN
         .def("_get_particleSystem_list", []( world_type & w){
             return  ParticleSystemHolder(w.GetParticleSystemList());
         })

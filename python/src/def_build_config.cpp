@@ -8,7 +8,7 @@ namespace py = pybind11;
 
 
 
-namespace pybox2d {
+namespace pyb2d {
 
     void def_build_config(py::module & m)
     {
@@ -20,10 +20,10 @@ namespace pybox2d {
 
         py::class_<BuildConfiguration>(m, "BuildConfiguration",
         "This class show the compile/build configuration\n"
-        "Of pybox2d\n"
+        "Of pyb2d\n"
         )
         .def_property_readonly_static("BOX_2D_VERSION", [](py::object /* self */) {
-            #ifdef  PYBOX2D_LIQUID_FUN
+            #ifdef  PYB2D_LIQUID_FUN
             return "2.4.1";
             #else
             return "2.4.1";
@@ -37,14 +37,14 @@ namespace pybox2d {
             #endif
         })
         .def_property_readonly_static("LIQUID_FUN", [](py::object /* self */) {
-            #ifdef  PYBOX2D_LIQUID_FUN
+            #ifdef  PYB2D_LIQUID_FUN
             return true;
             #else
             return false;
             #endif
         })
         .def_property_readonly_static("OLD_BOX2D", [](py::object /* self */) {
-            #ifdef  PYBOX2D_OLD_BOX2D
+            #ifdef  PYB2D_OLD_BOX2D
             return true;
             #else
             return false;

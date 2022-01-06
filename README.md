@@ -98,4 +98,4 @@ The pythonbytes podcast talked about the jupyter integration of pyb2d:
 ## History
 
 This project originated 2015 with the goal to create python bindings for liquidfun.
-The original work can still be found here: https://github.com/DerThorsten/liquidfun/tree/master/liquidfun/Box2D/pybox2d
+The original work can still be found here: https://github.com/DerThorsten/liquidfun/tree/master/liquidfun/Box2D/pyb2d

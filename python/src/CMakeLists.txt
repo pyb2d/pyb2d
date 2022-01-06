@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------------------------------------------
 
 
-if(NOT PYBOX2D_LIQUID_FUN)
+if(NOT PYB2D_LIQUID_FUN)
 
 
 SET(BOX2D_BASE_DIR ${CMAKE_SOURCE_DIR}/external/box2d-2.4.1)
@@ -36,7 +36,7 @@ ENDIF()
 
 
 
-if(NOT PYBOX2D_LIQUID_FUN)
+if(NOT PYB2D_LIQUID_FUN)
     set(LIQUIDFUN_EXTRA_SOURCES "")
 else()
     set(LIQUIDFUN_EXTRA_SOURCES
@@ -91,9 +91,9 @@ target_include_directories(${PY_MOD_LIB_NAME} PUBLIC
 target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DB2_USER_SETTINGS)
 
 
-if(PYBOX2D_LIQUID_FUN)
-    target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DPYBOX2D_LIQUID_FUN)  # -D removed
-    # target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DPYBOX2D_OLD_BOX2D)
+if(PYB2D_LIQUID_FUN)
+    target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DPYB2D_LIQUID_FUN)  # -D removed
+    # target_compile_definitions(${PY_MOD_LIB_NAME} PUBLIC -DPYB2D_OLD_BOX2D)
 endif()
 target_include_directories(${PY_MOD_LIB_NAME} PUBLIC  ${PY_INCLUDE_DIRS})
 

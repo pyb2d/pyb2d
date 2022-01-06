@@ -45,7 +45,7 @@ typedef Holder<b2Shape>             ShapeHolder;
 typedef Holder<b2Contact>           ContactHolder;
 typedef Holder<b2Manifold>          ManifoldHolder;
 typedef Holder<b2ContactImpulse>    ContactImpulseHolder;
-#ifdef PYBOX2D_LIQUID_FUN
+#ifdef PYB2D_LIQUID_FUN
 typedef Holder<b2ParticleSystem>    ParticleSystemHolder;
 typedef Holder<b2ParticleGroup>     ParticleGroupHolder;
 #endif

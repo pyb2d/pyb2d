@@ -9,10 +9,10 @@ namespace py = pybind11;
 
 
 
-void exportb2JointDef(py::module & pybox2dModule){
+void exportb2JointDef(py::module & pyb2dModule){
 
     typedef PyDefExtender<b2JointDef> PyJointDef;
-    py::class_<PyJointDef> jdClass(pybox2dModule, "JointDef");
+    py::class_<PyJointDef> jdClass(pyb2dModule, "JointDef");
     add_user_data_to_def_api<PyJointDef>(jdClass);
     jdClass
         .def(py::init<>())
@@ -38,14 +38,14 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2DistanceJointDef> PyDistanceJointDef;
-    py::class_<PyDistanceJointDef> b2DistanceJointDefCls(pybox2dModule,"DistanceJointDef",jdClass);
+    py::class_<PyDistanceJointDef> b2DistanceJointDefCls(pyb2dModule,"DistanceJointDef",jdClass);
     //add_user_data_to_def_api<b2DistanceJointDef>(b2DistanceJointDefCls);
     b2DistanceJointDefCls
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&PyDistanceJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyDistanceJointDef::localAnchorB)
         .def_readwrite("length", &PyDistanceJointDef::length)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_readwrite("frequency_hz", &PyDistanceJointDef::frequencyHz)
         .def_readwrite("damping_ratio", &PyDistanceJointDef::dampingRatio)
         #else
@@ -57,7 +57,7 @@ void exportb2JointDef(py::module & pybox2dModule){
     ;
 
     typedef PyDefExtender<b2FrictionJointDef> PyFrictionJointDef;
-    py::class_<PyFrictionJointDef>(pybox2dModule,"FrictionJointDef",jdClass)
+    py::class_<PyFrictionJointDef>(pyb2dModule,"FrictionJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&PyFrictionJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyFrictionJointDef::localAnchorB)
@@ -66,7 +66,7 @@ void exportb2JointDef(py::module & pybox2dModule){
     ;
 
     typedef PyDefExtender<b2GearJointDef> PyGearJointDef;
-    py::class_<PyGearJointDef>(pybox2dModule,"GearJointDef",jdClass)
+    py::class_<PyGearJointDef>(pyb2dModule,"GearJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("joint_1",&PyGearJointDef::joint1)
         .def_readwrite("joint_2",&PyGearJointDef::joint2)
@@ -75,7 +75,7 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2PrismaticJointDef> PyPrismaticJointDef;
-    py::class_<PyPrismaticJointDef>(pybox2dModule,"PrismaticJointDef",jdClass)
+    py::class_<PyPrismaticJointDef>(pyb2dModule,"PrismaticJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&PyPrismaticJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyPrismaticJointDef::localAnchorB)
@@ -91,7 +91,7 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2PulleyJointDef> PyPulleyJointDef;
-    py::class_<PyPulleyJointDef>(pybox2dModule,"PulleyJointDef",jdClass)
+    py::class_<PyPulleyJointDef>(pyb2dModule,"PulleyJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&PyPulleyJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyPulleyJointDef::localAnchorB)
@@ -105,7 +105,7 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2RevoluteJointDef> PyRevoluteJointDef;
-    py::class_<PyRevoluteJointDef>(pybox2dModule,"RevoluteJointDef",jdClass)
+    py::class_<PyRevoluteJointDef>(pyb2dModule,"RevoluteJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&PyRevoluteJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyRevoluteJointDef::localAnchorB)
@@ -121,7 +121,7 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     // typedef PyDefExtender<b2RopeJointDef> PyRopeJointDef;
-    // py::class_<PyRopeJointDef>(pybox2dModule,"RopeJointDef",jdClass)
+    // py::class_<PyRopeJointDef>(pyb2dModule,"RopeJointDef",jdClass)
     //     .def(py::init<>())
     //     .def_readwrite("local_anchor_a",&PyRopeJointDef::localAnchorA)
     //     .def_readwrite("local_anchor_b",&PyRopeJointDef::localAnchorB)
@@ -130,12 +130,12 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2WeldJointDef> Py2WeldJointDef;
-    py::class_<Py2WeldJointDef>(pybox2dModule,"WeldJointDef",jdClass)
+    py::class_<Py2WeldJointDef>(pyb2dModule,"WeldJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&Py2WeldJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&Py2WeldJointDef::localAnchorB)
         .def_readwrite("reference_angle", &Py2WeldJointDef::referenceAngle)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_readwrite("frequency_hz", &Py2WeldJointDef::frequencyHz)
         .def_readwrite("damping_ratio", &Py2WeldJointDef::dampingRatio)
         #else
@@ -146,7 +146,7 @@ void exportb2JointDef(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2WheelJointDef> PyWheelJointDef;
-    py::class_<PyWheelJointDef>(pybox2dModule,"WheelJointDef",jdClass)
+    py::class_<PyWheelJointDef>(pyb2dModule,"WheelJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("local_anchor_a",&PyWheelJointDef::localAnchorA)
         .def_readwrite("local_anchor_b",&PyWheelJointDef::localAnchorB)
@@ -157,7 +157,7 @@ void exportb2JointDef(py::module & pybox2dModule){
         .def_readwrite("enable_limit", &PyWheelJointDef::enableLimit)
         .def_readwrite("lower_translation", &PyWheelJointDef::lowerTranslation)
         .def_readwrite("upper_translation", &PyWheelJointDef::upperTranslation)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_readwrite("frequency_hz", &PyWheelJointDef::frequencyHz)
         .def_readwrite("damping_ratio", &PyWheelJointDef::dampingRatio)
         #else
@@ -167,11 +167,11 @@ void exportb2JointDef(py::module & pybox2dModule){
     ;
 
     typedef PyDefExtender<b2MouseJointDef> PyMouseJointDef;
-    py::class_<PyMouseJointDef>(pybox2dModule,"MouseJointDef",jdClass)
+    py::class_<PyMouseJointDef>(pyb2dModule,"MouseJointDef",jdClass)
         .def(py::init<>())
         .def_readwrite("target", &PyMouseJointDef::target)
         .def_readwrite("max_force", &PyMouseJointDef::maxForce)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_readwrite("frequency_hz", &PyMouseJointDef::frequencyHz)
         .def_readwrite("damping_ratio", &PyMouseJointDef::dampingRatio)
         #else

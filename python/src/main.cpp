@@ -16,7 +16,7 @@ namespace py = pybind11;
 
 
 namespace py = pybind11;
-namespace pybox2d{
+namespace pyb2d{
     void def_build_config(py::module &m);
 }
 void exportContact(py::module & );
@@ -31,7 +31,7 @@ void exportB2WorldCallbacks(py::module & );
 void exportB2Draw(py::module & );
 void exportb2Collision(py::module & );
 void exportBatchApi(py::module & );
-#ifdef PYBOX2D_LIQUID_FUN
+#ifdef PYB2D_LIQUID_FUN
 void exportB2Particle(py::module & );
 void exportB2ParticleSystem(py::module & );
 void exportB2ParticleGroup(py::module & );
@@ -41,14 +41,14 @@ void exportEmitter(py::module &);
 
 
 // Python Module and Docstrings
-PYBIND11_MODULE(_b2d , pybox2dModule)
+PYBIND11_MODULE(_b2d , pyb2dModule)
 {
     //xt::import_numpy();
 
-    pybox2dModule.doc() = R"pbdoc(
-        _pybox2d  python bindings
+    pyb2dModule.doc() = R"pbdoc(
+        _pyb2d  python bindings
 
-        .. currentmodule:: _pybox2d
+        .. currentmodule:: _pyb2d
 
         .. autosummary::
            :toctree: _generate
@@ -57,25 +57,25 @@ PYBIND11_MODULE(_b2d , pybox2dModule)
            MyClass
     )pbdoc";
 
-    pybox2d::def_build_config(pybox2dModule);
-    exportContact(pybox2dModule);
-    exportB2World(pybox2dModule);
-    exportB2Body(pybox2dModule);
-    exportB2Math(pybox2dModule);
-    exportB2Shape(pybox2dModule);
-    exportB2Fixture(pybox2dModule);
-    exportb2Joint(pybox2dModule);
-    exportb2JointDef(pybox2dModule);
-    exportB2WorldCallbacks(pybox2dModule);
-    exportB2Draw(pybox2dModule);
-    exportb2Collision(pybox2dModule);
-    exportBatchApi(pybox2dModule);
-    #ifdef PYBOX2D_LIQUID_FUN
-    exportB2Particle(pybox2dModule);
-    exportB2ParticleSystem(pybox2dModule);
-    exportB2ParticleGroup(pybox2dModule);
-    exportEmitter(pybox2dModule);
+    pyb2d::def_build_config(pyb2dModule);
+    exportContact(pyb2dModule);
+    exportB2World(pyb2dModule);
+    exportB2Body(pyb2dModule);
+    exportB2Math(pyb2dModule);
+    exportB2Shape(pyb2dModule);
+    exportB2Fixture(pyb2dModule);
+    exportb2Joint(pyb2dModule);
+    exportb2JointDef(pyb2dModule);
+    exportB2WorldCallbacks(pyb2dModule);
+    exportB2Draw(pyb2dModule);
+    exportb2Collision(pyb2dModule);
+    exportBatchApi(pyb2dModule);
+    #ifdef PYB2D_LIQUID_FUN
+    exportB2Particle(pyb2dModule);
+    exportB2ParticleSystem(pyb2dModule);
+    exportB2ParticleGroup(pyb2dModule);
+    exportEmitter(pyb2dModule);
     #endif
 
-    pybox2dModule.attr("__version__") = "0.7.2";
+    pyb2dModule.attr("__version__") = "0.7.2";
 }

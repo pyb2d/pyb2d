@@ -12,12 +12,12 @@
 namespace py = pybind11;
 
 
-void exportB2Body(py::module & pybox2dModule){
+void exportB2Body(py::module & pyb2dModule){
 
 
 
 
-    py::enum_<b2BodyType>(pybox2dModule, "BodyType")
+    py::enum_<b2BodyType>(pyb2dModule, "BodyType")
         .value("static", b2BodyType::b2_staticBody)
         .value("kinematic", b2BodyType::b2_kinematicBody)
         .value("dynamic", b2BodyType::b2_dynamicBody)
@@ -27,7 +27,7 @@ void exportB2Body(py::module & pybox2dModule){
     typedef PyDefExtender<b2BodyDef> PyBodyDef;
 
 
-    py::class_<PyBodyDef> body_def_py_cls(pybox2dModule,"BodyDef");
+    py::class_<PyBodyDef> body_def_py_cls(pyb2dModule,"BodyDef");
     add_user_data_to_def_api<PyBodyDef>(body_def_py_cls);
     body_def_py_cls
         .def(py::init<>())
@@ -45,7 +45,7 @@ void exportB2Body(py::module & pybox2dModule){
         .def_readwrite("bullet", &PyBodyDef::bullet)
         .def_readwrite("gravity_scale", &PyBodyDef::gravityScale)
 
-        // special pybox2d stuff, not part of c++ Box2D
+        // special pyb2d stuff, not part of c++ Box2D
         .def_property("report_contact_filter",
             [](PyBodyDef & self){return self.userData.reportContactFilter;},
             [](PyBodyDef & self, const b2ReportFilter & filter ){ self.userData.reportContactFilter = filter;}
@@ -54,7 +54,7 @@ void exportB2Body(py::module & pybox2dModule){
 
     ;
 
-    py::class_<b2Body, BodyHolder > body_py_cls(pybox2dModule,"Body");
+    py::class_<b2Body, BodyHolder > body_py_cls(pyb2dModule,"Body");
     add_user_data_api<b2Body>(body_py_cls);
     add_get_next_api<b2Body>(body_py_cls);
 
@@ -139,7 +139,7 @@ void exportB2Body(py::module & pybox2dModule){
 
 
 
-        // special pybox2d stuff, not part of c++ Box2D
+        // special pyb2d stuff, not part of c++ Box2D
         .def_property("report_contact_filter",
             [](b2Body & self){return self.GetUserData().reportContactFilter;},
             [](b2Body & self, b2ReportFilter & value){ self.GetUserData().reportContactFilter = value;}

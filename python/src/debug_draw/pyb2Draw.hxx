@@ -201,7 +201,7 @@ public:
             f(P(c.x,c.y),this->world_to_screen_scale(radius) ,P(axis.x,axis.y), make_uint8_color(color));
         }
     }
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
     void DrawParticles(const b2Vec2 *centers, float radius, const b2ParticleColor *colors, const int32 count) {
         py::object f = m_object.attr("draw_particles");
 
@@ -314,7 +314,7 @@ public:
     float m_scale;
     b2Vec2 m_translate;
     bool m_flip_y;
-    #ifdef PYBOX2D_LIQUID_FUN
+    #ifdef PYB2D_LIQUID_FUN
 
     #endif
 };

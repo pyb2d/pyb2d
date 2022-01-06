@@ -11,14 +11,14 @@ namespace py = pybind11;
 #include "holder.hxx"
 
 
-void exportContact(py::module & pybox2dModule){
+void exportContact(py::module & pyb2dModule){
 
 
 
-    py::class_<b2ContactEdge>(pybox2dModule,"b2ContactEdge")
+    py::class_<b2ContactEdge>(pyb2dModule,"b2ContactEdge")
     ;
 
-    py::class_<b2Contact, ContactHolder>(pybox2dModule,"b2Contact")
+    py::class_<b2Contact, ContactHolder>(pyb2dModule,"b2Contact")
         .def_property_readonly("fixture_a",[](      b2Contact & c){return FixtureHolder(c.GetFixtureA());})
         .def_property_readonly("fixture_b",[](      b2Contact & c){return FixtureHolder(c.GetFixtureB());})
 

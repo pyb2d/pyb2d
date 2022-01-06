@@ -1,5 +1,5 @@
-#ifndef PYBOX2D_HELPER_HXX
-#define PYBOX2D_HELPER_HXX
+#ifndef PYB2D_HELPER_HXX
+#define PYB2D_HELPER_HXX
 
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>            // Pybind11 import to define Python bindings

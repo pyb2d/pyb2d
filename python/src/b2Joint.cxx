@@ -103,9 +103,9 @@ public:
     using b2JointDef::b2JointDef;
 };
 
-void exportb2Joint(py::module & pybox2dModule){
-    #ifndef PYBOX2D_OLD_BOX2D
-    pybox2dModule.def("linear_stiffness", [](float frequency_hertz, float damping_ratio, b2Body* bodyA, b2Body* bodyB){
+void exportb2Joint(py::module & pyb2dModule){
+    #ifndef PYB2D_OLD_BOX2D
+    pyb2dModule.def("linear_stiffness", [](float frequency_hertz, float damping_ratio, b2Body* bodyA, b2Body* bodyB){
         float stiffness;
         float damping;
         b2LinearStiffness(stiffness, damping, frequency_hertz, damping_ratio, bodyA, bodyB);
@@ -116,7 +116,7 @@ void exportb2Joint(py::module & pybox2dModule){
         py::arg("body_a"),
         py::arg("body_b")
     );
-    pybox2dModule.def("angular_stiffness", [](float frequency_hertz, float damping_ratio, b2Body* bodyA, b2Body* bodyB){
+    pyb2dModule.def("angular_stiffness", [](float frequency_hertz, float damping_ratio, b2Body* bodyA, b2Body* bodyB){
         float stiffness;
         float damping;
         b2AngularStiffness(stiffness, damping, frequency_hertz, damping_ratio, bodyA, bodyB);
@@ -130,7 +130,7 @@ void exportb2Joint(py::module & pybox2dModule){
 
     #endif
 
-    py::enum_<b2JointType>(pybox2dModule, "JointType")
+    py::enum_<b2JointType>(pyb2dModule, "JointType")
         .value("unknown_joint", b2JointType::e_unknownJoint)
         .value("revolute_joint", b2JointType::e_revoluteJoint)
         .value("prismatic_joint", b2JointType::e_prismaticJoint)
@@ -145,7 +145,7 @@ void exportb2Joint(py::module & pybox2dModule){
         .value("motor_joint", b2JointType::e_motorJoint)
     ;
 
-    // py::enum_<b2LimitState>(pybox2dModule, "b2LimitState")
+    // py::enum_<b2LimitState>(pyb2dModule, "b2LimitState")
     //     .value("inactive_limit", b2LimitState::e_inactiveLimit)
     //     .value("at_lower_limit", b2LimitState::e_atLowerLimit)
     //     .value("at_upper_limit", b2LimitState::e_atUpperLimit)
@@ -154,11 +154,11 @@ void exportb2Joint(py::module & pybox2dModule){
 
 
 
-    py::class_<b2JointEdge>(pybox2dModule, "JointEdge")
+    py::class_<b2JointEdge>(pyb2dModule, "JointEdge")
         // A lot to do
     ;
 
-    auto jointCls = py::class_<b2Joint,JointHolder,  PyB2Joint>(pybox2dModule,"Joint");
+    auto jointCls = py::class_<b2Joint,JointHolder,  PyB2Joint>(pyb2dModule,"Joint");
 
     add_user_data_api<b2Joint>(jointCls);
     add_get_next_api<b2Joint>(jointCls);
@@ -181,9 +181,9 @@ void exportb2Joint(py::module & pybox2dModule){
     ;
 
 
-    py::class_<b2DistanceJoint,DistanceJointHolder, b2Joint>(pybox2dModule,"DistanceJoint")
+    py::class_<b2DistanceJoint,DistanceJointHolder, b2Joint>(pyb2dModule,"DistanceJoint")
         .def_property("length",&b2DistanceJoint::GetLength, &b2DistanceJoint::SetLength)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_property("frequency_hz",&b2DistanceJoint::GetFrequency, &b2DistanceJoint::SetFrequency)
         .def_property("damping_ratio",&b2DistanceJoint::GetDampingRatio, &b2DistanceJoint::SetDampingRatio)
         #else
@@ -192,12 +192,12 @@ void exportb2Joint(py::module & pybox2dModule){
         #endif
     ;
 
-    py::class_<b2FrictionJoint,Holder<b2FrictionJoint>, b2Joint>(pybox2dModule,"FrictionJoint")
+    py::class_<b2FrictionJoint,Holder<b2FrictionJoint>, b2Joint>(pyb2dModule,"FrictionJoint")
         .def_property("max_force", &b2FrictionJoint::GetMaxForce,  &b2FrictionJoint::SetMaxForce)
         .def_property("max_torque",&b2FrictionJoint::GetMaxTorque, &b2FrictionJoint::SetMaxTorque)
 
     ;
-    py::class_<b2GearJoint, Holder<b2GearJoint>, b2Joint >(pybox2dModule,"GearJoint")
+    py::class_<b2GearJoint, Holder<b2GearJoint>, b2Joint >(pyb2dModule,"GearJoint")
         .def_property_readonly("joint_1", [](b2GearJoint * joint){
             return JointHolder(joint->GetJoint1());
         })
@@ -205,7 +205,7 @@ void exportb2Joint(py::module & pybox2dModule){
             return JointHolder(joint->GetJoint2());
         })
     ;
-    py::class_<b2PrismaticJoint , Holder<b2PrismaticJoint>, b2Joint >(pybox2dModule,"PrismaticJoint")
+    py::class_<b2PrismaticJoint , Holder<b2PrismaticJoint>, b2Joint >(pyb2dModule,"PrismaticJoint")
         .def_property_readonly("reference_angle", &b2PrismaticJoint::GetReferenceAngle)
         .def_property_readonly("joint_translation", &b2PrismaticJoint::GetJointTranslation)
         .def_property_readonly("joint_speed", &b2PrismaticJoint::GetJointSpeed)
@@ -220,7 +220,7 @@ void exportb2Joint(py::module & pybox2dModule){
         .def_property("max_motor_force",&b2PrismaticJoint::GetMaxMotorForce, &b2PrismaticJoint::SetMaxMotorForce)
 
     ;
-    py::class_<b2PulleyJoint, Holder<b2PulleyJoint>, b2Joint >(pybox2dModule,"PulleyJoint")
+    py::class_<b2PulleyJoint, Holder<b2PulleyJoint>, b2Joint >(pyb2dModule,"PulleyJoint")
         .def_property_readonly("ground_anchor_a", &b2PulleyJoint::GetGroundAnchorA)
         .def_property_readonly("ground_anchor_b", &b2PulleyJoint::GetGroundAnchorB)
         .def_property_readonly("length_a", &b2PulleyJoint::GetLengthA)
@@ -230,7 +230,7 @@ void exportb2Joint(py::module & pybox2dModule){
         .def_property_readonly("current_length_b", &b2PulleyJoint::GetCurrentLengthB)
         .def("shift_origin", &b2PulleyJoint::ShiftOrigin)
     ;
-    py::class_<b2RevoluteJoint, Holder<b2RevoluteJoint>, b2Joint >(pybox2dModule,"RevoluteJoint")
+    py::class_<b2RevoluteJoint, Holder<b2RevoluteJoint>, b2Joint >(pyb2dModule,"RevoluteJoint")
         .def_property_readonly("reference_angle", &b2RevoluteJoint::GetReferenceAngle)
         .def_property_readonly("joint_angle", &b2RevoluteJoint::GetJointAngle)
         .def_property_readonly("joint_speed", &b2RevoluteJoint::GetJointSpeed)
@@ -244,9 +244,9 @@ void exportb2Joint(py::module & pybox2dModule){
         .def("get_motor_torque",&b2RevoluteJoint::GetMotorTorque, py::arg("iv_dt"))
     ;
 
-    py::class_<b2WeldJoint, Holder<b2WeldJoint>, b2Joint >(pybox2dModule,"WeldJoint")
+    py::class_<b2WeldJoint, Holder<b2WeldJoint>, b2Joint >(pyb2dModule,"WeldJoint")
         .def_property_readonly("reference_angle", &b2WeldJoint::GetReferenceAngle)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_property("frequency_hz",&b2WeldJoint::GetFrequency, &b2WeldJoint::SetFrequency)
         .def_property("damping_ratio",&b2WeldJoint::GetDampingRatio, &b2WeldJoint::SetDampingRatio)
         #else
@@ -255,12 +255,12 @@ void exportb2Joint(py::module & pybox2dModule){
         #endif
     ;
 
-    py::class_<b2WheelJoint, Holder<b2WheelJoint>, b2Joint >(pybox2dModule,"WheelJoint")
+    py::class_<b2WheelJoint, Holder<b2WheelJoint>, b2Joint >(pyb2dModule,"WheelJoint")
         .def_property_readonly("joint_translation", &b2WheelJoint::GetJointTranslation)
 
 
 
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_property_readonly("joint_speed", &b2WheelJoint::GetJointSpeed)
         #else
         .def_property_readonly("joint_linear_speed", &b2WheelJoint::GetJointLinearSpeed)
@@ -277,7 +277,7 @@ void exportb2Joint(py::module & pybox2dModule){
         .def_property("motor_speed",&b2WheelJoint::GetMotorSpeed, &b2WheelJoint::SetMotorSpeed)
         .def_property("max_motor_torque",&b2WheelJoint::GetMaxMotorTorque, &b2WheelJoint::SetMaxMotorTorque)
         .def("get_motor_torque",&b2WheelJoint::GetMotorTorque, py::arg("iv_dt"))
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_property("spring_frequency_hz",&b2WheelJoint::GetSpringFrequencyHz, &b2WheelJoint::SetSpringFrequencyHz)
         .def_property("spring_damping_ratio",&b2WheelJoint::GetSpringDampingRatio, &b2WheelJoint::SetSpringDampingRatio)
         // for generalization purposes we add these methods also under these names
@@ -292,10 +292,10 @@ void exportb2Joint(py::module & pybox2dModule){
 
     ;
     py::class_<b2MouseJoint, Holder<b2MouseJoint>, b2Joint
-    >(pybox2dModule,"MouseJoint")
+    >(pyb2dModule,"MouseJoint")
         .def_property("max_force",&b2MouseJoint::GetMaxForce, &b2MouseJoint::SetMaxForce)
         .def_property("target", &b2MouseJoint::GetTarget, &b2MouseJoint::SetTarget)
-        #ifdef PYBOX2D_OLD_BOX2D
+        #ifdef PYB2D_OLD_BOX2D
         .def_property("frequency_hz",&b2MouseJoint::GetFrequency, &b2MouseJoint::SetFrequency)
         .def_property("damping_ratio",&b2MouseJoint::GetDampingRatio, &b2MouseJoint::SetDampingRatio)
         #else

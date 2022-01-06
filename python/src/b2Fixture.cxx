@@ -15,11 +15,11 @@ inline void setShape(PyDefExtender<b2FixtureDef> & f, b2Shape * s){
 
 
 
-void exportB2Fixture(py::module & pybox2dModule){
+void exportB2Fixture(py::module & pyb2dModule){
 
 
 
-    py::class_<b2ReportFilter>(pybox2dModule,"ReportFilter")
+    py::class_<b2ReportFilter>(pyb2dModule,"ReportFilter")
         .def(py::init<>())
         .def_readwrite("category_bits", &b2ReportFilter::categoryBits)
         .def_readwrite("mask_bits", &b2ReportFilter::maskBits)
@@ -27,7 +27,7 @@ void exportB2Fixture(py::module & pybox2dModule){
     ;
 
 
-    py::class_<b2Filter>(pybox2dModule,"Filter")
+    py::class_<b2Filter>(pyb2dModule,"Filter")
         .def(py::init<>())
         .def_readwrite("category_bits", &b2Filter::categoryBits)
         .def_readwrite("mask_bits", &b2Filter::maskBits)
@@ -36,7 +36,7 @@ void exportB2Fixture(py::module & pybox2dModule){
 
 
     typedef PyDefExtender<b2FixtureDef> PyFixtureDef;
-    py::class_<PyFixtureDef> b2FixtureDefCls(pybox2dModule,"FixtureDef");
+    py::class_<PyFixtureDef> b2FixtureDefCls(pyb2dModule,"FixtureDef");
     add_user_data_to_def_api<PyFixtureDef>(b2FixtureDefCls);
 
     b2FixtureDefCls
@@ -54,7 +54,7 @@ void exportB2Fixture(py::module & pybox2dModule){
         .def_readwrite("filter", &PyFixtureDef::filter)
     ;
 
-    py::class_<b2Fixture, FixtureHolder> b2FixtureCls(pybox2dModule,"Fixture");
+    py::class_<b2Fixture, FixtureHolder> b2FixtureCls(pyb2dModule,"Fixture");
     add_user_data_api<b2Fixture>(b2FixtureCls);
     add_get_next_api<b2Fixture>(b2FixtureCls);
     b2FixtureCls

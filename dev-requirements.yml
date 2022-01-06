@@ -1,4 +1,4 @@
-name: pybox2d
+name: pyb2d
 
 channels:
   - conda-forge

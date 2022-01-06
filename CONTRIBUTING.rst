@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/DerThorsten/pybox2d/issues.
+Report bugs at https://github.com/DerThorsten/pyb2d/issues.
 
 If you are reporting a bug, please include:
 
@@ -38,14 +38,14 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-pybox2d could always use more documentation, whether as part of the
-official pybox2d docs, in docstrings, or even on the web in blog posts,
+pyb2d could always use more documentation, whether as part of the
+official pyb2d docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/DerThorsten/pybox2d/issues.
+The best way to send feedback is to file an issue at https://github.com/DerThorsten/pyb2d/issues.
 
 If you are proposing a feature:
 

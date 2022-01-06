@@ -133,13 +133,13 @@ DT * asType(b2Shape * shape){
     return res;
 }
 
-void exportB2Shape(py::module & pybox2dModule){
+void exportB2Shape(py::module & pyb2dModule){
 
 
 
     auto shapeCls = py::class_< b2Shape
     , ShapeHolder, PyB2Shape
-    >(pybox2dModule,"Shape");
+    >(pyb2dModule,"Shape");
     shapeCls
         //.alias<b2Shape>()
         .def(py::init<>())
@@ -163,7 +163,7 @@ void exportB2Shape(py::module & pybox2dModule){
 
 
     // derived shapes
-    py::class_<b2CircleShape, Holder<b2CircleShape>, b2Shape>(pybox2dModule,"CircleShape")
+    py::class_<b2CircleShape, Holder<b2CircleShape>, b2Shape>(pyb2dModule,"CircleShape")
         .def(py::init<>())
         // pos is deprecated
         .def_readwrite("pos", &b2CircleShape::m_p)
@@ -175,7 +175,7 @@ void exportB2Shape(py::module & pybox2dModule){
 
 
 
-    py::class_<b2EdgeShape, Holder<b2EdgeShape>,b2Shape>(pybox2dModule,"EdgeShape")
+    py::class_<b2EdgeShape, Holder<b2EdgeShape>,b2Shape>(pyb2dModule,"EdgeShape")
         .def(py::init<>())
 
         .def("set_one_sided",[](b2EdgeShape * s,const b2Vec2 & v0,const b2Vec2 & v1,const b2Vec2 & v2, const b2Vec2 & v3){
@@ -208,7 +208,7 @@ void exportB2Shape(py::module & pybox2dModule){
 
 
 
-    py::class_<b2ChainShape, Holder<b2ChainShape>,b2Shape >(pybox2dModule,"ChainShape")
+    py::class_<b2ChainShape, Holder<b2ChainShape>,b2Shape >(pyb2dModule,"ChainShape")
         .def(py::init<>())
         .def("create_loop",[](b2ChainShape *s, const std::vector<b2Vec2> & verts ){
             s->CreateLoop(verts.data(), verts.size());
@@ -235,7 +235,7 @@ void exportB2Shape(py::module & pybox2dModule){
         }, py::arg("body") = nullptr)
     ;
 
-    py::class_<b2PolygonShape, Holder<b2PolygonShape>,b2Shape>(pybox2dModule,"PolygonShape")
+    py::class_<b2PolygonShape, Holder<b2PolygonShape>,b2Shape>(pyb2dModule,"PolygonShape")
         .def(py::init<>())
         .def("set_as_box",
             [&](

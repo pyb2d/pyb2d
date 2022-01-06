@@ -8,11 +8,11 @@ namespace py = pybind11;
 
 
 
-void exportB2ParticleSystem(py::module & pybox2dModule){
+void exportB2ParticleSystem(py::module & pyb2dModule){
 
 
 
-    py::class_<b2ParticleSystemDef>(pybox2dModule, "ParticleSystemDef")
+    py::class_<b2ParticleSystemDef>(pyb2dModule, "ParticleSystemDef")
         .def(py::init<>())
 
         .def_readwrite("strict_contact_check", &b2ParticleSystemDef::strictContactCheck)
@@ -39,7 +39,7 @@ void exportB2ParticleSystem(py::module & pybox2dModule){
         .def_readwrite("lifetime_granularity", &b2ParticleSystemDef::lifetimeGranularity)
     ;
 
-    py::class_<b2ParticleSystem, ParticleSystemHolder >(pybox2dModule, "ParticleSystem")
+    py::class_<b2ParticleSystem, ParticleSystemHolder >(pyb2dModule, "ParticleSystem")
         .def_property("radius", &b2ParticleSystem::GetRadius, &b2ParticleSystem::SetRadius)
         .def_property("damping", &b2ParticleSystem::GetDamping, &b2ParticleSystem::SetDamping)
         .def_property("density", &b2ParticleSystem::GetDensity, &b2ParticleSystem::SetDensity)
