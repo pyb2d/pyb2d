@@ -3,6 +3,10 @@ Wheel Joint
 ===========================
 
 Create a car with two wheel and wheel joints
+
+Uses:
+    * :class:`b2d.WheelJointDef`
+    * :class:`b2d.WheelJoint`
 """
 
 

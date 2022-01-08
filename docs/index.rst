@@ -16,9 +16,8 @@ Contents:
 
    batch_api
 
-   tutorials/index
+   examples
 
-   auto_examples/index
 
 Drawing:
 
@@ -33,3 +32,6 @@ API Documentation:
    :maxdepth: 2
 
    pyb2d
+
+
+   gen_modules/backreferences

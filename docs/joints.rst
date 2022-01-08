@@ -1,6 +1,8 @@
 Joints
 =======================================
 
+
+
 JointDefs:
 
 - :class:`b2d.DistanceJointDef`
@@ -24,3 +26,53 @@ Joints:
 - :class:`b2d.RevoluteJoint`
 - :class:`b2d.WeldJoint`
 - :class:`b2d.WheelJoint`
+
+
+.. minigallery:: b2d.DistanceJoint
+    :add-heading:
+
+.. minigallery:: b2d.FrictionJoint
+    :add-heading:
+
+.. minigallery:: b2d.GearJoint
+    :add-heading:
+
+.. minigallery:: b2d.PrismaticJoint
+    :add-heading:
+
+.. minigallery:: b2d.PulleyJointJoint
+    :add-heading:
+
+.. minigallery:: b2d.WeldJoint
+    :add-heading:
+
+.. minigallery:: b2d.WheelJoint
+    :add-heading:
+
+.. minigallery:: b2d.MouseJoint
+    :add-heading:
+
+
+.. minigallery:: b2d.DistanceJointDef
+    :add-heading:
+
+.. minigallery:: b2d.FrictionJointDef
+    :add-heading:
+
+.. minigallery:: b2d.GearJointDef
+    :add-heading:
+
+.. minigallery:: b2d.PrismaticJointDef
+    :add-heading:
+
+.. minigallery:: b2d.PulleyJointDefJointDef
+    :add-heading:
+
+.. minigallery:: b2d.WeldJointDef
+    :add-heading:
+
+.. minigallery:: b2d.WheelJointDef
+    :add-heading:
+
+.. minigallery:: b2d.MouseJointDef
+    :add-heading:
