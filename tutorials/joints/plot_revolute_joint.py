@@ -3,6 +3,9 @@ Revolute Joint
 ===========================
 
 Create revolute joints
+Uses:
+    * :class:`b2d.RevoluteJointDef`
+    * :class:`b2d.RevoluteJoint`
 """
 
 

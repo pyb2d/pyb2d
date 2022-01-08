@@ -3,6 +3,9 @@ Pully Joint
 ===========================
 
 Create a pully joint
+Uses:
+    * :class:`b2d.PullyJointDef`
+    * :class:`b2d.PullyJoint`
 """
 
 

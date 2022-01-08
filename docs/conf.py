@@ -309,4 +309,14 @@ sphinx_gallery_conf = {
     ],  # path to where to save gallery generated output
     "matplotlib_animations": True,
     "ignore_pattern": r".*\.ipynb|test_all.py",
+    "backreferences_dir": "gen_modules/backreferences",
+    "doc_module": ("sphinx_gallery", "b2d"),
+    "reference_url": {
+        # The module you locally document uses None
+        "sphinx_gallery": None,
+    },
+    "show_memory": True,
+    # "autosummary_generate": True,
 }
+# generate autosummary even if no references
+autosummary_generate = True

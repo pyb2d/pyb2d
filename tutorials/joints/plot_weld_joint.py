@@ -3,6 +3,10 @@ Weld Joint
 ===========================
 
 Create weld joints
+
+Uses:
+    * :class:`b2d.WeldJointDef`
+    * :class:`b2d.WeldJoint`
 """
 
 
