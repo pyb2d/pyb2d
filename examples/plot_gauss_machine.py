@@ -47,11 +47,12 @@ class GaussMachine(TestbedBase):
 
         # particle system
         pdef = b2d.particle_system_def(
-            viscous_strength=0.9,
-            spring_strength=0.0,
-            damping_strength=100.5,
-            pressure_strength=1.0,
-            color_mixing_strength=0.05,
+            repulsive_strength=1.0,
+            # viscous_strength=0.9,
+            # spring_strength=0.0,
+            # damping_strength=100.5,
+            # pressure_strength=1.0,
+            # color_mixing_strength=0.05,
             density=2,
         )
 

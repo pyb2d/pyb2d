@@ -77,5 +77,5 @@ PYBIND11_MODULE(_b2d , pyb2dModule)
     exportEmitter(pyb2dModule);
     #endif
 
-    pyb2dModule.attr("__version__") = "0.7.2";
+    pyb2dModule.attr("__version__") = "0.7.3";
 }

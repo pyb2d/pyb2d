@@ -35,6 +35,9 @@ _id_to_gui = dict()
 
 class JupyterGui(GuiBase):
     class Settings(GuiBase.Settings):
+        class Config:
+            arbitrary_types_allowed = True
+
         id: object = None
 
     def __init__(self, testbed_cls, settings, testbed_settings=None):

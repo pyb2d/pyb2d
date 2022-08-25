@@ -12,7 +12,9 @@
 
 namespace py = pybind11;
 
-
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+}
 // functions without any argument
 // and b2Vec2 as output
 #define VEC2_GETTER(PY_NAME, CPP_NAME)\
@@ -49,6 +51,21 @@ public:
     using base_type::end;
     using base_type::erase;
     using base_type::operator[];
+
+    template<class F>
+    void for_each_pair(F && f)
+    {
+        if(!this->empty())
+        {
+            for(std::size_t i=0; i<this->size()-1; ++i)
+            {
+                for(std::size_t j=i+1; j<this->size(); ++j)
+                {
+                    f(this->operator[](i), this->operator[](j));
+                }
+            }
+        }
+    }
 private:
 };
 
@@ -230,8 +247,6 @@ void exportBodyBatchApi(py::module & pyb2dModule){
                         to repulsive forces.
             )"""
         )
-
-
 
         VEC2_GETTER(_position,         GetPosition)
         VEC2_GETTER(_world_center,     GetWorldCenter)

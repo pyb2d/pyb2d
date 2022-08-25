@@ -33,7 +33,6 @@ endif()
 
 if(PYB2D_LIQUID_FUN)
     add_compile_definitions(PYB2D_LIQUID_FUN)
-    # add_compile_definitions(PYB2D_OLD_BOX2D)
 endif()
 
 # Installation
