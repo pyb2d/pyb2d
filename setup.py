@@ -9,7 +9,7 @@ from pybind11 import get_cmake_dir, get_include
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup, find_packages
 
-__version__ = "0.7.3"
+__version__ = "0.7.4"
 
 # The main interface is through Pybind11Extension.
 # * You can add cxx_std=11/14/17, and then build_ext can be removed.
@@ -40,7 +40,7 @@ binding_sources = [
     "python/src/b2_user_settings.cpp",
 ]
 
-include_dirs = ["external/pybind11-2.8.1/include/", "python/src/"]
+include_dirs = ["external/pybind11-2.10.1/include/", "python/src/"]
 macros = [("B2_USER_SETTINGS", 1)]
 if liquidfun:
     binding_sources += [
