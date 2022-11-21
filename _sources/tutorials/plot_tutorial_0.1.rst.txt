@@ -160,8 +160,6 @@ each iteration and how many steps we need
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     t=5 fps=40 dt=0.025 n_steps=200
@@ -271,28 +269,23 @@ the gravity vector is non-zero only in the x direction
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.210 seconds)
+   **Total running time of the script:** ( 0 minutes  0.187 seconds)
 
 
 .. _sphx_glr_download_tutorials_plot_tutorial_0.1.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_tutorial_0.1.py <plot_tutorial_0.1.py>`
 
-     :download:`Download Python source code: plot_tutorial_0.1.py <plot_tutorial_0.1.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_tutorial_0.1.ipynb <plot_tutorial_0.1.ipynb>`
+      :download:`Download Jupyter notebook: plot_tutorial_0.1.ipynb <plot_tutorial_0.1.ipynb>`
 
 
 .. only:: html

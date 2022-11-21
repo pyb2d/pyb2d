@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joints &mdash; pyb2d 0.7.2 documentation</title>
+  <title>Joints &mdash; pyb2d 0.7.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
@@ -18,7 +18,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -34,7 +36,7 @@
             <a href="index.html" class="icon icon-home"> pyb2d
           </a>
               <div class="version">
-                0.7.2
+                0.7.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -48,12 +50,19 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="world.html">World</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bodies.html">Bodies</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Joints</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Joints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-distancejoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.DistanceJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-prismaticjoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.PrismaticJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-weldjoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WeldJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-wheeljoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WheelJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-distancejointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.DistanceJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-prismaticjointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.PrismaticJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-weldjointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WeldJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-using-b2d-wheeljointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WheelJointDef</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="batch_api.html">Batch API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#joint-tutorials">Joint Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#particle-tutorials">Particle Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="debug_draw/index.html">Debug Draw</a></li>
@@ -75,8 +84,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Joints</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Joints</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/joints.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,7 +96,7 @@
            <div itemprop="articleBody">
              
   <section id="joints">
-<h1>Joints<a class="headerlink" href="#joints" title="Permalink to this headline"></a></h1>
+<h1>Joints<a class="headerlink" href="#joints" title="Permalink to this heading"></a></h1>
 <p>JointDefs:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="pyb2d.html#b2d.DistanceJointDef" title="b2d.DistanceJointDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">b2d.DistanceJointDef</span></code></a></p></li>
@@ -112,6 +121,54 @@
 <li><p><a class="reference internal" href="pyb2d.html#b2d.WeldJoint" title="b2d.WeldJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">b2d.WeldJoint</span></code></a></p></li>
 <li><p><a class="reference internal" href="pyb2d.html#b2d.WheelJoint" title="b2d.WheelJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">b2d.WheelJoint</span></code></a></p></li>
 </ul>
+<section id="examples-using-b2d-distancejoint">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.DistanceJoint</span></code><a class="headerlink" href="#examples-using-b2d-distancejoint" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Uses:     * b2d.DistanceJointDef     * b2d.DistanceJoint"><img alt="Distance Joint" src="_images/sphx_glr_plot_distance_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_distance_joint.html#sphx-glr-tutorials-joints-plot-distance-joint-py"><span class="std std-ref">Distance Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Distance Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-prismaticjoint">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.PrismaticJoint</span></code><a class="headerlink" href="#examples-using-b2d-prismaticjoint" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create a prismatic joint"><img alt="Prismatic Joint" src="_images/sphx_glr_plot_prismatic_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_prismatic_joint.html#sphx-glr-tutorials-joints-plot-prismatic-joint-py"><span class="std std-ref">Prismatic Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Prismatic Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-weldjoint">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WeldJoint</span></code><a class="headerlink" href="#examples-using-b2d-weldjoint" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create weld joints"><img alt="Weld Joint" src="_images/sphx_glr_plot_weld_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_weld_joint.html#sphx-glr-tutorials-joints-plot-weld-joint-py"><span class="std std-ref">Weld Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Weld Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-wheeljoint">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WheelJoint</span></code><a class="headerlink" href="#examples-using-b2d-wheeljoint" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create a car with two wheel and wheel joints"><img alt="Wheel Joint" src="_images/sphx_glr_plot_wheel_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_wheel_joint.html#sphx-glr-tutorials-joints-plot-wheel-joint-py"><span class="std std-ref">Wheel Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Wheel Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-distancejointdef">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.DistanceJointDef</span></code><a class="headerlink" href="#examples-using-b2d-distancejointdef" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Uses:     * b2d.DistanceJointDef     * b2d.DistanceJoint"><img alt="Distance Joint" src="_images/sphx_glr_plot_distance_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_distance_joint.html#sphx-glr-tutorials-joints-plot-distance-joint-py"><span class="std std-ref">Distance Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Distance Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-prismaticjointdef">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.PrismaticJointDef</span></code><a class="headerlink" href="#examples-using-b2d-prismaticjointdef" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create a prismatic joint"><img alt="Prismatic Joint" src="_images/sphx_glr_plot_prismatic_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_prismatic_joint.html#sphx-glr-tutorials-joints-plot-prismatic-joint-py"><span class="std std-ref">Prismatic Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Prismatic Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-weldjointdef">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WeldJointDef</span></code><a class="headerlink" href="#examples-using-b2d-weldjointdef" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create weld joints"><img alt="Weld Joint" src="_images/sphx_glr_plot_weld_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_weld_joint.html#sphx-glr-tutorials-joints-plot-weld-joint-py"><span class="std std-ref">Weld Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Weld Joint</div>
+</div></div></section>
+<section id="examples-using-b2d-wheeljointdef">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WheelJointDef</span></code><a class="headerlink" href="#examples-using-b2d-wheeljointdef" title="Permalink to this heading"></a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create a car with two wheel and wheel joints"><img alt="Wheel Joint" src="_images/sphx_glr_plot_wheel_joint_thumb.gif" />
+<p><a class="reference internal" href="tutorials/joints/plot_wheel_joint.html#sphx-glr-tutorials-joints-plot-wheel-joint-py"><span class="std std-ref">Wheel Joint</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Wheel Joint</div>
+</div></div></section>
 </section>
 
 

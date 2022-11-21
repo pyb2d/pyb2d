@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_auto_examples:
-
 Examples
 ==================
 
@@ -13,14 +9,195 @@ Below is a gallery of examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a shape from a mathematical function. In this example we use f(...">
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_function_shape_thumb.gif
-     :alt: Function Shape
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_function_shape_thumb.gif
+    :alt: Function Shape
 
-     :ref:`sphx_glr_auto_examples_plot_function_shape.py`
+  :ref:`sphx_glr_auto_examples_plot_function_shape.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Function Shape</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to implement newtons cradle with b2d">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_newtons_cradle_thumb.gif
+    :alt: Newtons Cradle
+
+  :ref:`sphx_glr_auto_examples_plot_newtons_cradle.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Newtons Cradle</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a shape from a mathematical function. In this example we use f(...">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_elliptic_billiard_table_thumb.gif
+    :alt: Function Shape
+
+  :ref:`sphx_glr_auto_examples_plot_elliptic_billiard_table.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Function Shape</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a blender with Box2D">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_blender_thumb.gif
+    :alt: Blender
+
+  :ref:`sphx_glr_auto_examples_plot_blender.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Blender</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create particles which mix colors when they touch">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_color_mixing_thumb.gif
+    :alt: Color Mixing
+
+  :ref:`sphx_glr_auto_examples_plot_color_mixing.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Color Mixing</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to approximate a gaussian function in a fun way">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_gauss_machine_thumb.gif
+    :alt: Gauss Machine
+
+  :ref:`sphx_glr_auto_examples_plot_gauss_machine.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Gauss Machine</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use raycasting">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_raycast_thumb.gif
+    :alt: Raycast
+
+  :ref:`sphx_glr_auto_examples_plot_raycast.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Raycast</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to implement a very simple Billiard game with Box2D">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_billiard_thumb.gif
+    :alt: Billiard
+
+  :ref:`sphx_glr_auto_examples_plot_billiard.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Billiard</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Fly a rocket from one plant to another. Use &#x27;a&#x27;,&#x27;w&#x27;,&#x27;d&#x27; to fire the rockets engines, but avoid ...">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_rocket_thumb.gif
+    :alt: Rocket
+
+  :ref:`sphx_glr_auto_examples_plot_rocket.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Rocket</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create games inspired by AngryBirds.">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_angry_shapes_thumb.gif
+    :alt: AngryShapes
+
+  :ref:`sphx_glr_auto_examples_plot_angry_shapes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">AngryShapes</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to implement a the basics of a WorldOfGoo clone">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_goo_thumb.gif
+    :alt: Goo
+
+  :ref:`sphx_glr_auto_examples_plot_goo.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Goo</div>
+    </div>
+
 
 .. raw:: html
 
@@ -31,237 +208,29 @@ Below is a gallery of examples
    :hidden:
 
    /auto_examples/plot_function_shape
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to implement newtons cradle with b2d">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_newtons_cradle_thumb.gif
-     :alt: Newtons Cradle
-
-     :ref:`sphx_glr_auto_examples_plot_newtons_cradle.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_newtons_cradle
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a shape from a mathematical function. In this example we use f(...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_elliptic_billiard_table_thumb.gif
-     :alt: Function Shape
-
-     :ref:`sphx_glr_auto_examples_plot_elliptic_billiard_table.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_elliptic_billiard_table
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create a blender with Box2D">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_blender_thumb.gif
-     :alt: Blender
-
-     :ref:`sphx_glr_auto_examples_plot_blender.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_blender
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create particles which mix colors when they touch">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_color_mixing_thumb.gif
-     :alt: Color Mixing
-
-     :ref:`sphx_glr_auto_examples_plot_color_mixing.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_color_mixing
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to approximate a gaussian function in a fun way">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_gauss_machine_thumb.gif
-     :alt: Gauss Machine
-
-     :ref:`sphx_glr_auto_examples_plot_gauss_machine.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_gauss_machine
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use raycasting">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_raycast_thumb.gif
-     :alt: Raycast
-
-     :ref:`sphx_glr_auto_examples_plot_raycast.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_raycast
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to implement a very simple Billiard game with Box2D">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_billiard_thumb.gif
-     :alt: Billiard
-
-     :ref:`sphx_glr_auto_examples_plot_billiard.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_billiard
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Fly a rocket from one plant to another. Use &#x27;a&#x27;,&#x27;w&#x27;,&#x27;d&#x27; to fire the rockets engines, but avoid ...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_rocket_thumb.gif
-     :alt: Rocket
-
-     :ref:`sphx_glr_auto_examples_plot_rocket.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_rocket
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create games inspired by AngryBirds.">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_angry_shapes_thumb.gif
-     :alt: AngryShapes
-
-     :ref:`sphx_glr_auto_examples_plot_angry_shapes.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_angry_shapes
+   /auto_examples/plot_goo
 
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to implement a the basics of a WorldOfGoo clone">
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_goo_thumb.gif
-     :alt: Goo
+  .. container:: sphx-glr-footer sphx-glr-footer-gallery
 
-     :ref:`sphx_glr_auto_examples_plot_goo.py`
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-.. raw:: html
+      :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
 
-    </div>
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_goo
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-gallery
-
-
-  .. container:: sphx-glr-download sphx-glr-download-python
-
-    :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
-
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
+      :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
 
 
 .. only:: html

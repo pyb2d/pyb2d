@@ -2,7 +2,9 @@
 Distance Joint
 ===========================
 
-Create distance joints
+Uses:
+    * :class:`b2d.DistanceJointDef`
+    * :class:`b2d.DistanceJoint`
 """
 
 

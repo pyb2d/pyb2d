@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorials:
-
 Tutorials
 ==================
 
@@ -13,14 +9,42 @@ Below is a gallery of examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="The same as Tutorial 0.0, but way more pythonic">
 
 .. only:: html
 
- .. figure:: /tutorials/images/thumb/sphx_glr_plot_tutorial_0.1_thumb.png
-     :alt: Tutorial 0.1: Hello World
+  .. image:: /tutorials/images/thumb/sphx_glr_plot_tutorial_0.1_thumb.png
+    :alt: Tutorial 0.1: Hello World
 
-     :ref:`sphx_glr_tutorials_plot_tutorial_0.1.py`
+  :ref:`sphx_glr_tutorials_plot_tutorial_0.1.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Tutorial 0.1: Hello World</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The first steps">
+
+.. only:: html
+
+  .. image:: /tutorials/images/thumb/sphx_glr_plot_tutorial_0.0_thumb.png
+    :alt: Tutorial 0.0: Hello World
+
+  :ref:`sphx_glr_tutorials_plot_tutorial_0.0.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Tutorial 0.0: Hello World</div>
+    </div>
+
 
 .. raw:: html
 
@@ -31,34 +55,7 @@ Below is a gallery of examples
    :hidden:
 
    /tutorials/plot_tutorial_0.1
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The first steps">
-
-.. only:: html
-
- .. figure:: /tutorials/images/thumb/sphx_glr_plot_tutorial_0.0_thumb.png
-     :alt: Tutorial 0.0: Hello World
-
-     :ref:`sphx_glr_tutorials_plot_tutorial_0.0.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorials/plot_tutorial_0.0
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorials_joints:
 
 Joint Tutorials
 ==================
@@ -69,66 +66,59 @@ Below is a gallery of simple examples on how to create different joints
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Create a prismatic joint">
 
 .. only:: html
 
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_prismatic_joint_thumb.gif
-     :alt: Prismatic Joint
+  .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_prismatic_joint_thumb.gif
+    :alt: Prismatic Joint
 
-     :ref:`sphx_glr_tutorials_joints_plot_prismatic_joint.py`
+  :ref:`sphx_glr_tutorials_joints_plot_prismatic_joint.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Prismatic Joint</div>
     </div>
 
 
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_prismatic_joint
-
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create a pully joint">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create a pully joint Uses:     * b2d.PullyJointDef     * b2d.PullyJoint">
 
 .. only:: html
 
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_pully_joint_thumb.gif
-     :alt: Pully Joint
+  .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_pully_joint_thumb.gif
+    :alt: Pully Joint
 
-     :ref:`sphx_glr_tutorials_joints_plot_pully_joint.py`
+  :ref:`sphx_glr_tutorials_joints_plot_pully_joint.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Pully Joint</div>
     </div>
 
 
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_pully_joint
-
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create revolute joints">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create revolute joints Uses:     * b2d.RevoluteJointDef     * b2d.RevoluteJoint">
 
 .. only:: html
 
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_revolute_joint_thumb.gif
-     :alt: Revolute Joint
+  .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_revolute_joint_thumb.gif
+    :alt: Revolute Joint
 
-     :ref:`sphx_glr_tutorials_joints_plot_revolute_joint.py`
+  :ref:`sphx_glr_tutorials_joints_plot_revolute_joint.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Revolute Joint</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_revolute_joint
 
 .. raw:: html
 
@@ -136,20 +126,16 @@ Below is a gallery of simple examples on how to create different joints
 
 .. only:: html
 
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_weld_joint_thumb.gif
-     :alt: Weld Joint
+  .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_weld_joint_thumb.gif
+    :alt: Weld Joint
 
-     :ref:`sphx_glr_tutorials_joints_plot_weld_joint.py`
+  :ref:`sphx_glr_tutorials_joints_plot_weld_joint.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Weld Joint</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_weld_joint
 
 .. raw:: html
 
@@ -157,48 +143,37 @@ Below is a gallery of simple examples on how to create different joints
 
 .. only:: html
 
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_wheel_joint_thumb.gif
-     :alt: Wheel Joint
+  .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_wheel_joint_thumb.gif
+    :alt: Wheel Joint
 
-     :ref:`sphx_glr_tutorials_joints_plot_wheel_joint.py`
+  :ref:`sphx_glr_tutorials_joints_plot_wheel_joint.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Wheel Joint</div>
     </div>
 
 
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_wheel_joint
-
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create distance joints">
+    <div class="sphx-glr-thumbcontainer" tooltip="Uses:     * b2d.DistanceJointDef     * b2d.DistanceJoint">
 
 .. only:: html
 
- .. figure:: /tutorials/joints/images/thumb/sphx_glr_plot_distance_joint_thumb.gif
-     :alt: Distance Joint
+  .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_distance_joint_thumb.gif
+    :alt: Distance Joint
 
-     :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py`
+  :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Distance Joint</div>
+    </div>
+
 
 .. raw:: html
 
     </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorials/joints/plot_distance_joint
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorials_particles:
 
 Particle Tutorials
 ==================
@@ -209,14 +184,25 @@ Below is a gallery of examples using particles
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Create a RandomizedLinearEmitter">
 
 .. only:: html
 
- .. figure:: /tutorials/particles/images/thumb/sphx_glr_plot_randomized_linear_emitter_thumb.gif
-     :alt: Emitter
+  .. image:: /tutorials/particles/images/thumb/sphx_glr_plot_randomized_linear_emitter_thumb.gif
+    :alt: Emitter
 
-     :ref:`sphx_glr_tutorials_particles_plot_randomized_linear_emitter.py`
+  :ref:`sphx_glr_tutorials_particles_plot_randomized_linear_emitter.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Emitter</div>
+    </div>
+
 
 .. raw:: html
 
@@ -225,29 +211,23 @@ Below is a gallery of examples using particles
 
 .. toctree::
    :hidden:
+   :includehidden:
 
-   /tutorials/particles/plot_randomized_linear_emitter
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
+   /tutorials/joints/index.rst
+   /tutorials/particles/index.rst
 
 
-.. only :: html
+.. only:: html
 
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-gallery
+  .. container:: sphx-glr-footer sphx-glr-footer-gallery
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download all examples in Python source code: tutorials_python.zip </tutorials/tutorials_python.zip>`
 
-    :download:`Download all examples in Python source code: tutorials_python.zip </tutorials/tutorials_python.zip>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-    :download:`Download all examples in Jupyter notebooks: tutorials_jupyter.zip </tutorials/tutorials_jupyter.zip>`
+      :download:`Download all examples in Jupyter notebooks: tutorials_jupyter.zip </tutorials/tutorials_jupyter.zip>`
 
 
 .. only:: html

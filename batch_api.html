@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Batch API &mdash; pyb2d 0.7.2 documentation</title>
+  <title>Batch API &mdash; pyb2d 0.7.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
@@ -18,11 +18,13 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials" href="tutorials/index.html" />
+    <link rel="next" title="Examples" href="examples.html" />
     <link rel="prev" title="Joints" href="joints.html" /> 
 </head>
 
@@ -34,7 +36,7 @@
             <a href="index.html" class="icon icon-home"> pyb2d
           </a>
               <div class="version">
-                0.7.2
+                0.7.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -49,11 +51,28 @@
 <li class="toctree-l1"><a class="reference internal" href="world.html">World</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bodies.html">Bodies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Batch API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#joint-tutorials">Joint Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#particle-tutorials">Particle Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Batch API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#b2d.BodyVector"><code class="docutils literal notranslate"><span class="pre">BodyVector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.angle"><code class="docutils literal notranslate"><span class="pre">BodyVector.angle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.angular_damping"><code class="docutils literal notranslate"><span class="pre">BodyVector.angular_damping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.angular_velocity"><code class="docutils literal notranslate"><span class="pre">BodyVector.angular_velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.awake"><code class="docutils literal notranslate"><span class="pre">BodyVector.awake()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.bullet"><code class="docutils literal notranslate"><span class="pre">BodyVector.bullet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.enabled"><code class="docutils literal notranslate"><span class="pre">BodyVector.enabled()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.fixed_rotation"><code class="docutils literal notranslate"><span class="pre">BodyVector.fixed_rotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.inertia"><code class="docutils literal notranslate"><span class="pre">BodyVector.inertia()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.linear_damping"><code class="docutils literal notranslate"><span class="pre">BodyVector.linear_damping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.linear_velocity"><code class="docutils literal notranslate"><span class="pre">BodyVector.linear_velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.local_center"><code class="docutils literal notranslate"><span class="pre">BodyVector.local_center()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.mass"><code class="docutils literal notranslate"><span class="pre">BodyVector.mass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.position"><code class="docutils literal notranslate"><span class="pre">BodyVector.position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.sleeping_allowed"><code class="docutils literal notranslate"><span class="pre">BodyVector.sleeping_allowed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2d.BodyVector.world_center"><code class="docutils literal notranslate"><span class="pre">BodyVector.world_center()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="debug_draw/index.html">Debug Draw</a></li>
@@ -75,8 +94,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Batch API</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Batch API</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/batch_api.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,7 +106,7 @@
            <div itemprop="articleBody">
              
   <section id="batch-api">
-<h1>Batch API<a class="headerlink" href="#batch-api" title="Permalink to this headline"></a></h1>
+<h1>Batch API<a class="headerlink" href="#batch-api" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="b2d.BodyVector">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">b2d.</span></span><span class="sig-name descname"><span class="pre">BodyVector</span></span><a class="headerlink" href="#b2d.BodyVector" title="Permalink to this definition"></a></dt>
@@ -175,7 +194,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="joints.html" class="btn btn-neutral float-left" title="Joints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

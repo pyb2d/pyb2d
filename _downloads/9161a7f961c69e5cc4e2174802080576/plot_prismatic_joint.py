@@ -3,6 +3,11 @@ Prismatic Joint
 ===========================
 
 Create a prismatic joint
+
+Uses:
+    * :class:`b2d.PrismaticJointDef`
+    * :class:`b2d.PrismaticJoint`
+
 """
 
 

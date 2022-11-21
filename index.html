@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyb2d Documentation &mdash; pyb2d 0.7.2 documentation</title>
+  <title>pyb2d Documentation &mdash; pyb2d 0.7.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
@@ -18,7 +18,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -33,7 +35,7 @@
             <a href="#" class="icon icon-home"> pyb2d
           </a>
               <div class="version">
-                0.7.2
+                0.7.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -49,10 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="bodies.html">Bodies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
 <li class="toctree-l1"><a class="reference internal" href="batch_api.html">Batch API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#joint-tutorials">Joint Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#particle-tutorials">Particle Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="debug_draw/index.html">Debug Draw</a></li>
@@ -74,8 +73,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>pyb2d Documentation</li>
+      <li><a href="#" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">pyb2d Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,23 +85,33 @@
            <div itemprop="articleBody">
              
   <section id="pyb2d-documentation">
-<h1>pyb2d Documentation<a class="headerlink" href="#pyb2d-documentation" title="Permalink to this headline"></a></h1>
+<h1>pyb2d Documentation<a class="headerlink" href="#pyb2d-documentation" title="Permalink to this heading"></a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="world.html">World</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bodies.html">Bodies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="batch_api.html">Batch API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-distancejoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.DistanceJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-prismaticjoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.PrismaticJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-weldjoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WeldJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-wheeljoint">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WheelJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-distancejointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.DistanceJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-prismaticjointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.PrismaticJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-weldjointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WeldJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#examples-using-b2d-wheeljointdef">Examples using <code class="docutils literal notranslate"><span class="pre">b2d.WheelJointDef</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#joint-tutorials">Joint Tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="batch_api.html">Batch API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="batch_api.html#b2d.BodyVector"><code class="docutils literal notranslate"><span class="pre">BodyVector</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html#particle-tutorials">Particle Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#joint-tutorials">Joint Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index.html#particle-tutorials">Particle Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -116,7 +125,27 @@
 <p>API Documentation:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pyb2d.html">pyb2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyb2d.html">pyb2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.World"><code class="docutils literal notranslate"><span class="pre">World</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.Body"><code class="docutils literal notranslate"><span class="pre">Body</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.DistanceJoint"><code class="docutils literal notranslate"><span class="pre">DistanceJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.FrictionJoint"><code class="docutils literal notranslate"><span class="pre">FrictionJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.GearJoint"><code class="docutils literal notranslate"><span class="pre">GearJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.MouseJoint"><code class="docutils literal notranslate"><span class="pre">MouseJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.PrismaticJoint"><code class="docutils literal notranslate"><span class="pre">PrismaticJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.RevoluteJoint"><code class="docutils literal notranslate"><span class="pre">RevoluteJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.WeldJoint"><code class="docutils literal notranslate"><span class="pre">WeldJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.WheelJoint"><code class="docutils literal notranslate"><span class="pre">WheelJoint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.DistanceJointDef"><code class="docutils literal notranslate"><span class="pre">DistanceJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.FrictionJointDef"><code class="docutils literal notranslate"><span class="pre">FrictionJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.GearJointDef"><code class="docutils literal notranslate"><span class="pre">GearJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.MouseJointDef"><code class="docutils literal notranslate"><span class="pre">MouseJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.PrismaticJointDef"><code class="docutils literal notranslate"><span class="pre">PrismaticJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.RevoluteJointDef"><code class="docutils literal notranslate"><span class="pre">RevoluteJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.WeldJointDef"><code class="docutils literal notranslate"><span class="pre">WeldJointDef</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyb2d.html#b2d.WheelJointDef"><code class="docutils literal notranslate"><span class="pre">WheelJointDef</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
