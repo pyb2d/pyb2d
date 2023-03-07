@@ -26,6 +26,7 @@ endif()
 # ============
 OPTION(BUILD_PYTHON "${PROJECT_NAME} python binding" ON)
 OPTION(PYB2D_LIQUID_FUN "${PROJECT_NAME} liquidfun" ON)
+OPTION(USE_EXTERNAL_PYTHON_MODULE_INSTALL_DIR "use external provided PYTHON_MODULE_INSTALL_DIR" OFF)
 if(BUILD_PYTHON)
     add_subdirectory(python)
     # add_subdirectory(old_python)

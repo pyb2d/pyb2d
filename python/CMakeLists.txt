@@ -9,21 +9,21 @@ set(PY_MOD_NAME b2d )
 set(PY_MOD_LIB_NAME _${PY_MOD_NAME})
 
 
+if(NOT USE_EXTERNAL_PYTHON_MODULE_INSTALL_DIR)
 
+    IF(NOT DEFINED PYTHON_MODULE_INSTALL_DIR OR PYTHON_MODULE_INSTALL_DIR MATCHES "")
 
-IF(NOT DEFINED PYTHON_MODULE_INSTALL_DIR OR PYTHON_MODULE_INSTALL_DIR MATCHES "")
+        execute_process(
+          COMMAND "${PYTHON_EXECUTABLE}" -c "from __future__ import print_function; from distutils.sysconfig import get_python_lib; print(get_python_lib())"
+          OUTPUT_VARIABLE PYTHON_SITE
+          OUTPUT_STRIP_TRAILING_WHITESPACE)
+        SET(PYTHON_MODULE_INSTALL_DIR ${PYTHON_SITE})
 
-    execute_process(
-      COMMAND "${PYTHON_EXECUTABLE}" -c "from __future__ import print_function; from distutils.sysconfig import get_python_lib; print(get_python_lib())"
-      OUTPUT_VARIABLE PYTHON_SITE
-      OUTPUT_STRIP_TRAILING_WHITESPACE)
-    SET(PYTHON_MODULE_INSTALL_DIR ${PYTHON_SITE})
+    endif()
 
+    SET(PYTHON_MODULE_INSTALL_DIR ${PYTHON_MODULE_INSTALL_DIR}
+        CACHE PATH "where to install the Python package" FORCE)
 endif()
-
-SET(PYTHON_MODULE_INSTALL_DIR ${PYTHON_MODULE_INSTALL_DIR}
-    CACHE PATH "where to install the Python package" FORCE)
-
 
 # temporary python module dir
 
