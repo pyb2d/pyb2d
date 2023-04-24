@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_auto_examples_plot_angry_shapes.py>`
+        :ref:`Go to the end <sphx_glr_download_auto_examples_plot_angry_shapes.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -216,42 +216,42 @@ This example shows how to create games inspired by AngryBirds.
      </style>
 
      <div class="animation">
-       <img id="_anim_imgf6ae2cc5e47546239c0244c485e29812">
+       <img id="_anim_img7cbd0dd4d70c4d6a957eb5cd043c9b62">
        <div class="anim-controls">
-         <input id="_anim_sliderf6ae2cc5e47546239c0244c485e29812" type="range" class="anim-slider"
+         <input id="_anim_slider7cbd0dd4d70c4d6a957eb5cd043c9b62" type="range" class="anim-slider"
                 name="points" min="0" max="1" step="1" value="0"
-                oninput="animf6ae2cc5e47546239c0244c485e29812.set_frame(parseInt(this.value));">
+                oninput="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.set_frame(parseInt(this.value));">
          <div class="anim-buttons">
-           <button title="Decrease speed" aria-label="Decrease speed" onclick="animf6ae2cc5e47546239c0244c485e29812.slower()">
+           <button title="Decrease speed" aria-label="Decrease speed" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.slower()">
                <i class="fa fa-minus"></i></button>
-           <button title="First frame" aria-label="First frame" onclick="animf6ae2cc5e47546239c0244c485e29812.first_frame()">
+           <button title="First frame" aria-label="First frame" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.first_frame()">
              <i class="fa fa-fast-backward"></i></button>
-           <button title="Previous frame" aria-label="Previous frame" onclick="animf6ae2cc5e47546239c0244c485e29812.previous_frame()">
+           <button title="Previous frame" aria-label="Previous frame" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.previous_frame()">
                <i class="fa fa-step-backward"></i></button>
-           <button title="Play backwards" aria-label="Play backwards" onclick="animf6ae2cc5e47546239c0244c485e29812.reverse_animation()">
+           <button title="Play backwards" aria-label="Play backwards" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.reverse_animation()">
                <i class="fa fa-play fa-flip-horizontal"></i></button>
-           <button title="Pause" aria-label="Pause" onclick="animf6ae2cc5e47546239c0244c485e29812.pause_animation()">
+           <button title="Pause" aria-label="Pause" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.pause_animation()">
                <i class="fa fa-pause"></i></button>
-           <button title="Play" aria-label="Play" onclick="animf6ae2cc5e47546239c0244c485e29812.play_animation()">
+           <button title="Play" aria-label="Play" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.play_animation()">
                <i class="fa fa-play"></i></button>
-           <button title="Next frame" aria-label="Next frame" onclick="animf6ae2cc5e47546239c0244c485e29812.next_frame()">
+           <button title="Next frame" aria-label="Next frame" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.next_frame()">
                <i class="fa fa-step-forward"></i></button>
-           <button title="Last frame" aria-label="Last frame" onclick="animf6ae2cc5e47546239c0244c485e29812.last_frame()">
+           <button title="Last frame" aria-label="Last frame" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.last_frame()">
                <i class="fa fa-fast-forward"></i></button>
-           <button title="Increase speed" aria-label="Increase speed" onclick="animf6ae2cc5e47546239c0244c485e29812.faster()">
+           <button title="Increase speed" aria-label="Increase speed" onclick="anim7cbd0dd4d70c4d6a957eb5cd043c9b62.faster()">
                <i class="fa fa-plus"></i></button>
          </div>
-         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectf6ae2cc5e47546239c0244c485e29812"
+         <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select7cbd0dd4d70c4d6a957eb5cd043c9b62"
                class="anim-state">
-           <input type="radio" name="state" value="once" id="_anim_radio1_f6ae2cc5e47546239c0244c485e29812"
+           <input type="radio" name="state" value="once" id="_anim_radio1_7cbd0dd4d70c4d6a957eb5cd043c9b62"
                   >
-           <label for="_anim_radio1_f6ae2cc5e47546239c0244c485e29812">Once</label>
-           <input type="radio" name="state" value="loop" id="_anim_radio2_f6ae2cc5e47546239c0244c485e29812"
+           <label for="_anim_radio1_7cbd0dd4d70c4d6a957eb5cd043c9b62">Once</label>
+           <input type="radio" name="state" value="loop" id="_anim_radio2_7cbd0dd4d70c4d6a957eb5cd043c9b62"
                   checked>
-           <label for="_anim_radio2_f6ae2cc5e47546239c0244c485e29812">Loop</label>
-           <input type="radio" name="state" value="reflect" id="_anim_radio3_f6ae2cc5e47546239c0244c485e29812"
+           <label for="_anim_radio2_7cbd0dd4d70c4d6a957eb5cd043c9b62">Loop</label>
+           <input type="radio" name="state" value="reflect" id="_anim_radio3_7cbd0dd4d70c4d6a957eb5cd043c9b62"
                   >
-           <label for="_anim_radio3_f6ae2cc5e47546239c0244c485e29812">Reflect</label>
+           <label for="_anim_radio3_7cbd0dd4d70c4d6a957eb5cd043c9b62">Reflect</label>
          </form>
        </div>
      </div>
@@ -261,13 +261,13 @@ This example shows how to create games inspired by AngryBirds.
        /* Instantiate the Animation class. */
        /* The IDs given should match those used in the template above. */
        (function() {
-         var img_id = "_anim_imgf6ae2cc5e47546239c0244c485e29812";
-         var slider_id = "_anim_sliderf6ae2cc5e47546239c0244c485e29812";
-         var loop_select_id = "_anim_loop_selectf6ae2cc5e47546239c0244c485e29812";
+         var img_id = "_anim_img7cbd0dd4d70c4d6a957eb5cd043c9b62";
+         var slider_id = "_anim_slider7cbd0dd4d70c4d6a957eb5cd043c9b62";
+         var loop_select_id = "_anim_loop_select7cbd0dd4d70c4d6a957eb5cd043c9b62";
          var frames = new Array(240);
     
        frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAuvklEQVR4nO3dfXRUVZ7u8acCJBJCVQwhqaR5aV4UjBDsQY01to4jkYC0F4XV\
      S5GWSNOwxGCPoAzGpSCuuYbBmVHbQZi+zhXvXNFuvKJXFmhHXsJ1CChps3hR05LGTpRUojCpgmAq\
      Idn3j8hpqwmQYFKV2vl+1trLnLP3Oed3jqV5ct7KZYwxAgAAgLXiol0AAAAAuheBDwAAwHIEPgAA\
@@ -481,7 +481,7 @@ This example shows how to create games inspired by AngryBirds.
      R+ADAACw3P8H8Y3f9c6oiSYAAAAASUVORK5CYII=\
      "
        frames[1] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAuvklEQVR4nO3dfXRUVZ7u8acCJBJCVQwhqaR5aV4UjBDsQY01to4jkYC0F4XV\
      S5GWSNOwxGCPoAzGpSCuuYbBmVHbQZi+zhXvXNFuvKJXFmhHXsJ1CChps3hR05LGTpRUojCpgmAq\
      Idn3j8hpqwmQYFKV2vl+1trLnLP3Oed3jqV5ct7KZYwxAgAAgLXiol0AAAAAuheBDwAAwHIEPgAA\
@@ -695,7 +695,7 @@ This example shows how to create games inspired by AngryBirds.
      R+ADAACw3P8H8Y3f9c6oiSYAAAAASUVORK5CYII=\
      "
        frames[2] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAuaUlEQVR4nO3df3RU9Z3/8dcEkgiEmRBCMon8EMGCkYAVMJ2vq8tXIgHRRWHP\
      V35Uo1JYMbgVLNVYheLpMRzcrtquwm7titsjWukRPfIVWQokfFkiSjTLL5sVSk2UTIJgZiCYIT8+\
      3z8it44ESTCZYT55Ps75nObez+fe+77XKXnl/hqXMcYIAAAA1oqLdgEAAADoWgQ+AAAAyxH4AAAA\
@@ -908,7 +908,7 @@ This example shows how to create games inspired by AngryBirds.
      gg==\
      "
        frames[3] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAuaUlEQVR4nO3df3RU9Z3/8dcEkgiEmRBCMon8EMGCkYAVMJ2vq8tXIgHRRWHP\
      V35Uo1JYMbgVLNVYheLpMRzcrtquwm7titsjWukRPfIVWQokfFkiSjTLL5sVSk2UTIJgZiCYIT8+\
      3z8it44ESTCZYT55Ps75nObez+fe+77XKXnl/hqXMcYIAAAA1oqLdgEAAADoWgQ+AAAAyxH4AAAA\
@@ -1121,7 +1121,7 @@ This example shows how to create games inspired by AngryBirds.
      gg==\
      "
        frames[4] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAt7ElEQVR4nO3dfXCU9b338c8GkhgIuzFAskkhyFOBSIItYrrH1nJLJCClKPSM\
      ItWoFEYMzhGUYhyF4jljPNjTalsLZ+52xDkj0tIjemRED/IQxhJQU3PzoGYkoomSTRQmuxDM5ul3\
      /xG56pYACSa77C/v18w1ze7122u/1zbK233CZYwxAgAAgLXioj0AAAAAehfBBwAAYDmCDwAAwHIE\
@@ -1331,7 +1331,7 @@ This example shows how to create games inspired by AngryBirds.
      HMEHAABgOYIPAADAcgQfAACA5Qg+AAAAy/1/jA6VdjAaS08AAAAASUVORK5CYII=\
      "
        frames[5] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtWUlEQVR4nO3df3BU9b3/8VcCSQyE3RhCskn5IT8UjCTQAsb9emsZiYRI/apw\
      ZxQpRi6FKwa/V1AuxlEs3o5h8I7VWgt3vvaKd76iLV7RgRFt5EeoJVJJzfBLc4ViEyWbWGh2QzCb\
      X5/vH5FTtwRJMNllP3k+Zj5Dzvl8zjnvc1zJi/NrY4wxRgAAALBWbKQLAAAAQN8i8AEAAFiOwAcA\
@@ -1539,7 +1539,7 @@ This example shows how to create games inspired by AngryBirds.
      M9QAAAAASUVORK5CYII=\
      "
        frames[6] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtBElEQVR4nO3de3RUZZ7u8acCSQRiVQyQVCIEw6XByK0naLrGy7gkEpD2oDDn\
      KDIabYQWgzOCzWg8Cg2rl+HgrGm1G2HWdLew1ojY9IiOLJFJcwnjEFHTZrjZGUnHTpRUojCpgmCK\
      XN7zR2RrNUESOqlKvXw/a73L7P2+e+/f3pSVh33DZYwxAgAAgLXiol0AAAAAeheBDwAAwHIEPgAA\
@@ -1745,7 +1745,7 @@ This example shows how to create games inspired by AngryBirds.
      ACxH4AMAALAcgQ8AAMByBD4AAADL/X/91LdI0ghHhgAAAABJRU5ErkJggg==\
      "
        frames[7] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAs2UlEQVR4nO3df3RU9Z3/8VcCyUgIMzFAMskCKaCCEQhtxDh1a/1KJCD1oLD7\
      VaQaLYUjBraApRi/CIXdYyju2fpjKZyz7RHP94hUekS/ckSa8iOsJURNzfJDGyVLmyiZRKGZgWCG\
      kHy+f6RcnSVIQpOZzIfn45zPIfd+PnPv+3MJkxf3xyTOGGMEAAAAa8VHuwAAAAD0LgIfAACA5Qh8\
@@ -1950,7 +1950,7 @@ This example shows how to create games inspired by AngryBirds.
      AADLEfgAAAAsR+ADAACwHIEPAADAcgQ+AAAAyxH4AAAALPf/AW65q2lAX2JBAAAAAElFTkSuQmCC\
      "
        frames[8] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -2155,7 +2155,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[9] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAseUlEQVR4nO3df3DU9b3v8VcCyQqE3RhCskn5UX5YMJJAixj32nocSQmIjgr3\
      HkWq0YMwYnAqWA6GURDGMQx6Wq2HwpmxI84d8Qcd0ZEreig/wrUsUSMZfqippLSJkk0UbnZDMBuS\
      fO4fyNduCRJospv95PmY+YzZ/X73u+/vGsOTze6aYIwxAgAAgLUSYz0AAAAAehbBBwAAYDmCDwAA\
@@ -2359,7 +2359,7 @@ This example shows how to create games inspired by AngryBirds.
      f/t3WouOAAAAAElFTkSuQmCC\
      "
        frames[10] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArtUlEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aQByq+CkQAtYtyxWo9EQky9IPyh\
      yIHooTBicCpYinEUhDljGDznFO2hMOf0XHGmApWO6MgVlfIjjIcl1dQcftkMRNoEySYWTnYhmCUk\
      n/sH5Vu3BAk22c1+8nzMfOaw+/1k9/3d5sjT/WWcMcYIAAAA1oqP9gAAAADoXgQfAACA5Qg+AAAA\
@@ -2559,7 +2559,7 @@ This example shows how to create games inspired by AngryBirds.
      AMByBB8AAIDlCD4AAADLEXwAAACWI/gAAAAs9/8Bql/n4zYb26MAAAAASUVORK5CYII=\
      "
        frames[11] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAq9klEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aT8aAALRgi0EdMdT61HUkKMXhTO\
      XEWORg+FEYNzBEsxjkJxzjFc7G21PQgzt2fEP0QsHdGRI9qUH2E8LKipOfzSHMlBEyWbWJjshmA2\
      vz73D+TbbgkQaLKb/eT5mPlM2f1+svv+bml5sr+IM8YYAQAAwFrx0R4AAAAA/YvgAwAAsBzBBwAA\
@@ -2756,7 +2756,7 @@ This example shows how to create games inspired by AngryBirds.
      YDmCDwAAwHL/HyjPoC0ktFvpAAAAAElFTkSuQmCC\
      "
        frames[12] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqEElEQVR4nO3dfXCU9b338U8CyUoIuzGEZJPyUJ4EIwm0iOnennq8JSWJqTcK\
      fyhSjZbCiME5guVgHIXinNtw8EzVtggzxx5x5hapdERHRrQpD2E8LCipGZ5sRnKoiZJNLEx2IZgl\
      D7/7D+RqtwYJmOxmf7xfM79pdq9rd7/Xmsqbax9MMMYYAQAAwFqJsR4AAAAA/YvgAwAAsBzBBwAA\
@@ -2949,7 +2949,7 @@ This example shows how to create games inspired by AngryBirds.
      8AEAAFju/wMjIljqB+WEKAAAAABJRU5ErkJggg==\
      "
        frames[13] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApb0lEQVR4nO3df3DU9b3v8VcCyZYQdmMIySaHH/LDgpEEThHTvZ5aRyJJTB0U\
      5o4iR6MHYcTgPYLlYLwKxTljONg51fZQuDM9I/4hUumIjoxoU36E62FJNZrhl2ZMhpoo2cSGyW4I\
      ZsmPz/3Dw/e6JdRgk93sh+dj5jNm9/vd3fd3G+Hp7ne3CcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj\
@@ -3139,7 +3139,7 @@ This example shows how to create games inspired by AngryBirds.
      AACWI/gAAAAsR/ABAABY7v8BNx8zRCxPFX4AAAAASUVORK5CYII=\
      "
        frames[14] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApRklEQVR4nO3dfXDU5b338U8CyRYIuzGEZJPyUB40GEmgBzHd8dTjLSlJTB0U\
      /lDkaPRQGDE4R7AcjKNQnN6GG8+02h4KM3c74h8iLY7oyIielIcwHpaoqRmeNGNy0yZKNrFhshuC\
      WfJw3X9QftOtoQab7GavvF8z15Td35Xd72+bytt9aoIxxggAAADWSoz1AAAAABheBB8AAIDlCD4A\
@@ -3328,7 +3328,7 @@ This example shows how to create games inspired by AngryBirds.
      LEfwAQAAWI7gAwAAsBzBBwAAYDmCDwAAwHIEHwAAgOX+P8QXL83Pt0FBAAAAAElFTkSuQmCC\
      "
        frames[15] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApGklEQVR4nO3df3DU1b3/8VcCyUoIuzGEZJMLQX7YYCSBeyOmO95aRyIhRgaF\
      PxS5Gr0URgzOFSwX4ygUv3cMg51W20vhO9P7Ff8QaemIjozoTYGE8bJQTc3ll81IhjZRsonCZDcE\
      s+TH+f5h+Uy3hhpssps9eT5mzjS7n5Pd92dN4elmd00wxhgBAADAWomxHgAAAADDi+ADAACwHMEH\
@@ -3517,7 +3517,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[16] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoxklEQVR4nO3cb3DU5b338U8CyUoIuzGEZJMCafjTYCSBcxDTHU893pKSxNQb\
      hQeKHI0eCiMG5wiWg3EUivcZw41nWm0PhQc9Iz4QaemIjozoSYGE8bCkmprhn81IBpso2cTCZDcE\
      s+TPdT/w8Lu7NdRgk132yvs1c03Z/V3Z/f7WVN7uvwRjjBEAAACslRjrAQAAADC6CD4AAADLEXwA\
@@ -3704,7 +3704,7 @@ This example shows how to create games inspired by AngryBirds.
      gg8AAMByBB8AAIDlCD4AAADL/T8qvBll88V1OAAAAABJRU5ErkJggg==\
      "
        frames[17] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAobklEQVR4nO3dbXDU5b3/8U8CyZYQdmMIySYHQrmxwUgSzomY7njqcSQliamD\
      wgNFqtFSGDE4R7AcjKNQnDOGwc6ptofCg56/+ECk0hEdGdGTAgljWaimZrizGZOhTZRsYmGyG4LZ\
      3F3/Bw6/6dZQgyfZZS/er5lrht3fld3vb03l7d41wRhjBAAAAGslxnoAAAAAjC+CDwAAwHIEHwAA\
@@ -3890,7 +3890,7 @@ This example shows how to create games inspired by AngryBirds.
      AElFTkSuQmCC\
      "
        frames[18] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -4075,7 +4075,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[19] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -4260,7 +4260,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[20] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -4445,7 +4445,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[21] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -4630,7 +4630,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[22] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -4815,7 +4815,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[23] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -5000,7 +5000,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[24] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -5185,7 +5185,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[25] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -5370,7 +5370,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[26] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -5555,7 +5555,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[27] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -5740,7 +5740,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[28] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -5925,7 +5925,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[29] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -6110,7 +6110,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[30] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -6295,7 +6295,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[31] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -6480,7 +6480,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[32] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -6665,7 +6665,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[33] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -6850,7 +6850,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[34] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -7035,7 +7035,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[35] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -7220,7 +7220,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[36] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -7405,7 +7405,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[37] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -7590,7 +7590,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[38] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -7775,7 +7775,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[39] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -7960,7 +7960,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[40] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -8145,7 +8145,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[41] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -8330,7 +8330,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[42] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -8515,7 +8515,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[43] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -8700,7 +8700,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[44] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -8885,7 +8885,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[45] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -9070,7 +9070,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[46] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -9255,7 +9255,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[47] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -9440,7 +9440,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[48] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -9625,7 +9625,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[49] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -9810,7 +9810,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[50] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -9995,7 +9995,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[51] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -10180,7 +10180,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[52] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -10365,7 +10365,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[53] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -10550,7 +10550,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[54] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -10735,7 +10735,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[55] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -10920,7 +10920,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[56] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -11105,7 +11105,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[57] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -11290,7 +11290,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[58] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -11475,7 +11475,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[59] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -11660,7 +11660,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[60] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -11845,7 +11845,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[61] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -12030,7 +12030,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[62] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAojElEQVR4nO3cb3DU5b3//1cCyRYIuzGEZJMDpAFsMJJAT8R0x1OPIylJTP2i\
      ML9R5Gj0UBgxOEewHIyjUJwzhsEzp9qWwg3PiDdEWjqiIyN6UiBhPCxUUzP8sxmToU2UbGLDZDcE\
      s+TP9bvRw2e6NWiwyW724vmYuabsfq7svj9rKk/3X4IxxggAAADWSoz1AAAAABhbBB8AAIDlCD4A\
@@ -12216,7 +12216,7 @@ This example shows how to create games inspired by AngryBirds.
      DwAAwHIEHwAAgOUIPgAAAMv9/8h7EfP7CVQ/AAAAAElFTkSuQmCC\
      "
        frames[63] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoxklEQVR4nO3cb3DU5b338U8CyUoIuzGEZJMCafjTYCSBcxDTHU893pKSxNQb\
      hQeKHI0eCiMG5wiWg3EUivcZw41nWm0PhQc9Iz4QaemIjozoSYGE8bCkmprhn81IBpso2cTCZDcE\
      s+TPdT/w8Lu7NdRgk132yvs1c03Z/V3Z/f7WVN7uvwRjjBEAAACslRjrAQAAADC6CD4AAADLEXwA\
@@ -12403,7 +12403,7 @@ This example shows how to create games inspired by AngryBirds.
      gg8AAMByBB8AAIDlCD4AAADL/T8qvBll88V1OAAAAABJRU5ErkJggg==\
      "
        frames[64] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApGklEQVR4nO3df3DU1b3/8VcCyUoIuzGEZJMLQX7YYCSBeyOmO95aRyIhRgaF\
      PxS5Gr0URgzOFSwX4ygUv3cMg51W20vhO9P7Ff8QaemIjozoTYGE8bJQTc3ll81IhjZRsonCZDcE\
      s+TH+f5h+Uy3hhpssps9eT5mzjS7n5Pd92dN4elmd00wxhgBAADAWomxHgAAAADDi+ADAACwHMEH\
@@ -12592,7 +12592,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[65] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApS0lEQVR4nO3dfXDU5b338U8CyZYQdmMIySblQR4sGElCD2K6Y+txJCXE1EHh\
      nlGkGj0URgzOESwH4ygU59yGwTOttofCH+2IM0ekpSN6y4ieFEgYD0uq0QxPNmNysImSTSxMdiGY\
      zdN1/2H5TbeGGmiym73yfs1cU3Z/V3a/v20qb/epCcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj+AAA\
@@ -12782,7 +12782,7 @@ This example shows how to create games inspired by AngryBirds.
      YII=\
      "
        frames[66] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApb0lEQVR4nO3df3DU9b3v8VcCyZYQdmMIySaHH/LDgpEEThHTvZ5aRyJJTB0U\
      5o4iR6MHYcTgPYLlYLwKxTljONg51fZQuDM9I/4hUumIjoxoU36E62FJNZrhl2ZMhpoo2cSGyW4I\
      ZsmPz/3Dw/e6JdRgk93sh+dj5jNm9/vd3fd3G+Hp7ne3CcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj\
@@ -12972,7 +12972,7 @@ This example shows how to create games inspired by AngryBirds.
      AACWI/gAAAAsR/ABAABY7v8BNx8zRCxPFX4AAAAASUVORK5CYII=\
      "
        frames[67] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApxUlEQVR4nO3dbXCUZZ7v8V8CSQ8hdMcQkk6WBwNoMJLADmKmyx3XkgwhRg8K\
      LxRZjQ4DJQbPCg6LsRQGa8twcM+OjstA1XGP+EJE8YiWlOhmeAjl0jCaMcWTpiTDTKKkEwcq3RBM\
      k4frvGC4xx7DEDDpTl/5fqquMt333d3/u83A1+67exKMMUYAAACwVmKsBwAAAMDAIvgAAAAsR/AB\
@@ -13164,7 +13164,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[68] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqhElEQVR4nO3de3CUdZ7v8U8CSQuE7hhC0slykYsDRhKYQYxd7riWREKMHhTq\
      lCKr0WWgxGCt4LAYS2Gw9hgK96w6Mwz8MXvE2iPiYImWHNGJXMK6NKgZU9w0JRlmEiWdOFDpDsE0\
      ufzOH8gz9hggYNKd/uX9qvqVdD9Pd3+fNsqbpy8kGGOMAAAAYK3EWA8AAACAvkXwAQAAWI7gAwAA\
@@ -13359,7 +13359,7 @@ This example shows how to create games inspired by AngryBirds.
      LEfwAQAAWO7/A7okeXgLSvllAAAAAElFTkSuQmCC\
      "
        frames[69] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArWUlEQVR4nO3df3TU9Z3v8dcEkhQIMyGEZJLyQ34JRhLYjRjnuFVXUgKmHhTu\
      vYpUo0vhisFTwbIYr0Lx9hgu9rbYLoXdY4/4h4ilR/TIEd2UH+FaBqrRLL9slmRpEyWTKJzMQDBD\
      SD73D8q3nRIg0GSG+eT5OOdzysz3MzPv70jl6cxkcBljjAAAAGCthFgPAAAAgN5F8AEAAFiO4AMA\
@@ -13558,7 +13558,7 @@ This example shows how to create games inspired by AngryBirds.
      P15UAAAAAElFTkSuQmCC\
      "
        frames[70] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsA0lEQVR4nO3df3TU9Z3v8VcCyRQIMzGEZBL5IT8sGPnVRUxn3bIcSQkx9aLk\
      3FWkECmFFYNnBctiXMXi8RgOelqtRfije8Q9K9DSK3jkiDblR1jLQDWayy+bIxGbKJmEws0MBDOE\
      5HP/oHx1SpBAkxnmk+fjnM/ZzHw/mXl/p6w+nV8kGGOMAAAAYK3EWA8AAACA7kXwAQAAWI7gAwAA\
@@ -13760,7 +13760,7 @@ This example shows how to create games inspired by AngryBirds.
      jx8AAAAASUVORK5CYII=\
      "
        frames[71] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsSklEQVR4nO3df3DU9b3v8VcCycqv3RAg2aQB5IcFIwmcgqZ7PLVeiYSYOij8\
      oUg1WgojBqaCcjSOojjnGi6eadXWwsyxV+yMiMURHRlRIz/C8bBSiebyy2YkYhMlmyg0uxDIkh+f\
      +wfytVuCBJrsZj95PmY+0+x+P7v73jXC0/3VBGOMEQAAAKyVGOsBAAAA0LMIPgAAAMsRfAAAAJYj\
@@ -13963,7 +13963,7 @@ This example shows how to create games inspired by AngryBirds.
      wQcAAGC5/w/737m0i/pciwAAAABJRU5ErkJggg==\
      "
        frames[72] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsdElEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aT8kB8WjCRwDmK6x6N1JBIw9YAw\
      cxU5GJXCCMGpYDkYB7E4HUPRqT9ahHuO54r3jEiLIzJS0UP5Ea6yUE3N8EtzCAebKNkEYbILwSwh\
      +dw/Ur66hyCBJrvZT56Pmc80u99Pdt/flYanm901zhhjBAAAAGvFR3sAAAAAdC2CDwAAwHIEHwAA\
@@ -14167,7 +14167,7 @@ This example shows how to create games inspired by AngryBirds.
      GgAAAABJRU5ErkJggg==\
      "
        frames[73] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -14372,7 +14372,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[74] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAs2UlEQVR4nO3df3RU9Z3/8VcCyUgIMzFAMskCKaCCEQhtxDh1a/1KJCD1oLD7\
      VaQaLYUjBraApRi/CIXdYyju2fpjKZyz7RHP94hUekS/ckSa8iOsJURNzfJDGyVLmyiZRKGZgWCG\
      kHy+f6RcnSVIQpOZzIfn45zPIfd+PnPv+3MJkxf3xyTOGGMEAAAAa8VHuwAAAAD0LgIfAACA5Qh8\
@@ -14577,7 +14577,7 @@ This example shows how to create games inspired by AngryBirds.
      AADLEfgAAAAsR+ADAACwHIEPAADAcgQ+AAAAyxH4AAAALPf/AW65q2lAX2JBAAAAAElFTkSuQmCC\
      "
        frames[75] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAs9ElEQVR4nO3dfXRV9Z3v8c8JJCkQzwkhJCcZHuRBwQjBGdT0XKfUJZEEUy8K\
      q1eRwUgpVAyuispgXIrF1WsYmJmqHQprpo7YdUVaWtErS7QpD6EOATWa4UGbkQyaKDmJws05EMzJ\
      0+/+kbLtKUESmpyT88v7tdZvmb1/v733d2/iySf7KS5jjBEAAACsFRftAgAAANC3CHwAAACWI/AB\
@@ -14783,7 +14783,7 @@ This example shows how to create games inspired by AngryBirds.
      HwAAgOX+Pzfmxs1S1ED4AAAAAElFTkSuQmCC\
      "
        frames[76] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtBElEQVR4nO3de3RUZZ7u8acCSQRiVQyQVCIEw6XByK0naLrGy7gkEpD2oDDn\
      KDIabYQWgzOCzWg8Cg2rl+HgrGm1G2HWdLew1ojY9IiOLJFJcwnjEFHTZrjZGUnHTpRUojCpgmCK\
      XN7zR2RrNUESOqlKvXw/a73L7P2+e+/f3pSVh33DZYwxAgAAgLXiol0AAAAAeheBDwAAwHIEPgAA\
@@ -14989,7 +14989,7 @@ This example shows how to create games inspired by AngryBirds.
      ACxH4AMAALAcgQ8AAMByBD4AAADL/X/91LdI0ghHhgAAAABJRU5ErkJggg==\
      "
        frames[77] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtWUlEQVR4nO3df3BU9b3/8VcCSQyE3RhCskn5IT8UjCTQAsb9emsZiYRI/apw\
      ZxQpRi6FKwa/V1AuxlEs3o5h8I7VWgt3vvaKd76iLV7RgRFt5EeoJVJJzfBLc4ViEyWbWGh2QzCb\
      X5/vH5FTtwRJMNllP3k+Zj5Dzvl8zjnvc1zJi/NrY4wxRgAAALBWbKQLAAAAQN8i8AEAAFiOwAcA\
@@ -15197,7 +15197,7 @@ This example shows how to create games inspired by AngryBirds.
      M9QAAAAASUVORK5CYII=\
      "
        frames[78] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtWUlEQVR4nO3df3BU9b3/8VcCSQyE3RhCskn5IT8UjCTQAsb9emsZiYRI/apw\
      ZxQpRi6FKwa/V1AuxlEs3o5h8I7VWgt3vvaKd76iLV7RgRFt5EeoJVJJzfBLc4ViEyWbWGh2QzCb\
      X5/vH5FTtwRJMNllP3k+Zj5Dzvl8zjnvc1zJi/NrY4wxRgAAALBWbKQLAAAAQN8i8AEAAFiOwAcA\
@@ -15405,7 +15405,7 @@ This example shows how to create games inspired by AngryBirds.
      M9QAAAAASUVORK5CYII=\
      "
        frames[79] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtWUlEQVR4nO3df3BU9b3/8VcCSQyE3RhCskn5IT8UjCTQAsb9emsZiYRI/apw\
      ZxQpRi6FKwa/V1AuxlEs3o5h8I7VWgt3vvaKd76iLV7RgRFt5EeoJVJJzfBLc4ViEyWbWGh2QzCb\
      X5/vH5FTtwRJMNllP3k+Zj5Dzvl8zjnvc1zJi/NrY4wxRgAAALBWbKQLAAAAQN8i8AEAAFiOwAcA\
@@ -15613,7 +15613,7 @@ This example shows how to create games inspired by AngryBirds.
      M9QAAAAASUVORK5CYII=\
      "
        frames[80] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtWUlEQVR4nO3df3BU9b3/8VcCSQyE3RhCskn5IT8UjCTQAsb9emsZiYRI/apw\
      ZxQpRi6FKwa/V1AuxlEs3o5h8I7VWgt3vvaKd76iLV7RgRFt5EeoJVJJzfBLc4ViEyWbWGh2QzCb\
      X5/vH5FTtwRJMNllP3k+Zj5Dzvl8zjnvc1zJi/NrY4wxRgAAALBWbKQLAAAAQN8i8AEAAFiOwAcA\
@@ -15821,7 +15821,7 @@ This example shows how to create games inspired by AngryBirds.
      M9QAAAAASUVORK5CYII=\
      "
        frames[81] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtWUlEQVR4nO3df3BU9b3/8VcCSQyE3RhCskn5IT8UjCTQAsb9emsZiYRI/apw\
      ZxQpRi6FKwa/V1AuxlEs3o5h8I7VWgt3vvaKd76iLV7RgRFt5EeoJVJJzfBLc4ViEyWbWGh2QzCb\
      X5/vH5FTtwRJMNllP3k+Zj5Dzvl8zjnvc1zJi/NrY4wxRgAAALBWbKQLAAAAQN8i8AEAAFiOwAcA\
@@ -16029,7 +16029,7 @@ This example shows how to create games inspired by AngryBirds.
      M9QAAAAASUVORK5CYII=\
      "
        frames[82] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtBElEQVR4nO3de3RUZZ7u8acCSQRiVQyQVCIEw6XByK0naLrGy7gkEpD2oDDn\
      KDIabYQWgzOCzWg8Cg2rl+HgrGm1G2HWdLew1ojY9IiOLJFJcwnjEFHTZrjZGUnHTpRUojCpgmCK\
      XN7zR2RrNUESOqlKvXw/a73L7P2+e+/f3pSVh33DZYwxAgAAgLXiol0AAAAAeheBDwAAwHIEPgAA\
@@ -16235,7 +16235,7 @@ This example shows how to create games inspired by AngryBirds.
      ACxH4AMAALAcgQ8AAMByBD4AAADL/X/91LdI0ghHhgAAAABJRU5ErkJggg==\
      "
        frames[83] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAtBElEQVR4nO3de3RUZZ7u8acCSQRiVQyQVCIEw6XByK0naLrGy7gkEpD2oDDn\
      KDIabYQWgzOCzWg8Cg2rl+HgrGm1G2HWdLew1ojY9IiOLJFJcwnjEFHTZrjZGUnHTpRUojCpgmCK\
      XN7zR2RrNUESOqlKvXw/a73L7P2+e+/f3pSVh33DZYwxAgAAgLXiol0AAAAAeheBDwAAwHIEPgAA\
@@ -16441,7 +16441,7 @@ This example shows how to create games inspired by AngryBirds.
      ACxH4AMAALAcgQ8AAMByBD4AAADL/X/91LdI0ghHhgAAAABJRU5ErkJggg==\
      "
        frames[84] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAs9ElEQVR4nO3dfXRV9Z3v8c8JJCkQzwkhJCcZHuRBwQjBGdT0XKfUJZEEUy8K\
      q1eRwUgpVAyuispgXIrF1WsYmJmqHQprpo7YdUVaWtErS7QpD6EOATWa4UGbkQyaKDmJws05EMzJ\
      0+/+kbLtKUESmpyT88v7tdZvmb1/v733d2/iySf7KS5jjBEAAACsFRftAgAAANC3CHwAAACWI/AB\
@@ -16647,7 +16647,7 @@ This example shows how to create games inspired by AngryBirds.
      HwAAgOX+Pzfmxs1S1ED4AAAAAElFTkSuQmCC\
      "
        frames[85] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAs2UlEQVR4nO3df3RU9Z3/8VcCyUgIMzFAMskCKaCCEQhtxDh1a/1KJCD1oLD7\
      VaQaLYUjBraApRi/CIXdYyju2fpjKZyz7RHP94hUekS/ckSa8iOsJURNzfJDGyVLmyiZRKGZgWCG\
      kHy+f6RcnSVIQpOZzIfn45zPIfd+PnPv+3MJkxf3xyTOGGMEAAAAa8VHuwAAAAD0LgIfAACA5Qh8\
@@ -16852,7 +16852,7 @@ This example shows how to create games inspired by AngryBirds.
      AADLEfgAAAAsR+ADAACwHIEPAADAcgQ+AAAAyxH4AAAALPf/AW65q2lAX2JBAAAAAElFTkSuQmCC\
      "
        frames[86] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -17057,7 +17057,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[87] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAseUlEQVR4nO3df3DU9b3v8VcCyQqE3RhCskn5UX5YMJJAixj32nocSQmIjgr3\
      HkWq0YMwYnAqWA6GURDGMQx6Wq2HwpmxI84d8Qcd0ZEreig/wrUsUSMZfqippLSJkk0UbnZDMBuS\
      fO4fyNduCRJospv95PmY+YzZ/X73u+/vGsOTze6aYIwxAgAAgLUSYz0AAAAAehbBBwAAYDmCDwAA\
@@ -17261,7 +17261,7 @@ This example shows how to create games inspired by AngryBirds.
      f/t3WouOAAAAAElFTkSuQmCC\
      "
        frames[88] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsSklEQVR4nO3df3DU9b3v8VcCycqv3RAg2aQB5IcFIwmcgqZ7PLVeiYSYOij8\
      oUg1WgojBqaCcjSOojjnGi6eadXWwsyxV+yMiMURHRlRIz/C8bBSiebyy2YkYhMlmyg0uxDIkh+f\
      +wfytVuCBJrsZj95PmY+0+x+P7v73jXC0/3VBGOMEQAAAKyVGOsBAAAA0LMIPgAAAMsRfAAAAJYj\
@@ -17464,7 +17464,7 @@ This example shows how to create games inspired by AngryBirds.
      wQcAAGC5/w/737m0i/pciwAAAABJRU5ErkJggg==\
      "
        frames[89] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArtUlEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aQByq+CkQAtYtyxWo9EQky9IPyh\
      yIHooTBicCpYinEUhDljGDznFO2hMOf0XHGmApWO6MgVlfIjjIcl1dQcftkMRNoEySYWTnYhmCUk\
      n/sH5Vu3BAk22c1+8nzMfOaw+/1k9/3d5sjT/WWcMcYIAAAA1oqP9gAAAADoXgQfAACA5Qg+AAAA\
@@ -17664,7 +17664,7 @@ This example shows how to create games inspired by AngryBirds.
      AMByBB8AAIDlCD4AAADLEXwAAACWI/gAAAAs9/8Bql/n4zYb26MAAAAASUVORK5CYII=\
      "
        frames[90] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAq9klEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aT8aAALRgi0EdMdT61HUkKMXhTO\
      XEWORg+FEYNzBEsxjkJxzjFc7G21PQgzt2fEP0QsHdGRI9qUH2E8LKipOfzSHMlBEyWbWJjshmA2\
      vz73D+TbbgkQaLKb/eT5mPlM2f1+svv+bml5sr+IM8YYAQAAwFrx0R4AAAAA/YvgAwAAsBzBBwAA\
@@ -17861,7 +17861,7 @@ This example shows how to create games inspired by AngryBirds.
      YDmCDwAAwHL/HyjPoC0ktFvpAAAAAElFTkSuQmCC\
      "
        frames[91] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqEElEQVR4nO3dfXCU9b338U8CyUoIuzGEZJPyUJ4EIwm0iOnennq8JSWJqTcK\
      fyhSjZbCiME5guVgHIXinNtw8EzVtggzxx5x5hapdERHRrQpD2E8LCipGZ5sRnKoiZJNLEx2IZgl\
      D7/7D+RqtwYJmOxmf7xfM79pdq9rd7/Xmsqbax9MMMYYAQAAwFqJsR4AAAAA/YvgAwAAsBzBBwAA\
@@ -18054,7 +18054,7 @@ This example shows how to create games inspired by AngryBirds.
      8AEAAFju/wMjIljqB+WEKAAAAABJRU5ErkJggg==\
      "
        frames[92] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApjUlEQVR4nO3cfXDU9b33/9cGki0h7MYQkk3KTblRMJLAOYjpjqfWkZQQoxcK\
      c40i1eihMGJwKliKcRSKv45h8MyptofCH+2AM5dIS0f0khFtyk0YDwvV1Ax3mjE5tImSTRQmuyGY\
      JTef6w/k++vWUAMmu9kPz8fMZ8zu97u77+/XCE/3zmWMMQIAAIC1kuI9AAAAAAYXwQcAAGA5gg8A\
@@ -18245,7 +18245,7 @@ This example shows how to create games inspired by AngryBirds.
      AAAASUVORK5CYII=\
      "
        frames[93] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApUUlEQVR4nO3cfXDU5b338U8CyZYQdmMIySYHQnlQMJLAORHTvT16HImEmDog\
      nBlFqtFSGDF4V7AcjLeCMGcMg2dOtR4Kf/SM+IdIS0d0ZESb8hDGw0I1NcOTzUiGNlGyiYU7uyGY\
      JQ/X/Qfyu90aNNhkN3vl/Zq5puz+rux+f2sqb/cpwRhjBAAAAGslxnoAAAAADC6CDwAAwHIEHwAA\
@@ -18435,7 +18435,7 @@ This example shows how to create games inspired by AngryBirds.
      SUVORK5CYII=\
      "
        frames[94] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApLklEQVR4nO3df3DU9b3v8VcCyRYIuzGEZJMDSflhwUgSzkFM93rqcSQliamD\
      wh+KVKOHwojBOYJyMI5Ccc4YBs+cansozJyeEe+MSKUjOnJFT8qPcC0L1dQMvzRjMthEySYWJrsh\
      mCU/PvcPyvd2a9Bgk93sJ8/HzGea3e93d9/fNYWnu99dE4wxRgAAALBWYqwHAAAAwPAi+AAAACxH\
@@ -18624,7 +18624,7 @@ This example shows how to create games inspired by AngryBirds.
      YDmCDwAAwHL/D6jRMm/Ce93dAAAAAElFTkSuQmCC\
      "
        frames[95] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAo80lEQVR4nO3dfXDU5b338U8CyQqE3RhCssmB0AA2GEngFDHd8ehxJCXE1EFh\
      7lHkaPRQGDE4R7AU4ygU54xhsHOq9SD80TPiHyItHdGRET0pD2E8LKmm5ubJZkyGNlGyiQ2T3RDM\
      kofr/sPD7+7WUINNdrNX3q+Za8ru78ru97dN5e0+NcEYYwQAAABrJcZ6AAAAAIwsgg8AAMByBB8A\
@@ -18812,7 +18812,7 @@ This example shows how to create games inspired by AngryBirds.
      +AAAACz3/wAnYB7PrwNR+wAAAABJRU5ErkJggg==\
      "
        frames[96] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoxklEQVR4nO3cb3DU5b338U8CyUoIuzGEZJMCafjTYCSBcxDTHU893pKSxNQb\
      hQeKHI0eCiMG5wiWg3EUivcZw41nWm0PhQc9Iz4QaemIjozoSYGE8bCkmprhn81IBpso2cTCZDcE\
      s+TPdT/w8Lu7NdRgk132yvs1c03Z/V3Z/f7WVN7uvwRjjBEAAACslRjrAQAAADC6CD4AAADLEXwA\
@@ -18999,7 +18999,7 @@ This example shows how to create games inspired by AngryBirds.
      gg8AAMByBB8AAIDlCD4AAADL/T8qvBll88V1OAAAAABJRU5ErkJggg==\
      "
        frames[97] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAobklEQVR4nO3dbXDU5b3/8U8CyZYQdmMIySYHQrmxwUgSzomY7njqcSQliamD\
      wgNFqtFSGDE4R7AcjKNQnDOGwc6ptofCg56/+ECk0hEdGdGTAgljWaimZrizGZOhTZRsYmGyG4LZ\
      3F3/Bw6/6dZQgyfZZS/er5lrht3fld3vb03l7d41wRhjBAAAAGslxnoAAAAAjC+CDwAAwHIEHwAA\
@@ -19185,7 +19185,7 @@ This example shows how to create games inspired by AngryBirds.
      AElFTkSuQmCC\
      "
        frames[98] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -19370,7 +19370,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[99] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -19555,7 +19555,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[100] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -19740,7 +19740,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[101] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -19925,7 +19925,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[102] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -20110,7 +20110,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[103] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -20295,7 +20295,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[104] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -20480,7 +20480,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[105] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -20665,7 +20665,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[106] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -20850,7 +20850,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[107] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -21035,7 +21035,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[108] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -21220,7 +21220,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[109] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -21405,7 +21405,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[110] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -21590,7 +21590,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[111] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -21775,7 +21775,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[112] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -21960,7 +21960,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[113] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -22145,7 +22145,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[114] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -22330,7 +22330,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[115] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -22515,7 +22515,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[116] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -22700,7 +22700,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[117] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -22885,7 +22885,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[118] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -23070,7 +23070,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[119] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -23255,7 +23255,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[120] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -23440,7 +23440,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[121] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -23625,7 +23625,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[122] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -23810,7 +23810,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[123] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -23995,7 +23995,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[124] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -24180,7 +24180,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[125] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -24365,7 +24365,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[126] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -24550,7 +24550,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[127] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -24735,7 +24735,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[128] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -24920,7 +24920,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[129] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -25105,7 +25105,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[130] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -25290,7 +25290,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[131] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -25475,7 +25475,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[132] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -25660,7 +25660,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[133] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -25845,7 +25845,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[134] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -26030,7 +26030,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[135] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -26215,7 +26215,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[136] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -26400,7 +26400,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[137] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -26585,7 +26585,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[138] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -26770,7 +26770,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[139] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -26955,7 +26955,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[140] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -27140,7 +27140,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[141] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -27325,7 +27325,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[142] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoVklEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHpAFsMJKEO8R0x6vnSEoSUweF\
      PxQ5jR6FEYNzguUwjkJxbgyDN1dtj8IfvRH/ELF0REdG9FIgYTyWVFMz/LIZydAmSjaxMNkNwSz5\
      8bk/HL7TLaEGL9llP3k+Zj4z7H4/2X1/1yhP91eCMcYIAAAA1kqM9QAAAAAYWwQfAACA5Qg+AAAA\
@@ -27510,7 +27510,7 @@ This example shows how to create games inspired by AngryBirds.
      yxF8AAAAliP4AAAALEfwAQAAWO7/AGZeC16qytHuAAAAAElFTkSuQmCC\
      "
        frames[143] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAorklEQVR4nO3dfXDU5b3//1cCyZYQdmMIySYHiAFsMJLAOYjpjqceRyIhpg4K\
      8x1FjkYPhRGDcwTLwTgKxTljGOycqj0U/ugZ8Q+Rlo7oyIielJswHhaqqRnuNCMZ2kTJJjZMdkMw\
      m7vr94fl8+vWoMEmu9krz8fMNWX3c2X3/dmm8nTvmmCMMQIAAIC1EmM9AAAAAEYWwQcAAGA5gg8A\
@@ -27697,7 +27697,7 @@ This example shows how to create games inspired by AngryBirds.
      Ze1RHAAAAABJRU5ErkJggg==\
      "
        frames[144] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAo3ElEQVR4nO3cfXDU5b338U8CyUoIuzGEZJPDQ3nQYCQJ50RMdzx6HElJYuqg\
      cM8ocjR6KIwYnCNYDsZboThnDINnTrU9FP7oGfEPkZaO6MiINvIQbstCNTXDk82YDG2iZBMbJrsh\
      mCUP1/2H5TfdGmqwyW724v2auabs/q7sfn9rKm/3KcEYYwQAAABrJcZ6AAAAAIwugg8AAMByBB8A\
@@ -27885,7 +27885,7 @@ This example shows how to create games inspired by AngryBirds.
      RK5CYII=\
      "
        frames[145] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApGklEQVR4nO3df3DU1b3/8VcCyUoIuzGEZJMLQX7YYCSBeyOmO95aRyIhRgaF\
      PxS5Gr0URgzOFSwX4ygUv3cMg51W20vhO9P7Ff8QaemIjozoTYGE8bJQTc3ll81IhjZRsonCZDcE\
      s+TH+f5h+Uy3hhpssps9eT5mzjS7n5Pd92dN4elmd00wxhgBAADAWomxHgAAAADDi+ADAACwHMEH\
@@ -28074,7 +28074,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[146] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApS0lEQVR4nO3dfXDU5b338U8CyZYQdmMIySblQR4sGElCD2K6Y+txJCXE1EHh\
      nlGkGj0URgzOESwH4ygU59yGwTOttofCH+2IM0ekpSN6y4ieFEgYD0uq0QxPNmNysImSTSxMdiGY\
      zdN1/2H5TbeGGmiym73yfs1cU3Z/V3a/v20qb/epCcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj+AAA\
@@ -28264,7 +28264,7 @@ This example shows how to create games inspired by AngryBirds.
      YII=\
      "
        frames[147] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApUUlEQVR4nO3cfXDU5b338U8CyZYQdmMIySYHQnlQMJLAORHTvT16HImEmDog\
      nBlFqtFSGDF4V7AcjLeCMGcMg2dOtR4Kf/SM+IdIS0d0ZESb8hDGw0I1NcOTzUiGNlGyiYU7uyGY\
      JQ/X/Qfyu90aNNhkN3vl/Zq5puz+rux+f2sqb/cpwRhjBAAAAGslxnoAAAAADC6CDwAAwHIEHwAA\
@@ -28454,7 +28454,7 @@ This example shows how to create games inspired by AngryBirds.
      SUVORK5CYII=\
      "
        frames[148] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApjUlEQVR4nO3cfXDU9b33/9cGki0h7MYQkk3KTblRMJLAOYjpjqfWkZQQoxcK\
      c40i1eihMGJwKliKcRSKv45h8MyptofCH+2AM5dIS0f0khFtyk0YDwvV1Ax3mjE5tImSTRQmuyGY\
      JTef6w/k++vWUAMmu9kPz8fMZ8zu97u77+/XCE/3zmWMMQIAAIC1kuI9AAAAAAYXwQcAAGA5gg8A\
@@ -28645,7 +28645,7 @@ This example shows how to create games inspired by AngryBirds.
      AAAASUVORK5CYII=\
      "
        frames[149] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqEElEQVR4nO3dfXCU9b338U8CyUoIuzGEZJPyUJ4EIwm0iOnennq8JSWJqTcK\
      fyhSjZbCiME5guVgHIXinNtw8EzVtggzxx5x5hapdERHRrQpD2E8LCipGZ5sRnKoiZJNLEx2IZgl\
      D7/7D+RqtwYJmOxmf7xfM79pdq9rd7/Xmsqbax9MMMYYAQAAwFqJsR4AAAAA/YvgAwAAsBzBBwAA\
@@ -28838,7 +28838,7 @@ This example shows how to create games inspired by AngryBirds.
      8AEAAFju/wMjIljqB+WEKAAAAABJRU5ErkJggg==\
      "
        frames[150] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqhElEQVR4nO3de3CUdZ7v8U8CSQuE7hhC0slykYsDRhKYQYxd7riWREKMHhTq\
      lCKr0WWgxGCt4LAYS2Gw9hgK96w6Mwz8MXvE2iPiYImWHNGJXMK6NKgZU9w0JRlmEiWdOFDpDsE0\
      ufzOH8gz9hggYNKd/uX9qvqVdD9Pd3+fNsqbpy8kGGOMAAAAYK3EWA8AAACAvkXwAQAAWI7gAwAA\
@@ -29033,7 +29033,7 @@ This example shows how to create games inspired by AngryBirds.
      LEfwAQAAWO7/A7okeXgLSvllAAAAAElFTkSuQmCC\
      "
        frames[151] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArWUlEQVR4nO3df3TU9Z3v8dcEkhQIMyGEZJLyQ34JRhLYjRjnuFVXUgKmHhTu\
      vYpUo0vhisFTwbIYr0Lx9hgu9rbYLoXdY4/4h4ilR/TIEd2UH+FaBqrRLL9slmRpEyWTKJzMQDBD\
      SD73D8q3nRIg0GSG+eT5OOdzysz3MzPv70jl6cxkcBljjAAAAGCthFgPAAAAgN5F8AEAAFiO4AMA\
@@ -29232,7 +29232,7 @@ This example shows how to create games inspired by AngryBirds.
      P15UAAAAAElFTkSuQmCC\
      "
        frames[152] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArtUlEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aQByq+CkQAtYtyxWo9EQky9IPyh\
      yIHooTBicCpYinEUhDljGDznFO2hMOf0XHGmApWO6MgVlfIjjIcl1dQcftkMRNoEySYWTnYhmCUk\
      n/sH5Vu3BAk22c1+8nzMfOaw+/1k9/3d5sjT/WWcMcYIAAAA1oqP9gAAAADoXgQfAACA5Qg+AAAA\
@@ -29432,7 +29432,7 @@ This example shows how to create games inspired by AngryBirds.
      AMByBB8AAIDlCD4AAADLEXwAAACWI/gAAAAs9/8Bql/n4zYb26MAAAAASUVORK5CYII=\
      "
        frames[153] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsSklEQVR4nO3df3DU9b3v8VcCycqv3RAg2aQB5IcFIwmcgqZ7PLVeiYSYOij8\
      oUg1WgojBqaCcjSOojjnGi6eadXWwsyxV+yMiMURHRlRIz/C8bBSiebyy2YkYhMlmyg0uxDIkh+f\
      +wfytVuCBJrsZj95PmY+0+x+P7v73jXC0/3VBGOMEQAAAKyVGOsBAAAA0LMIPgAAAMsRfAAAAJYj\
@@ -29635,7 +29635,7 @@ This example shows how to create games inspired by AngryBirds.
      wQcAAGC5/w/737m0i/pciwAAAABJRU5ErkJggg==\
      "
        frames[154] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAseUlEQVR4nO3df3DU9b3v8VcCyQqE3RhCskn5UX5YMJJAixj32nocSQmIjgr3\
      HkWq0YMwYnAqWA6GURDGMQx6Wq2HwpmxI84d8Qcd0ZEreig/wrUsUSMZfqippLSJkk0UbnZDMBuS\
      fO4fyNduCRJospv95PmY+YzZ/X73u+/vGsOTze6aYIwxAgAAgLUSYz0AAAAAehbBBwAAYDmCDwAA\
@@ -29839,7 +29839,7 @@ This example shows how to create games inspired by AngryBirds.
      f/t3WouOAAAAAElFTkSuQmCC\
      "
        frames[155] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAseUlEQVR4nO3df3DU9b3v8VcCyQqE3RhCskn5UX5YMJJAixj32nocSQmIjgr3\
      HkWq0YMwYnAqWA6GURDGMQx6Wq2HwpmxI84d8Qcd0ZEreig/wrUsUSMZfqippLSJkk0UbnZDMBuS\
      fO4fyNduCRJospv95PmY+YzZ/X73u+/vGsOTze6aYIwxAgAAgLUSYz0AAAAAehbBBwAAYDmCDwAA\
@@ -30043,7 +30043,7 @@ This example shows how to create games inspired by AngryBirds.
      f/t3WouOAAAAAElFTkSuQmCC\
      "
        frames[156] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsdElEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aT8kB8WjCRwDmK6x6N1JBIw9YAw\
      cxU5GJXCCMGpYDkYB7E4HUPRqT9ahHuO54r3jEiLIzJS0UP5Ea6yUE3N8EtzCAebKNkEYbILwSwh\
      +dw/Ur66hyCBJrvZT56Pmc80u99Pdt/flYanm901zhhjBAAAAGvFR3sAAAAAdC2CDwAAwHIEHwAA\
@@ -30247,7 +30247,7 @@ This example shows how to create games inspired by AngryBirds.
      GgAAAABJRU5ErkJggg==\
      "
        frames[157] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -30452,7 +30452,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[158] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -30657,7 +30657,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[159] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -30862,7 +30862,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[160] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -31067,7 +31067,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[161] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -31272,7 +31272,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[162] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsuklEQVR4nO3de3BUdZ738U8HkgiE7hgg6WS5TEAFIwRnEDO9ro4lkYDRB4V9\
      VGQ1ugglBndFZTQuglhbhsKpGZ0ZBmp3ZsWqFVFckYUFWeQS1iGiRvJw0yxkmUmUdKKw6Q4Bmlx+\
      zx8ZjtNDkMRJutO/vF9VvzLd5+T097QxvO0bLmOMEQAAAKwVF+0BAAAA0L0IPgAAAMsRfAAAAJYj\
@@ -31477,7 +31477,7 @@ This example shows how to create games inspired by AngryBirds.
      AACw3P8HYApzej08SHAAAAAASUVORK5CYII=\
      "
        frames[163] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsdElEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aT8kB8WjCRwDmK6x6N1JBIw9YAw\
      cxU5GJXCCMGpYDkYB7E4HUPRqT9ahHuO54r3jEiLIzJS0UP5Ea6yUE3N8EtzCAebKNkEYbILwSwh\
      +dw/Ur66hyCBJrvZT56Pmc80u99Pdt/flYanm901zhhjBAAAAGvFR3sAAAAAdC2CDwAAwHIEHwAA\
@@ -31681,7 +31681,7 @@ This example shows how to create games inspired by AngryBirds.
      GgAAAABJRU5ErkJggg==\
      "
        frames[164] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAseUlEQVR4nO3df3DU9b3v8VcCyQqE3RhCskn5UX5YMJJAixj32nocSQmIjgr3\
      HkWq0YMwYnAqWA6GURDGMQx6Wq2HwpmxI84d8Qcd0ZEreig/wrUsUSMZfqippLSJkk0UbnZDMBuS\
      fO4fyNduCRJospv95PmY+YzZ/X73u+/vGsOTze6aYIwxAgAAgLUSYz0AAAAAehbBBwAAYDmCDwAA\
@@ -31885,7 +31885,7 @@ This example shows how to create games inspired by AngryBirds.
      f/t3WouOAAAAAElFTkSuQmCC\
      "
        frames[165] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAseUlEQVR4nO3df3DU9b3v8VcCyQqE3RhCskn5UX5YMJJAixj32nocSQmIjgr3\
      HkWq0YMwYnAqWA6GURDGMQx6Wq2HwpmxI84d8Qcd0ZEreig/wrUsUSMZfqippLSJkk0UbnZDMBuS\
      fO4fyNduCRJospv95PmY+YzZ/X73u+/vGsOTze6aYIwxAgAAgLUSYz0AAAAAehbBBwAAYDmCDwAA\
@@ -32089,7 +32089,7 @@ This example shows how to create games inspired by AngryBirds.
      f/t3WouOAAAAAElFTkSuQmCC\
      "
        frames[166] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsA0lEQVR4nO3df3TU9Z3v8VcCyRQIMzGEZBL5IT8sGPnVRUxn3bIcSQkx9aLk\
      3FWkECmFFYNnBctiXMXi8RgOelqtRfije8Q9K9DSK3jkiDblR1jLQDWayy+bIxGbKJmEws0MBDOE\
      5HP/oHx1SpBAkxnmk+fjnM/ZzHw/mXl/p6w+nV8kGGOMAAAAYK3EWA8AAACA7kXwAQAAWI7gAwAA\
@@ -32291,7 +32291,7 @@ This example shows how to create games inspired by AngryBirds.
      jx8AAAAASUVORK5CYII=\
      "
        frames[167] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArtUlEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aQByq+CkQAtYtyxWo9EQky9IPyh\
      yIHooTBicCpYinEUhDljGDznFO2hMOf0XHGmApWO6MgVlfIjjIcl1dQcftkMRNoEySYWTnYhmCUk\
      n/sH5Vu3BAk22c1+8nzMfOaw+/1k9/3d5sjT/WWcMcYIAAAA1oqP9gAAAADoXgQfAACA5Qg+AAAA\
@@ -32491,7 +32491,7 @@ This example shows how to create games inspired by AngryBirds.
      AMByBB8AAIDlCD4AAADLEXwAAACWI/gAAAAs9/8Bql/n4zYb26MAAAAASUVORK5CYII=\
      "
        frames[168] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArWUlEQVR4nO3df3TU9Z3v8dcEkhQIMyGEZJLyQ34JRhLYjRjnuFVXUgKmHhTu\
      vYpUo0vhisFTwbIYr0Lx9hgu9rbYLoXdY4/4h4ilR/TIEd2UH+FaBqrRLL9slmRpEyWTKJzMQDBD\
      SD73D8q3nRIg0GSG+eT5OOdzysz3MzPv70jl6cxkcBljjAAAAGCthFgPAAAAgN5F8AEAAFiO4AMA\
@@ -32690,7 +32690,7 @@ This example shows how to create games inspired by AngryBirds.
      P15UAAAAAElFTkSuQmCC\
      "
        frames[169] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqhElEQVR4nO3de3CUdZ7v8U8CSQuE7hhC0slykYsDRhKYQYxd7riWREKMHhTq\
      lCKr0WWgxGCt4LAYS2Gw9hgK96w6Mwz8MXvE2iPiYImWHNGJXMK6NKgZU9w0JRlmEiWdOFDpDsE0\
      ufzOH8gz9hggYNKd/uX9qvqVdD9Pd3+fNsqbpy8kGGOMAAAAYK3EWA8AAACAvkXwAQAAWI7gAwAA\
@@ -32885,7 +32885,7 @@ This example shows how to create games inspired by AngryBirds.
      LEfwAQAAWO7/A7okeXgLSvllAAAAAElFTkSuQmCC\
      "
        frames[170] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqEElEQVR4nO3dfXCU9b338U8CyUoIuzGEZJPyUJ4EIwm0iOnennq8JSWJqTcK\
      fyhSjZbCiME5guVgHIXinNtw8EzVtggzxx5x5hapdERHRrQpD2E8LCipGZ5sRnKoiZJNLEx2IZgl\
      D7/7D+RqtwYJmOxmf7xfM79pdq9rd7/Xmsqbax9MMMYYAQAAwFqJsR4AAAAA/YvgAwAAsBzBBwAA\
@@ -33078,7 +33078,7 @@ This example shows how to create games inspired by AngryBirds.
      8AEAAFju/wMjIljqB+WEKAAAAABJRU5ErkJggg==\
      "
        frames[171] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApjUlEQVR4nO3cfXDU9b33/9cGki0h7MYQkk3KTblRMJLAOYjpjqfWkZQQoxcK\
      c40i1eihMGJwKliKcRSKv45h8MyptofCH+2AM5dIS0f0khFtyk0YDwvV1Ax3mjE5tImSTRQmuyGY\
      JTef6w/k++vWUAMmu9kPz8fMZ8zu97u77+/XCE/3zmWMMQIAAIC1kuI9AAAAAAYXwQcAAGA5gg8A\
@@ -33269,7 +33269,7 @@ This example shows how to create games inspired by AngryBirds.
      AAAASUVORK5CYII=\
      "
        frames[172] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApUUlEQVR4nO3cfXDU5b338U8CyZYQdmMIySYHQnlQMJLAORHTvT16HImEmDog\
      nBlFqtFSGDF4V7AcjLeCMGcMg2dOtR4Kf/SM+IdIS0d0ZESb8hDGw0I1NcOTzUiGNlGyiYU7uyGY\
      JQ/X/Qfyu90aNNhkN3vl/Zq5puz+rux+f2sqb/cpwRhjBAAAAGslxnoAAAAADC6CDwAAwHIEHwAA\
@@ -33459,7 +33459,7 @@ This example shows how to create games inspired by AngryBirds.
      SUVORK5CYII=\
      "
        frames[173] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApS0lEQVR4nO3dfXDU5b338U8CyZYQdmMIySblQR4sGElCD2K6Y+txJCXE1EHh\
      nlGkGj0URgzOESwH4ygU59yGwTOttofCH+2IM0ekpSN6y4ieFEgYD0uq0QxPNmNysImSTSxMdiGY\
      zdN1/2H5TbeGGmiym73yfs1cU3Z/V3a/v20qb/epCcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj+AAA\
@@ -33649,7 +33649,7 @@ This example shows how to create games inspired by AngryBirds.
      YII=\
      "
        frames[174] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApGklEQVR4nO3df3DU1b3/8VcCyUoIuzGEZJMLQX7YYCSBeyOmO95aRyIhRgaF\
      PxS5Gr0URgzOFSwX4ygUv3cMg51W20vhO9P7Ff8QaemIjozoTYGE8bJQTc3ll81IhjZRsonCZDcE\
      s+TH+f5h+Uy3hhpssps9eT5mzjS7n5Pd92dN4elmd00wxhgBAADAWomxHgAAAADDi+ADAACwHMEH\
@@ -33838,7 +33838,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[175] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAo3ElEQVR4nO3cfXDU5b338U8CyUoIuzGEZJPDQ3nQYCQJ50RMdzx6HElJYuqg\
      cM8ocjR6KIwYnCNYDsZboThnDINnTrU9FP7oGfEPkZaO6MiINvIQbstCNTXDk82YDG2iZBMbJrsh\
      mCUP1/2H5TfdGmqwyW724v2auabs/q7sfn9rKm/3KcEYYwQAAABrJcZ6AAAAAIwugg8AAMByBB8A\
@@ -34026,7 +34026,7 @@ This example shows how to create games inspired by AngryBirds.
      RK5CYII=\
      "
        frames[176] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAorklEQVR4nO3dfXDU5b3//1cCyZYQdmMIySYHiAFsMJLAOYjpjqceRyIhpg4K\
      8x1FjkYPhRGDcwTLwTgKxTljGOycqj0U/ugZ8Q+Rlo7oyIielJswHhaqqRnuNCMZ2kTJJjZMdkMw\
      m7vr94fl8+vWoMEmu9krz8fMNWX3c2X3/dmm8nTvmmCMMQIAAIC1EmM9AAAAAEYWwQcAAGA5gg8A\
@@ -34213,7 +34213,7 @@ This example shows how to create games inspired by AngryBirds.
      Ze1RHAAAAABJRU5ErkJggg==\
      "
        frames[177] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAobklEQVR4nO3dbXDU5b3/8U8CyZYQdmMIySYHQrmxwUgSzomY7njqcSQliamD\
      wgNFqtFSGDE4R7AcjKNQnDOGwc6ptofCg56/+ECk0hEdGdGTAgljWaimZrizGZOhTZRsYmGyG4LZ\
      3F3/Bw6/6dZQgyfZZS/er5lrht3fld3vb03l7d41wRhjBAAAAGslxnoAAAAAjC+CDwAAwHIEHwAA\
@@ -34399,7 +34399,7 @@ This example shows how to create games inspired by AngryBirds.
      AElFTkSuQmCC\
      "
        frames[178] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -34584,7 +34584,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[179] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -34769,7 +34769,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[180] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -34954,7 +34954,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[181] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -35139,7 +35139,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[182] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -35324,7 +35324,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[183] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -35509,7 +35509,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[184] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -35694,7 +35694,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[185] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -35879,7 +35879,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[186] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -36064,7 +36064,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[187] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -36249,7 +36249,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[188] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -36434,7 +36434,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[189] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -36619,7 +36619,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[190] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -36804,7 +36804,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[191] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -36989,7 +36989,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[192] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -37174,7 +37174,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[193] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -37359,7 +37359,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[194] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -37544,7 +37544,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[195] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -37729,7 +37729,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[196] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -37914,7 +37914,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[197] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -38099,7 +38099,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[198] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -38284,7 +38284,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[199] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -38469,7 +38469,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[200] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -38654,7 +38654,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[201] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -38839,7 +38839,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[202] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -39024,7 +39024,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[203] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -39209,7 +39209,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[204] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -39394,7 +39394,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[205] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -39579,7 +39579,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[206] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -39764,7 +39764,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[207] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -39949,7 +39949,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[208] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -40134,7 +40134,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[209] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -40319,7 +40319,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[210] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -40504,7 +40504,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[211] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -40689,7 +40689,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[212] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -40874,7 +40874,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[213] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -41059,7 +41059,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[214] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -41244,7 +41244,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[215] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -41429,7 +41429,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[216] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -41614,7 +41614,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[217] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -41799,7 +41799,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[218] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -41984,7 +41984,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[219] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -42169,7 +42169,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[220] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -42354,7 +42354,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[221] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -42539,7 +42539,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[222] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAoSElEQVR4nO3cf3DU9Z3H8VcCyZYQdmMIySYHSflhg5Ek3EVMd7x6jqSEmDoo\
      /KHIafQojBicEyyHcRSKc2MY7Fy1PQp/9Eb8Q6SlIzoyopfyI4zHQjU1wy+bMRnaRMkmNkx2QzCb\
      X5/7w+E73RJqsMku++H5mPnMsPv9ZPf9XaM83V8JxhgjAAAAWCsx1gMAAABgfBF8AAAAliP4AAAA\
@@ -42724,7 +42724,7 @@ This example shows how to create games inspired by AngryBirds.
      I/gAAAAs9/9DRAleAX0HzwAAAABJRU5ErkJggg==\
      "
        frames[223] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAobklEQVR4nO3dbXDU5b3/8U8CyZYQdmMIySYHQrmxwUgSzomY7njqcSQliamD\
      wgNFqtFSGDE4R7AcjKNQnDOGwc6ptofCg56/+ECk0hEdGdGTAgljWaimZrizGZOhTZRsYmGyG4LZ\
      3F3/Bw6/6dZQgyfZZS/er5lrht3fld3vb03l7d41wRhjBAAAAGslxnoAAAAAjC+CDwAAwHIEHwAA\
@@ -42910,7 +42910,7 @@ This example shows how to create games inspired by AngryBirds.
      AElFTkSuQmCC\
      "
        frames[224] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAorklEQVR4nO3dfXDU5b3//1cCyZYQdmMIySYHiAFsMJLAOYjpjqceRyIhpg4K\
      8x1FjkYPhRGDcwTLwTgKxTljGOycqj0U/ugZ8Q+Rlo7oyIielJswHhaqqRnuNCMZ2kTJJjZMdkMw\
      m7vr94fl8+vWoMEmu9krz8fMNWX3c2X3/dmm8nTvmmCMMQIAAIC1EmM9AAAAAEYWwQcAAGA5gg8A\
@@ -43097,7 +43097,7 @@ This example shows how to create games inspired by AngryBirds.
      Ze1RHAAAAABJRU5ErkJggg==\
      "
        frames[225] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAo3ElEQVR4nO3cfXDU5b338U8CyUoIuzGEZJPDQ3nQYCQJ50RMdzx6HElJYuqg\
      cM8ocjR6KIwYnCNYDsZboThnDINnTrU9FP7oGfEPkZaO6MiINvIQbstCNTXDk82YDG2iZBMbJrsh\
      mCUP1/2H5TfdGmqwyW724v2auabs/q7sfn9rKm/3KcEYYwQAAABrJcZ6AAAAAIwugg8AAMByBB8A\
@@ -43285,7 +43285,7 @@ This example shows how to create games inspired by AngryBirds.
      RK5CYII=\
      "
        frames[226] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApGklEQVR4nO3df3DU1b3/8VcCyUoIuzGEZJMLQX7YYCSBeyOmO95aRyIhRgaF\
      PxS5Gr0URgzOFSwX4ygUv3cMg51W20vhO9P7Ff8QaemIjozoTYGE8bJQTc3ll81IhjZRsonCZDcE\
      s+TH+f5h+Uy3hhpssps9eT5mzjS7n5Pd92dN4elmd00wxhgBAADAWomxHgAAAADDi+ADAACwHMEH\
@@ -43474,7 +43474,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[227] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApS0lEQVR4nO3dfXDU5b338U8CyZYQdmMIySblQR4sGElCD2K6Y+txJCXE1EHh\
      nlGkGj0URgzOESwH4ygU59yGwTOttofCH+2IM0ekpSN6y4ieFEgYD0uq0QxPNmNysImSTSxMdiGY\
      zdN1/2H5TbeGGmiym73yfs1cU3Z/V3a/v20qb/epCcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj+AAA\
@@ -43664,7 +43664,7 @@ This example shows how to create games inspired by AngryBirds.
      YII=\
      "
        frames[228] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApUUlEQVR4nO3cfXDU5b338U8CyZYQdmMIySYHQnlQMJLAORHTvT16HImEmDog\
      nBlFqtFSGDF4V7AcjLeCMGcMg2dOtR4Kf/SM+IdIS0d0ZESb8hDGw0I1NcOTzUiGNlGyiYU7uyGY\
      JQ/X/Qfyu90aNNhkN3vl/Zq5puz+rux+f2sqb/cpwRhjBAAAAGslxnoAAAAADC6CDwAAwHIEHwAA\
@@ -43854,7 +43854,7 @@ This example shows how to create games inspired by AngryBirds.
      SUVORK5CYII=\
      "
        frames[229] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApb0lEQVR4nO3df3DU9b3v8VcCyZYQdmMIySaHH/LDgpEEThHTvZ5aRyJJTB0U\
      5o4iR6MHYcTgPYLlYLwKxTljONg51fZQuDM9I/4hUumIjoxoU36E62FJNZrhl2ZMhpoo2cSGyW4I\
      ZsmPz/3Dw/e6JdRgk93sh+dj5jNm9/vd3fd3G+Hp7ne3CcYYIwAAAFgrMdYDAAAAYHgRfAAAAJYj\
@@ -44044,7 +44044,7 @@ This example shows how to create games inspired by AngryBirds.
      AACWI/gAAAAsR/ABAABY7v8BNx8zRCxPFX4AAAAASUVORK5CYII=\
      "
        frames[230] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAApxUlEQVR4nO3dbXCUZZ7v8V8CSQ8hdMcQkk6WBwNoMJLADmKmyx3XkgwhRg8K\
      LxRZjQ4DJQbPCg6LsRQGa8twcM+OjstA1XGP+EJE8YiWlOhmeAjl0jCaMcWTpiTDTKKkEwcq3RBM\
      k4frvGC4xx7DEDDpTl/5fqquMt333d3/u83A1+67exKMMUYAAACwVmKsBwAAAMDAIvgAAAAsR/AB\
@@ -44236,7 +44236,7 @@ This example shows how to create games inspired by AngryBirds.
      AABJRU5ErkJggg==\
      "
        frames[231] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqEElEQVR4nO3dfXCU9b338U8CyUoIuzGEZJPyUJ4EIwm0iOnennq8JSWJqTcK\
      fyhSjZbCiME5guVgHIXinNtw8EzVtggzxx5x5hapdERHRrQpD2E8LCipGZ5sRnKoiZJNLEx2IZgl\
      D7/7D+RqtwYJmOxmf7xfM79pdq9rd7/Xmsqbax9MMMYYAQAAwFqJsR4AAAAA/YvgAwAAsBzBBwAA\
@@ -44429,7 +44429,7 @@ This example shows how to create games inspired by AngryBirds.
      8AEAAFju/wMjIljqB+WEKAAAAABJRU5ErkJggg==\
      "
        frames[232] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAqhElEQVR4nO3de3CUdZ7v8U8CSQuE7hhC0slykYsDRhKYQYxd7riWREKMHhTq\
      lCKr0WWgxGCt4LAYS2Gw9hgK96w6Mwz8MXvE2iPiYImWHNGJXMK6NKgZU9w0JRlmEiWdOFDpDsE0\
      ufzOH8gz9hggYNKd/uX9qvqVdD9Pd3+fNsqbpy8kGGOMAAAAYK3EWA8AAACAvkXwAQAAWI7gAwAA\
@@ -44624,7 +44624,7 @@ This example shows how to create games inspired by AngryBirds.
      LEfwAQAAWO7/A7okeXgLSvllAAAAAElFTkSuQmCC\
      "
        frames[233] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAq9klEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aT8aAALRgi0EdMdT61HUkKMXhTO\
      XEWORg+FEYNzBEsxjkJxzjFc7G21PQgzt2fEP0QsHdGRI9qUH2E8LKipOfzSHMlBEyWbWJjshmA2\
      vz73D+TbbgkQaLKb/eT5mPlM2f1+svv+bml5sr+IM8YYAQAAwFrx0R4AAAAA/YvgAwAAsBzBBwAA\
@@ -44821,7 +44821,7 @@ This example shows how to create games inspired by AngryBirds.
      YDmCDwAAwHL/HyjPoC0ktFvpAAAAAElFTkSuQmCC\
      "
        frames[234] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArWUlEQVR4nO3df3TU9Z3v8dcEkhQIMyGEZJLyQ34JRhLYjRjnuFVXUgKmHhTu\
      vYpUo0vhisFTwbIYr0Lx9hgu9rbYLoXdY4/4h4ilR/TIEd2UH+FaBqrRLL9slmRpEyWTKJzMQDBD\
      SD73D8q3nRIg0GSG+eT5OOdzysz3MzPv70jl6cxkcBljjAAAAGCthFgPAAAAgN5F8AEAAFiO4AMA\
@@ -45020,7 +45020,7 @@ This example shows how to create games inspired by AngryBirds.
      P15UAAAAAElFTkSuQmCC\
      "
        frames[235] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAArtUlEQVR4nO3df3DU9b3v8VcCSQTCbgwh2aQByq+CkQAtYtyxWo9EQky9IPyh\
      yIHooTBicCpYinEUhDljGDznFO2hMOf0XHGmApWO6MgVlfIjjIcl1dQcftkMRNoEySYWTnYhmCUk\
      n/sH5Vu3BAk22c1+8nzMfOaw+/1k9/3d5sjT/WWcMcYIAAAA1oqP9gAAAADoXgQfAACA5Qg+AAAA\
@@ -45220,7 +45220,7 @@ This example shows how to create games inspired by AngryBirds.
      AMByBB8AAIDlCD4AAADLEXwAAACWI/gAAAAs9/8Bql/n4zYb26MAAAAASUVORK5CYII=\
      "
        frames[236] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsA0lEQVR4nO3df3TU9Z3v8VcCyRQIMzGEZBL5IT8sGPnVRUxn3bIcSQkx9aLk\
      3FWkECmFFYNnBctiXMXi8RgOelqtRfije8Q9K9DSK3jkiDblR1jLQDWayy+bIxGbKJmEws0MBDOE\
      5HP/oHx1SpBAkxnmk+fjnM/ZzHw/mXl/p6w+nV8kGGOMAAAAYK3EWA8AAACA7kXwAQAAWI7gAwAA\
@@ -45422,7 +45422,7 @@ This example shows how to create games inspired by AngryBirds.
      jx8AAAAASUVORK5CYII=\
      "
        frames[237] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsA0lEQVR4nO3df3TU9Z3v8VcCyRQIMzGEZBL5IT8sGPnVRUxn3bIcSQkx9aLk\
      3FWkECmFFYNnBctiXMXi8RgOelqtRfije8Q9K9DSK3jkiDblR1jLQDWayy+bIxGbKJmEws0MBDOE\
      5HP/oHx1SpBAkxnmk+fjnM/ZzHw/mXl/p6w+nV8kGGOMAAAAYK3EWA8AAACA7kXwAQAAWI7gAwAA\
@@ -45624,7 +45624,7 @@ This example shows how to create games inspired by AngryBirds.
      jx8AAAAASUVORK5CYII=\
      "
        frames[238] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsSklEQVR4nO3df3DU9b3v8VcCycqv3RAg2aQB5IcFIwmcgqZ7PLVeiYSYOij8\
      oUg1WgojBqaCcjSOojjnGi6eadXWwsyxV+yMiMURHRlRIz/C8bBSiebyy2YkYhMlmyg0uxDIkh+f\
      +wfytVuCBJrsZj95PmY+0+x+P7v73jXC0/3VBGOMEQAAAKyVGOsBAAAA0LMIPgAAAMsRfAAAAJYj\
@@ -45827,7 +45827,7 @@ This example shows how to create games inspired by AngryBirds.
      wQcAAGC5/w/737m0i/pciwAAAABJRU5ErkJggg==\
      "
        frames[239] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAHeCAYAAAAB0dYuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-     bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9h\
+     bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9h\
      AAAPYQGoP6dpAAAsSklEQVR4nO3df3DU9b3v8VcCycqv3RAg2aQB5IcFIwmcgqZ7PLVeiYSYOij8\
      oUg1WgojBqaCcjSOojjnGi6eadXWwsyxV+yMiMURHRlRIz/C8bBSiebyy2YkYhMlmyg0uxDIkh+f\
      +wfytVuCBJrsZj95PmY+0+x+P7v73jXC0/3VBGOMEQAAAKyVGOsBAAAA0LMIPgAAAMsRfAAAAJYj\
@@ -46034,7 +46034,7 @@ This example shows how to create games inspired by AngryBirds.
          /* set a timeout to make sure all the above elements are created before
             the object is initialized. */
          setTimeout(function() {
-             animf6ae2cc5e47546239c0244c485e29812 = new Animation(frames, img_id, slider_id, 41.0,
+             anim7cbd0dd4d70c4d6a957eb5cd043c9b62 = new Animation(frames, img_id, slider_id, 41.0,
                                       loop_select_id);
          }, 0);
        })()
@@ -46042,8 +46042,19 @@ This example shows how to create games inspired by AngryBirds.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/runner/.local/lib/python3.10/site-packages/b2d/testbed/backend/matplotlib_gif_gui/matplotlib_gif_gui.py:52: UserWarning: You passed in an explicit save_count=240 which is being ignored in favor of frames=240.
+      self.ani = animation.FuncAnimation(
 
 
+
+
+
+
+|
 
 .. code-block:: default
 
@@ -46405,7 +46416,7 @@ This example shows how to create games inspired by AngryBirds.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  33.662 seconds)
+   **Total running time of the script:** ( 0 minutes  38.008 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_angry_shapes.py:
@@ -46413,6 +46424,8 @@ This example shows how to create games inspired by AngryBirds.
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python

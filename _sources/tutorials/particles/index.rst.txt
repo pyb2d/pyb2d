@@ -21,7 +21,7 @@ Below is a gallery of examples using particles
 .. only:: html
 
   .. image:: /tutorials/particles/images/thumb/sphx_glr_plot_randomized_linear_emitter_thumb.gif
-    :alt: Emitter
+    :alt:
 
   :ref:`sphx_glr_tutorials_particles_plot_randomized_linear_emitter.py`
 

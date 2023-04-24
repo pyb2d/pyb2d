@@ -19,7 +19,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /tutorials/images/thumb/sphx_glr_plot_tutorial_0.1_thumb.png
-    :alt: Tutorial 0.1: Hello World
+    :alt:
 
   :ref:`sphx_glr_tutorials_plot_tutorial_0.1.py`
 
@@ -36,7 +36,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /tutorials/images/thumb/sphx_glr_plot_tutorial_0.0_thumb.png
-    :alt: Tutorial 0.0: Hello World
+    :alt:
 
   :ref:`sphx_glr_tutorials_plot_tutorial_0.0.py`
 
@@ -76,7 +76,7 @@ Below is a gallery of simple examples on how to create different joints
 .. only:: html
 
   .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_prismatic_joint_thumb.gif
-    :alt: Prismatic Joint
+    :alt:
 
   :ref:`sphx_glr_tutorials_joints_plot_prismatic_joint.py`
 
@@ -88,12 +88,12 @@ Below is a gallery of simple examples on how to create different joints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create a pully joint Uses:     * b2d.PullyJointDef     * b2d.PullyJoint">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create a pully joint Uses:      b2d.PullyJointDef      b2d.PullyJoint">
 
 .. only:: html
 
   .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_pully_joint_thumb.gif
-    :alt: Pully Joint
+    :alt:
 
   :ref:`sphx_glr_tutorials_joints_plot_pully_joint.py`
 
@@ -105,12 +105,12 @@ Below is a gallery of simple examples on how to create different joints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create revolute joints Uses:     * b2d.RevoluteJointDef     * b2d.RevoluteJoint">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create revolute joints Uses:      b2d.RevoluteJointDef      b2d.RevoluteJoint">
 
 .. only:: html
 
   .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_revolute_joint_thumb.gif
-    :alt: Revolute Joint
+    :alt:
 
   :ref:`sphx_glr_tutorials_joints_plot_revolute_joint.py`
 
@@ -127,7 +127,7 @@ Below is a gallery of simple examples on how to create different joints
 .. only:: html
 
   .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_weld_joint_thumb.gif
-    :alt: Weld Joint
+    :alt:
 
   :ref:`sphx_glr_tutorials_joints_plot_weld_joint.py`
 
@@ -144,7 +144,7 @@ Below is a gallery of simple examples on how to create different joints
 .. only:: html
 
   .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_wheel_joint_thumb.gif
-    :alt: Wheel Joint
+    :alt:
 
   :ref:`sphx_glr_tutorials_joints_plot_wheel_joint.py`
 
@@ -156,12 +156,12 @@ Below is a gallery of simple examples on how to create different joints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Uses:     * b2d.DistanceJointDef     * b2d.DistanceJoint">
+    <div class="sphx-glr-thumbcontainer" tooltip="Uses:      b2d.DistanceJointDef      b2d.DistanceJoint">
 
 .. only:: html
 
   .. image:: /tutorials/joints/images/thumb/sphx_glr_plot_distance_joint_thumb.gif
-    :alt: Distance Joint
+    :alt:
 
   :ref:`sphx_glr_tutorials_joints_plot_distance_joint.py`
 
@@ -194,7 +194,7 @@ Below is a gallery of examples using particles
 .. only:: html
 
   .. image:: /tutorials/particles/images/thumb/sphx_glr_plot_randomized_linear_emitter_thumb.gif
-    :alt: Emitter
+    :alt:
 
   :ref:`sphx_glr_tutorials_particles_plot_randomized_linear_emitter.py`
 
@@ -212,6 +212,7 @@ Below is a gallery of examples using particles
 .. toctree::
    :hidden:
    :includehidden:
+
 
    /tutorials/joints/index.rst
    /tutorials/particles/index.rst

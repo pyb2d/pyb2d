@@ -19,7 +19,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_function_shape_thumb.gif
-    :alt: Function Shape
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_function_shape.py`
 
@@ -36,7 +36,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_newtons_cradle_thumb.gif
-    :alt: Newtons Cradle
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_newtons_cradle.py`
 
@@ -53,7 +53,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_elliptic_billiard_table_thumb.gif
-    :alt: Function Shape
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_elliptic_billiard_table.py`
 
@@ -70,7 +70,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_blender_thumb.gif
-    :alt: Blender
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_blender.py`
 
@@ -87,7 +87,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_color_mixing_thumb.gif
-    :alt: Color Mixing
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_color_mixing.py`
 
@@ -104,7 +104,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_gauss_machine_thumb.gif
-    :alt: Gauss Machine
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_gauss_machine.py`
 
@@ -121,7 +121,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_raycast_thumb.gif
-    :alt: Raycast
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_raycast.py`
 
@@ -138,7 +138,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_billiard_thumb.gif
-    :alt: Billiard
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_billiard.py`
 
@@ -155,7 +155,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_rocket_thumb.gif
-    :alt: Rocket
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_rocket.py`
 
@@ -172,7 +172,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_angry_shapes_thumb.gif
-    :alt: AngryShapes
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_angry_shapes.py`
 
@@ -189,7 +189,7 @@ Below is a gallery of examples
 .. only:: html
 
   .. image:: /auto_examples/images/thumb/sphx_glr_plot_goo_thumb.gif
-    :alt: Goo
+    :alt:
 
   :ref:`sphx_glr_auto_examples_plot_goo.py`
 
